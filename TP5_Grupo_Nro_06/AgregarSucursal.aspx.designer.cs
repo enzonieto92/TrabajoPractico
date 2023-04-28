@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TP5
+namespace TP5_Grupo_Nro_06
 {
 
 
-    public partial class WebForm1
+    public partial class AgregarSucursal
     {
 
         /// <summary>
@@ -33,15 +33,6 @@ namespace TP5
         protected global::System.Web.UI.WebControls.LinkButton btnAgregarSucursal;
 
         /// <summary>
-        /// Control btnListSucursales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnListSucursales;
-
-        /// <summary>
         /// Control btnEliminarSucursal.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace TP5
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnEliminarSucursal;
+
+        /// <summary>
+        /// Control btnListarSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnListarSucursal;
 
         /// <summary>
         /// Control lblGrupo.
@@ -114,13 +114,13 @@ namespace TP5
         protected global::System.Web.UI.WebControls.Label lblProvincia;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddlProvincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvincias;
 
         /// <summary>
         /// Control lblDireccion.

@@ -5,15 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TP5
+namespace TP5_Grupo_Nro_06
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AgregarSucursal : System.Web.UI.Page
     {
+        Negocio negocio = new Negocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                CargarProvincias();
+            }
         }
-
         protected void btnAgregarSucursal_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarSucursal.aspx");
@@ -27,6 +30,13 @@ namespace TP5
         protected void btnEliminarSucursal_Click(object sender, EventArgs e)
         {
             Response.Redirect("EliminarSucursal.aspx");
+        }
+        private void CargarProvincias()
+        {
+            ddlProvincias.DataSource = negocio.ObtenerProvincias();
+            ddlProvincias.DataTextField = "DescripcionProvincia";
+            ddlProvincias.DataValueField = "Id_Provincia";
+            ddlProvincias.DataBind();
         }
     }
 }
