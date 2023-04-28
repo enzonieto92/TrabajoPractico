@@ -13,5 +13,20 @@ namespace TP5_Grupo_Nro_13
         {
 
         }
+
+        protected void btnAgregarSucursal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarSucursal.aspx");
+        }
+
+        protected void btnListarSucursal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListarSucursal.aspx");
+        }
+
+        protected void btnEliminarSucursal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EliminarSucursal.aspx");
+        }
     }
 }
