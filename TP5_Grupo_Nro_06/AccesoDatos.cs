@@ -11,16 +11,16 @@ namespace TP5_Grupo_Nro_06
     public class AccesoDatos
     {
         private static string rutaConexion = @"Data Source=localhost\sqlexpress; Initial Catalog = BDSucursales; Integrated Security = True";
-        public DataTable ObtenerTablas(string consultaSQL, string Provincias)
+        public DataTable ObtenerTablas(string consultaSQL, string NombreTabla)
         {
             SqlConnection conn = new SqlConnection(rutaConexion);
             conn.ConnectionString = rutaConexion;
             conn.Open();
             SqlDataAdapter adap = new SqlDataAdapter(consultaSQL, conn);
             DataSet ds = new DataSet();
-            adap.Fill(ds, "Provincias");
+            adap.Fill(ds, NombreTabla);
             conn.Close();
-            return ds.Tables["Provincias"];
+            return ds.Tables[NombreTabla];
         }
 
 
