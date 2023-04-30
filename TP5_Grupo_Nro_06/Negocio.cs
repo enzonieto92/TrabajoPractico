@@ -18,5 +18,11 @@ namespace TP5_Grupo_Nro_06
             return conexion.ObtenerTablas(consultaSQL, nombreTabla);
         }
 
+        public int AgregarSucursal(string nombre, string descripcion, string idProvincia, string direccion)
+        {
+            string consultaSQL = "INSERT INTO Sucursal (NombreSucursal, descripcionSucursa, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('nombre', 'descripcion', 'idProvincia', 'direccion')";
+            return conexion.RealizarConsulta(consultaSQL);
+        }
+
     }
 }

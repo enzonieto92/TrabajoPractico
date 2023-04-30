@@ -38,5 +38,7 @@ namespace TP5_Grupo_Nro_06
             ddlProvincias.DataValueField = "Id_Provincia";
             ddlProvincias.DataBind();
         }
+
+       
     }
 }

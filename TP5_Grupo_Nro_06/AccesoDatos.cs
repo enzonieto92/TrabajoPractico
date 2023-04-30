@@ -23,6 +23,15 @@ namespace TP5_Grupo_Nro_06
             return ds.Tables[NombreTabla];
         }
 
+        public int RealizarConsulta(string consultaSQL)
+        {
+            SqlConnection cn = new SqlConnection(rutaConexion);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(consultaSQL, cn);
+            int Rows = (int)cmd.ExecuteNonQuery();
+            cn.Close();
+            return Rows; 
+        }
 
     }
 }
