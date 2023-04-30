@@ -31,6 +31,7 @@
             &nbsp;</p>
         <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
         <asp:TextBox ID="txtNombre" runat="server" style="margin-left: 105px" Width="226px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
         <p>
             <asp:Label ID="lblDescripcion" runat="server" Height="45px" Text="Descripción:"></asp:Label>
             <asp:TextBox ID="txtDescripcion" runat="server" Height="44px" style="margin-left: 139px" Width="227px"></asp:TextBox>
@@ -42,10 +43,12 @@
         </p>
         <p>
             <asp:Label ID="lblDireccion" runat="server" Text="Dirección:"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 155px" Width="224px"></asp:TextBox>
+            <asp:TextBox ID="txtDireccion" runat="server" style="margin-left: 155px" Width="224px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
         </p>
         <p>
-            &nbsp;</p>
+            <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" />
+        </p>
     </form>
 </body>
 </html>
