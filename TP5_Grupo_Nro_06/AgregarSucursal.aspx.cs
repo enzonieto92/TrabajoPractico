@@ -31,9 +31,16 @@ namespace TP5_Grupo_Nro_06
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            int a;
             Negocio Sucursal = new Negocio();
-            Sucursal.AgregarSucursal(txtNombre.Text, txtDescripcion.Text, ddlProvincias.SelectedValue, txtDireccion.Text);
+            a=Sucursal.AgregarSucursal(txtNombre.Text, txtDescripcion.Text, ddlProvincias.SelectedValue, txtDireccion.Text);
             lblAgregado.Text = "La sucursal se ha agregado con éxito";
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincias.SelectedIndex = 0;
+
+            lblPrueba.Text = Convert.ToString(a);
         }
     }
 }

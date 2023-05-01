@@ -117,6 +117,7 @@
             <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblAgregado" runat="server"></asp:Label>
+            <asp:Label ID="lblPrueba" runat="server"></asp:Label>
         </p>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
         <p class="auto-style2">
