@@ -6,6 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 40px;
+        }
+        .auto-style2 {
+            margin-left: 160px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -35,11 +43,13 @@
         <p>
             <asp:Label ID="lblDescripcion" runat="server" Height="45px" Text="Descripción:"></asp:Label>
             <asp:TextBox ID="txtDescripcion" runat="server" Height="44px" style="margin-left: 139px" Width="227px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una descripción" ForeColor="Red" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
         </p>
         <p>
             <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
             <asp:DropDownList ID="ddlProvincias" runat="server" CssClass="auto-style1" style="margin-left: 157px" Width="232px">
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="rfvProvincias" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="Debe seleccionar una Provincia" ForeColor="Red" InitialValue="-- Seleccione --" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
         </p>
         <p>
             <asp:Label ID="lblDireccion" runat="server" Text="Dirección:"></asp:Label>
@@ -47,8 +57,10 @@
             <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
         </p>
         <p>
-            <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" />
+            <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" />
         </p>
+        <p class="auto-style2">
+            &nbsp;</p>
     </form>
 </body>
 </html>

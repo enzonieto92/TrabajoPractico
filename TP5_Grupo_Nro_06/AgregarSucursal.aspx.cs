@@ -17,6 +17,8 @@ namespace TP5_Grupo_Nro_06
             {
                 CargarProvincias();
             }
+
+            //lblPruebassss.Text = ddlProvincias.SelectedValue;
         }
         protected void btnAgregarSucursal_Click(object sender, EventArgs e)
         {
@@ -38,8 +40,13 @@ namespace TP5_Grupo_Nro_06
             ddlProvincias.DataTextField = "DescripcionProvincia";
             ddlProvincias.DataValueField = "Id_Provincia";
             ddlProvincias.DataBind();
+            ddlProvincias.Items.Insert(0, "-- Seleccione --");
         }
 
-       
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Negocio Sucursal = new Negocio();
+            Sucursal.AgregarSucursal(txtNombre.Text, txtDescripcion.Text, ddlProvincias.SelectedValue, txtDireccion.Text);
+        }
     }
 }
