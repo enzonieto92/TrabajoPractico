@@ -24,30 +24,30 @@ namespace TP5_Grupo_Nro_06
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control btnAgregarSucursal.
+        /// Control hlAgregarSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAgregarSucursal;
+        protected global::System.Web.UI.WebControls.HyperLink hlAgregarSucursal;
 
         /// <summary>
-        /// Control btnEliminarSucursal.
+        /// Control hlListarSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnEliminarSucursal;
+        protected global::System.Web.UI.WebControls.HyperLink hlListarSucursal;
 
         /// <summary>
-        /// Control btnListarSucursal.
+        /// Control hlEliminarSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnListarSucursal;
+        protected global::System.Web.UI.WebControls.HyperLink hlEliminarSucursal;
     }
 }

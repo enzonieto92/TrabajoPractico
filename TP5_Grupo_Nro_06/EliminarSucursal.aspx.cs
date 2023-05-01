@@ -13,20 +13,5 @@ namespace TP5_Grupo_Nro_06
         {
 
         }
-
-        protected void btnAgregarSucursal_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AgregarSucursal.aspx");
-        }
-
-        protected void btnListSucursales_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListarSucursal.aspx");
-        }
-
-        protected void btnEliminarSucursal_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("EliminarSucursal.aspx");
-        }
     }
 }

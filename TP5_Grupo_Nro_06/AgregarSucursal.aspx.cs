@@ -20,20 +20,6 @@ namespace TP5_Grupo_Nro_06
 
             //lblPruebassss.Text = ddlProvincias.SelectedValue;
         }
-        protected void btnAgregarSucursal_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AgregarSucursal.aspx");
-        }
-
-        protected void btnListSucursales_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListarSucursal.aspx");
-        }
-
-        protected void btnEliminarSucursal_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("EliminarSucursal.aspx");
-        }
         private void CargarProvincias()
         {
             ddlProvincias.DataSource = negocio.ObtenerProvincias();
