@@ -47,6 +47,7 @@ namespace TP5_Grupo_Nro_06
         {
             Negocio Sucursal = new Negocio();
             Sucursal.AgregarSucursal(txtNombre.Text, txtDescripcion.Text, ddlProvincias.SelectedValue, txtDireccion.Text);
+            lblAgregado.Text = "La sucursal se ha agregado con éxito";
         }
     }
 }
