@@ -50,7 +50,6 @@
         <p>
             <asp:Label ID="lblAgregarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Agregar Sucursal"></asp:Label>
         </p>
-        <p class="auto-style10">
             <table class="auto-style7" role="gridcell">
                 <tr>
                     <td class="auto-style5">
@@ -101,27 +100,12 @@
             <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección valida" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                  </tr>
             </table>
-        </p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
             <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblAgregado" runat="server"></asp:Label>
             <asp:Label ID="lblPrueba" runat="server"></asp:Label>
-        </p>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
-        <p class="auto-style2">
-            &nbsp;</p>
+
     </form>
 </body>
 </html>
