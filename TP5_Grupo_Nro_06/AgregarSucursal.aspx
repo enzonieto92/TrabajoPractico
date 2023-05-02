@@ -35,8 +35,8 @@
 </head>
 
 
+<body>
 <form id="form1" runat="server" aria-checked="true">
-    <body>
         <div class="links">
 		    <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
 		    <asp:HyperLink ID="hlListarSucursal" runat="server" NavigateUrl="ListarSucursal.aspx">ListarSucursal</asp:HyperLink>
@@ -56,52 +56,52 @@
         
         <table class="form" role="gridcell">
                 <tr>
-                    <td class="auto-style5">
+                    <td>
         <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                     </td>
-                    <td class="auto-style8">
+                    <td>
         <asp:TextBox ID="txtNombre" runat="server" Width="226px" CssClass="auto-style6"></asp:TextBox>
                     </td>
-                    <td class="auto-style9">
+                    <td>
         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="revNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td>
             <asp:Label ID="lblDescripcion" runat="server" Height="19px" Text="Descripción:" CssClass="auto-style3" Width="79px"></asp:Label>
                     </td>
-                    <td class="auto-style8">
+                    <td>
             <asp:TextBox ID="txtDescripcion" runat="server" Height="87px" Width="225px" CssClass="auto-style6" Rows="5" TextMode="MultiLine"></asp:TextBox>
                     </td>
-                    <td class="auto-style9">
+                    <td>
             <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una descripción" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td>
             <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
                     </td>
-                    <td class="auto-style8">
+                    <td>
             <asp:DropDownList ID="ddlProvincias" runat="server" CssClass="auto-style6" Width="232px">
             </asp:DropDownList>
                     </td>
-                    <td class="auto-style9">
+                    <td>
             <asp:RequiredFieldValidator ID="rfvProvincias" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="Debe seleccionar una Provincia" ForeColor="Red" InitialValue="-- Seleccione --" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                     </td>
 
                 </tr>
                   <tr>
-                    <td class="auto-style5">
+                    <td>
             <asp:Label ID="lblDireccion" runat="server" Text="Dirección:"></asp:Label>
                     </td>
-                    <td class="auto-style8">
+                    <td>
             <asp:TextBox ID="txtDireccion" runat="server" Width="224px" CssClass="auto-style6"></asp:TextBox>
                     </td>
-                    <td class="auto-style9"
-                    </td>
+                    <td>
             <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección valida" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
+                    </td>
                  </tr>
             </table>
 
@@ -115,6 +115,6 @@
             <div class ="form">
                  <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
             </div>
-        </body>
-    </form>
+        </form>
+   </body>
 </html>
