@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -20,50 +21,40 @@
 			text-decoration: none;
 			border-radius: 5px;
 		}
+        .form {			
+            display: flex;
+			justify-content: center;
+			gap: 20px;
+        }
+
+	            .auto-style1 {
+                    margin-left: 118px;
+                }
+
 	</style>
-    <style type="text/css">
-        .auto-style2 {
-            margin-left: 160px;
-        }
-        .auto-style3 {
-            width: 33%;
-            height: 166px;
-        }
-        .auto-style5 {
-            width: 159px;
-        }
-        .auto-style6 {
-            margin-left: 0px;
-        }
-        .auto-style7 {
-            width: 453px;
-            height: 229px;
-            margin-left: 20px;
-        }
-        .auto-style8 {
-            width: 247px;
-        }
-        .auto-style9 {
-            width: 16px;
-        }
-        .auto-style10 {
-            height: 3px;
-            margin-top: 30px;
-        }
-    </style>
 </head>
-    <form id="form1" runat="server" aria-checked="true">
-<body>
-    <div class="links">
-		<asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
-		<asp:HyperLink ID="hlListarSucursal" runat="server" NavigateUrl="ListarSucursal.aspx">ListarSucursal</asp:HyperLink>
-        <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="EliminarSucursal.aspx">EliminarSucursal</asp:HyperLink>
-	</div> 
-        <asp:Label ID="lblGrupo" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="GRUPO Nº6"></asp:Label>
-        <p>
-            <asp:Label ID="lblAgregarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Agregar Sucursal"></asp:Label>
-        </p>
-            <table class="auto-style7" role="gridcell">
+
+
+<form id="form1" runat="server" aria-checked="true">
+    <body>
+        <div class="links">
+		    <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
+		    <asp:HyperLink ID="hlListarSucursal" runat="server" NavigateUrl="ListarSucursal.aspx">ListarSucursal</asp:HyperLink>
+            <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="EliminarSucursal.aspx">EliminarSucursal</asp:HyperLink>
+	    </div> 
+
+        <p></p>
+        
+        <div class="form">
+                <asp:Label ID="lblGrupo" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="GRUPO Nº6"></asp:Label>
+        </div>
+        <div class="form">
+                <asp:Label ID="lblAgregarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Agregar Sucursal"></asp:Label>
+        </div>
+
+        <p></p>
+        
+        <table class="form" role="gridcell">
                 <tr>
                     <td class="auto-style5">
         <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
@@ -113,12 +104,17 @@
             <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección valida" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                  </tr>
             </table>
-            <asp:Button ID="btnAceptar" runat="server" style="margin-left: 218px" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblAgregado" runat="server"></asp:Label>
-            <asp:Label ID="lblPrueba" runat="server"></asp:Label>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
 
+            <div class ="form">
+                <p>
+                  <asp:Button class="form" ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" CssClass="auto-style1" />
+                </p>
+                <asp:Label ID="lblAgregado" runat="server"></asp:Label>
+                <asp:Label ID="lblPrueba" runat="server"></asp:Label>
+            </div>
+            <div class ="form">
+                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
+            </div>
         </body>
     </form>
 </html>
