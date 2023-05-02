@@ -107,6 +107,8 @@
                 <p>
                   <asp:Button class="form" ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" CssClass="auto-style1" />
                 </p>
+            </div>
+            <div class ="form">
                 <asp:Label ID="lblAgregado" runat="server"></asp:Label>
                 <asp:Label ID="lblPrueba" runat="server"></asp:Label>
             </div>

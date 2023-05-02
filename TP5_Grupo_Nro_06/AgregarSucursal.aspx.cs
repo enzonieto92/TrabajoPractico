@@ -39,7 +39,6 @@ namespace TP5_Grupo_Nro_06
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
             ddlProvincias.SelectedIndex = 0;
-
             lblPrueba.Text = Convert.ToString(a);
         }
     }
