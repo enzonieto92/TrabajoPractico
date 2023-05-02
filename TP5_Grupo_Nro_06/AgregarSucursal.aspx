@@ -5,33 +5,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-        	<style>
-		.links {
-			display: flex;
-			justify-content: center;
-			gap: 20px;
-		}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title></title>
+        	    <style>
+		    .links {
+			    display: flex;
+			    justify-content: center;
+			    gap: 20px;
+		    }
+		    .links a {
+			    padding: 10px;
+			    background-color: #4CAF50;
+			    color: white;
+			    text-decoration: none;
+			    border-radius: 5px;
+		    }
+            .form {			
+                display: flex;
+			    justify-content: center;
+			    gap: 20px;
+            }
+	        .auto-style1 {
+                        margin-left: 118px;
+                    }
 
-		.links a {
-			padding: 10px;
-			background-color: #4CAF50;
-			color: white;
-			text-decoration: none;
-			border-radius: 5px;
-		}
-        .form {			
-            display: flex;
-			justify-content: center;
-			gap: 20px;
-        }
-
-	            .auto-style1 {
-                    margin-left: 118px;
-                }
-
-	</style>
+	            </style>
 </head>
 
 
@@ -60,7 +58,7 @@
         <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                     </td>
                     <td>
-        <asp:TextBox ID="txtNombre" runat="server" Width="226px" CssClass="auto-style6"></asp:TextBox>
+        <asp:TextBox ID="txtNombre" runat="server" Width="226px"></asp:TextBox>
                     </td>
                     <td>
         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
@@ -69,10 +67,10 @@
                 </tr>
                 <tr>
                     <td>
-            <asp:Label ID="lblDescripcion" runat="server" Height="19px" Text="Descripción:" CssClass="auto-style3" Width="79px"></asp:Label>
+            <asp:Label ID="lblDescripcion" runat="server" Height="19px" Text="Descripción:" Width="79px"></asp:Label>
                     </td>
                     <td>
-            <asp:TextBox ID="txtDescripcion" runat="server" Height="87px" Width="225px" CssClass="auto-style6" Rows="5" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="txtDescripcion" runat="server" Height="87px" Width="225px" Rows="5" TextMode="MultiLine"></asp:TextBox>
                     </td>
                     <td>
             <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una descripción" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
@@ -83,7 +81,7 @@
             <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
                     </td>
                     <td>
-            <asp:DropDownList ID="ddlProvincias" runat="server" CssClass="auto-style6" Width="232px">
+            <asp:DropDownList ID="ddlProvincias" runat="server" Width="232px">
             </asp:DropDownList>
                     </td>
                     <td>
