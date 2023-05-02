@@ -34,12 +34,26 @@ namespace TP5_Grupo_Nro_06
             int a;
             Negocio Sucursal = new Negocio();
             a=Sucursal.AgregarSucursal(txtNombre.Text, txtDescripcion.Text, ddlProvincias.SelectedValue, txtDireccion.Text);
-            lblAgregado.Text = "La sucursal se ha agregado con éxito";
+            if (a == -1)
+            {
+                lblAgregado.Text = "Error al agregar sucursal";
+            }
+            else
+            {
+                lblAgregado.Text = "La sucursal se ha agregado con éxito";
+            }
+
+            ReiniciarCampos();
+
+            lblPrueba.Text = Convert.ToString(a);
+        }
+
+        public void ReiniciarCampos()
+        {
             txtNombre.Text = "";
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
             ddlProvincias.SelectedIndex = 0;
-            lblPrueba.Text = Convert.ToString(a);
         }
     }
 }

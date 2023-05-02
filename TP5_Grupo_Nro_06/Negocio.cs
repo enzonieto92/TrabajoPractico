@@ -20,9 +20,16 @@ namespace TP5_Grupo_Nro_06
 
         public int AgregarSucursal(string nombre, string descripcion, string idProvincia, string direccion)
         {
-            //int id = Convert.ToInt32(idProvincia);
+            if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(idProvincia) || string.IsNullOrEmpty(direccion))
+            {
+                return -1;
+            }
+            else
+            {
             string consultaSQL = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('"+nombre+"', '"+descripcion+"', "+idProvincia+", '"+direccion+"')";
             return conexion.RealizarConsulta(consultaSQL);
+            }
+            
         }
 
     }
