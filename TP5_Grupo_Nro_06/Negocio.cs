@@ -34,13 +34,13 @@ namespace TP5_Grupo_Nro_06
 
         public DataTable listarSucursalInicial()
         {
-            string consultaListarSQL = "select Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal, Provincia.DescripcionProvincia, Sucursal.DireccionSucursal from Sucursal inner join Provincia on Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+            string consultaListarSQL = "select Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripción, DescripcionProvincia AS Provincia, DireccionSucursal AS Dirección from Sucursal inner join Provincia on Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             string nombre = "Sucursal";
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
         public DataTable listarSucursal (string id)
         {
-            string consultaListarSQL = "select Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal, Provincia.DescripcionProvincia, Sucursal.DireccionSucursal from Sucursal inner join Provincia on Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal =" + id;
+            string consultaListarSQL = "select Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripción, DescripcionProvincia AS Provincia, DireccionSucursal AS Dirección from Sucursal inner join Provincia on Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal =" + id;
             string nombre = "Sucursal";
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
