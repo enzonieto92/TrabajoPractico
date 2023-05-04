@@ -50,9 +50,8 @@
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Búsqueda ingrese ID Sucursal:"></asp:Label>
 		&nbsp;&nbsp;&nbsp;
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
+        <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" OnClick="btnFiltrar_Click" />
         <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" />
 	</div>
     
@@ -60,9 +59,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
 	<div class="form">
-    <asp:GridView ID="grdSucursales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" Height="441px" Width="1254px" CellSpacing="3">
+    <asp:GridView ID="grdSucursales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" Height="10px" Width="1254px" CellSpacing="3">
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" BorderStyle="Solid" />
         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
         <SortedAscendingCellStyle BackColor="#F7F7F7" />

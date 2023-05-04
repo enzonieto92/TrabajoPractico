@@ -12,7 +12,8 @@ namespace TP5_Grupo_Nro_06
         Negocio listaSucursal = new Negocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            if (!Page.IsPostBack)
             {
                 cargarTabla();
             }
@@ -22,7 +23,11 @@ namespace TP5_Grupo_Nro_06
             grdSucursales.DataSource = listaSucursal.listarSucursalInicial();
             grdSucursales.DataBind();
         }
-
+        private void cargarTabla(string id)
+        {
+            grdSucursales.DataSource = listaSucursal.listarSucursal(id);
+            grdSucursales.DataBind();
+        }
         protected void btnAgregarSucursal_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarSucursal.aspx");
@@ -36,6 +41,15 @@ namespace TP5_Grupo_Nro_06
         protected void btnEliminarSucursal_Click(object sender, EventArgs e)
         {
             Response.Redirect("EliminarSucursal.aspx");
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text != "")
+            {
+            cargarTabla(txtBusqueda.Text);
+            }
+
         }
     }
 }
