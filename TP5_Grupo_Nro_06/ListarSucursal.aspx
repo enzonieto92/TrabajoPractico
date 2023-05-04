@@ -50,7 +50,25 @@
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Búsqueda ingrese ID Sucursal:"></asp:Label>
 		&nbsp;&nbsp;&nbsp;
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" />
 	</div>
+    
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+    <asp:GridView ID="grdSucursales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Height="441px" Width="1254px">
+        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+        <SortedDescendingHeaderStyle BackColor="#242121" />
+    </asp:GridView>
     
 
 </form>
