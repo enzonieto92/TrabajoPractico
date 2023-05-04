@@ -32,5 +32,12 @@ namespace TP5_Grupo_Nro_06
             
         }
 
+        public DataTable listarSucursalInicial()
+        {
+            string consultaListarSQL = "select Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal, Provincia.DescripcionProvincia, Sucursal.DireccionSucursal from Sucursal inner join Provincia on Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+            string nombre = "Sucursal";
+            return conexion.ObtenerTablas(consultaListarSQL, nombre);
+        }
+
     }
 }
