@@ -50,13 +50,15 @@
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Búsqueda ingrese ID Sucursal:"></asp:Label>
 		&nbsp;&nbsp;&nbsp;
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
-	&nbsp;&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
+	&nbsp;&nbsp;<asp:RegularExpressionValidator ID="revSucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
         <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" OnClick="btnFiltrar_Click" />
         <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" />
 	</div>
-    
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class ="form">
+    <p>
+    <asp:Label ID="lblResultado" runat="server" Text="No se encontraron Resultados" Visible="False"></asp:Label>
+    </p>
+    </div>
     <br />
 	<div class="form">
     <asp:GridView ID="grdSucursales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" Height="10px" Width="1254px" CellSpacing="3">

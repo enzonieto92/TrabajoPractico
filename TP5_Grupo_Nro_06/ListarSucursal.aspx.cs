@@ -27,6 +27,14 @@ namespace TP5_Grupo_Nro_06
         {
             grdSucursales.DataSource = listaSucursal.listarSucursal(id);
             grdSucursales.DataBind();
+            if (grdSucursales.Rows.Count > 0)
+            {
+                lblResultado.Visible = false;
+            }
+            else
+            {
+                lblResultado.Visible = true;
+            }
         }
         protected void btnAgregarSucursal_Click(object sender, EventArgs e)
         {
@@ -49,7 +57,6 @@ namespace TP5_Grupo_Nro_06
             {
             cargarTabla(txtBusqueda.Text);
             }
-
         }
     }
 }
