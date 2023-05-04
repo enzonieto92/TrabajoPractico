@@ -52,7 +52,7 @@
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
 	&nbsp;&nbsp;<asp:RegularExpressionValidator ID="revSucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
         <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" OnClick="btnFiltrar_Click" />
-        <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" />
+        <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" OnClick="btnMostrarTodo_Click" />
 	</div>
     <div class ="form">
     <p>

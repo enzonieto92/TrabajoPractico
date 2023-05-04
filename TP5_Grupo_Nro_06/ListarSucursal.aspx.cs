@@ -48,7 +48,14 @@ namespace TP5_Grupo_Nro_06
             if (txtBusqueda.Text != "")
             {
             cargarTabla(txtBusqueda.Text);
+                txtBusqueda.Text = "";
             }
+        }
+
+        protected void btnMostrarTodo_Click(object sender, EventArgs e)
+        {
+            cargarTabla();
+            txtBusqueda.Text = "";
         }
     }
 }
