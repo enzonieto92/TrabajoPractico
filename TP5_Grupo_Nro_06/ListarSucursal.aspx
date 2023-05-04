@@ -20,6 +20,11 @@
 			text-decoration: none;
 			border-radius: 5px;
 		}
+		.form {			
+                display: flex;
+			    justify-content: center;
+			    gap: 20px;
+            }
 	</style>
 </head>
 <form id="form1" runat="server">
@@ -30,5 +35,23 @@
         <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="EliminarSucursal.aspx">EliminarSucursal</asp:HyperLink>
 	</div>
     </body>
+    <br />
+    <br />
+                
+        <br />
+    <br />
+	<div class="form">
+		<asp:Label ID="lblListarSucursales" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listado de Sucursales"></asp:Label>
+		<br />
+        <br />
+		<br />
+	</div>
+	<div class="form">
+		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Búsqueda ingrese ID Sucursal:"></asp:Label>
+		&nbsp;&nbsp;&nbsp;
+		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
+	</div>
+    
+
 </form>
 </html>
