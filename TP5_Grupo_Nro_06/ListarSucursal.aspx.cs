@@ -23,10 +23,12 @@ namespace TP5_Grupo_Nro_06
             grdSucursales.DataSource = listaSucursal.listarSucursalInicial();
             grdSucursales.DataBind();
         }
-        private void cargarTabla(string id)
+        private int CargarTabla(string id)
         {
             grdSucursales.DataSource = listaSucursal.listarSucursal(id);
             grdSucursales.DataBind();
+            return grdSucursales.Rows.Count;
+            
         }
         protected void btnAgregarSucursal_Click(object sender, EventArgs e)
         {
@@ -45,9 +47,14 @@ namespace TP5_Grupo_Nro_06
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            
             if (txtBusqueda.Text != "")
             {
-            cargarTabla(txtBusqueda.Text);
+                if (CargarTabla(txtBusqueda.Text) == 0)
+                {
+                    lblResultado.Visible = true;
+                    grdSucursales.Visible = false;
+                }
                 txtBusqueda.Text = "";
             }
         }
@@ -56,6 +63,8 @@ namespace TP5_Grupo_Nro_06
         {
             cargarTabla();
             txtBusqueda.Text = "";
+            lblResultado.Visible = false;
+            grdSucursales.Visible = true;
         }
     }
 }

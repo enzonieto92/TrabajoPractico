@@ -56,7 +56,7 @@
 	</div>
     <div class ="form">
     <p>
-    <asp:Label ID="lblResultado" runat="server" Text="No se encontraron Resultados" Visible="False"></asp:Label>
+    <asp:Label ID="lblResultado" runat="server" Text="No se encontraron resultados" Visible="False" ForeColor="White" BackColor="red" BorderWidth="2px" BorderColor="Black"></asp:Label>
     </p>
     </div>
     <br />
