@@ -20,7 +20,8 @@
 			    text-decoration: none;
 			    border-radius: 5px;
 		    }
-            .form {			
+            .form {		
+                padding: 20px;
                 display: flex;
 			    justify-content: center;
 			    gap: 20px;
@@ -40,17 +41,14 @@
 		    <asp:HyperLink ID="hlListarSucursal" runat="server" NavigateUrl="ListarSucursal.aspx">ListarSucursal</asp:HyperLink>
             <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="EliminarSucursal.aspx">EliminarSucursal</asp:HyperLink>
 	    </div> 
-
-        <p></p>
         
         <div class="form">
                 <asp:Label ID="lblGrupo" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="GRUPO Nº6"></asp:Label>
         </div>
+
         <div class="form">
                 <asp:Label ID="lblAgregarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Agregar Sucursal"></asp:Label>
         </div>
-
-        <p></p>
         
         <table class="form" role="gridcell">
                 <tr>
@@ -104,9 +102,7 @@
             </table>
 
             <div class ="form">
-                <p>
                   <asp:Button class="form" ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" CssClass="auto-style1" />
-                </p>
             </div>
             <div class ="form">
                 <asp:Label ID="lblAgregado" runat="server"></asp:Label>
