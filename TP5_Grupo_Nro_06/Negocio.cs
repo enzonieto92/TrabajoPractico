@@ -44,5 +44,11 @@ namespace TP5_Grupo_Nro_06
             string nombre = "Sucursal";
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
+
+        public int EliinarSucursal(string id)
+        {
+            string consulta = "delete FROM Sucursal WHERE id_Sucursal = "+id;
+            return conexion.RealizarConsulta(consulta);
+        }
     }
 }
