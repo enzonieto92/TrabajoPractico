@@ -13,5 +13,22 @@ namespace TP5_Grupo_Nro_06
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int suc;
+            Negocio sucursal = new Negocio();
+            suc = sucursal.EliminarSucursal(txtBusqueda.Text);
+            if(suc == -1)
+            {
+                lblAgregado.Text = "Error a eliminar sucursal";
+                txtBusqueda.Text = "";
+            }
+            else
+            {
+                lblAgregado.Text = "Sucursal Eliminada!";
+                txtBusqueda.Text = "";
+            }
+        }
     }
 }

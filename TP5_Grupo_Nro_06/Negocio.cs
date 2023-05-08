@@ -45,10 +45,18 @@ namespace TP5_Grupo_Nro_06
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
 
-        public int EliinarSucursal(string id)
+        public int EliminarSucursal(string id)
         {
-            string consulta = "delete FROM Sucursal WHERE id_Sucursal = "+id;
-            return conexion.RealizarConsulta(consulta);
+            if (string.IsNullOrEmpty(id))
+            {
+                return -1;
+            }
+            else
+            {
+                string consulta = "delete FROM Sucursal WHERE id_Sucursal = "+id;
+                return conexion.RealizarConsulta(consulta);
+            }
+            
         }
     }
 }
