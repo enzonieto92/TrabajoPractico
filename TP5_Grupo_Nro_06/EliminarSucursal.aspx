@@ -47,6 +47,7 @@
 	<div class="form">
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Ingresar ID Sucursal:"></asp:Label>
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="revIDsucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Ingrese un ID Valido!" ForeColor="Red" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
         <asp:Button ID="btnEliminar" runat="server" Font-Bold="True" Text="Eliminar"/>
 	</div>
 

@@ -30,6 +30,10 @@
                         margin-left: 118px;
                     }
 
+	                .auto-style2 {
+                        width: 16px;
+                    }
+
 	            </style>
 </head>
 
@@ -58,7 +62,7 @@
                     <td>
         <asp:TextBox ID="txtNombre" runat="server" Width="226px"></asp:TextBox>
                     </td>
-                    <td>
+                    <td class="auto-style2">
         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="revNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </td>
@@ -70,7 +74,7 @@
                     <td>
             <asp:TextBox ID="txtDescripcion" runat="server" Height="87px" Width="225px" Rows="5" TextMode="MultiLine"></asp:TextBox>
                     </td>
-                    <td>
+                    <td class="auto-style2">
             <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una descripción" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -82,7 +86,7 @@
             <asp:DropDownList ID="ddlProvincias" runat="server" Width="232px">
             </asp:DropDownList>
                     </td>
-                    <td>
+                    <td class="auto-style2">
             <asp:RequiredFieldValidator ID="rfvProvincias" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="Debe seleccionar una Provincia" ForeColor="Red" InitialValue="-- Seleccione --" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                     </td>
 
@@ -94,7 +98,7 @@
                     <td>
             <asp:TextBox ID="txtDireccion" runat="server" Width="224px" CssClass="auto-style6"></asp:TextBox>
                     </td>
-                    <td>
+                    <td class="auto-style2">
             <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección valida" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </td>

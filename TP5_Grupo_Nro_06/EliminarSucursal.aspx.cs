@@ -11,7 +11,7 @@ namespace TP5_Grupo_Nro_06
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
     }
 }
