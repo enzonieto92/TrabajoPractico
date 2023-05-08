@@ -26,12 +26,7 @@
 		justify-content: center;
 		gap: 20px;
 		}
-		.form2 {		
-		padding: 20px;
-        display:flex;
-		justify-content: center;
-		gap: 20px;
-		}
+
 	        .labels {
                 position: absolute;
                 top: 0;
@@ -58,7 +53,7 @@
 		<asp:Label ID="lblEliminarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Sucursal"></asp:Label>
 	</div> 
 
-	<div class="form2">
+	<div class="form">
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Ingresar ID Sucursal:"></asp:Label>
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px" ValidateRequestMode="Enabled" ViewStateMode="Enabled"></asp:TextBox>
         <asp:Button ID="btnEliminar" runat="server" Font-Bold="True" Text="Eliminar" OnClick="btnEliminar_Click"/>
