@@ -47,16 +47,8 @@ namespace TP5_Grupo_Nro_06
 
         public int EliminarSucursal(string id)
         {
-            if (string.IsNullOrEmpty(id))
-            {
-                return -1;
-            }
-            else
-            {
                 string consulta = "delete FROM Sucursal WHERE id_Sucursal = "+id;
                 return conexion.RealizarConsulta(consulta);
-            }
-            
         }
     }
 }

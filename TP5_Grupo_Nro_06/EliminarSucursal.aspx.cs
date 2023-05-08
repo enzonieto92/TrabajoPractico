@@ -19,9 +19,10 @@ namespace TP5_Grupo_Nro_06
             int suc;
             Negocio sucursal = new Negocio();
             suc = sucursal.EliminarSucursal(txtBusqueda.Text);
-            if(suc == -1)
+            if(suc == 0)
             {
-                lblAgregado.Text = "Error a eliminar sucursal";
+                lblAgregado.Text = "No se encontró la sucursal!";
+                lblAgregado.ForeColor = System.Drawing.Color.Red;
                 txtBusqueda.Text = "";
             }
             else

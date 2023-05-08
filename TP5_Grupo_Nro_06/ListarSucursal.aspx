@@ -3,33 +3,34 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    	<style>
-		.links {
-			display: flex;
-			justify-content: center;
-			gap: 20px;
-		}
+	<head runat="server">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+    		<style>
+			.links {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
 
-		.links a {
-			padding: 10px;
-			background-color: #4CAF50;
-			color: white;
-			text-decoration: none;
-			border-radius: 5px;
-		}
-		.form {			
-                padding: 20px;
-                display: flex;
-			    justify-content: center;
-			    gap: 20px;
-            }
-	</style>
-</head>
-<form id="form1" runat="server">
+			.links a {
+				padding: 10px;
+				background-color: #4CAF50;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			.form {			
+					padding: 20px;
+					display: flex;
+					justify-content: center;
+					gap: 20px;
+				}
+		</style>
+	</head>
+
     <body>
+		<form id="form1" runat="server">
 
     <div class="links">
 		<asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
@@ -70,6 +71,6 @@
         <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
     </div>
-
-</form>
+	</form>
+	</body>
 </html>

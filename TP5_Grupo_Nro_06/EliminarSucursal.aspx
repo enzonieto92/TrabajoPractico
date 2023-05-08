@@ -26,9 +26,22 @@
 		justify-content: center;
 		gap: 20px;
 		}
+		.form2 {		
+		padding: 20px;
+        display:flex;
+		justify-content: center;
+		gap: 20px;
+		}
+	        .labels {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 156px;
+            }
 	</style>
 </head>
 <form id="form1" runat="server">
+
     <body>
 
     <div class="links">
@@ -44,13 +57,19 @@
     <div class="form">
 		<asp:Label ID="lblEliminarSucursal" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Sucursal"></asp:Label>
 	</div> 
-	<div class="form">
+
+	<div class="form2">
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Ingresar ID Sucursal:"></asp:Label>
-		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
-        <asp:RegularExpressionValidator ID="revIDsucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Ingrese un ID Valido!" ForeColor="Red" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
+		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px" ValidateRequestMode="Enabled" ViewStateMode="Enabled"></asp:TextBox>
         <asp:Button ID="btnEliminar" runat="server" Font-Bold="True" Text="Eliminar" OnClick="btnEliminar_Click"/>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lblAgregado" runat="server"></asp:Label>
+		<div style="position: relative; display:inline-block;">
+		  <div class="labels"><asp:RegularExpressionValidator ID="revIDsucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Ingrese un ID Valido!" ForeColor="Red" ValidationExpression="^[1-9]\d*$" ValidateRequestMode="Enabled"></asp:RegularExpressionValidator></div>
+		  <div class="labels"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe Ingresar un ID!" ForeColor="#FF3300" ControlToValidate="txtBusqueda"></asp:RequiredFieldValidator></div>
+		</div>
+	</div>
+			
+	<div class="form">
+		<asp:Label ID="lblAgregado" runat="server"></asp:Label>
 	</div>
 
 	</body>
