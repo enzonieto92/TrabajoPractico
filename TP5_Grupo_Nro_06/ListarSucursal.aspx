@@ -26,6 +26,16 @@
 					justify-content: center;
 					gap: 20px;
 				}
+			.labels {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 170px;
+            }
+		    .buttons {
+                position: relative;
+				left: 160px;
+            }
 		</style>
 	</head>
 
@@ -48,13 +58,17 @@
 
 	<div class="form">
 		<asp:Label ID="lblBusqueda" runat="server" Font-Size="Large" Text="Búsqueda ingrese ID Sucursal:"></asp:Label>
-		&nbsp;&nbsp;&nbsp;
 		<asp:TextBox ID="txtBusqueda" runat="server" Width="278px"></asp:TextBox>
-	&nbsp;&nbsp;<asp:RegularExpressionValidator ID="revSucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
+		<div style="position: relative; display:inline-block;">
+		  <div class="labels"><asp:RegularExpressionValidator ID="revSucursal" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Escriba un ID Válido!" ValidateRequestMode="Enabled" ValidationExpression="^[1-9]\d*$" ForeColor="#FF3300"></asp:RegularExpressionValidator></div>
+		  <div class="labels"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tiene que escribir un ID!" ForeColor="#FF3300" ControlToValidate="txtBusqueda"></asp:RequiredFieldValidator></div>
+		</div>
+     <div class="buttons">   
         <asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" Text="Filtrar" OnClick="btnFiltrar_Click" />
         <asp:Button ID="btnMostrarTodo" runat="server" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Mostrar Todos" OnClick="btnMostrarTodo_Click" />
 	</div>
-
+	</div>
+		
     <div class ="form">
     <asp:Label ID="lblResultado" runat="server" Text="No se encontraron resultados" Visible="False" ForeColor="White" BackColor="red" BorderWidth="2px" BorderColor="Black"></asp:Label>
     </div>

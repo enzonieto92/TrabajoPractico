@@ -47,15 +47,17 @@ namespace TP5_Grupo_Nro_06
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            
-            if (txtBusqueda.Text != "")
-            {
-                if (CargarTabla(txtBusqueda.Text) == 0)
-                {
+
+            switch (CargarTabla(txtBusqueda.Text)){
+
+                case 0:
                     lblResultado.Visible = true;
                     grdSucursales.Visible = false;
-                }
-                txtBusqueda.Text = "";
+                    break;
+                default:
+                    lblResultado.Visible = false;
+                    grdSucursales.Visible = true;
+                    break;
             }
         }
 

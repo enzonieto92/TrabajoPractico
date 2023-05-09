@@ -17,9 +17,8 @@ namespace TP5_Grupo_Nro_06
             {
                 CargarProvincias();
             }
-
-            //lblPruebassss.Text = ddlProvincias.SelectedValue;
         }
+
         private void CargarProvincias()
         {
             ddlProvincias.DataSource = negocio.ObtenerProvincias();
