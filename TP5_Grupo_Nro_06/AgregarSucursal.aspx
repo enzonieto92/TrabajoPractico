@@ -26,13 +26,6 @@
 			    justify-content: center;
 			    gap: 20px;
             }
-	        .auto-style1 {
-                        margin-left: 118px;
-                    }
-
-	                .auto-style2 {
-                        width: 16px;
-                    }
 
 	            </style>
 </head>
@@ -60,7 +53,7 @@
         <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                     </td>
                     <td>
-        <asp:TextBox ID="txtNombre" runat="server" Width="226px"></asp:TextBox>
+        <asp:TextBox ID="txtNombre" runat="server" Width="224px"></asp:TextBox>
                     </td>
                     <td class="auto-style2">
         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
@@ -72,7 +65,7 @@
             <asp:Label ID="lblDescripcion" runat="server" Height="19px" Text="Descripción:" Width="79px"></asp:Label>
                     </td>
                     <td>
-            <asp:TextBox ID="txtDescripcion" runat="server" Height="87px" Width="225px" Rows="5" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="txtDescripcion" runat="server" Rows="5" TextMode="MultiLine" Width="226px"></asp:TextBox>
                     </td>
                     <td class="auto-style2">
             <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una descripción" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
@@ -96,7 +89,7 @@
             <asp:Label ID="lblDireccion" runat="server" Text="Dirección:"></asp:Label>
                     </td>
                     <td>
-            <asp:TextBox ID="txtDireccion" runat="server" Width="224px" CssClass="auto-style6"></asp:TextBox>
+            <asp:TextBox ID="txtDireccion" runat="server" Width="224px" ></asp:TextBox>
                     </td>
                     <td class="auto-style2">
             <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
@@ -106,15 +99,20 @@
             </table>
 
             <div class ="form">
-                  <asp:Button class="form" ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click" CssClass="auto-style1" />
-            </div>
+
+                  <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="Grupo 1" OnClick="btnAceptar_Click"/>
+                </div>
+
+
             <div class ="form">
                 <asp:Label ID="lblAgregado" runat="server"></asp:Label>
                 <asp:Label ID="lblPrueba" runat="server"></asp:Label>
             </div>
+
             <div class ="form">
                  <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
             </div>
+
         </form>
    </body>
 </html>

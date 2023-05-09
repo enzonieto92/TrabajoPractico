@@ -44,8 +44,6 @@ namespace TP5_Grupo_Nro_06
             }
 
             ReiniciarCampos();
-
-            lblPrueba.Text = Convert.ToString(a);
         }
 
         public void ReiniciarCampos()
