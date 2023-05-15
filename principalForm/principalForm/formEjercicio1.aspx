@@ -29,7 +29,41 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="GridView1" runat="server" Height="351px" Width="834px">
+                        <asp:GridView ID="grdProductos" runat="server" Height="351px" Width="834px" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="grdProductos_RowEditing" OnRowUpdating="grdProductos_RowUpdating">
+                            <Columns>
+                                <asp:TemplateField HeaderText="ID Producto">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtboxIDProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Lbl_IDProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nombre Producto">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtboxNombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Lbl_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Cantidad Por Unidad">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtbxCantidadUnidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Lbl_CantidadUnidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Precio Unidad">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="txtbxPrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Lbl_PrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
                         </asp:GridView>
                     </td>
                 </tr>

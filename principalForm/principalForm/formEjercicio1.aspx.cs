@@ -20,8 +20,25 @@ namespace principalForm
         }
         private void cargarGridView()
         {
-            GridView1.DataSource = cargarGrid.cargarTabla();
-            GridView1.DataBind();
+            grdProductos.DataSource = cargarGrid.cargarTabla();
+            grdProductos.DataBind();
+        }
+
+        protected void grdProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdProductos.EditIndex = e.NewEditIndex;
+            cargarGridView();
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grdProductos.EditIndex = -1;
+            cargarGridView();
+        }
+
+        protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
         }
     }
 }
