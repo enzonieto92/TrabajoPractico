@@ -30,15 +30,5 @@ namespace principalForm
             cargarGridView();
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            grdProductos.EditIndex = -1;
-            cargarGridView();
-        }
-
-        protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-        }
     }
 }

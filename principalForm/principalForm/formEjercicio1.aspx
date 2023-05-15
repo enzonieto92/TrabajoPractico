@@ -29,7 +29,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="grdProductos" runat="server" Height="351px" Width="834px" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="grdProductos_RowEditing" OnRowUpdating="grdProductos_RowUpdating">
+                        <asp:GridView ID="grdProductos" runat="server" Height="351px" Width="834px" AutoGenerateColumns="False" AutoGenerateEditButton="True"  OnRowEditing="grdProductos_RowEditing" >
                             <Columns>
                                 <asp:TemplateField HeaderText="ID Producto">
                                     <EditItemTemplate>
