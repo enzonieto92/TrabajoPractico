@@ -11,15 +11,16 @@ namespace principalForm
     public class AccesoDatos
     {
         private static string rutaConexion = @"Data Source=localhost\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True";
+
         public DataTable ObtenerTablas(string consultaSQL, string NombreTabla)
         {
-            SqlConnection con = new SqlConnection(rutaConexion);
-            con.ConnectionString = rutaConexion;
-            con.Open();
-            SqlDataAdapter adap = new SqlDataAdapter(consultaSQL, con);
+            SqlConnection conn = new SqlConnection(rutaConexion);
+            conn.ConnectionString = rutaConexion;
+            conn.Open();
+            SqlDataAdapter adap = new SqlDataAdapter(consultaSQL, conn);
             DataSet ds = new DataSet();
             adap.Fill(ds, NombreTabla);
-            con.Close();
+            conn.Close();
             return ds.Tables[NombreTabla];
         }
 

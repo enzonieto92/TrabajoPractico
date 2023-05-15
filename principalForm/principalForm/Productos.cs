@@ -9,18 +9,18 @@ namespace principalForm
     {
         private int i_IdProducto;
         private string s_Nombre;
-        private int i_Cantidad;
+        private string s_Cantidad;
         private float f_Precio;
 
         public Productos()
         {
         }
 
-        public Productos(int i_IdProducto, string s_Nombre, int i_Cantidad, float f_Precio)
+        public Productos(int i_IdProducto, string s_Nombre, string s_Cantidad, float f_Precio)
         {
             this.i_IdProducto = i_IdProducto;
             this.s_Nombre = s_Nombre;
-            this.i_Cantidad = i_Cantidad;
+            this.s_Cantidad = s_Cantidad;
             this.f_Precio = f_Precio;
         }
 
@@ -35,10 +35,10 @@ namespace principalForm
             set { s_Nombre = value; }
         }
 
-        public int Cantidad
+        public string Cantidad
         {
-            get { return i_Cantidad; }
-            set { i_Cantidad = value; }
+            get { return s_Cantidad; }
+            set { s_Cantidad = value; }
         }
 
         public float Precio
