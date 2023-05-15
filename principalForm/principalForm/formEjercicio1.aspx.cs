@@ -29,6 +29,5 @@ namespace principalForm
             grdProductos.EditIndex = e.NewEditIndex;
             cargarGridView();
         }
-
     }
 }

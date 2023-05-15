@@ -9,6 +9,10 @@ namespace principalForm
 {
     public class Metodos
     {
+        public Metodos()
+        {
+        }
+
         AccesoDatos conexion = new AccesoDatos();
         public DataTable cargarTabla()
         {
@@ -17,5 +21,11 @@ namespace principalForm
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
 
+        private void ArmarParametrosEliminarProductos(ref SqlCommand Comando, Productos Producto)
+        {
+            SqlParameter sqlParametro = new SqlParameter();
+            sqlParametro = Comando.Parameters.Add("@IdProducto", SqlDbType.Int);
+            sqlParametro.Value = Producto.IdProducto;
+        }
     }
 }
