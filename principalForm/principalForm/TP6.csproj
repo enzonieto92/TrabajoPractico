@@ -69,10 +69,12 @@
   <ItemGroup>
     <Content Include="formEjercicio1.aspx" />
     <Content Include="formEjercicio2.aspx" />
+    <Content Include="SeleccionarProductos.aspx" />
     <Content Include="Web.config" />
     <Content Include="inicio.aspx">
       <BrowseToURL>~/formEjercicio1.aspx</BrowseToURL>
     </Content>
+    <Content Include="MostrarProductos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDatos.cs" />
@@ -99,6 +101,20 @@
     </Compile>
     <Compile Include="inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarProductos.aspx.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarProductos.aspx.designer.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarProductos.aspx.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarProductos.aspx.designer.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
