@@ -13,5 +13,10 @@ namespace principalForm
         {
 
         }
+
+        protected void lnkInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InicioEj2.aspx");
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="formEjercicio2.aspx.cs" Inherits="principalForm.formEjercicio2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InicioEj2.aspx.cs" Inherits="principalForm.formEjercicio2" %>
 
 <!DOCTYPE html>
 
