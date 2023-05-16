@@ -46,5 +46,6 @@ namespace principalForm
             get { return f_Precio; }
             set { f_Precio = value; }
         }
+
     }
 }

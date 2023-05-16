@@ -36,9 +36,14 @@ namespace principalForm
             sqlParametro = comando.Parameters.Add("@PrecioUnidad", SqlDbType.Money);
             sqlParametro.Value = producto.IdProducto;
         }*/
-        public int ActualizarProducto(Productos prod, string id, string nombreProducto, string cantidad, string precio)
+        public int ActualizarProducto(Productos prod)
         {
-            string consulta = "update Productos set NombreProducto = nombreProducto, set CantidadPorUnidad = cantidad, set PrecioUnidad = precio where IdProducto = id";
+            int IDprod = prod.IdProducto;
+            string nombre = prod.Nombre;
+            string cant = prod.Cantidad;
+            float pre = (float)prod.Precio;
+
+            string consulta = "update Productos set NombreProducto = '"+nombre+"', CantidadPorUnidad = '"+cant+"', PrecioUnidad = '"+pre+"' where IdProducto = "+IDprod;
             return conexion.RealizarConsulta(consulta);
         }
         public int EliminarProducto(Productos prod, string id)
@@ -47,5 +52,6 @@ namespace principalForm
             return conexion.RealizarConsulta(consulta);
 
         }
+
     }
 }
