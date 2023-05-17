@@ -24,13 +24,13 @@ namespace principalForm
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control grdSeleccionarProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grdSeleccionarProductos;
 
         /// <summary>
         /// Control lblSelect.
@@ -42,12 +42,12 @@ namespace principalForm
         protected global::System.Web.UI.WebControls.Label lblSelect;
 
         /// <summary>
-        /// Control lnkInicio.
+        /// Control hpVolverInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkInicio;
+        protected global::System.Web.UI.WebControls.HyperLink hpVolverInicio;
     }
 }

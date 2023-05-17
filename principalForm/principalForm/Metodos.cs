@@ -20,7 +20,12 @@ namespace principalForm
             string nombre = "Productos";
             return conexion.ObtenerTablas(consultaListarSQL, nombre);
         }
-
+        public DataTable cargarTablaej2()
+        {
+            string consultaListarSQL = "select IdProducto, NombreProducto, IdProveedor, PrecioUnidad from Productos";
+            string nombre = "Productos";
+            return conexion.ObtenerTablas(consultaListarSQL, nombre);
+        }
         private void ArmarParametrosEliminarProductos(ref SqlCommand Comando, Productos Producto)
         {
             SqlParameter sqlParametro = new SqlParameter();

@@ -28,7 +28,29 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3">
-                    <asp:GridView ID="GridView1" runat="server" Height="417px" Width="823px">
+                    <asp:GridView ID="grdSeleccionarProductos" runat="server" Height="417px" Width="823px" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grdSeleccionarProductos_PageIndexChanging" PageSize="14">
+                        <Columns>
+                            <asp:TemplateField HeaderText="Id Producto">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbl_IdProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Nombre Producto">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbl_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Id Proveedor">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbl_IdProveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Precio Unitario">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbl_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
                     </asp:GridView>
                 </td>
                 <td class="auto-style2"></td>
@@ -38,7 +60,7 @@
                     <asp:Label ID="lblSelect" runat="server"></asp:Label>
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkInicio" runat="server" OnClick="lnkInicio_Click">Volver al Inicio</asp:LinkButton>
+                    <asp:HyperLink ID="hpVolverInicio" runat="server" NavigateUrl="~/InicioEj2.aspx">Volver al Inicio</asp:HyperLink>
                 </td>
             </tr>
         </table>

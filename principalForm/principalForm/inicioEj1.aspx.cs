@@ -13,15 +13,5 @@ namespace principalForm
         {
 
         }
-
-        protected void lnkEjercicio1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("formEjercicio1.aspx");
-        }
-
-        protected void lnkEjercicio2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("formEjercicio2.aspx");
-        }
     }
 }

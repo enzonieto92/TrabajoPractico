@@ -33,13 +33,13 @@ namespace principalForm
         protected global::System.Web.UI.WebControls.Label lblInicio;
 
         /// <summary>
-        /// Control lbSeleccionar.
+        /// Control hpSeleccionar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbSeleccionar;
+        protected global::System.Web.UI.WebControls.HyperLink hpSeleccionar;
 
         /// <summary>
         /// Control lbEliminar.
@@ -51,12 +51,12 @@ namespace principalForm
         protected global::System.Web.UI.WebControls.LinkButton lbEliminar;
 
         /// <summary>
-        /// Control lbMostrar.
+        /// Control hpMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbMostrar;
+        protected global::System.Web.UI.WebControls.HyperLink hpMostrar;
     }
 }

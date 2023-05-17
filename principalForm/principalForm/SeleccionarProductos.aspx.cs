@@ -9,14 +9,24 @@ namespace principalForm
 {
     public partial class SeleccionarProductos : System.Web.UI.Page
     {
+        Metodos cargarGrid = new Metodos();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                cargarGridView();
+            }
+        }
+        private void cargarGridView()
+        {
+            grdSeleccionarProductos.DataSource = cargarGrid.cargarTablaej2();
+            grdSeleccionarProductos.DataBind();
         }
 
-        protected void lnkInicio_Click(object sender, EventArgs e)
+        protected void grdSeleccionarProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            Response.Redirect("InicioEj2.aspx");
+            grdSeleccionarProductos.PageIndex = e.NewPageIndex;
+            cargarGridView();
         }
     }
 }

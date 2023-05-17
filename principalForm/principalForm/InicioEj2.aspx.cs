@@ -13,15 +13,5 @@ namespace principalForm
         {
 
         }
-
-        protected void lbSeleccionar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("SeleccionarProductos.aspx");
-        }
-
-        protected void lbMostrar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarProductos.aspx");
-        }
     }
 }

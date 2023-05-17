@@ -25,14 +25,14 @@
             </tr>
             <tr>
                 <td>
-                    <asp:LinkButton ID="lnkEjercicio1" runat="server" OnClick="lnkEjercicio1_Click">Ejercicio1</asp:LinkButton>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/formEjercicio1.aspx">Ejercicio 1</asp:HyperLink>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>
-                    <asp:LinkButton ID="lnkEjercicio2" runat="server" OnClick="lnkEjercicio2_Click">Ejercicio 2</asp:LinkButton>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/InicioEj2.aspx">Ejercicio 2</asp:HyperLink>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
