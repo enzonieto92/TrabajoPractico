@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace principalForm
 {
@@ -31,12 +32,21 @@ namespace principalForm
 
         protected void grdSeleccionarProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            Metodos obj = new Metodos();
+
             string i_IdProducto = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProducto")).Text;
             string i_NombreProducto = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_NombreProducto")).Text;
             string i_IdProveedor = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProveedor")).Text;
             string i_Precio = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnitario")).Text;
-
+            
             lblSelect.Text = "Usted Selecciono: " + i_IdProducto + " " + i_NombreProducto + " " + i_IdProveedor + " " + i_Precio;
+
+            if (Session["ProductosSeleccionados"] == null)
+            {
+                Session["ProductosSeleccionados"] = obj.CrearTabla();
+            }
+
+            obj.AgregarFila((DataTable)Session["ProductosSeleccionados"],i_IdProducto,i_NombreProducto, i_IdProveedor, i_Precio);
         }
     }
 }

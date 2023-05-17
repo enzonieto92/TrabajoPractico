@@ -55,8 +55,34 @@ namespace principalForm
         {
             string consulta = "delete FROM Productos WHERE IdProducto = " + id;
             return conexion.RealizarConsulta(consulta);
-
         }
+
+
+        public DataTable CrearTabla()
+        {
+            DataTable tabla = new DataTable();
+
+            tabla.Columns.Add("ID");
+            tabla.Columns.Add("Nombre");
+            tabla.Columns.Add("ID Proveedor");
+            tabla.Columns.Add("Precio Unitario");
+
+            return tabla;
+        }
+
+        public void AgregarFila(DataTable tabla, string id, string nombre, string cant, string precio)
+        {
+            DataRow fila;
+            fila = tabla.NewRow();
+            fila["ID"] = id;
+            fila["Nombre"] = nombre;
+            fila["ID Proveedor"] = cant;
+            fila["Precio Unitario"] = precio;
+
+            tabla.Rows.Add(fila);
+        }
+
+
 
     }
 }

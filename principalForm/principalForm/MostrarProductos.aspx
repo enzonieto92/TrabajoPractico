@@ -22,8 +22,13 @@
         </div>
 
         <div class="grid";>
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="gvSeleccionados" runat="server">
         </asp:GridView>
+            <br />
+            <br />
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red" Text="No se cargaron Productos."></asp:Label>
+            <br />
+            <br />
         </div>
 
         <div class="form";>

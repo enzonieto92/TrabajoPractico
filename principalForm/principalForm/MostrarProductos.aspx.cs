@@ -11,7 +11,17 @@ namespace principalForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["ProductosSeleccionados"]!=null)
+            {
+                lblMensaje.Visible = false;
+                gvSeleccionados.DataSource = Session["ProductosSeleccionados"];
+                gvSeleccionados.DataBind();
+            }
+            else
+            {
+                lblMensaje.Visible = true;
+            }
+                
         }
     }
 }
