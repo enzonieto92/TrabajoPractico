@@ -28,7 +28,7 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3">
-                    <asp:GridView ID="grdSeleccionarProductos" runat="server" Height="417px" Width="823px" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grdSeleccionarProductos_PageIndexChanging" PageSize="14">
+                    <asp:GridView ID="grdSeleccionarProductos" runat="server" Height="417px" Width="823px" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grdSeleccionarProductos_PageIndexChanging" PageSize="14" AutoGenerateSelectButton="True" OnSelectedIndexChanging="grdSeleccionarProductos_SelectedIndexChanging">
                         <Columns>
                             <asp:TemplateField HeaderText="Id Producto">
                                 <ItemTemplate>
