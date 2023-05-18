@@ -67,23 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="formEjercicio1.aspx" />
+    <Content Include="InicioEj1.aspx" />
     <Content Include="InicioEj2.aspx" />
     <Content Include="SeleccionarProductos.aspx" />
     <Content Include="Web.config" />
-    <Content Include="inicioEj1.aspx">
-      <BrowseToURL>~/formEjercicio1.aspx</BrowseToURL>
+    <Content Include="InicioTP.aspx">
+      <BrowseToURL>~/InicioTP.aspx</BrowseToURL>
     </Content>
     <Content Include="MostrarProductos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDatos.cs" />
-    <Compile Include="formEjercicio1.aspx.cs">
-      <DependentUpon>formEjercicio1.aspx</DependentUpon>
+    <Compile Include="InicioEj1.aspx.cs">
+      <DependentUpon>InicioEj1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="formEjercicio1.aspx.designer.cs">
-      <DependentUpon>formEjercicio1.aspx</DependentUpon>
+    <Compile Include="InicioEj1.aspx.designer.cs">
+      <DependentUpon>InicioEj1.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioEj2.aspx.cs">
       <DependentUpon>InicioEj2.aspx</DependentUpon>
@@ -95,12 +95,12 @@
     <Compile Include="Metodos.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="inicioEj1.aspx.cs">
-      <DependentUpon>inicioEj1.aspx</DependentUpon>
+    <Compile Include="InicioTP.aspx.cs">
+      <DependentUpon>InicioTP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="inicioEj1.aspx.designer.cs">
-      <DependentUpon>inicioEj1.aspx</DependentUpon>
+    <Compile Include="InicioTP.aspx.designer.cs">
+      <DependentUpon>InicioTP.aspx</DependentUpon>
     </Compile>
     <Compile Include="SeleccionarProductos.aspx.cs">
       <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
