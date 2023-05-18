@@ -32,15 +32,15 @@ namespace principalForm
             sqlParametro = Comando.Parameters.Add("@IdProducto", SqlDbType.Int);
             sqlParametro.Value = Producto.IdProducto;
         }
-      /*  private void ArmarParametrosActualizarProductos(ref SqlCommand comando, Productos producto)
-        {
-            SqlParameter sqlParametro = new SqlParameter();
-            sqlParametro = comando.Parameters.Add("@IdProducto", SqlDbType.Int);
-            sqlParametro = comando.Parameters.Add("@NombreProducto", SqlDbType.NVarChar, 40);
-            sqlParametro = comando.Parameters.Add("@CantidadPorUnidad", SqlDbType.NVarChar, 20);
-            sqlParametro = comando.Parameters.Add("@PrecioUnidad", SqlDbType.Money);
-            sqlParametro.Value = producto.IdProducto;
-        }*/
+        /*  private void ArmarParametrosActualizarProductos(ref SqlCommand comando, Productos producto)
+          {
+              SqlParameter sqlParametro = new SqlParameter();
+              sqlParametro = comando.Parameters.Add("@IdProducto", SqlDbType.Int);
+              sqlParametro = comando.Parameters.Add("@NombreProducto", SqlDbType.NVarChar, 40);
+              sqlParametro = comando.Parameters.Add("@CantidadPorUnidad", SqlDbType.NVarChar, 20);
+              sqlParametro = comando.Parameters.Add("@PrecioUnidad", SqlDbType.Money);
+              sqlParametro.Value = producto.IdProducto;
+          }*/
         public int ActualizarProducto(Productos prod)
         {
             int IDprod = prod.IdProducto;
@@ -48,7 +48,7 @@ namespace principalForm
             string cant = prod.Cantidad;
             float pre = (float)prod.Precio;
 
-            string consulta = "update Productos set NombreProducto = '"+nombre+"', CantidadPorUnidad = '"+cant+"', PrecioUnidad = '"+pre+"' where IdProducto = "+IDprod;
+            string consulta = "update Productos set NombreProducto = '" + nombre + "', CantidadPorUnidad = '" + cant + "', PrecioUnidad = '" + pre + "' where IdProducto = " + IDprod;
             return conexion.RealizarConsulta(consulta);
         }
         public int EliminarProducto(Productos prod, string id)
@@ -78,11 +78,23 @@ namespace principalForm
             fila["Nombre"] = nombre;
             fila["ID Proveedor"] = cant;
             fila["Precio Unitario"] = precio;
-
             tabla.Rows.Add(fila);
         }
+        public bool BuscarFila(DataTable tabla, string id)
+        {
+            bool resultado = false;
 
+            foreach (DataRow row in tabla.Rows)
+            {
+                if (row["ID"].ToString() == id)
+                {
+                    resultado = true;
+                }
 
+            }
 
+            return resultado;
+
+        }
     }
 }
