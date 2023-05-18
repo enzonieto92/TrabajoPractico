@@ -10,48 +10,54 @@ namespace principalForm
 {
     public partial class SeleccionarProductos : System.Web.UI.Page
     {
-        Metodos cargarGrid = new Metodos();
+        private Metodos Seleccion;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            Seleccion = new Metodos();
+
+            if (!IsPostBack)
             {
-                cargarGridView();
+                CargarGridView();
             }
         }
-        private void cargarGridView()
+
+        private void CargarGridView()
         {
-            grdSeleccionarProductos.DataSource = cargarGrid.cargarTablaej2();
+            grdSeleccionarProductos.DataSource = Seleccion.cargarTablaej2();
             grdSeleccionarProductos.DataBind();
         }
 
         protected void grdSeleccionarProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdSeleccionarProductos.PageIndex = e.NewPageIndex;
-            cargarGridView();
+            CargarGridView();
         }
 
         protected void grdSeleccionarProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            Metodos obj = new Metodos();
-            string i_IdProducto = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProducto")).Text;
-            string i_NombreProducto = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_NombreProducto")).Text;
-            string i_IdProveedor = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProveedor")).Text;
-            string i_Precio = ((Label)grdSeleccionarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnitario")).Text;         
-            lblSelect.Text = "Usted Selecciono: " + i_IdProducto + " " + i_NombreProducto + " " + i_IdProveedor + " " + i_Precio;
+            GridViewRow selectedRow = grdSeleccionarProductos.Rows[e.NewSelectedIndex];
+            string i_IdProducto = GetLabelValue(selectedRow, "lbl_IdProducto");
+            string i_NombreProducto = GetLabelValue(selectedRow, "lbl_NombreProducto");
+            string i_IdProveedor = GetLabelValue(selectedRow, "lbl_IdProveedor");
+            string i_Precio = GetLabelValue(selectedRow, "lbl_PrecioUnitario");
+            lblSelect.Text = $"Usted Selecciono: {i_IdProducto} {i_NombreProducto} {i_IdProveedor} ${i_Precio}";
 
             if (Session["ProductosSeleccionados"] == null)
             {
-                Session["ProductosSeleccionados"] = obj.CrearTabla();
-                obj.AgregarFila((DataTable)Session["ProductosSeleccionados"], i_IdProducto, i_NombreProducto, i_IdProveedor, i_Precio);
-            }
-            else
-            {
-               if (obj.BuscarFila((DataTable)Session["ProductosSeleccionados"], i_IdProducto) == false)
-                {
-                    obj.AgregarFila((DataTable)Session["ProductosSeleccionados"], i_IdProducto, i_NombreProducto, i_IdProveedor, i_Precio);
-                }
+                Session["ProductosSeleccionados"] = Seleccion.CrearTabla();
             }
 
+            if (!Seleccion.BuscarFila((DataTable)Session["ProductosSeleccionados"], i_IdProducto))
+            {
+                Seleccion.AgregarFila((DataTable)Session["ProductosSeleccionados"], i_IdProducto, i_NombreProducto, i_IdProveedor, i_Precio);
+            }
+        }
+
+        private string GetLabelValue(GridViewRow row, string labelId)
+        {
+            Label label = (Label)row.FindControl(labelId);
+            return label.Text;
         }
     }
 }
