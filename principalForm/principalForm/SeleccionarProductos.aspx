@@ -6,52 +6,67 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            height: 539px;
+    <style>
+        .Ej1
+        {
+            margin-top: 1rem;
+            font-family: Dubai;
+            justify-content:center;
+            text-align: center;
         }
-        .auto-style2 {
-            height: 458px;
+        .Buttons
+        {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            display:inline;
+            padding: 10px 20px;
+            background-color:#5D7B9D; 
+            border-radius: 5px; 
+            text-decoration: none;
         }
-        .auto-style3 {
-            height: 458px;
-            width: 827px;
-        }
-        .auto-style4 {
-            width: 827px;
+        .Label{
+            margin-top:2rem;
+            margin-bottom:2rem;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style3">
-                    <asp:GridView ID="grdSeleccionarProductos" runat="server" Height="417px" Width="823px" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grdSeleccionarProductos_PageIndexChanging" PageSize="14" AutoGenerateSelectButton="True" OnSelectedIndexChanging="grdSeleccionarProductos_SelectedIndexChanging" CellPadding="4" ForeColor="#333333" GridLines="None" >
+    <form id="form1" runat="server" class="Ej1">
+        <div class="Links">
+                        <asp:Label ID="lblEjercicio1" runat="server" Text="Ejercicio N°2"></asp:Label>
+        </div>
+
+        <div>
+                    <asp:GridView ID="grdSeleccionarProductos" Height="351px" Width="831px" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grdSeleccionarProductos_PageIndexChanging" PageSize="14" AutoGenerateSelectButton="True" CellPadding="4" OnSelectedIndexChanging="grdSeleccionarProductos_SelectedIndexChanging" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+
                         <Columns>
-                            <asp:TemplateField HeaderText="Id Producto">
-                                <ItemTemplate>
-                                    <asp:Label ID="lbl_IdProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Nombre Producto">
-                                <ItemTemplate>
-                                    <asp:Label ID="lbl_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Id Proveedor">
-                                <ItemTemplate>
-                                    <asp:Label ID="lbl_IdProveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Precio Unitario">
-                                <ItemTemplate>
-                                    <asp:Label ID="lbl_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Id Producto">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_IdProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                                        </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Nombre Producto">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
+                                        </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Id Proveedor">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_IdProveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
+                                        </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Precio Unitario">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
+                                        </ItemTemplate>
+                                </asp:TemplateField>
                         </Columns>
+
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -62,19 +77,19 @@
                         <SortedAscendingHeaderStyle BackColor="#506C8C" />
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
                     </asp:GridView>
-                </td>
-                <td class="auto-style2"></td>
-            </tr>
-            <tr>
-                <td class="auto-style4">
-                    <asp:Label ID="lblSelect" runat="server"></asp:Label>
-                </td>
-                <td>
-                    <asp:HyperLink ID="hpVolverInicio" runat="server" NavigateUrl="~/InicioEj2.aspx">Volver al Inicio</asp:HyperLink>
-                </td>
-            </tr>
-        </table>
-    </form>
-</body>
+
+                     <div class ="Label">
+                        <asp:Label ID="lblSelect" runat="server"></asp:Label>
+                         <br />
+                         </div>   
+
+                   <div class="Buttons">
+                        <asp:HyperLink ID="hpVolverInicio" runat="server" NavigateUrl="~/InicioEj2.aspx" Font-Underline="False" ForeColor="White">Volver al Inicio</asp:HyperLink>
+                    </div>   
+            </div>
+
+        </form>
+    </body>
 </html>

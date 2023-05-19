@@ -9,25 +9,37 @@
     <style>
         .Ej1
         {
+            margin-top: 1rem;
+            font-family: Dubai;
             justify-content:center;
             text-align: center;
         }
         .Buttons
         {
-            margin-top: 5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
             margin-left: 2rem;
             margin-right: 2rem;
             display: inline-block;
             padding: 7px 7px;
-            background-color: #5D7B9D; /* Cambia el color de fondo a tu preferencia */
-            border-radius: 5px; /* Ajusta el valor para cambiar el radio de los bordes */
+            background-color: #5D7B9D; 
+            border-radius: 5px; 
             text-decoration: none;
+        }
+        .Links
+        {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            text-align:center;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server" class="Ej1">
 
+        <div>
+            <asp:Label ID="lblEjercicio2" runat="server" Text="Ejercicio N°2"></asp:Label>
+         </div>
         <div>
             <asp:Label ID="lblInicio" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Inicio"></asp:Label>
         </div>
@@ -42,6 +54,10 @@
 
          <div class ="Buttons">
             <asp:HyperLink ID="hpMostrar" runat="server" NavigateUrl="~/MostrarProductos.aspx" ForeColor="White" Font-Underline="False">Mostrar Productos</asp:HyperLink>
+        </div>
+
+        <div class ="Hyperlink">
+        <asp:HyperLink ID="hlInicio" runat="server" Font-Underline="False" NavigateUrl="~/InicioTP.aspx" ForeColor="#3399FF">Volver al Menú Principal</asp:HyperLink>
         </div>
 
     </form>

@@ -9,6 +9,7 @@
     <style>
         .Inicio
         {
+            font-family: Dubai;
             justify-content:center;
             text-align: center;
         }
@@ -33,11 +34,11 @@
                 </div>
 
                 <div class ="Buttons">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/InicioEj1.aspx" ForeColor="White">Ejercicio 1</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/InicioEj1.aspx" ForeColor="White" Font-Underline="False">Ejercicio 1</asp:HyperLink>
                 </div>
 
                 <div class ="Buttons">
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/InicioEj2.aspx" ForeColor="White">Ejercicio 2</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/InicioEj2.aspx" ForeColor="White" Font-Underline="False">Ejercicio 2</asp:HyperLink>
                 </div>
 
 

@@ -41,7 +41,7 @@ namespace principalForm
             string i_NombreProducto = GetLabelValue(selectedRow, "lbl_NombreProducto");
             string i_IdProveedor = GetLabelValue(selectedRow, "lbl_IdProveedor");
             string i_Precio = GetLabelValue(selectedRow, "lbl_PrecioUnitario");
-            lblSelect.Text = $"Usted Selecciono: {i_IdProducto} {i_NombreProducto} {i_IdProveedor} ${i_Precio}";
+            lblSelect.Text = $"Usted Seleccionó:  {i_IdProducto} {i_NombreProducto} {i_IdProveedor} ${i_Precio}";
 
             if (Session["ProductosSeleccionados"] == null)
             {
