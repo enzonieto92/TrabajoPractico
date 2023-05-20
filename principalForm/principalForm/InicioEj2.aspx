@@ -58,6 +58,8 @@
 
         <div class ="Hyperlink">
         <asp:HyperLink ID="hlInicio" runat="server" Font-Underline="False" NavigateUrl="~/InicioTP.aspx" ForeColor="#3399FF">Volver al Menú Principal</asp:HyperLink>
+            <br />
+            <asp:Label ID="lblEliminados" runat="server" ForeColor="#009933" Text="Se han eliminado los productos de la lista" Visible="False"></asp:Label>
         </div>
 
     </form>

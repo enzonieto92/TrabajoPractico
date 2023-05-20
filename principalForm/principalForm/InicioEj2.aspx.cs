@@ -12,12 +12,23 @@ namespace principalForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblEliminados.Visible = false;
         }
 
         protected void lbEliminar_Click(object sender, EventArgs e)
         {
-            Session["ProductosSeleccionados"] = null;
+            if (Session["ProductosSeleccionados"] == null)
+            {
+                lblEliminados.Visible = true;
+                lblEliminados.ForeColor = System.Drawing.Color.DarkOrange;
+                lblEliminados.Text = "No hay productos cargados en la lista";
+            }
+            else
+            {
+                Session["ProductosSeleccionados"] = null;
+                lblEliminados.Visible = true;
+            }
+            
         }
     }
 }
