@@ -13,5 +13,10 @@ namespace TP7_Grupo_Nro_06
         {
 
         }
+
+        protected void lvSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
