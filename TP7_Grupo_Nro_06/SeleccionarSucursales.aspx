@@ -31,8 +31,8 @@
 <body>
     <form id="form1" runat="server">
         <div class ="container">
-            <asp:HyperLink ID="linkListado" runat="server">Listado de Sucursales</asp:HyperLink>
-            <asp:HyperLink ID="linkMostrarSeleccionados" runat="server">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+            <asp:HyperLink ID="linkListado" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
+            <asp:HyperLink ID="linkMostrarSeleccionados" runat="server" NavigateUrl="~/MostrarSucursales.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
             </div>
             <div>
             <asp:Label ID="lblListado" runat="server" Text="Listado de Sucursales" Font-Bold="True" Font-Size="X-Large"></asp:Label>
