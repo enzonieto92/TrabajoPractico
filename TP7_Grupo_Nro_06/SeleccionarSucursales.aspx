@@ -144,7 +144,7 @@
                             <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' Font-Size="Small" Height="60px" style="text-align:left" />
                             <br />
                             <br />
-                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar"/>
+                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command"/>
                             <br />
                             <br /></td>
                     </ItemTemplate>

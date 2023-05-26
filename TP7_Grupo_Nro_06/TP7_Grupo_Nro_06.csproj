@@ -85,6 +85,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gestionSucursales.cs" />
+    <Compile Include="Metodos.cs" />
     <Compile Include="MostrarSucursales.aspx.cs">
       <DependentUpon>MostrarSucursales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
