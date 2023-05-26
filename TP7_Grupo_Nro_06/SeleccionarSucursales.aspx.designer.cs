@@ -78,67 +78,22 @@ namespace TP7_Grupo_Nro_06
         protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
-        /// Control btnBuenosAires.
+        /// Control dlProvincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuenosAires;
+        protected global::System.Web.UI.WebControls.DataList dlProvincias;
 
         /// <summary>
-        /// Control btnEntreRios.
+        /// Control sqlDataProvincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntreRios;
-
-        /// <summary>
-        /// Control btnSantaFe.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSantaFe;
-
-        /// <summary>
-        /// Control btnLaPampa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLaPampa;
-
-        /// <summary>
-        /// Control btnCórdoba.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCórdoba;
-
-        /// <summary>
-        /// Control btnMisiones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMisiones;
-
-        /// <summary>
-        /// Control btnChaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChaco;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlDataProvincias;
 
         /// <summary>
         /// Control lvSucursales.

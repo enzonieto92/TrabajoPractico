@@ -54,43 +54,23 @@
               <table class="left-column">
       <tr>
         <td>
-            <asp:Button ID="btnBuenosAires" runat="server" Text="Buenos Aires" CssClass="Boton" />
-          
-        </td>
+            &nbsp;</td>
       </tr>
       <tr>
         <td>
-            <asp:Button ID="btnEntreRios" runat="server" Text="Entre Rios" CssClass="Boton" />
+            <asp:DataList ID="dlProvincias" runat="server" DataSourceID="sqlDataProvincias" Height="571px" Width="155px">
+                <ItemTemplate>
+                    <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("DescripcionProvincia") %>' CommandName="comandoBoton" Height="23px" OnCommand="btnProvincias_Command" Text='<%# Eval("DescripcionProvincia") %>' Width="178px" />
+<br />
+                    <br />
+                </ItemTemplate>
+            </asp:DataList>
 
         </td>
       </tr>
-      <tr>
-        <td>
-            <asp:Button ID="btnSantaFe" runat="server" Text="Santa Fé" CssClass="Boton" />
-          
-        </td>
-      </tr>
           <tr>
         <td>
-            <asp:Button ID="btnLaPampa" runat="server" Text="La Pampa" CssClass="Boton" />
-          
-        </td>
-      </tr>
-          <tr>
-        <td>
-            <asp:Button ID="btnCórdoba" runat="server" Text="Córdoba" CssClass="Boton"/>
-          
-        </td>
-      </tr>
-          <tr>
-        <td>
-            <asp:Button ID="btnMisiones" runat="server" Text="Misiones" CssClass="Boton" />
-          
-        </td>
-      </tr>
-          <tr>
-        <td>
-            <asp:Button ID="btnChaco" runat="server" Text="Chaco" CssClass="Boton" />
+            <asp:SqlDataSource ID="sqlDataProvincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
           
         </td>
       </tr>
@@ -200,7 +180,7 @@
                         </td>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [URL_Imagen_Sucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [URL_Imagen_Sucursal], [DescripcionSucursal], [Id_ProvinciaSucursal] FROM [Sucursal]"></asp:SqlDataSource>
         </div>
 </div>
     </form>

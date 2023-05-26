@@ -28,5 +28,13 @@ namespace TP7_Grupo_Nro_06
             SqlDataSource1.FilterExpression = "NombreSucursal LIKE '%" + texto + "%'";
             lvSucursales.DataBind();
         }
+
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "comandoBoton")
+            {
+                ///int idProvincia = Convert.ToInt32(e.CommandArgument);
+            }
+        }
     }
 }
