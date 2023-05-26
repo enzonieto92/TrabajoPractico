@@ -60,7 +60,7 @@
         <td>
             <asp:DataList ID="dlProvincias" runat="server" DataSourceID="sqlDataProvincias" Height="571px" Width="155px">
                 <ItemTemplate>
-                    <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("DescripcionProvincia") %>' CommandName="comandoBoton" Height="23px" OnCommand="btnProvincias_Command" Text='<%# Eval("DescripcionProvincia") %>' Width="178px" />
+                    <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' CommandName="comandoBoton" Height="23px" OnCommand="btnProvincias_Command" Text='<%# Eval("DescripcionProvincia") %>' Width="178px" />
 <br />
                     <br />
                 </ItemTemplate>
@@ -180,7 +180,7 @@
                         </td>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [URL_Imagen_Sucursal], [DescripcionSucursal], [Id_ProvinciaSucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [URL_Imagen_Sucursal], [DescripcionSucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
         </div>
 </div>
     </form>

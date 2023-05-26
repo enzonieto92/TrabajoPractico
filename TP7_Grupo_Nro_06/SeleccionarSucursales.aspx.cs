@@ -33,7 +33,8 @@ namespace TP7_Grupo_Nro_06
         {
             if(e.CommandName == "comandoBoton")
             {
-                ///int idProvincia = Convert.ToInt32(e.CommandArgument);
+                string consulta;
+                consulta= "SELECT Id_Sucursal,NombreSucursal,DescripcionSucursal,URL_Imagen_Sucursal FROM Sucursal WHERE Id_ProvinciaSucursal = " + e.CommandArgument;
             }
         }
     }
