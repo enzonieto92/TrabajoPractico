@@ -43,18 +43,25 @@ namespace TP7_Grupo_Nro_06
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
             Metodos tabla = new Metodos();
-            string[] argumentos = e.CommandArgument.ToString().Split('-');
-
-            string Id_Sucursal = argumentos[0];
-            string NombreSucursal = argumentos[1];
-            string DescripcionSucursal = argumentos[2];
-
-            if (Session["SucursalesSeleccionadas"] == null)
+            if (e.CommandName == "eventoSeleccionar")
             {
-                Session["tabla"] = tabla.CrearTabla();
-            }
+                string[] argumentos = e.CommandArgument.ToString().Split(new char[] { ',' });
 
-            tabla.AgregarFila((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal, NombreSucursal, DescripcionSucursal);
+                string Id_Sucursal = argumentos[0];
+                string NombreSucursal = argumentos[1];
+                string DescripcionSucursal = argumentos[2];
+
+                if (Session["SucursalesSeleccionadas"] == null)
+                {
+                    Session["SucursalesSeleccionadas"] = tabla.CrearTabla();
+                }
+                else
+                {
+                   tabla.AgregarFila((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal, NombreSucursal, DescripcionSucursal);
+                }
+
+                
+            }
 
         }
     }
