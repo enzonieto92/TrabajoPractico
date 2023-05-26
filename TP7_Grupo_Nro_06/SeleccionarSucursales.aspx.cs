@@ -35,8 +35,8 @@ namespace TP7_Grupo_Nro_06
         {
             if(e.CommandName == "comandoBoton")
             {
-                string consulta;
-                consulta= "SELECT Id_Sucursal,NombreSucursal,DescripcionSucursal,URL_Imagen_Sucursal FROM Sucursal WHERE Id_ProvinciaSucursal = " + e.CommandArgument;
+                SqlDataSource1.FilterExpression = "Id_ProvinciaSucursal = " + e.CommandArgument;
+                lvSucursales.DataBind();
             }
         }
 
