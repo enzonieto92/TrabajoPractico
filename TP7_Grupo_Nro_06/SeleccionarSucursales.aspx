@@ -28,7 +28,11 @@
         }
         .auto-style1 {
             float: left;
-            width: 207px;
+            width: 279px;
+            text-align: center;
+        }
+        .auto-style2 {
+            height: 29px;
         }
     </style>
 </head>
@@ -44,7 +48,7 @@
             <div class ="container">
         <asp:Label ID="lblBusqueda" runat="server" Text="Búsqueda por Nombre de Sucursal"></asp:Label>
         <asp:TextBox ID="txtboxBusqueda" runat="server"></asp:TextBox>
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click1" />
             </div>
         <div class="container">
               <table class="left-column">
@@ -153,10 +157,15 @@
                     </InsertItemTemplate>
                     <ItemTemplate>
                         <td runat="server" style="background-color: #E0FFFF;color: #333333;">
-                            &nbsp;<asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
+                            <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
                             <br />
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
-&nbsp;<asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' Height="150px" Width="180px" />
+                            <br />
+                            <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' Font-Size="Small" Height="60px" style="text-align:left" />
+                            <br />
+                            <br />
+                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar"/>
+                            <br />
                             <br /></td>
                     </ItemTemplate>
                     <LayoutTemplate>
@@ -170,7 +179,13 @@
                                 </td>
                             </tr>
                             <tr runat="server">
-                                <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF"></td>
+                                <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF" class="auto-style2">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                        <Fields>
+                                            <asp:NumericPagerField />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </td>
                             </tr>
                         </table>
                     </LayoutTemplate>
