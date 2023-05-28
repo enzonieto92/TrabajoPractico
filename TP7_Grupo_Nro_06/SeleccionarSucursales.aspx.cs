@@ -12,7 +12,7 @@ namespace TP7_Grupo_Nro_06
 {
     public partial class SeleccionarSucursales : System.Web.UI.Page
     {
-        static string consulta;
+        //static string consulta;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -54,10 +54,21 @@ namespace TP7_Grupo_Nro_06
                 if (Session["SucursalesSeleccionadas"] == null)
                 {
                     Session["SucursalesSeleccionadas"] = tabla.CrearTabla();
+                    tabla.AgregarFila((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal, NombreSucursal, DescripcionSucursal);
                 }
                 else
                 {
-                   tabla.AgregarFila((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal, NombreSucursal, DescripcionSucursal);
+                   
+                   if(tabla.SucursalRepetida((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal) == false)
+                    {
+                        lblMensajeSeleccion.Text = "";
+                        tabla.AgregarFila((DataTable)Session["SucursalesSeleccionadas"], Id_Sucursal, NombreSucursal, DescripcionSucursal);
+                    }
+                    else
+                    {
+                        lblMensajeSeleccion.Text = "Esta sucursal ya fue seleccionada";
+                    }
+                   
                 }
 
                 

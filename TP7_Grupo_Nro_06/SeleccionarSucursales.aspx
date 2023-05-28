@@ -54,7 +54,8 @@
               <table class="left-column">
       <tr>
         <td>
-            &nbsp;</td>
+            <asp:Label ID="lblMensajeSeleccion" runat="server"></asp:Label>
+          </td>
       </tr>
       <tr>
         <td>

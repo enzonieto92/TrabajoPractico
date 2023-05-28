@@ -31,5 +31,22 @@ namespace TP7_Grupo_Nro_06
             fila["Descripcion Sucursal"] = DescripcionSucursal;
             tabla.Rows.Add(fila);
         }
+
+        public Boolean SucursalRepetida(DataTable tabla, string id)
+        {
+            int cantFilas, i;
+
+            cantFilas = tabla.Rows.Count;
+
+            for (i = 0; i < cantFilas; i++)
+            {
+                if (tabla.Rows[i][0].ToString() == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
