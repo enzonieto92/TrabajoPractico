@@ -39,7 +39,17 @@ namespace TP7_Grupo_Nro_06
                 lvSucursales.DataBind();
             }
         }
-
+        protected int Agrupar()
+        {
+            if (lvSucursales.Items.Count < 3 && lvSucursales.Items.Count != 0)
+            {
+                return lvSucursales.Items.Count % 3;
+            }
+            else
+            {
+                return 3;
+            }
+        }
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
             Metodos tabla = new Metodos();
