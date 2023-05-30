@@ -27,7 +27,7 @@ namespace TP7_Grupo_Nro_06
         {
             string texto = txtboxBusqueda.Text;
 
-            SqlDataSource1.FilterExpression = "NombreSucursal LIKE '%" + texto + "%'";
+            SqlDataSource1.FilterExpression = "NombreSucursal LIKE '" + texto + "%'";
             lvSucursales.DataBind();
         }
 
