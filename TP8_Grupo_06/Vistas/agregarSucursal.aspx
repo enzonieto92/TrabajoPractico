@@ -28,13 +28,13 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hlAgregarSucursal" runat="server">Agregar Sucursal</asp:HyperLink>
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/agregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="hlListarSucursal" runat="server">Lista De Sucursales</asp:HyperLink>
+                        <asp:HyperLink ID="hlListarSucursal" runat="server" NavigateUrl="~/ListarSucursales.aspx">Lista De Sucursales</asp:HyperLink>
                     </td>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="hlEliminarSucursal" runat="server">Eliminar Sucursal</asp:HyperLink>
+                        <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="~/EliminarSucursales.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -43,40 +43,53 @@
                 </tr>
                 <tr>
                     <td class="auto-style5">
-                        <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text="Grupo N° 6"></asp:Label>
+                        <asp:Label ID="lblGrupo" runat="server" Font-Size="20pt" Text="Grupo N° 6"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="Agregar Sucursal "></asp:Label>
+                        <asp:Label ID="lblAgregar" runat="server" Font-Bold="True" Text="Agregar Sucursal "></asp:Label>
                     </td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Label ID="Label3" runat="server" Text="Nombre Surusal : "></asp:Label>
+                        <asp:Label ID="lblNombre" runat="server" Text="Nombre Surusal: "></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="148px"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" Width="148px"></asp:TextBox>
                     </td>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblDescripcion" runat="server" Text="Descripción:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" Width="148px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlProvincias" runat="server" Width="148px">
+                        </asp:DropDownList>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5">
+                        <asp:Label ID="Label2" runat="server" Text="Dirección:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtDireccion" runat="server" Height="50px" Width="148px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
