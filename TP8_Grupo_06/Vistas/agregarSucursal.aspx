@@ -60,6 +60,8 @@
 
                         <td>
                         <asp:TextBox ID="txtNombre" runat="server" Width="150px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                         </td>
 
                     </tr>
@@ -71,6 +73,7 @@
                         <td>
                         <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" CssClass="txtbox" Height="100px" Width="152px">
                         </asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese una descripción" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
@@ -85,6 +88,7 @@
                         <asp:DropDownList ID="ddlProvincias" runat="server" Width="158px">
 
                         </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="Seleccione una provincia" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
                         </td>
 
                     </tr>
@@ -98,17 +102,22 @@
                         <td>
                         <asp:TextBox ID="txtDireccion" runat="server" Height="19px" Width="150px">
                         </asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección" ForeColor="Red" ValidationGroup="Grupo 1">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una dirección valida" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s]+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                         </td>
                     </tr>
                    <tr>
                        <td>
                        </td>
                            <td class="links">
-                    <asp:Button ID="btnAgregar" Width="75px"  runat="server" Text="Agregar" />
+                    <asp:Button ID="btnAgregar" Width="75px"  runat="server" Text="Agregar" ValidationGroup="Grupo 1" />
                            </td>
                        </tr>
 
                </table>
+
+
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="Grupo 1" />
 
 
     </form>
