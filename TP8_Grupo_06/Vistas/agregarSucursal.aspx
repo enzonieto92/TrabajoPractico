@@ -100,8 +100,16 @@
                         </asp:TextBox>
                         </td>
                     </tr>
+                   <tr>
+                       <td>
+                       </td>
+                           <td class="links">
+                    <asp:Button ID="btnAgregar" Width="75px"  runat="server" Text="Agregar" />
+                           </td>
+                       </tr>
 
                </table>
+
 
     </form>
 </body>
