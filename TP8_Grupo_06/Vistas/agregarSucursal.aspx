@@ -110,9 +110,11 @@
                        <td>
                        </td>
                            <td class="links">
-                    <asp:Button ID="btnAgregar" Width="75px"  runat="server" Text="Agregar" ValidationGroup="Grupo 1" />
+                    <asp:Button ID="btnAgregar" Width="75px"  runat="server" Text="Agregar" ValidationGroup="Grupo 1" OnClick="btnAgregar_Click" />
+                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
                            </td>
                        </tr>
+
 
                </table>
 

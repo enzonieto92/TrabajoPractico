@@ -20,7 +20,6 @@ namespace Entidades
 
         }
 
-        public int get
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }

@@ -179,3 +179,9 @@ C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Gr
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Vistas\obj\Debug\Vistas.csproj.CopyComplete
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Vistas\obj\Debug\Vistas.dll
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Vistas\obj\Debug\Vistas.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Entidades.dll
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Negocio.dll
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.dll
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Entidades.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Negocio.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.pdb
