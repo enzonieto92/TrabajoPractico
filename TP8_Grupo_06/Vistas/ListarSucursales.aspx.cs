@@ -26,13 +26,21 @@ namespace Vistas
         {
             negocioSucursales s = new negocioSucursales();
             
-
+            if (s.ObtenerSucursal(txtBusqueda.Text).Rows.Count == 0)
+            {
+                lblResultado.Visible = true;
+            }
+            else
+            {
+                lblResultado.Visible = false;
+            }
             grdSucursales.DataSource = s.ObtenerSucursal(txtBusqueda.Text);
             grdSucursales.DataBind();
         }
 
         protected void btnMostrarTodo_Click(object sender, EventArgs e)
         {
+            txtBusqueda.Text = "";
             MostrarSucursales();
         }
 
@@ -45,6 +53,7 @@ namespace Vistas
         {
             negocioSucursales suc = new negocioSucursales();
 
+            lblResultado.Visible = false;
             grdSucursales.DataSource = suc.ListarSucursales();
             grdSucursales.DataBind();
         }
