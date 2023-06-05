@@ -4,3 +4,7 @@ C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Gr
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.dll
 C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.pdb
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.dll
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\TP8_Grupo_06\Entidades\obj\Debug\Entidades.pdb
