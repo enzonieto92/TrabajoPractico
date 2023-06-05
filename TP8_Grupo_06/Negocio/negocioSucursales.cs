@@ -56,5 +56,20 @@ namespace Negocio
 
             return tabla;
         }
+        public bool eliminarSucursal(int idSucursal)
+        {
+            datosSucursal dao = new datosSucursal();
+            Sucursal suc = new Sucursal();
+            suc.Id = idSucursal;
+            int op = dao.EliminarSucursal(suc);
+            if (op == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

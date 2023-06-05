@@ -13,7 +13,13 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            MostrarSucursales();
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            if (!IsPostBack)
+            { 
+               MostrarSucursales();
+
+            }
+            
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

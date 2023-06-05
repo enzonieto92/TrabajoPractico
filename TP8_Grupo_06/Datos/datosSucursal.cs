@@ -66,5 +66,17 @@ namespace Datos
 
             return tabla;
         }
+        public int EliminarSucursal(Sucursal suc)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametroSucursalEliminar(ref comando, suc);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarSucursal");
+        }
+        private void ArmarParametroSucursalEliminar(ref SqlCommand comando, Sucursal suc)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
+            SqlParametros.Value = suc.Id;
+        }
     }
 }
