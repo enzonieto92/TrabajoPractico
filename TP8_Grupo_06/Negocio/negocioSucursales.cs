@@ -36,5 +36,25 @@ namespace Negocio
             }
 
         }
+
+        public DataTable ListarSucursales()
+        {
+            datosSucursal ds = new datosSucursal();
+
+            return ds.TablaSucursales();
+        }
+
+        public DataTable ObtenerSucursal(string id)
+        {
+            datosSucursal ds = new datosSucursal();
+            Sucursal suc = new Sucursal();
+            DataTable tabla;
+
+            suc.Id = Convert.ToInt32(id);
+
+            tabla = ds.DatosSucursal(suc);
+
+            return tabla;
+        }
     }
 }

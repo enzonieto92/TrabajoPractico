@@ -185,3 +185,5 @@ C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.dll
 C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Entidades.pdb
 C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Negocio.pdb
 C:\Users\enzon\Desktop\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\TP8_Grupo_06\Vistas\bin\Datos.pdb

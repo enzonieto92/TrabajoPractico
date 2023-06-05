@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Entidades;
 
 namespace Vistas
 {
@@ -11,7 +13,34 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MostrarSucursales();
+        }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            negocioSucursales s = new negocioSucursales();
+            
+
+            grdSucursales.DataSource = s.ObtenerSucursal(txtBusqueda.Text);
+            grdSucursales.DataBind();
+        }
+
+        protected void btnMostrarTodo_Click(object sender, EventArgs e)
+        {
+            MostrarSucursales();
+        }
+
+        protected void grdSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MostrarSucursales()
+        {
+            negocioSucursales suc = new negocioSucursales();
+
+            grdSucursales.DataSource = suc.ListarSucursales();
+            grdSucursales.DataBind();
         }
     }
 }

@@ -39,5 +39,32 @@ namespace Datos
             SqlParametros = Comando.Parameters.Add("@DIRECCIONSUC", SqlDbType.VarChar);
             SqlParametros.Value = suc.Direccion;
         }
+
+        public DataTable TablaSucursales()
+        {
+            accesoDatos ac = new accesoDatos();
+            DataTable tabla;
+
+            string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal";
+
+            tabla = ac.ObtenerTablas(consulta, "Sucursales");
+
+            return tabla;
+        }
+
+        public DataTable DatosSucursal(Sucursal suc)
+        {
+            accesoDatos ac = new accesoDatos();
+            DataTable tabla;
+            string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal WHERE Id_Sucursal = '"+suc.Id+"'";
+
+            tabla = ac.ObtenerTablas(consulta, "Sucursal");
+
+            //suc.Nombre = tabla.Rows[0]["NombreSucursal"].ToString();
+            //suc.Descripcion = tabla.Rows[0]["DescripcionSucursal"].ToString();
+            //suc.IdProvincia = Convert.ToInt32(tabla.Rows[0]["Id_ProvinciaSucursal"]);
+
+            return tabla;
+        }
     }
 }
