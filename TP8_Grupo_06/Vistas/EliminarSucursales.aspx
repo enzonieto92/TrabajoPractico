@@ -55,6 +55,7 @@
         <asp:Label ID="lblIngresarID" runat="server" Text="Ingresar ID sucursal:"></asp:Label>
         <asp:TextBox ID="txtIngresarID" runat="server"></asp:TextBox>
         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIngresarID" ErrorMessage="Tiene que ingresar un ID! " ForeColor="#FF3300"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form">
