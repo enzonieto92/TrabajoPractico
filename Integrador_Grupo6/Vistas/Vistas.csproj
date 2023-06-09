@@ -68,16 +68,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\images.jpg" />
-    <Content Include="IniciarSesion.aspx" />
+    <Content Include="iniciarSesion.aspx" />
+    <Content Include="registrarse.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IniciarSesion.aspx.cs">
-      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    <Compile Include="iniciarSesion.aspx.cs">
+      <DependentUpon>iniciarSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IniciarSesion.aspx.designer.cs">
-      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    <Compile Include="iniciarSesion.aspx.designer.cs">
+      <DependentUpon>iniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrarse.aspx.cs">
+      <DependentUpon>registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrarse.aspx.designer.cs">
+      <DependentUpon>registrarse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
