@@ -8,23 +8,6 @@
     <title></title>
     <style>
 
-        .titulo{
-            display: flex;
-            justify-content: center;
-            width:80%;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            font-family: sans-serif;
-            height: 100%;
-        }
-
-        .form{
-            background-color: darkcyan;
-            width:40rem;
-            height:10rem;
-        }
         td{
             margin-bottom:3px;
         }
@@ -56,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblEmail" runat="server" style="width: 100px;" Text="Email :"></asp:Label>
+                        <asp:Label ID="lblUsuario" runat="server" style="width: 100px;" Text="Usuario :"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" style="width: 100px;" BackColor="#009999" BorderColor="#006666" BorderStyle="Groove" ForeColor="White"></asp:TextBox>
@@ -64,7 +47,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblUsuario" runat="server" style="width: 100px;" Text="Usuario :"></asp:Label>
+                        <asp:Label ID="lblEmail" runat="server" style="width: 100px;" Text="Email :"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtUsuario" runat="server" style="width: 100px;" BackColor="#009999" BorderColor="#006666" BorderStyle="Groove" ForeColor="White"></asp:TextBox>
