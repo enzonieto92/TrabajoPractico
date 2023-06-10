@@ -1,0 +1,72 @@
+﻿body {
+}
+
+
+.TextBox {
+    background-color: darkcyan;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+    outline: none;
+    -webkit-transition: all 500ms ease;
+    color:white;
+    
+}
+td .TextBox:focus{
+    border-bottom: 1px solid cyan;
+
+}
+
+td {
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+tr {
+    margin: 5px;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+    background: #252932;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+header .logo {
+    color: #f2f2f2;
+    font-family: sans-serif;
+    font-size: 50px;
+    line-height: 150px;
+    float: left;
+}
+
+header nav {
+    float: right;
+    font-family: sans-serif;
+    line-height: 150px;
+}
+
+header nav a {
+display: inline-block;
+color: #fff;
+text-decoration: none;
+padding: 10px 20px;
+line-height: normal;
+font-size: 20px;
+font-weight: bold;
+-webkit-transition: all 500ms ease;
+-o-transition: all 500ms ease;
+transition: all 500ms ease;
+}
+
+header nav a:hover {
+    background: darkcyan;
+}
+
