@@ -70,3 +70,49 @@ header nav a:hover {
     background: darkcyan;
 }
 
+.boton-personalizado {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: darkcyan;
+    border: none;
+}
+
+.estiloListView {
+    background-color:white;
+    border-width: 3px;
+    border-color: darkcyan;
+    width: 300px;
+    text-align:center;
+}
+
+.cajaDeTexto {
+    background-color: white;
+    border-width: 2px;
+    outline-width: 1px;
+    color: black;
+    width: 350px;
+    font-size: 18px;
+}
+
+.nombreArticulo {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: darkcyan;
+    border: none;
+    width: 250px;
+    margin-top: 5px;
+    
+}
+
