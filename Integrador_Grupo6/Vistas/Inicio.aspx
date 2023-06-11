@@ -43,6 +43,74 @@
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar"  />
         </div>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">
+                    <table class="auto-style3">
+                        <tr>
+                           
+                                
+                         
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style4"><strong>--------------------------------------------------------------------------<br />
+                                <br />
+                                Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server">
+                                <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
+                                <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
+                                <asp:ListItem Value="3">Gaming</asp:ListItem>
+                                <asp:ListItem Value="4">Notebooks</asp:ListItem>
+                                <asp:ListItem Value="5">Realidad Virtual</asp:ListItem>
+                                <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
+                                </asp:RadioButtonList>
+                                <br />
+                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style5"><strong>Marcas</strong><asp:RadioButtonList ID="rblMarcas" runat="server">
+                                <asp:ListItem Value="1">Nvidia</asp:ListItem>
+                                <asp:ListItem Value="2">Asus</asp:ListItem>
+                                <asp:ListItem Value="3">Xbox</asp:ListItem>
+                                <asp:ListItem Value="4">Sony</asp:ListItem>
+                                <asp:ListItem Value="5">Samsung</asp:ListItem>
+                                <asp:ListItem Value="6">MSI</asp:ListItem>
+                                </asp:RadioButtonList>
+                                <br />
+                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">&nbsp; <strong>Precio</strong><br />
+                                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max<br />
+                                <asp:TextBox ID="txtPrecioMin" runat="server" Width="101px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:TextBox ID="txtPrecioMax" runat="server" Width="101px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style6">
+                                <asp:DropDownList ID="ddlOrden" runat="server" Height="16px" Width="170px">
+                                    <asp:ListItem Value="0">----Seleccionar Orden----</asp:ListItem>
+                                    <asp:ListItem Value="PrecioUnitario_Pr ASC">Precio (menor a mayor)</asp:ListItem>
+                                    <asp:ListItem Value="PrecioUnitario_Pr DESC">Precio (mayor a menor)</asp:ListItem>
+                                </asp:DropDownList>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style7">
+                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="56px" OnClick="btnFiltrar_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" />
+                            </td>
+                        </tr>
+                    </table>
+
+        <td>
             <div style="display:flex;justify-content:center;">
             <asp:ListView ID="lvProductos" runat="server" DataKeyNames="CodProducto_Pro" DataSourceID="SqlDataSource1" GroupItemCount="4">
                 <EditItemTemplate>

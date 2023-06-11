@@ -13,5 +13,25 @@ namespace Vistas
         {
 
         }
+
+        protected void btnLimpiarCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLimpiarMarcas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

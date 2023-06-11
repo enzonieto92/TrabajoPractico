@@ -116,3 +116,35 @@ header nav a:hover {
     
 }
 
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 402px;
+}
+
+.auto-style3 {
+    width: 100%;
+    height: 688px;
+}
+
+.auto-style4 {
+    height: 223px;
+    width: 571px;
+}
+
+.auto-style5 {
+    height: 234px;
+    width: 571px;
+}
+
+.auto-style6 {
+    height: 63px;
+    width: 571px;
+}
+
+.auto-style7 {
+    width: 571px;
+}
+
