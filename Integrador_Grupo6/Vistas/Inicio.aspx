@@ -9,12 +9,6 @@
 
     <link rel="StyleSheet" href="StyleSheet.css" type="text/css"/>
 
-    <style type="text/css">
-        .auto-style8 {
-            margin-bottom: 0px;
-        }
-    </style>
-
     </head>
 <body>
     <form id="form1" runat="server">
@@ -130,9 +124,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style4"><strong>--------------------------------------------------------------------------<br />
-                                <br />
-                                Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server">
+                            <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
                                 <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
                                 <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
                                 <asp:ListItem Value="3">Gaming</asp:ListItem>
@@ -141,11 +133,11 @@
                                 <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
                                 </asp:RadioButtonList>
                                 <br />
-                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" />
+                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" CssClass="BtnPersonalizado"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style5"><strong>Marcas</strong><asp:RadioButtonList ID="rblMarcas" runat="server">
+                            <td class="auto-style5"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Marcas</strong><asp:RadioButtonList ID="rblMarcas" runat="server" CssClass="radioBtn">
                                 <asp:ListItem Value="1">Nvidia</asp:ListItem>
                                 <asp:ListItem Value="2">Asus</asp:ListItem>
                                 <asp:ListItem Value="3">Xbox</asp:ListItem>
@@ -154,11 +146,11 @@
                                 <asp:ListItem Value="6">MSI</asp:ListItem>
                                 </asp:RadioButtonList>
                                 <br />
-                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" />
+                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" CssClass="BtnPersonalizado"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style7">&nbsp; <strong>Precio</strong><br />
+                            <td class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Precio</strong><br />
                                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max<br />
                                 <asp:TextBox ID="txtPrecioMin" runat="server" Width="101px"></asp:TextBox>
@@ -178,9 +170,9 @@
                         </tr>
                         <tr>
                             <td class="auto-style7">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="56px" OnClick="btnFiltrar_Click" />
+                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="90px" OnClick="btnFiltrar_Click" CssClass="BtnPersonalizado"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" />
+                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" CssClass="BtnPersonalizado"/>
                             </td>
                         </tr>
                     </table>

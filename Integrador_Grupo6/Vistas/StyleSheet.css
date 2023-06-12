@@ -188,6 +188,19 @@ header nav a:hover {
     width: 571px;
 }
 
+.BtnPersonalizado{
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: none;
+    width = "200px";
+}
+
+.radioBtn {
+    font-family: "Arial", sans-serif;
+}
 .auto-style5 {
     height: 234px;
     width: 571px;
