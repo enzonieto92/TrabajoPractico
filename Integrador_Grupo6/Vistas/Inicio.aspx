@@ -26,59 +26,94 @@
 				<a href="inicio.aspx">
                     Inicio
 				</a>
-                <a href="#" id="btnAbrirPopup" onclick="MostrarPopup(); return false;">IniciarSesión</a>
-				<a href="registrarse.aspx">
-                    Registrarse
-				</a>
+                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click">Iniciar Sesión</asp:LinkButton>
+
+                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnAbrirPopup2_Click"> Registrarse</asp:LinkButton>
+
 			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px"/>
            </nav>
 		</div>
     </header>
-
-               <div id="miPopup" class="popup">
-                <div class="popup-contenido">
-                    <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" DescriptionUrl="CerrarPopup(); return false;" style="position: relative; top: 10px; left: 265px;"/>
-                    <h2 style="text-align:center; font-family:sans-serif;">
+    <asp:Panel ID="Panelpopup" runat="server" Visible="False">
+    <div id="miPopup" class="popup">
+            <div class="popup-contenido">
+                <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
+                <h2 style="text-align:center; font-family:sans-serif;">
                 <asp:Label ID="lblRegistrarse" runat="server" Text="Inicio de Sesión"></asp:Label> 
-                    </h2>
+                </h2>
+                <div class="Datos">
+    <div class="Form">
 
-        <div class="Form">
+        <asp:Label ID="lblUsuario" runat="server" class="Label" Text="Usuario: " ></asp:Label>
+        <asp:TextBox ID="txtUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
 
-            <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
-            <asp:TextBox ID="txtUsuario" runat="server" class="TextBox"></asp:TextBox>
+    </div>
 
-        </div>
+    <div class="Form">
 
-        <div class="Form">
+            <asp:Label ID="lblContraseña" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
+            <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
+    </div>
+</div>
+                <div class="Hyperlink">
+                    <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink> 
+                </div>
 
-                <asp:Label ID="lblContraseña" runat="server" Text="Contraseña:"></asp:Label>
-                <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
-
-        </div>
-
-        <div style="text-align:center;">
-                <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif" ForeColor="SkyBlue" Font-Size="Medium" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink>
-        </div>      
                     
-            <div class="Form" style="justify-content:center; display:flex;">
-                    <asp:Button ID="btnRegistrase" runat="server"  Text="Iniciar Sesión"/>
-                    </div>   
+        <div class="Button" ">
+                <asp:Button ID="btnRegistrase" runat="server"  Text="Iniciar Sesión"/>
+                </div>   
+
+            </div>
+    </div>
+    </asp:Panel>
+
+        <asp:Panel ID="Panelpopup2" runat="server">
+       <div id="PopupRegistro" class="popup">
+             <div class="popup-contenido" style="height:500px; width: 500px;">
+                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
+                    <h2 style="text-align:center; font-family:sans-serif;">
+                    <asp:Label ID="Label1" runat="server" Text="Registrarse"></asp:Label> 
+                    </h2>
+                    <div class="Datos">
+        <div class="Form">
+
+            <asp:Label ID="Label2" runat="server" class="Label" Text="Usuario: " ></asp:Label>
+            <asp:TextBox ID="txtboxUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
+
+        </div>
+
+        <div class="Form">
+
+                <asp:Label ID="Label3" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
+                <asp:TextBox ID="txtboxContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
+        </div>
+        <div class="Form">
+                <asp:Label ID="lblRepContraseña" runat="server" class="Label" Text="Repita la contraseña:"></asp:Label>
+               <asp:TextBox ID="txtRepContraseña" runat="server" class="TextBox" TextMode="password"></asp:TextBox>
+        </div>
+
+       <div class="Form">
+
+                        <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
+                        <asp:TextBox ID="txtEmail" runat="server" class="TextBox"></asp:TextBox>
+
+       </div>
+
+        <div class="Form">
+
+                        <asp:Label ID="lblRepEmail" runat="server" class="Label" Text="Repita el Email:"></asp:Label>
+
+                        <asp:TextBox ID="txtRepEmail" class="TextBox" runat="server" ></asp:TextBox>
+        </div>
+                        <div class="Button">
+                        <asp:Button ID="Button1" runat="server" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
+                        </div>
+    </div>
 
               </div>
        </div>
-
-
-
-<script>
-    function MostrarPopup() {
-        document.getElementById("miPopup").style.display = "flex";
-    }
-
-    function CerrarPopup() {
-        document.getElementById("miPopup").style.display = "none";
-    }
-</script>
-
+        </asp:Panel>
         <div style="text-align: center; margin: 50px">
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar"  />
