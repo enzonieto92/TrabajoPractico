@@ -84,62 +84,19 @@
                             
                             <Columns>
                                 <asp:TemplateField HeaderText="N° Factura">
-                                    <EditItemTemplate>
-                                        <asp:Label ID="eit_lbl_DNI" runat="server" Text='<%# Bind("DNI_Us") %>'></asp:Label>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lbl_NFactura" runat="server" Text='<%# Bind("NroFactura_Fa") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Cod. Metodo Envio">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtMail" runat="server" Text='<%# Bind("Email_Us") %>'></asp:TextBox>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lbl_CodMetEnvio" runat="server" Text='<%# Bind("CodMetEnvio_Fa") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Cod. Metodo Pago">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtDomicilio" runat="server" Text='<%# Bind("Domicilio_Us") %>'></asp:TextBox>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lbl_CodMetPago_Fa" runat="server" Text='<%# Bind("CodMetPago_Fa") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Fecha">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtCodPostal" runat="server" Text='<%# Bind("CodigoPostal_Us") %>'></asp:TextBox>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lblFecha" runat="server" Text='<%# Bind("Fecha_Fa", "{0:d}") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Dirección Entrega">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtTelefono" runat="server" Text='<%# Bind("Telefono_Us") %>' Width="129px"></asp:TextBox>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lbl_DireccionEntrega" runat="server" Text='<%# Bind("DireccionEntrega_Fa") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Total">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtFechaNac" runat="server" Text='<%# Bind("FechaNac_Us") %>' TextMode="Date"></asp:TextBox>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="it_lbl_Total" runat="server" Text='<%# Bind("Total_Fa") %>'></asp:Label>
-                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:ButtonField ButtonType="Button" CommandName="eventoVerMas" HeaderText="Detalle Factura" Text="Ver detalle" />
                             </Columns>
-                             <EmptyDataTemplate>
-                                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style: inset;border-width:5px;">
-                                    <tr>
-                                        <td>No hubo coincidencias!</td>
-                                    </tr>
-                                </table>
-                            </EmptyDataTemplate>
                         </asp:GridView>
                     </td>
                     <td>&nbsp;
@@ -147,29 +104,14 @@
                                                         
                                                         <Columns>
                                                             <asp:TemplateField HeaderText="N°Factura">
-                                                                <ItemTemplate>
-                                                                    <asp:Label ID="it_lblNFactura" runat="server" Text='<%# Bind("NroFactura_Df") %>'></asp:Label>
-                                                                </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="Producto">
-                                                                <ItemTemplate>
-                                                                    <asp:Label ID="it_lblNombreProd" runat="server" Text='<%# Bind("Nombre_Pr") %>'></asp:Label>
-                                                                </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="Categoria">
-                                                                <ItemTemplate>
-                                                                    <asp:Label ID="it_lblColor" runat="server" Text='<%# Bind("Descripcion_Co") %>'></asp:Label>
-                                                                </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="Precio Un.">
-                                                                <ItemTemplate>
-                                                                    <asp:Label ID="it_lblPrecioUn" runat="server" Text='<%# Bind("PrecioUnitario_Df") %>'></asp:Label>
-                                                                </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="Cantidad">
-                                                                <ItemTemplate>
-                                                                    <asp:Label ID="it_lblCantidad" runat="server" Text='<%# Bind("Cantidad_Df") %>'></asp:Label>
-                                                                </ItemTemplate>
                                                             </asp:TemplateField>
                                                         </Columns>
                                                     </asp:GridView>
