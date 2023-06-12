@@ -117,7 +117,7 @@
 
             </div>
         <div style="display:flex;justify-content:center;">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CodProducto_Pro" DataSourceID="SqlDataSource1" HeaderStyle-CssClass="dataGrid-th">
+            <asp:GridView ID="gvProductosCarrito" runat="server" AutoGenerateColumns="False" DataKeyNames="CodProducto_Pro" DataSourceID="SqlDataSource1" HeaderStyle-CssClass="dataGrid-th">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL_Pro" HeaderText="Imagen">
                         <ControlStyle Height="40px" Width="50px" />
@@ -147,6 +147,10 @@
                 <HeaderStyle CssClass="dataGrid-th" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BD_TecnoUTNConnectionString %>" SelectCommand="SELECT [CodProducto_Pro], [Nombre_Pro], [Descripcion_Pro], [PrecioUnitario_Pro], [imgURL_Pro] FROM [Productos]"></asp:SqlDataSource>
+        </div>
+        <div class="encabezado" style="display:flex;justify-content:center; margin-top: 10px; background-color:darkred">
+            <asp:Label ID="lblTotal" runat="server" Text="Total: $"></asp:Label>
+            <asp:Label ID="lblImporte" runat="server" Text="-"></asp:Label>
         </div>
         <div style="display:flex;justify-content:center; margin-top: 10px">
             <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" />

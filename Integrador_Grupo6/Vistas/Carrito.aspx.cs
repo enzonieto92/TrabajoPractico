@@ -13,6 +13,7 @@ namespace Vistas
         {
             Panelpopup.Visible = false;
             Panelpopup2.Visible = false;
+            lblImporte.Text = SumaTotal().ToString();
         }
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
@@ -38,6 +39,18 @@ namespace Vistas
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Carrito.aspx");
+        }
+
+        private decimal SumaTotal()
+        {
+            decimal total = 0;
+            int i;
+
+            for (i=0;i<4;i++)
+            {
+                total += Convert.ToDecimal(gvProductosCarrito.Rows[i].Cells[4].Text);
+            }
+            return total;
         }
     }
 }
