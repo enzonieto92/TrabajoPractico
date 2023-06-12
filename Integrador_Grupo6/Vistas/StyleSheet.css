@@ -152,6 +152,24 @@ header nav a:hover {
     height: 300px;
 }
 
+/*Grid View Encabezado-----------*/
+.dataGrid-th {
+    background-color: darkcyan;
+    color: white;
+    border-color: darkcyan;
+}
+/*-------------------------------*/
+
+.encabezado {
+    background-color: #252932;
+    color: white;
+    width: 1370px;
+    margin: 0 auto;
+    margin-block-end: 20px;
+    font-family: Dubai;
+    font-size: 20px;
+}
+
 .auto-style1 {
     width: 100%;
 }

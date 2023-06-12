@@ -67,8 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Carrito.aspx" />
     <Content Include="Imagenes\Iconos\carrito.png" />
     <Content Include="Imagenes\Iconos\cruz.png" />
+    <Content Include="Imagenes\Iconos\tachobasura.png" />
     <Content Include="Imagenes\Productos\AuricularesInalambricosNoblex.jpg" />
     <Content Include="Imagenes\Productos\JoystickPlay4.jpg" />
     <Content Include="Imagenes\Productos\NotebookLenovo.jpg" />
@@ -78,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

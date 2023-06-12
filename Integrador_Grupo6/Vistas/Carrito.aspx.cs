@@ -7,32 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Vistas
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class Carrito : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Panelpopup.Visible = false;
             Panelpopup2.Visible = false;
-        }
-
-        protected void btnLimpiarCategorias_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnLimpiarMarcas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnFiltrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
@@ -50,9 +30,9 @@ namespace Vistas
             Panelpopup2.Visible = true;
         }
 
-protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
+        protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
-        Panelpopup2.Visible = false;
+            Panelpopup2.Visible = false;
         }
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
