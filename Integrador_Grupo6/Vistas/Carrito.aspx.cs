@@ -52,5 +52,25 @@ namespace Vistas
             }
             return total;
         }
+
+        protected void btnTarjeta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEfectivo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_PagarTarj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_PagarEfec_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

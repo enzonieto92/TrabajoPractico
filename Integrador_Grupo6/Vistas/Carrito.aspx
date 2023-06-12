@@ -156,6 +156,125 @@
             <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" />
             <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnVaciar" runat="server" Text="Vaciar Carrito" />
         </div>
+
+
+        <asp:Panel ID="PanelMetodos" runat="server">
+            <p>
+        <strong>Formas de Envio</strong></p>
+    <p>
+        <asp:DropDownList ID="ddl_FormasEnvio" runat="server" AutoPostBack="True" ValidationGroup="Grupo0">
+            <asp:ListItem>---Forma de Envio---</asp:ListItem>
+            <asp:ListItem Value="1">Retiro en Sucursal</asp:ListItem>
+            <asp:ListItem Value="2">A Domicilio</asp:ListItem>
+        </asp:DropDownList>
+        &nbsp;</p>
+    <asp:Panel ID="PanelFormaEnvio" runat="server">
+        Direccion de Entrega:&nbsp;&nbsp;
+        <asp:TextBox ID="txtDireccionEntrega" runat="server" MaxLength="40" ValidationGroup="Grupo1"></asp:TextBox>
+        &nbsp;<br />
+        Ciudad:&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtCiudad" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+        &nbsp;
+        <br />
+        Provincia:&nbsp;&nbsp;
+        <asp:TextBox ID="txtProvincia" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+        &nbsp;
+        </asp:Panel>
+    <br />
+    <table class="auto-style12">
+        <tr>
+            <td class="auto-style10">
+                <br />
+                <br />
+        <strong>Formas de Pago</strong><br />
+        <asp:Button ID="btnTarjeta" runat="server" Text="Tarjeta" CssClass="BtnPersonalizado" OnClick="btnTarjeta_Click" Width="114px" ValidationGroup="Grupo0" />
+        <br />
+                <br />
+        <asp:Button ID="btnEfectivo" runat="server" Text="Efectivo" CssClass="BtnPersonalizado" Width="114px" OnClick="btnEfectivo_Click" ValidationGroup="Grupo0" />
+            </td>
+            <td class="auto-style11">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                DNI:<br />
+            </td>
+            <td>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <asp:Label ID="lbl_DNI" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style10"></td>
+            <td class="auto-style11">Nombre:
+                <br />
+            </td>
+            <td>
+                <asp:Label ID="lbl_Nombre" runat="server"></asp:Label>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style10">&nbsp;</td>
+            <td class="auto-style11">Apellido:&nbsp; </td>
+            <td>
+                <asp:Label ID="lbl_Apellido" runat="server"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    <asp:Panel ID="PanelTarjeta" runat="server">
+        <br />
+        <span class="auto-style9"><strong>Tarjeta de Credito</strong></span><br />
+        <br />
+        Numero de Tarjeta:<asp:TextBox ID="txt_Tarjeta" runat="server" MaxLength="16" ValidationGroup="Grupo2"></asp:TextBox>
+        &nbsp;
+        <br />
+        Titular Tarjeta:<asp:TextBox ID="txt_Titular" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+        &nbsp;
+        <br />
+        Fecha de Vencimiento(MM/AA):<asp:TextBox ID="txt_Vencimiento" runat="server" Width="151px" TextMode="Month" ValidationGroup="Grupo2"></asp:TextBox>
+        &nbsp;
+        <br />
+        Codigo de Seguridad:<asp:TextBox ID="txt_CodigoSeg" runat="server" Width="83px" ValidationGroup="Grupo2"></asp:TextBox>
+        &nbsp;
+        <br />
+        Cuotas:
+        <asp:DropDownList ID="ddl_Cuotas" runat="server" ValidationGroup="Grupo2">
+            <asp:ListItem Value="--Seleccionar Cuotas--">--Seleccionar Cuotas--</asp:ListItem>
+            <asp:ListItem>1 Cuota</asp:ListItem>
+            <asp:ListItem>3 Cuota</asp:ListItem>
+            <asp:ListItem>6 Cuota</asp:ListItem>
+            <asp:ListItem>9 Cuota</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <br />
+        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="BtnPersonalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="80px" />
+        <br />
+        <br />
+    </asp:Panel>
+            
+    <asp:Panel ID="PanelEfectivo" runat="server">
+        <br />
+        <span class="auto-style9"><strong>Efectivo</strong></span><br />
+        <br />
+        <asp:DropDownList ID="ddl_Efectivo" runat="server" ValidationGroup="Grupo3">
+            <asp:ListItem>--Seleccionar Opcion--</asp:ListItem>
+            <asp:ListItem Value="1">Pago Facil</asp:ListItem>
+            <asp:ListItem Value="2">Rapi Pago</asp:ListItem>
+            <asp:ListItem Value="3">Sucursal</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <br />
+        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="BtnPersonalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="77px" />
+    </asp:Panel>
+    <p>
+        <asp:Label ID="Label4" runat="server"></asp:Label>
+    </p>
+            </asp:Panel>
     </form>
 </body>
 </html>
