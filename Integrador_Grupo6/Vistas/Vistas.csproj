@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminProductos.aspx" />
+    <Content Include="adminReportes.aspx" />
+    <Content Include="adminUsuario.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Imagenes\Iconos\carrito.png" />
     <Content Include="Imagenes\Iconos\cruz.png" />
@@ -80,6 +83,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminProductos.aspx.cs">
+      <DependentUpon>adminProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminProductos.aspx.designer.cs">
+      <DependentUpon>adminProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminReportes.aspx.cs">
+      <DependentUpon>adminReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminReportes.aspx.designer.cs">
+      <DependentUpon>adminReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminUsuario.aspx.cs">
+      <DependentUpon>adminUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminUsuario.aspx.designer.cs">
+      <DependentUpon>adminUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

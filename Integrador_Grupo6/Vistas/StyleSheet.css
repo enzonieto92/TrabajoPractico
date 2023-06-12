@@ -188,6 +188,56 @@ header nav a:hover {
     width: 571px;
 }
 
+.auto-style5 {
+    width: 220px;
+}
+
+.auto-style6 {
+    font-size: x-large;
+}
+
+.auto-style7 {
+    text-decoration: underline;
+}
+
+.auto-style8 {
+    font-size: medium;
+}
+
+.auto-style9 {
+    width: 239px;
+}
+
+.auto-style10 {
+    margin-right: 1px;
+}
+.auto-style11 {
+    width: 318px;
+}
+.auto-style12 {
+    width: 800px;
+}
+.auto-style13 {
+    width: 300px;
+}
+.auto-style14 {
+   font-size: x-large;
+   text-decoration: underline;
+ }
+.auto-style15 {
+    font-size: large;
+}
+.auto-style16 {
+    width: 800px;
+    height: 45px;
+}
+.auto-style17 {
+   height: 45px;
+}
+
+
+
+
 .BtnPersonalizado{
     background-color: darkcyan;
     color: white;
