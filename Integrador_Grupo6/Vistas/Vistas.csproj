@@ -68,24 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\Iconos\carrito.png" />
+    <Content Include="Imagenes\Iconos\cruz.png" />
     <Content Include="Imagenes\Productos\AuricularesInalambricosNoblex.jpg" />
     <Content Include="Imagenes\Productos\JoystickPlay4.jpg" />
     <Content Include="Imagenes\Productos\NotebookLenovo.jpg" />
     <Content Include="Imagenes\Productos\RealidadVirtual.jpg" />
-    <Content Include="iniciarSesion.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="registrarse.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="iniciarSesion.aspx.cs">
-      <DependentUpon>iniciarSesion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iniciarSesion.aspx.designer.cs">
-      <DependentUpon>iniciarSesion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

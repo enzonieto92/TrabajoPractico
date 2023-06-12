@@ -10,8 +10,8 @@
     <link rel="StyleSheet" href="StyleSheet.css" type="text/css"/>
 
     <style type="text/css">
-        .auto-style1 {
-            margin-top: 11px;
+        .auto-style8 {
+            margin-bottom: 0px;
         }
     </style>
 
@@ -25,20 +25,60 @@
 			<nav>
 				<a href="inicio.aspx">
                     Inicio
-
 				</a>
-				<a href="iniciarSesion.aspx">
-                    Iniciar Sesión
-
-				</a>
+                <a href="#" id="btnAbrirPopup" onclick="MostrarPopup(); return false;">IniciarSesión</a>
 				<a href="registrarse.aspx">
                     Registrarse
-
 				</a>
 			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px"/>
-			</nav>
+           </nav>
 		</div>
     </header>
+
+               <div id="miPopup" class="popup">
+                <div class="popup-contenido">
+                    <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" DescriptionUrl="CerrarPopup(); return false;" style="position: relative; top: 10px; left: 265px;"/>
+                    <h2 style="text-align:center; font-family:sans-serif;">
+                <asp:Label ID="lblRegistrarse" runat="server" Text="Inicio de Sesión"></asp:Label> 
+                    </h2>
+
+        <div class="Form">
+
+            <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
+            <asp:TextBox ID="txtUsuario" runat="server" class="TextBox"></asp:TextBox>
+
+        </div>
+
+        <div class="Form">
+
+                <asp:Label ID="lblContraseña" runat="server" Text="Contraseña:"></asp:Label>
+                <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
+
+        </div>
+
+        <div style="text-align:center;">
+                <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif" ForeColor="SkyBlue" Font-Size="Medium" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink>
+        </div>      
+                    
+            <div class="Form" style="justify-content:center; display:flex;">
+                    <asp:Button ID="btnRegistrase" runat="server"  Text="Iniciar Sesión"/>
+                    </div>   
+
+              </div>
+       </div>
+
+
+
+<script>
+    function MostrarPopup() {
+        document.getElementById("miPopup").style.display = "flex";
+    }
+
+    function CerrarPopup() {
+        document.getElementById("miPopup").style.display = "none";
+    }
+</script>
+
         <div style="text-align: center; margin: 50px">
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar"  />
