@@ -54,8 +54,8 @@
                 </div>
 
                     
-        <div class="Button" ">
-                <asp:Button ID="btnRegistrase" runat="server"  Text="Iniciar Sesión"/>
+        <div class="Button">
+                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión"/>
                 </div>   
 
             </div>
@@ -101,7 +101,7 @@
                         <asp:TextBox ID="txtRepEmail" class="TextBox" runat="server" ></asp:TextBox>
         </div>
                         <div class="Button">
-                        <asp:Button ID="Button1" runat="server" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
+                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
                         </div>
     </div>
 
@@ -124,7 +124,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
                                 <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
                                 <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
                                 <asp:ListItem Value="3">Gaming</asp:ListItem>
@@ -133,7 +133,7 @@
                                 <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
                                 </asp:RadioButtonList>
                                 <br />
-                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" CssClass="BtnPersonalizado"/>
+                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" CssClass="boton-personalizado"/>
                             </td>
                         </tr>
                         <tr>
@@ -146,7 +146,7 @@
                                 <asp:ListItem Value="6">MSI</asp:ListItem>
                                 </asp:RadioButtonList>
                                 <br />
-                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" CssClass="BtnPersonalizado"/>
+                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" CssClass="boton-personalizado"/>
                             </td>
                         </tr>
                         <tr>
@@ -170,9 +170,9 @@
                         </tr>
                         <tr>
                             <td class="auto-style7">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="90px" OnClick="btnFiltrar_Click" CssClass="BtnPersonalizado"/>
+                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="90px" OnClick="btnFiltrar_Click" CssClass="boton-personalizado"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" CssClass="BtnPersonalizado"/>
+                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" CssClass="boton-personalizado"/>
                             </td>
                         </tr>
                     </table>

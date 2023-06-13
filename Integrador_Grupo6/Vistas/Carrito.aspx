@@ -57,8 +57,8 @@
                 </div>
 
                     
-        <div class="Button" ">
-                <asp:Button ID="btnRegistrase" runat="server"  Text="Iniciar Sesión"/>
+        <div class="Button">
+                <asp:Button ID="btnRegistrase" class="boton-personalizado" runat="server"  Text="Iniciar Sesión"/>
                 </div>   
 
             </div>
@@ -104,7 +104,7 @@
                         <asp:TextBox ID="txtRepEmail" class="TextBox" runat="server" ></asp:TextBox>
         </div>
                         <div class="Button">
-                        <asp:Button ID="Button1" runat="server" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
+                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
                         </div>
     </div>
 
@@ -186,12 +186,12 @@
                 <br />
                 <br />
         <strong>Formas de Pago</strong><br />
-        <asp:Button ID="btnTarjeta" runat="server" Text="Tarjeta" CssClass="BtnPersonalizado" OnClick="btnTarjeta_Click" Width="114px" ValidationGroup="Grupo0" />
+        <asp:Button ID="btnTarjeta" runat="server" Text="Tarjeta" CssClass="boton-personalizado" OnClick="btnTarjeta_Click" Width="114px" ValidationGroup="Grupo0" />
         <br />
                 <br />
-        <asp:Button ID="btnEfectivo" runat="server" Text="Efectivo" CssClass="BtnPersonalizado" Width="114px" OnClick="btnEfectivo_Click" ValidationGroup="Grupo0" />
+        <asp:Button ID="btnEfectivo" runat="server" Text="Efectivo" CssClass="boton-personalizado" Width="114px" OnClick="btnEfectivo_Click" ValidationGroup="Grupo0" />
             </td>
-            <td class="auto-style11">
+            <td>
                 <br />
                 <br />
                 <br />
@@ -209,8 +209,8 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style10"></td>
-            <td class="auto-style11">Nombre:
+            <td></td>
+            <td>Nombre:
                 <br />
             </td>
             <td>
@@ -219,8 +219,8 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style10">&nbsp;</td>
-            <td class="auto-style11">Apellido:&nbsp; </td>
+            <td>&nbsp;</td>
+            <td>Apellido:&nbsp; </td>
             <td>
                 <asp:Label ID="lbl_Apellido" runat="server"></asp:Label>
             </td>
@@ -228,7 +228,7 @@
     </table>
     <asp:Panel ID="PanelTarjeta" runat="server">
         <br />
-        <span class="auto-style9"><strong>Tarjeta de Credito</strong></span><br />
+        <span><strong>Tarjeta de Credito</strong></span><br />
         <br />
         Numero de Tarjeta:<asp:TextBox ID="txt_Tarjeta" runat="server" MaxLength="16" ValidationGroup="Grupo2"></asp:TextBox>
         &nbsp;
@@ -252,14 +252,14 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="BtnPersonalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="80px" />
+        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="80px" />
         <br />
         <br />
     </asp:Panel>
             
     <asp:Panel ID="PanelEfectivo" runat="server">
         <br />
-        <span class="auto-style9"><strong>Efectivo</strong></span><br />
+        <span><strong>Efectivo</strong></span><br />
         <br />
         <asp:DropDownList ID="ddl_Efectivo" runat="server" ValidationGroup="Grupo3">
             <asp:ListItem>--Seleccionar Opcion--</asp:ListItem>
@@ -269,7 +269,7 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="BtnPersonalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="77px" />
+        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="77px" />
     </asp:Panel>
     <p>
         <asp:Label ID="Label4" runat="server"></asp:Label>
