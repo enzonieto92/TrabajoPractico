@@ -175,20 +175,6 @@ header nav a:hover {
     font-size: 20px;
 }
 
-
-
-
-
-.BtnPersonalizado{
-    background-color: darkcyan;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    box-shadow: none;
-    width = "200px";
-}
-
 .radioBtn {
     font-family: "Arial", sans-serif;
 }
