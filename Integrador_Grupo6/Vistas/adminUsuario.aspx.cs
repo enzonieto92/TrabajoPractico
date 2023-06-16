@@ -69,7 +69,9 @@ namespace Vistas
 
         protected void grvUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
+            grvUsuarios.EditIndex = e.NewEditIndex;
+            cargarTablaUsuario("SELECT * FROM Usuario");
+            limpiarCampos();
         }
 
         protected void grvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)

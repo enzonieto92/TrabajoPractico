@@ -115,7 +115,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Contraseña">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="eit_txtUsuario" runat="server" MaxLength="30" Text='<%# Bind("Contraseña_Us") %>'></asp:TextBox>
+                                        <asp:TextBox ID="eit_txtContraseña" runat="server" MaxLength="30" Text='<%# Bind("Contraseña_Us") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="it_lbl_Contraseña" runat="server" Text='<%# Bind("Contraseña_Us") %>'></asp:Label>
