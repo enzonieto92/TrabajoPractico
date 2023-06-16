@@ -41,7 +41,7 @@ namespace Vistas
         protected void grvUsuarios_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grvUsuarios.EditIndex = -1;
-            cargarTablaUsuario("SELECT * FROM Usuarios");
+            cargarTablaUsuario("SELECT * FROM Usuario");
             limpiarCampos();
         }
 
@@ -53,7 +53,7 @@ namespace Vistas
             NegocioUsuario NU = new NegocioUsuario();
             bool elimino = NU.EliminarUsuario(Us);
 
-            cargarTablaUsuario("SELECT * FROM Usuarios");
+            cargarTablaUsuario("SELECT * FROM Usuario");
 
             if (elimino)
             {
