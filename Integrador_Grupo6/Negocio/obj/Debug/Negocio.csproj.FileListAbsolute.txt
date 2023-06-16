@@ -1,0 +1,11 @@
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Negocio.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Dao.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Entidades.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Dao.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.pdb

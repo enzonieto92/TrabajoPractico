@@ -1,0 +1,9 @@
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\bin\Debug\Dao.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\bin\Debug\Dao.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\bin\Debug\Entidades.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\bin\Debug\Entidades.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\obj\Debug\Dao.csproj.AssemblyReference.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\obj\Debug\Dao.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Dao\obj\Debug\Dao.pdb

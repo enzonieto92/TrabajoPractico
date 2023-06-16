@@ -1,0 +1,6 @@
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.dll
+C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.pdb

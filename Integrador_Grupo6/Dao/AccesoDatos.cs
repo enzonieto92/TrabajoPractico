@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Entidades;
 
 namespace Dao
 {
     class AccesoDatos
     {
-        string ruta = @"Data Source=localhost\sqlexpress; Initial Catalog = BD_TecnoUTN; Integrated Security = True";
+        string ruta = @"Data Source=localhost\sqlexpress; Initial Catalog = TecnovatosBD; Integrated Security = True";
 
         public AccesoDatos()
         {
@@ -40,7 +41,29 @@ namespace Dao
             cn.Close();
             return Rows;
         }
+        private SqlDataAdapter ObtenerAdaptador(string consultaSql, SqlConnection cn)
+        {
+            SqlDataAdapter adaptador;
+            try
+            {
+                adaptador = new SqlDataAdapter(consultaSql, cn);
+                return adaptador;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
+        public DataTable ObtenerTabla(string NombreTabla, string Sql)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection Conexion = ObtenerConexion();
+            SqlDataAdapter adp = ObtenerAdaptador(Sql, Conexion);
+            adp.Fill(ds, NombreTabla);
+            Conexion.Close();
+            return ds.Tables[NombreTabla];
+        }
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {
             int FilasAlteradas;

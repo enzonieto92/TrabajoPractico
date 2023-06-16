@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using Dao;
+using Entidades;
+
+namespace Negocio
+{
+    public class NegocioUsuario
+    {
+        DAOusuario du = new DAOusuario();
+        public DataTable getTabla(string consulta)
+        {
+            return du.getTabla(consulta);
+        }
+        public bool EliminarUsuario(Usuario us)
+        {
+            DAOusuario dao = new DAOusuario();
+            int op = dao.eliminarUsuario(us);
+            if (op == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
