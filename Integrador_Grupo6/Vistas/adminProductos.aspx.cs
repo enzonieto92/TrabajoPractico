@@ -33,6 +33,30 @@ namespace Vistas
             grvProductos.DataBind();
         }
 
+        protected void lbCerrarSesión_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnIngresarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnIngresarStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
