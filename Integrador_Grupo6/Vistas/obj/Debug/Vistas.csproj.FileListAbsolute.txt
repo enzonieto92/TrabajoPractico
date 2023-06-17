@@ -299,3 +299,9 @@ C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.dll
 C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.pdb
 C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.pdb
 C:\Users\Nahuel\Downloads\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.pdb
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.dll
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.dll
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.dll
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.pdb
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.pdb
+C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.pdb

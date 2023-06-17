@@ -18,6 +18,17 @@ namespace Dao
 
         }
 
+        public int ejecutarTransaccion(String consulta)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlCommand cm = new SqlCommand(consulta, cn);
+
+            int filasAfectadas = cm.ExecuteNonQuery();  
+
+            return filasAfectadas;
+        }
+
         private SqlConnection ObtenerConexion()
         {
             SqlConnection cn = new SqlConnection(ruta);
