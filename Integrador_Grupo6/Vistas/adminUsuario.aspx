@@ -32,6 +32,7 @@
             <br />
             Filtros<br />
             <asp:DropDownList ID="ddlFiltro" runat="server" Height="16px" Width="164px" AutoPostBack="True">
+                <asp:ListItem Value="DNI_Us">DNI</asp:ListItem>
                 <asp:ListItem Value="Usuario_Us">Usuario</asp:ListItem>
                 <asp:ListItem Value="Email_Us">Email</asp:ListItem>
                 <asp:ListItem Value="Telefono_Us">Telefono</asp:ListItem>
@@ -41,9 +42,9 @@
                 <asp:ListItem Value="Estado_Us">Estado de Usuario</asp:ListItem>
             </asp:DropDownList>
             <asp:TextBox ID="txtFiltro" runat="server" CssClass="auto-style2" Height="21px" Width="273px"></asp:TextBox>
-            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro"/>
+            <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click"/>
             <br />
             <br />
             Tipo 1 = Usuario Común<br />

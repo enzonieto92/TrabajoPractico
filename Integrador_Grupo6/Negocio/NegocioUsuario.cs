@@ -30,5 +30,29 @@ namespace Negocio
                 return false;
             }
         }
+        public bool existeUsuario(Usuario Us)
+        {
+            bool existe = du.existeUsuario(Us);
+            if (existe)
+                return true;
+            else
+                return false;
+        }
+        public bool existeMail(Usuario Us)
+        {
+            bool existe = du.existeMail(Us);
+            if (existe)
+                return true;
+            else
+                return false;
+        }
+        public bool ActualizarUsuario(Usuario Us)
+        {
+            int cantFilas = 0;
+
+            cantFilas = du.ActualizarUsuario(Us);
+            if (cantFilas == 1) return true;
+            else return false;
+        }
     }
 }

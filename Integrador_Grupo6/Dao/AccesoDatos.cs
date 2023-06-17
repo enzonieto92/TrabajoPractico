@@ -64,6 +64,18 @@ namespace Dao
             Conexion.Close();
             return ds.Tables[NombreTabla];
         }
+        public Boolean existe(String consulta)
+        {
+            Boolean estado = false;
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                estado = true;
+            }
+            return estado;
+        }
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {
             int FilasAlteradas;

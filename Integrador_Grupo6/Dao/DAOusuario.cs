@@ -34,17 +34,70 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("Usuario", consulta);
             return tabla;
         }
+        public Boolean existeMail(Usuario Us)
+        {
+            String consulta = "Select * from Usuario where Email_Us='" + Us.Email_Us1 + "'AND NOT DNI_Us = '" + Us.DNI_Us1 + "'";
+            return cn.existe(consulta);
+        }
+        public Boolean existeUsuario(Usuario Us)
+        {
+            String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "' AND NOT DNI_Us='" + Us.DNI_Us1 + "'";
+            return cn.existe(consulta);
+        }
         public int eliminarUsuario(Usuario us)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametroSucursalEliminar(ref comando, us);
+            ArmarParametroUsuarioEliminar(ref comando, us);
             return cn.EjecutarProcedimientoAlmacenado(comando, "spEliminarUsuario");
         }
-        private void ArmarParametroSucursalEliminar(ref SqlCommand comando, Usuario us)
+
+        private void ArmarParametroUsuarioEliminar(ref SqlCommand comando, Usuario us)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@DNI", SqlDbType.Int);
             SqlParametros.Value = us.DNI_Us1;
+        }
+        public int ActualizarUsuario(Usuario Us)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosUsuarioActualizar(ref cmd, Us);
+            AccesoDatos cn = new AccesoDatos();
+            int filasAfectadas = cn.EjecutarProcedimientoAlmacenado(cmd, "SPActualizarUsuario");
+            if (filasAfectadas == 1) return 1;
+            return 0;
+        }
+        public void armarParametrosUsuarioActualizar(ref SqlCommand cmd, Usuario Us)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = cmd.Parameters.Add("@DNI", SqlDbType.Char, 10);
+            parametros.Value = Us.DNI_Us1;
+
+            parametros = cmd.Parameters.Add("@Email", SqlDbType.VarChar, 60);
+            parametros.Value = Us.Email_Us1;
+
+            parametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Nombre_Us1;
+
+            parametros = cmd.Parameters.Add("@Apellido", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Apellido_Us1;
+
+            parametros = cmd.Parameters.Add("@FechaNacimiento", SqlDbType.Date);
+            parametros.Value = Us.FechaNacimineto_Us1;
+
+            parametros = cmd.Parameters.Add("@Telefono", SqlDbType.Char, 10);
+            parametros.Value = Us.Telefono_Us1;
+
+            parametros = cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Usuario_Us1;
+
+            parametros = cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Contraseña_Us1;
+
+            parametros = cmd.Parameters.Add("@Tipo", SqlDbType.Int);
+            parametros.Value = Us.Tipo_Us1;
+
+            parametros = cmd.Parameters.Add("@Estado", SqlDbType.Bit);
+            parametros.Value = Us.Estado_Us1;
         }
     }
 }
