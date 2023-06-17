@@ -23,7 +23,7 @@ namespace Negocio
             return Dpr.getTabla(consulta);
         }
 
-        public bool existeUsuario(string CodProducto)
+        public bool existeProducto(string CodProducto)
         {
             bool existe = Dpr.existeProducto(CodProducto);
             if (existe)
