@@ -57,6 +57,24 @@ namespace Vistas
         {
 
         }
+
+        protected void grvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string codPr = ((Label)grvProductos.Rows[e.RowIndex].FindControl("lbl_it_CodProd")).Text;
+            Productos prod = new Productos();
+            prod.CodProducto_Pr1 = codPr;
+           bool result = np.eliminarProducto(prod);
+            if (result)
+            {
+                Resultado.Text = "No se eliminó";
+            }
+            else
+            {
+                Resultado.Text = "Eliminado";
+            }
+            cargartablaProductos();
+            
+        }
     }
 }
 

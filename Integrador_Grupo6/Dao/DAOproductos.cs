@@ -39,8 +39,11 @@ namespace Dao
 
         public int eliminarProducto(Productos prod)
         {
-            int cantFilas = cn.ejecutarTransaccion("UPDATE Productos SET Estado_Pr = 0 WHERE CodProducto_Pr = '" + prod.CodProducto_Pr1 + "'");
-            return cantFilas;
+            SqlCommand comando = new SqlCommand();
+            ArmarParametroEliminar(ref comando, prod);
+            int cant = cn.EjecutarProcedimientoAlmacenado(comando, "DeleteProductoCascada");
+            return cant;
+
         }
 
         public int actualizarProducto(Productos prod)
@@ -49,7 +52,13 @@ namespace Dao
             armarParametrosActualizar(ref comando, prod);
             return cn.EjecutarProcedimientoAlmacenado(comando, "SPActualizarProducto");
         }
+        public void ArmarParametroEliminar(ref SqlCommand cmd, Productos prod)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = cmd.Parameters.Add("@CodProducto_Pr", SqlDbType.Char);
+            SqlParametros.Value = prod.CodProducto_Pr1;
 
+        }
 
         private void armarParametrosAgregar(ref SqlCommand cmd, Productos prod)
         {

@@ -20,3 +20,14 @@ C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\T
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.dll
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Negocio.dll
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Negocio.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Dao.dll
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Entidades.dll
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Dao.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\bin\Debug\Entidades.pdb
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.dll
+C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Negocio\obj\Debug\Negocio.pdb
