@@ -311,3 +311,9 @@ C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.dll
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.pdb
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.pdb
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Entidades.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Negocio.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Vistas\bin\Dao.pdb

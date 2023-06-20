@@ -23,14 +23,54 @@ namespace Vistas
             if (!IsPostBack)
             {
                 cargartablaProductos();
+                cargarCategorias();
+                cargarMarcas();
+                cargarColores();
             }
 
         }
         void cargartablaProductos()
         {
-            DataTable tablaProductos = np.getTabla("SELECT * FROM Productos");
+            NegocioMarcas NM = new NegocioMarcas();
+            DataTable tablaProductos = np.getTabla();
             grvProductos.DataSource = tablaProductos;
             grvProductos.DataBind();
+        }
+
+        void cargarCategorias()
+        {
+            NegocioCategorias NC = new NegocioCategorias();
+            DataTable tabla;
+
+            tabla = NC.listarCategorias();
+            ddlTalleProducto.DataSource = tabla;
+            ddlTalleProducto.DataTextField = "Descripcion_Cat";
+            ddlTalleProducto.DataValueField = "CodCategoria_Cat";
+            ddlTalleProducto.DataBind();
+        }
+
+        void cargarMarcas()
+        {
+            NegocioMarcas NM = new NegocioMarcas();
+            DataTable tabla;
+
+            tabla = NM.listarMarcas();
+            ddlMarcas.DataSource = tabla;
+            ddlMarcas.DataTextField = "Descripcion_Ma";
+            ddlMarcas.DataValueField = "CodMarca_Ma";
+            ddlMarcas.DataBind();
+        }
+
+        void cargarColores()
+        {
+            NegocioColores NC = new NegocioColores();
+            DataTable tabla;
+
+            tabla = NC.listarColores();
+            ddlColorProducto.DataSource = tabla;
+            ddlColorProducto.DataTextField = "Descripcion_Co";
+            ddlColorProducto.DataValueField = "CodColor_Co";
+            ddlColorProducto.DataBind();
         }
 
         protected void lbCerrarSesión_Click(object sender, EventArgs e)

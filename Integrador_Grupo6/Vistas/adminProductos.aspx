@@ -22,9 +22,9 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
             <br />
-            <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProducto.aspx">Productos</asp:HyperLink>
+            <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx">Productos</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuarios.aspx">Usuarios</asp:HyperLink>
+            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx">Usuarios</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx">Reportes</asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style8"><strong>&nbsp;</strong></span><span class="auto-style7"><strong>Productos</strong></span><br />
@@ -61,12 +61,12 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Codigo Marca">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_CodMarca" runat="server" Text='<%# Bind("CodMarcas_Pr") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_CodMarca" runat="server" Text='<%# Bind("Descripcion_Ma") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Codigo Categoria">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_CodCat" runat="server" Text='<%# Bind("CodCategoria_Pr") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_CodCat" runat="server" Text='<%# Bind("Descripcion_Cat") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre">
@@ -111,47 +111,23 @@
             <asp:TextBox ID="txtCodProd" runat="server" MaxLength="6"></asp:TextBox>
 &nbsp;</strong><table class="auto-style1">
                 <tr>
-                    <td class="auto-style12"><strong>Nombre del Producto<br />
+                    <td class="auto-style12"><strong>Nombre<br />
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="auto-style11" MaxLength="20"></asp:TextBox>
                         </strong></td>
-                    <td>C<strong>odigo del Producto<br />
-                        <asp:DropDownList ID="ddlCodigoProducto" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style12"><strong>Descripcion del Producto<br />
-                        <asp:TextBox ID="txtDescripcion" runat="server" Height="21px" MaxLength="100"></asp:TextBox>
-                        </strong></td>
-                    <td><strong>Categoría del Producto<br />
+                    <td><strong>Categoría<br />
                         <asp:DropDownList ID="ddlTalleProducto" runat="server">
                         </asp:DropDownList>
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style16"><strong>Categoría del Producto<br />
-                        <asp:DropDownList ID="ddlCategorias" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                    <td class="auto-style17"><strong>Color del Producto<br />
-                        <asp:DropDownList ID="ddlColorProducto" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style12"><strong>Marca del Producto<br />
+                    <td class="auto-style16"><strong>Marca<br />
                         <asp:DropDownList ID="ddlMarcas" runat="server">
                         </asp:DropDownList>
                         </strong></td>
-                    <td><strong>Stock<br />
-                        <asp:TextBox ID="txtStockProducto" runat="server" CssClass="auto-style16"></asp:TextBox>
+                    <td class="auto-style17"><strong>Color<br />
+                        <asp:DropDownList ID="ddlColorProducto" runat="server">
+                        </asp:DropDownList>
                         </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style12"><strong>Url de la Imagen del Producto<br />
-                        <asp:TextBox ID="txtUrl" runat="server" CssClass="auto-style16" MaxLength="60"></asp:TextBox>
-                        </strong></td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style12"><strong>
@@ -159,7 +135,28 @@
                         <br />
                         <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="auto-style16"></asp:TextBox>
                         </strong></td>
+                    <td><strong>
+                        <asp:Label ID="Label28" runat="server" Text="Stock"></asp:Label>
+                        <br />
+                        <asp:TextBox ID="txtStock" runat="server" CssClass="auto-style16" TextMode="Number"></asp:TextBox>
+                        </strong></td>
+                </tr>
+                <tr>
+                    <td class="auto-style12"><strong>Url de la Imagen del Producto<br />
+                        <asp:TextBox ID="txtUrl" runat="server" CssClass="auto-style16" MaxLength="60" TextMode="Url"></asp:TextBox>
+                        </strong></td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style12" colspan="2"><strong>Descripcion<br />
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" MaxLength="100" TextMode="MultiLine" Width="364px"></asp:TextBox>
+                        </strong></td>
+                </tr>
+                <tr>
+                    <td class="auto-style12">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style12">
@@ -171,7 +168,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style12">
-                    </td>
+                        &nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>

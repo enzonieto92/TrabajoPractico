@@ -18,9 +18,9 @@ namespace Negocio
 
         }
 
-        public DataTable getTabla(string consulta)
+        public DataTable getTabla()
         {
-            return Dpr.getTabla(consulta);
+            return Dpr.getTabla();
         }
 
         public bool existeProducto(string CodProducto)
@@ -56,7 +56,16 @@ namespace Negocio
                 return false;
         }
 
+        public bool agregarProducto(Productos prod)
+        {
+            int cantFilas = 0;
+            cantFilas = Dpr.agregarProducto(prod);
 
+            if (cantFilas == 1)
+                return true;
+            else
+                return false;
+        }
 
     }
 }

@@ -18,8 +18,10 @@ namespace Dao
 
         }
 
-        public DataTable getTabla(string consulta)
+        public DataTable getTabla()
         {
+            string consulta = "SELECT CodProducto_Pr, Descripcion_Ma, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }

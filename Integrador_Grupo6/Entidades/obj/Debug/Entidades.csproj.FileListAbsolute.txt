@@ -10,3 +10,9 @@ C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\T
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.dll
 C:\Users\axel9\OneDrive\Desktop\cuatrimestre\3ER CUATRIMESTRE\Prog 3\TP1 nuevo\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\CUATRIMESTRE 3\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.pdb
