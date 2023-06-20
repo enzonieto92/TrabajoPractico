@@ -31,7 +31,6 @@ namespace Vistas
         }
         void cargartablaProductos()
         {
-            NegocioMarcas NM = new NegocioMarcas();
             DataTable tablaProductos = np.getTabla();
             grvProductos.DataSource = tablaProductos;
             grvProductos.DataBind();
@@ -79,10 +78,6 @@ namespace Vistas
             ddlColorProducto.DataBind();
         }
 
-        protected void lbCerrarSesión_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -124,6 +119,7 @@ namespace Vistas
             string codPr = ((Label)grvProductos.Rows[e.RowIndex].FindControl("lbl_it_CodProd")).Text;
             Productos prod = new Productos();
             prod.CodProducto_Pr1 = codPr;
+            cargartablaProductos();
            bool result = np.eliminarProducto(prod);
             if (result)
             {
@@ -133,7 +129,6 @@ namespace Vistas
             {
                 Resultado.Text = "Eliminado";
             }
-            cargartablaProductos();
             
         }
 
@@ -158,10 +153,6 @@ namespace Vistas
             }
         }
 
-        protected void btnIngresarStock_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private Productos cargarproducto()
         {
@@ -190,6 +181,44 @@ namespace Vistas
             txtPrecioUnitario.Text = "";
             txtStock.Text = "";
             txtDescripcion.Text = "";
+        }
+
+
+        protected void grvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            cargartablaProductos();
+
+        }
+
+        protected void grvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grvProductos.EditIndex = e.NewEditIndex;
+            
+            cargartablaProductos();
+
+        }
+        protected void grvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grvProductos.EditIndex = -1;
+            cargartablaProductos();
+        }
+
+ 
+        protected void grvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            lblMensajeAgregado.Text = "";
+            grvProductos.PageIndex = e.NewPageIndex;
+            cargartablaProductos();
+        }
+
+        protected void lbCerrarSesión_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnIngresarStock_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
