@@ -67,5 +67,10 @@ namespace Negocio
                 return false;
         }
 
+        public DataTable filtrarProductos(string tipo, string texto)
+        {
+            return Dpr.filtroProductos(tipo, texto);
+        }
+
     }
 }

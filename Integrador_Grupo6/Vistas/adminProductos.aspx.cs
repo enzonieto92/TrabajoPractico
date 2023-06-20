@@ -86,12 +86,37 @@ namespace Vistas
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            string tipo = ddlFiltro.SelectedValue;
+
+            switch (tipo)
+            {
+                case "CodMarca_Pr": tipo = "Descripcion_Ma";
+                break;
+                case "CodCategoria_Pr": tipo = "Descripcion_Cat";
+                break;
+            }
+
+            grvProductos.DataSource = np.filtrarProductos(tipo , txtFiltro.Text);
+            grvProductos.DataBind();
+
+            if(np.filtrarProductos(tipo, txtFiltro.Text).Rows.Count == 0)
+            {
+                Resultado.ForeColor = System.Drawing.Color.Red;
+                Resultado.Text = "NO SE ENCONTRARON RESULTADOS";
+            }
+            else
+            {
+                Resultado.Text = "";
+            }
 
         }
 
         protected void btnQuitarFiltro_Click(object sender, EventArgs e)
         {
-
+            ddlFiltro.SelectedIndex = 0;
+            txtFiltro.Text = "";
+            Resultado.Text = "";
+            cargartablaProductos();
         }
 
         protected void grvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)

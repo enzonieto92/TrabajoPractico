@@ -55,8 +55,8 @@
             <strong>Filtros</strong><br />
             <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="auto-style12">
                 <asp:ListItem Value="CodProducto_Pr">Codigo Producto</asp:ListItem>
-                <asp:ListItem Value="CodMarca_Pr">Codigo Marca</asp:ListItem>
-                <asp:ListItem Value="CodCategoria_Pr">Codigo Categoría</asp:ListItem>
+                <asp:ListItem Value="CodMarca_Pr">Marca</asp:ListItem>
+                <asp:ListItem Value="CodCategoria_Pr">Categoría</asp:ListItem>
                 <asp:ListItem Value="Nombre_Pr">Nombre</asp:ListItem>
                 <asp:ListItem Value="Descripcion_Pr">Descripcion</asp:ListItem>
                 <asp:ListItem Value="Estado_Pr">Estado de Producto</asp:ListItem>
