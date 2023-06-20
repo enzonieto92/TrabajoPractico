@@ -73,25 +73,16 @@
                             <AlternatingRowStyle BackColor="Gainsboro" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Codigo Producto">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="txtCodigoEdit" runat="server" Text='<%# Bind("CodProducto_Pr") %>'></asp:TextBox>
-                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_CodProd" runat="server" Text='<%# Bind("CodProducto_Pr") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Codigo Marca">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="txtMarcaEdit" runat="server" Text='<%# Bind("Descripcion_Ma") %>'></asp:TextBox>
-                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_CodMarca" runat="server" Text='<%# Bind("Descripcion_Ma") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Codigo Categoria">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="txtCategoriaEdit" runat="server" Text='<%# Bind("Descripcion_Cat") %>'></asp:TextBox>
-                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_CodCat" runat="server" Text='<%# Bind("Descripcion_Cat") %>'></asp:Label>
                                     </ItemTemplate>

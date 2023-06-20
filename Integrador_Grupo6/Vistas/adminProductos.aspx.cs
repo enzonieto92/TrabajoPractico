@@ -186,8 +186,29 @@ namespace Vistas
 
         protected void grvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            cargartablaProductos();
+            // Obtener la fila editada
+            GridViewRow row = grvProductos.Rows[e.RowIndex];
 
+            // Obtener los valores actualizados
+            string codigoProducto = ((Label)row.FindControl("lbl_it_CodProd")).Text;
+            string nombre = ((TextBox)row.FindControl("txtNombreEdit")).Text;
+            string descripcion = ((TextBox)row.FindControl("txtDescripcionEdit")).Text;
+            string precioUnitario = ((TextBox)row.FindControl("txtPrecioEdit")).Text;
+            bool estado = ((CheckBox)row.FindControl("cbEstado")).Checked;
+
+            // Crear el objeto Productos con los valores actualizados
+            Productos productoActualizado = new Productos();
+            productoActualizado.CodProducto_Pr1 = codigoProducto;
+            productoActualizado.Nombre_Pr1 = nombre;
+            productoActualizado.Descripcion_Pr1 = descripcion;
+            productoActualizado.PrecioUnitario_Pr1 = decimal.Parse(precioUnitario);
+            productoActualizado.Estado_Pr = estado;
+
+            // Llamar al método np.actualizarProducto para guardar los datos actualizados en la base de datos
+            np.actualizarProducto(productoActualizado);
+            grvProductos.EditIndex = -1;
+            // Volver a cargar la tabla de productos después de la actualización
+            cargartablaProductos();
         }
 
         protected void grvProductos_RowEditing(object sender, GridViewEditEventArgs e)
