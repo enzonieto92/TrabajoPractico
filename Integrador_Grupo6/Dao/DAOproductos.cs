@@ -65,17 +65,17 @@ namespace Dao
         private void armarParametrosAgregar(ref SqlCommand cmd, Productos prod)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = cmd.Parameters.Add("@CodProducto_Pr", SqlDbType.Char);
+            SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
             SqlParametros.Value = prod.CodProducto_Pr1;
-            SqlParametros = cmd.Parameters.Add("@CodMarcas_Pr", SqlDbType.Char);
-            SqlParametros.Value = prod.CodMarcas_Pr1.CodMarca_Ma;
-            SqlParametros = cmd.Parameters.Add("@CodCategoria_Pr", SqlDbType.Char);
-            SqlParametros.Value = prod.CodCategoria_Pr1.CodCategoria_Ca;
-            SqlParametros = cmd.Parameters.Add("@Descripcion_Pr", SqlDbType.VarChar);
+            SqlParametros = cmd.Parameters.Add("@CodMarca", SqlDbType.Char);
+            SqlParametros.Value = prod.CodMarcas_Pr1;
+            SqlParametros = cmd.Parameters.Add("@CodCategoria", SqlDbType.Char);
+            SqlParametros.Value = prod.CodCategoria_Pr1;
+            SqlParametros = cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar);
             SqlParametros.Value = prod.Descripcion_Pr1;
-            SqlParametros = cmd.Parameters.Add("@Nombre_Pr", SqlDbType.VarChar);
+            SqlParametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar);
             SqlParametros.Value = prod.Nombre_Pr1;
-            SqlParametros = cmd.Parameters.Add("@Urlimagen_Pr", SqlDbType.VarChar);
+            SqlParametros = cmd.Parameters.Add("@Urlimagen", SqlDbType.VarChar);
             SqlParametros.Value = prod.UrlImagen_Pr1;
             SqlParametros = cmd.Parameters.Add("@PrecioUnitario", SqlDbType.Decimal);
             SqlParametros.Value = prod.PrecioUnitario_Pr1;
@@ -87,9 +87,9 @@ namespace Dao
             SqlParametros = cmd.Parameters.Add("@CodProducto_Pr", SqlDbType.Char);
             SqlParametros.Value = prod.CodProducto_Pr1;
             SqlParametros = cmd.Parameters.Add("@CodMarcas_Pr", SqlDbType.Char);
-            SqlParametros.Value = prod.CodMarcas_Pr1.CodMarca_Ma;
+            SqlParametros.Value = prod.CodMarcas_Pr1;
             SqlParametros = cmd.Parameters.Add("@CodCategoria_Pr", SqlDbType.Char);
-            SqlParametros.Value = prod.CodCategoria_Pr1.CodCategoria_Ca;
+            SqlParametros.Value = prod.CodCategoria_Pr1;
             SqlParametros = cmd.Parameters.Add("@Descripcion_Pr", SqlDbType.VarChar);
             SqlParametros.Value = prod.Descripcion_Pr1;
             SqlParametros = cmd.Parameters.Add("@Nombre_Pr", SqlDbType.VarChar);

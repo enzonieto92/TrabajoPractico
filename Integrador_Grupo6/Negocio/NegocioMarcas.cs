@@ -35,5 +35,16 @@ namespace Negocio
 
             return nombre;
         }
+
+        public string codigoMarca (string nombre)
+        {
+            string codigo;
+            DataTable tabla;
+
+            tabla = Dmar.codMarca(nombre);
+            codigo = tabla.Rows[0]["CodMarca_Ma"].ToString();
+
+            return codigo;
+        }
     }
 }

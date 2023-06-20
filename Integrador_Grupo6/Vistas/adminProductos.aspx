@@ -101,11 +101,9 @@
                                         <asp:Label ID="lbl_it_Desc" runat="server" Text='<%# Bind("Descripcion_Pr") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Url Imagen">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_it_img" runat="server" Text='<%# Bind("URLimagen_Pr") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:ImageField DataImageUrlField="URLimagen_Pr" HeaderText="Imagen">
+                                    <ControlStyle Height="40px" Width="50px" />
+                                </asp:ImageField>
                                 <asp:TemplateField HeaderText="Precio Unitario">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_Precio" runat="server" Text='<%# Bind("PrecioUnitario") %>'></asp:Label>
@@ -166,15 +164,14 @@
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"><strong>Url de la Imagen del Producto<br />
-                        <asp:TextBox ID="txtUrl" runat="server" CssClass="auto-style16" MaxLength="60" TextMode="Url"></asp:TextBox>
+                    <td colspan="2"><strong>Cargar Imagen del Producto<br />
+                        <asp:FileUpload ID="FileUploadImagenProd" runat="server" />
                         <br />
                         </strong></td>
-                    <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style12" colspan="2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripcion<br />
-                        <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" MaxLength="100" TextMode="MultiLine" Width="364px" ValidationGroup="1"></asp:TextBox>
+                    <td class="auto-style12" colspan="2"><strong>Descripcion<br />
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="115px" MaxLength="100" TextMode="MultiLine" Width="431px" ValidationGroup="1"></asp:TextBox>
                         <br />
                         </strong></td>
                 </tr>
@@ -193,10 +190,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">
-                        &nbsp;</td>
-                    <td class="auto-style4">
-                        &nbsp;</td>
+                    <td colspan="2">
+                        <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

@@ -28,7 +28,17 @@ namespace Dao
         public DataTable nomMarca(string CodMarca)
         {
             DataTable tabla;
-            string consulta = "SELECT Descripcion_Ma, FROM Marcas WHERE CodMarca_Ma = " + CodMarca;
+            string consulta = "SELECT Descripcion_Ma FROM Marcas WHERE CodMarca_Ma = " + CodMarca;
+
+            tabla = cn.ObtenerTabla("Marcas", consulta);
+
+            return tabla;
+        }
+
+        public DataTable codMarca(string nombre)
+        {
+            DataTable tabla;
+            string consulta = "SELECT CodMarca_Ma FROM Marcas WHERE Descripcion_Ma = " + nombre;
 
             tabla = cn.ObtenerTabla("Marcas", consulta);
 
