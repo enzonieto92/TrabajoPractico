@@ -43,10 +43,10 @@ namespace Vistas
             DataTable tabla;
 
             tabla = NC.listarCategorias();
-            ddlTalleProducto.DataSource = tabla;
-            ddlTalleProducto.DataTextField = "Descripcion_Cat";
-            ddlTalleProducto.DataValueField = "CodCategoria_Cat";
-            ddlTalleProducto.DataBind();
+            ddlCategoriaProducto.DataSource = tabla;
+            ddlCategoriaProducto.DataTextField = "Descripcion_Cat";
+            ddlCategoriaProducto.DataValueField = "CodCategoria_Cat";
+            ddlCategoriaProducto.DataBind();
         }
 
         void cargarMarcas()
@@ -78,16 +78,6 @@ namespace Vistas
 
         }
 
-        protected void btnIngresarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnIngresarStock_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
 
@@ -114,6 +104,16 @@ namespace Vistas
             }
             cargartablaProductos();
             
+        }
+
+        protected void btnIngresarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnIngresarStock_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

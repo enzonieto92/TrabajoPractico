@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caracteristicas.cs" />
+    <Compile Include="CaracteristicasXproductoXcolores.cs" />
     <Compile Include="Categorias.cs" />
+    <Compile Include="Colores.cs" />
+    <Compile Include="DetalleFacturas.cs" />
+    <Compile Include="Facturas.cs" />
     <Compile Include="Marcas.cs" />
+    <Compile Include="MetodoDeEnvio.cs" />
+    <Compile Include="MetodoDePago.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />

@@ -14,6 +14,28 @@
         .auto-style2 {
             width: 251px;
         }
+        .auto-style3 {
+            width: 185px;
+        }
+        .auto-style4 {
+            width: 219px;
+        }
+        .auto-style6 {
+            width: 253px;
+            height: 64px;
+        }
+        .auto-style7 {
+            width: 428px;
+            height: 64px;
+        }
+        .auto-style8 {
+            width: 253px;
+            height: 66px;
+        }
+        .auto-style10 {
+            width: 219px;
+            height: 114px;
+        }
     </style>
 </head>
 <body>
@@ -103,73 +125,77 @@
             </table>
             <strong>
             <br class="auto-style6" />
-            <span class="auto-style6">Ingresar Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ingresar Stock del Producto<br />
+            <span class="auto-style6">Ingresar Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar Stock del Producto:<br />
             <br />
             </span>
             <span class="auto-style15">Código de Producto<br />
             </span>
             <asp:TextBox ID="txtCodProd" runat="server" MaxLength="6"></asp:TextBox>
-&nbsp;</strong><table class="auto-style1">
+&nbsp;</strong><table>
                 <tr>
-                    <td class="auto-style12"><strong>Nombre<br />
+                    <td class="auto-style4"><strong>Nombre<br />
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="auto-style11" MaxLength="20"></asp:TextBox>
+                        <br />
                         </strong></td>
-                    <td><strong>Categoría<br />
-                        <asp:DropDownList ID="ddlTalleProducto" runat="server">
+                    <td class="auto-style4"><strong>Categoría<br />
+                        <asp:DropDownList ID="ddlCategoriaProducto" runat="server">
                         </asp:DropDownList>
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style16"><strong>Marca<br />
+                    <td class="auto-style4"><strong>Marca<br />
                         <asp:DropDownList ID="ddlMarcas" runat="server">
                         </asp:DropDownList>
                         </strong></td>
-                    <td class="auto-style17"><strong>Color<br />
+                    <td class="auto-style4"><strong>Color<br />
                         <asp:DropDownList ID="ddlColorProducto" runat="server">
                         </asp:DropDownList>
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style12"><strong>
+                    <td class="auto-style10"><strong>
                         <asp:Label ID="Label27" runat="server" Text="Precio Unitario"></asp:Label>
                         <br />
                         <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="auto-style16"></asp:TextBox>
+                        <br />
                         </strong></td>
-                    <td><strong>
+                    <td class="auto-style10"><strong>
                         <asp:Label ID="Label28" runat="server" Text="Stock"></asp:Label>
                         <br />
                         <asp:TextBox ID="txtStock" runat="server" CssClass="auto-style16" TextMode="Number"></asp:TextBox>
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style12"><strong>Url de la Imagen del Producto<br />
+                    <td class="auto-style4"><strong>Url de la Imagen del Producto<br />
                         <asp:TextBox ID="txtUrl" runat="server" CssClass="auto-style16" MaxLength="60" TextMode="Url"></asp:TextBox>
+                        <br />
                         </strong></td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style12" colspan="2"><strong>Descripcion<br />
-                        <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" MaxLength="100" TextMode="MultiLine" Width="364px"></asp:TextBox>
+                    <td class="auto-style12" colspan="2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripcion<br />
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" MaxLength="100" TextMode="MultiLine" Width="364px" ValidationGroup="1"></asp:TextBox>
+                        <br />
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style12">
+                    <td class="auto-style4">
                         &nbsp;</td>
-                    <td>
+                    <td class="auto-style4">
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style12">
+                    <td class="auto-style4">
                         <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
                     </td>
-                    <td>
+                    <td class="auto-style4">
                         <asp:Button ID="btnIngresarStock" runat="server" Text="Ingresar Stock" ValidationGroup="2" OnClick="btnIngresarStock_Click" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style12">
+                    <td class="auto-style4">
                         &nbsp;</td>
-                    <td>
+                    <td class="auto-style4">
                         &nbsp;</td>
                 </tr>
             </table>
