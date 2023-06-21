@@ -18,5 +18,13 @@ namespace Negocio
         {
             return dDF.getTabla(nroFactura);
         }
+
+        public decimal getTotalProductosVendidos(string consulta)
+        {
+            decimal cantidad = dDF.getTotalProductosVendidos(consulta);
+            return cantidad;
+        }
     }
+
+    
 }

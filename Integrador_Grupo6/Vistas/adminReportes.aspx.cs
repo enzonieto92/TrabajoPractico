@@ -158,11 +158,25 @@ namespace Vistas
 
         protected void btnFiltroVentas_Click(object sender, EventArgs e)
         {
+            String consulta = armarParametrosFecha();
+
+            DataTable tablaFacturas = nsF.getTabla();
+            grvFacturas.DataSource = tablaFacturas;
+           
+
+            lblProductosVendidos.Text = Convert.ToString(nDF.getTotalProductosVendidos(consulta));
+
+            vaciarGridDetalleFacturas();
         }
 
         protected void btnFiltroTotal_Click(object sender, EventArgs e)
         {
+            string consulta = armarParametrosFecha();
+            DataTable tablaFacturas = nsF.getTabla();
+            grvFacturas.DataSource = tablaFacturas;
+            
 
+            lblReporteTotal.Text = "$ " + Convert.ToString(nsF.getTotalRecaudado(consulta));
         }
     }
 }

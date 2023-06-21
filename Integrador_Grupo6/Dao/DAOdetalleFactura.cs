@@ -21,5 +21,18 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("DetalleFacturas", consulta);
             return tabla;
         }
+
+        public decimal getTotalProductosVendidos(string consulta)
+        {
+            string con = "SELECT SUM(Cantidad_Df) AS [Total Productos Vendidos] FROM DetalleFacturas INNER JOIN Facturas ON NroFactura_Df = NroFactura_Fa " + consulta;
+            DataTable tabla = cn.ObtenerTabla("Facturas", con);
+            decimal cantidad = 0;
+
+            cantidad = Convert.ToInt32(tabla.Rows[0]["Total Productos Vendidos"] is DBNull ? 0 : tabla.Rows[0]["Total Productos Vendidos"]);
+
+            return cantidad;
+        }
     }
+
+
 }

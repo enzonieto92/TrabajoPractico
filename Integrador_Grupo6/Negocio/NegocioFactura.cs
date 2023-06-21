@@ -25,5 +25,10 @@ namespace Negocio
         {
             return df.getTablaFecha(consulta);
         }
+        public decimal getTotalRecaudado(string consulta)
+        {
+            decimal cantidad = df.getTotalRecaudado(consulta);
+            return cantidad;
+        }
     }
 }

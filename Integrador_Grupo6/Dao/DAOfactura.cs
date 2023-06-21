@@ -31,5 +31,16 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("Facturas", con);
             return tabla;
         }
+
+        public decimal getTotalRecaudado(String consulta)
+        {
+            string con = "SELECT SUM(Total_Fa) AS[Total Recaudado] FROM Facturas " + consulta;
+            DataTable tabla = cn.ObtenerTabla("Facturas", con);
+            decimal cantidad = 0;
+
+            cantidad = Convert.ToInt32(tabla.Rows[0]["Total Recaudado"] is DBNull ? 0 : tabla.Rows[0]["Total Recaudado"]);
+
+            return cantidad;
+        }
     }
 }
