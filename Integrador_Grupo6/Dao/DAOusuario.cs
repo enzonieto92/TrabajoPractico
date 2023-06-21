@@ -29,8 +29,9 @@ namespace Dao
             return usu;
         }
 
-        public DataTable getTabla(string consulta)
+        public DataTable getTabla()
         {
+            string consulta = "Select * from Usuario";
             DataTable tabla = cn.ObtenerTabla("Usuario", consulta);
             return tabla;
         }
@@ -98,6 +99,12 @@ namespace Dao
 
             parametros = cmd.Parameters.Add("@Estado", SqlDbType.Bit);
             parametros.Value = Us.Estado_Us1;
+        }
+        public DataTable filtroUsuario(string tipo, string texto)
+        {
+            string consulta = "select * from Usuario where " + tipo + " like '%[" + texto + "]%'";
+            DataTable tabla = cn.ObtenerTabla("Usuario", consulta);
+            return tabla;
         }
     }
 }

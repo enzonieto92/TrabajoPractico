@@ -13,9 +13,9 @@ namespace Negocio
     public class NegocioUsuario
     {
         DAOusuario du = new DAOusuario();
-        public DataTable getTabla(string consulta)
+        public DataTable getTabla()
         {
-            return du.getTabla(consulta);
+            return du.getTabla();
         }
         public bool EliminarUsuario(Usuario us)
         {
@@ -53,6 +53,11 @@ namespace Negocio
             cantFilas = du.ActualizarUsuario(Us);
             if (cantFilas == 1) return true;
             else return false;
+        }
+
+        public DataTable filtrarUsuario(string tipo, string texto)
+        {
+            return du.filtroUsuario(tipo, texto);
         }
     }
 }

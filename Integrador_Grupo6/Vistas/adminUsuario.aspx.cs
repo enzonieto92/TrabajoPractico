@@ -25,7 +25,7 @@ namespace Vistas
         }
         void cargarTablaUsuario()
         {
-            DataTable tablaUsuarios = nSU.getTabla("SELECT * FROM Usuario");
+            DataTable tablaUsuarios = nSU.getTabla();
             grvUsuarios.DataSource = tablaUsuarios;
             grvUsuarios.DataBind();
         }
@@ -158,7 +158,8 @@ namespace Vistas
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            DataTable tablaProductos = nSU.getTabla($"SELECT * FROM Usuario WHERE {ddlFiltro.SelectedValue} LIKE '%{txtFiltro.Text}%'");
+            string tipo = ddlFiltro.SelectedValue;
+            DataTable tablaProductos = nSU.filtrarUsuario(tipo,txtFiltro.Text);
             grvUsuarios.DataSource = tablaProductos;
             grvUsuarios.DataBind();
             limpiarCampos();

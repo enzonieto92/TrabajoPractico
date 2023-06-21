@@ -44,6 +44,8 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="DAOcategoria.cs" />
     <Compile Include="DAOcolor.cs" />
+    <Compile Include="DAOdetalleFactura.cs" />
+    <Compile Include="DAOfactura.cs" />
     <Compile Include="DAOmarcas.cs" />
     <Compile Include="DAOproductos.cs" />
     <Compile Include="DAOusuario.cs" />
