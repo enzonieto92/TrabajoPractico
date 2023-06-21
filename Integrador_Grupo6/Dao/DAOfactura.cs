@@ -19,5 +19,17 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("Facturas", consulta);
             return tabla;
         }
+        public DataTable getFiltro(string texto)
+        {
+            string consulta = "Select * from Facturas where NroFactura_Fa = '" + texto + "'";
+            DataTable tabla = cn.ObtenerTabla("Facturas", consulta);
+            return tabla;
+        }
+        public DataTable getTablaFecha(String consulta)
+        {
+            string con = "select * from Facturas " + consulta;
+            DataTable tabla = cn.ObtenerTabla("Facturas", con);
+            return tabla;
+        }
     }
 }

@@ -105,6 +105,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtFecha1;
 
         /// <summary>
+        /// Control revFecha1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator revFecha1;
+
+        /// <summary>
         /// Control txtFecha2.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFecha2;
+
+        /// <summary>
+        /// Control rfvFecha2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFecha2;
 
         /// <summary>
         /// Control btnFiltroFecha.

@@ -17,5 +17,13 @@ namespace Negocio
         {
             return df.getTabla();
         }
+        public DataTable filtrar(string txt)
+        {
+            return df.getFiltro(txt);
+        }
+        public DataTable getTablaFecha(string consulta)
+        {
+            return df.getTablaFecha(consulta);
+        }
     }
 }

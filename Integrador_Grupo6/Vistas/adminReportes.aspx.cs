@@ -18,6 +18,7 @@ namespace Vistas
         NegocioDetalleFactura nDF = new NegocioDetalleFactura();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 cargarTablaFacturasTODO();
@@ -59,47 +60,104 @@ namespace Vistas
 
         protected void btnBuscarReporte_Click(object sender, EventArgs e)
         {
-
+            DataTable tablaFacturas = nsF.filtrar(txtReporteDeVenta.Text);
+            grvFacturas.DataSource = tablaFacturas;
+            grvFacturas.DataBind();
+            txtReporteDeVenta.Text = "";
+            vaciarGridDetalleFacturas();
         }
 
         protected void btnQuitarFiltros_Click(object sender, EventArgs e)
         {
-
+            cargarTablaFacturasTODO();
+            vaciarGridDetalleFacturas();
+            limpiarCampos();
         }
-
-        protected void lbProcudctos_Click(object sender, EventArgs e)
+        void limpiarCampos()
+        {
+            txtReporteDeVenta.Text = "";
+        }
+        public string armarParametrosFecha()
         {
 
-        }
+            string consulta = "WHERE Fecha_Fa";
+            if (txtFecha1.Text != "" || txtFecha2.Text != "")
+            {
 
-        protected void lbUsuarios_Click(object sender, EventArgs e)
-        {
 
-        }
+                if (ddlFiltroFecha.SelectedValue == "=")
+                {
+                    consulta += $" = '{txtFecha1.Text}'";
 
-        protected void lbReportes_Click(object sender, EventArgs e)
-        {
+                }
+                if (ddlFiltroFecha.SelectedValue == ">=")
+                {
+                    consulta += $" >= '{txtFecha1.Text}'";
 
-        }
 
-        protected void lbCerrarSesión_Click(object sender, EventArgs e)
-        {
+                }
+                if (ddlFiltroFecha.SelectedValue == "<=")
+                {
+                    consulta += $" <= '{txtFecha1.Text}'";
+
+                }
+                if (ddlFiltroFecha.SelectedValue == "entre")
+                {
+                    consulta += $" >= '{txtFecha1.Text}' AND Fecha_Fa <= '{txtFecha2.Text}'";
+
+                }
+            }
+            return consulta;
 
         }
 
         protected void ddlFiltroFecha_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlFiltroFecha.SelectedValue != "-1")
+            {
+                if (ddlFiltroFecha.SelectedValue == "entre")
+                {
+                    txtFecha2.Visible = true;
+                    rfvFecha2.Visible = true;
+                }
+                else
+                {
+                    txtFecha2.Visible = false;
+                    rfvFecha2.Visible = false;
+                }
 
+                txtFecha1.Visible = true;
+                txtFecha2.Text = "";
+                PanelFiltros.Visible = true;
+                btnFiltroFecha.Visible = true;
+                btnFiltroTotal.Visible = true;
+            }
+            else
+            {
+                txtFecha1.Text = "";
+                txtFecha1.Visible = false;
+                txtFecha2.Visible = false;
+                btnFiltroFecha.Visible = false;
+                PanelFiltros.Visible = false;
+            }
         }
 
         protected void btnFiltroFecha_Click(object sender, EventArgs e)
         {
-
+            string consulta = armarParametrosFecha();
+            DataTable tablaFacturas = nsF.getTablaFecha(consulta);
+            grvFacturas.DataSource = tablaFacturas;
+            grvFacturas.DataBind();
+            vaciarGridDetalleFacturas();
+        }
+        public void vaciarGridDetalleFacturas()
+        {
+            grvDetalleFacturas.DataSource = null;
+            grvDetalleFacturas.DataBind();
         }
 
         protected void btnFiltroVentas_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void btnFiltroTotal_Click(object sender, EventArgs e)
