@@ -20,7 +20,7 @@ namespace Dao
 
         public DataTable getTabla()
         {
-            string consulta = "SELECT CodProducto_Pr, Descripcion_Ma, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
+            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
                               "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
@@ -86,6 +86,10 @@ namespace Dao
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
             SqlParametros.Value = prod.CodProducto_Pr1;
+            SqlParametros = cmd.Parameters.Add("@CodMarca", SqlDbType.Char);
+            SqlParametros.Value = prod.CodMarcas_Pr1.CodMarca_Ma;
+            SqlParametros = cmd.Parameters.Add("@CodCategoria", SqlDbType.Char);
+            SqlParametros.Value = prod.CodCategoria_Pr1.CodCategoria_Ca;
             SqlParametros = cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar);
             SqlParametros.Value = prod.Descripcion_Pr1;
             SqlParametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar);

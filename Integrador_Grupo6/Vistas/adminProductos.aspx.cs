@@ -17,6 +17,9 @@ namespace Vistas
     {
 
         NegocioProductos np = new NegocioProductos();
+        NegocioCategorias NC = new NegocioCategorias();
+        NegocioMarcas NM = new NegocioMarcas();
+        NegocioColores NCo = new NegocioColores();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,7 +41,7 @@ namespace Vistas
 
         void cargarCategorias()
         {
-            NegocioCategorias NC = new NegocioCategorias();
+            
             DataTable tabla;
 
             tabla = NC.listarCategorias();
@@ -52,7 +55,7 @@ namespace Vistas
 
         void cargarMarcas()
         {
-            NegocioMarcas NM = new NegocioMarcas();
+            
             DataTable tabla;
 
             tabla = NM.listarMarcas();
@@ -66,10 +69,10 @@ namespace Vistas
 
         void cargarColores()
         {
-            NegocioColores NC = new NegocioColores();
+    
             DataTable tabla;
 
-            tabla = NC.listarColores();
+            tabla = NCo.listarColores();
             ddlColorProducto.DataSource = tabla;
             tabla.Rows.Add("-- Seleccionar --", "-- Seleccionar --");
             ddlColorProducto.DataTextField = "Descripcion_Co";
@@ -135,11 +138,10 @@ namespace Vistas
         protected void btnIngresarProducto_Click(object sender, EventArgs e)
         {
             Productos pro = new Productos();
-            NegocioProductos NP = new NegocioProductos();
 
             pro = cargarproducto();
 
-            if (NP.agregarProducto(pro))
+            if (np.agregarProducto(pro))
             {
                 cargartablaProductos();
                 limpiarCampos();
@@ -157,13 +159,12 @@ namespace Vistas
         private Productos cargarproducto()
         {
             Productos pro = new Productos();
-            NegocioMarcas NM = new NegocioMarcas();
             Marcas mar = new Marcas();
 
             pro.CodProducto_Pr1 = txtCodProd.Text;
             pro.Nombre_Pr1 = txtNombre.Text;
-            pro.CodCategoria_Pr1 = ddlCategoriaProducto.SelectedValue.ToString();
-            pro.CodMarcas_Pr1 = ddlMarcas.SelectedValue.ToString();
+            pro.CodCategoria_Pr1.CodCategoria_Ca = ddlCategoriaProducto.SelectedValue.ToString();
+            pro.CodMarcas_Pr1.CodMarca_Ma = ddlMarcas.SelectedValue.ToString();
             pro.PrecioUnitario_Pr1 = Convert.ToDecimal(txtPrecioUnitario.Text);
             pro.UrlImagen_Pr1 = "~/Imagenes/Productos/" + FileUploadImagenProd.PostedFile.FileName;
             pro.Descripcion_Pr1 = txtDescripcion.Text;
@@ -191,6 +192,8 @@ namespace Vistas
 
             // Obtener los valores actualizados
             string codigoProducto = ((Label)row.FindControl("lbl_it_CodProd")).Text;
+            string codMarca = ((DropDownList)row.FindControl("ei_ddl_Marca")).SelectedValue;
+            string codCategoria = ((DropDownList)row.FindControl("ei_ddl_Categoria")).SelectedValue;
             string nombre = ((TextBox)row.FindControl("txtNombreEdit")).Text;
             string descripcion = ((TextBox)row.FindControl("txtDescripcionEdit")).Text;
             string precioUnitario = ((TextBox)row.FindControl("txtPrecioEdit")).Text;
@@ -199,6 +202,8 @@ namespace Vistas
             // Crear el objeto Productos con los valores actualizados
             Productos productoActualizado = new Productos();
             productoActualizado.CodProducto_Pr1 = codigoProducto;
+            productoActualizado.CodMarcas_Pr1.CodMarca_Ma = codMarca;
+            productoActualizado.CodCategoria_Pr1.CodCategoria_Ca = codCategoria;
             productoActualizado.Nombre_Pr1 = nombre;
             productoActualizado.Descripcion_Pr1 = descripcion;
             productoActualizado.PrecioUnitario_Pr1 = decimal.Parse(precioUnitario);
@@ -240,6 +245,26 @@ namespace Vistas
         protected void btnIngresarStock_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowState==DataControlRowState.Edit)
+            {
+                DropDownList ddlMa = (DropDownList)e.Row.FindControl("ei_ddl_Marca");
+                DropDownList ddlCat = (DropDownList)e.Row.FindControl("ei_ddl_Categoria");
+                DataTable tablaMarcas = NM.listarMarcas();
+                ddlMa.DataSource = tablaMarcas;
+                ddlMa.DataTextField = "CodMarca_Ma";
+                ddlMa.DataValueField = "CodMarca_Ma";
+                ddlMa.DataBind();
+
+                DataTable tablaCategoria = NC.listarCategorias();
+                ddlCat.DataSource = tablaCategoria;
+                ddlCat.DataTextField = "CodCategoria_Cat";
+                ddlCat.DataValueField = "CodCategoria_Cat";
+                ddlCat.DataBind();
+            }
         }
     }
 }

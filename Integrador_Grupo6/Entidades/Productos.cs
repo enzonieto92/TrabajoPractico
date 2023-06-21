@@ -14,7 +14,7 @@ namespace Entidades
 
         }
 
-        public Productos(string codProducto_Pr, string codMarcas_Pr, string codCategoria_Pr, string nombre_Pr, string descripcion_Pr, decimal precioUnitario_Pr, string urlImagen_Pr, bool estado_Pr)
+        public Productos(string codProducto_Pr, Marcas codMarcas_Pr, Categorias codCategoria_Pr, string nombre_Pr, string descripcion_Pr, decimal precioUnitario_Pr, string urlImagen_Pr, bool estado_Pr)
         {
             CodProducto_Pr = codProducto_Pr;
             CodMarcas_Pr = codMarcas_Pr;
@@ -27,8 +27,8 @@ namespace Entidades
         }
 
         private string CodProducto_Pr;
-        private string CodMarcas_Pr;
-        private string CodCategoria_Pr;
+        private Marcas CodMarcas_Pr = new Marcas();
+        private Categorias CodCategoria_Pr = new Categorias();
         private string Nombre_Pr;
         private string Descripcion_Pr;
         private decimal PrecioUnitario_Pr;
@@ -36,8 +36,8 @@ namespace Entidades
         private bool estado_Pr;
 
         public string CodProducto_Pr1 { get => CodProducto_Pr; set => CodProducto_Pr = value; }
-        public string CodMarcas_Pr1 { get => CodMarcas_Pr; set => CodMarcas_Pr = value; }
-        public string CodCategoria_Pr1 { get => CodCategoria_Pr; set => CodCategoria_Pr = value; }
+        public Marcas CodMarcas_Pr1 { get => CodMarcas_Pr; set => CodMarcas_Pr = value; }
+        public Categorias CodCategoria_Pr1 { get => CodCategoria_Pr; set => CodCategoria_Pr = value; }
         public string Nombre_Pr1 { get => Nombre_Pr; set => Nombre_Pr = value; }
         public string Descripcion_Pr1 { get => Descripcion_Pr; set => Descripcion_Pr = value; }
         public decimal PrecioUnitario_Pr1 { get => PrecioUnitario_Pr; set => PrecioUnitario_Pr = value; }
