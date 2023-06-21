@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
     <header>
         		<div class="wrapper">
-			<div class="logo">TECNO UTN</div>
+			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
 				<a href="inicio.aspx">
@@ -28,6 +28,7 @@
            </nav>
 		</div>
     </header>
+       
     <asp:Panel ID="Panelpopup" runat="server" Visible="False">
     <div id="miPopup" class="popup">
             <div class="popup-contenido">
@@ -112,87 +113,70 @@
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar"  />
         </div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">
-                    <table class="auto-style3">
-                        <tr>
-                           
+        <div class="contenedor">
+                            <h3 style="font-family:sans-serif; text-align:center;">Categorías</h3>
                                 
-                         
-                                
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Categorías</strong><asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
-                                <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
-                                <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
-                                <asp:ListItem Value="3">Gaming</asp:ListItem>
-                                <asp:ListItem Value="4">Notebooks</asp:ListItem>
-                                <asp:ListItem Value="5">Realidad Virtual</asp:ListItem>
-                                <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
+                                <asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
+                                    <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
+                                    <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
+                                    <asp:ListItem Value="3">Gaming</asp:ListItem>
+                                    <asp:ListItem Value="4">Notebooks</asp:ListItem>
+                                    <asp:ListItem Value="5">Realidad Virtual</asp:ListItem>
+                                    <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
                                 </asp:RadioButtonList>
-                                <br />
-                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" CssClass="boton-personalizado"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style5"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Marcas</strong><asp:RadioButtonList ID="rblMarcas" runat="server" CssClass="radioBtn">
-                                <asp:ListItem Value="1">Nvidia</asp:ListItem>
-                                <asp:ListItem Value="2">Asus</asp:ListItem>
-                                <asp:ListItem Value="3">Xbox</asp:ListItem>
-                                <asp:ListItem Value="4">Sony</asp:ListItem>
-                                <asp:ListItem Value="5">Samsung</asp:ListItem>
-                                <asp:ListItem Value="6">MSI</asp:ListItem>
-                                </asp:RadioButtonList>
-                                <br />
-                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" CssClass="boton-personalizado"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Precio</strong><br />
-                                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max<br />
-                                <asp:TextBox ID="txtPrecioMin" runat="server" Width="101px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:TextBox ID="txtPrecioMax" runat="server" Width="101px"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style6">
-                                <asp:DropDownList ID="ddlOrden" runat="server" Height="16px" Width="170px">
-                                    <asp:ListItem Value="0">----Seleccionar Orden----</asp:ListItem>
-                                    <asp:ListItem Value="PrecioUnitario_Pr ASC">Precio (menor a mayor)</asp:ListItem>
-                                    <asp:ListItem Value="PrecioUnitario_Pr DESC">Precio (mayor a menor)</asp:ListItem>
-                                </asp:DropDownList>
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style7">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="90px" OnClick="btnFiltrar_Click" CssClass="boton-personalizado"/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" CssClass="boton-personalizado"/>
-                            </td>
-                        </tr>
-                    </table>
+                            <div style="display:flex; justify-content:center;margin-top:20px;">
+                                <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" class="boton-personalizado"/>
+                            </div>
 
-        <td>
-            <div style="display:flex;justify-content:center;">
-            <asp:ListView ID="lvProductos" runat="server" DataKeyNames="CodProducto_Pro" DataSourceID="SqlDataSource1" GroupItemCount="4">
+                             <h3 style="text-align:center;font-family:sans-serif;"> Marcas</h3>
+
+                                <asp:RadioButtonList ID="rblMarcas" runat="server" CssClass="radioBtn">
+                                    <asp:ListItem Value="1">Nvidia</asp:ListItem>
+                                    <asp:ListItem Value="2">Asus</asp:ListItem>
+                                    <asp:ListItem Value="3">Xbox</asp:ListItem>
+                                    <asp:ListItem Value="4">Sony</asp:ListItem>
+                                    <asp:ListItem Value="5">Samsung</asp:ListItem>
+                                    <asp:ListItem Value="6">MSI</asp:ListItem>
+                                </asp:RadioButtonList>
+                             <div style="display:flex; justify-content:center;margin-top:20px; margin-bottom:20px;">
+
+                                <asp:Button ID="btnLimpiarMarcas" runat="server" OnClick="btnLimpiarMarcas_Click" Text="Limpiar" class="boton-personalizado"/>
+                            </div>
+
+                                <h3 style="text-align:center;font-family:sans-serif;">Precio</h3>
+                            <div style="width:100%; height:50px;">
+                                    <div style="float:left; width:30%;">
+                                        <asp:Label ID="lblMax" runat="server" Text="Max: " style="display:block;margin-left:10px;"></asp:Label>
+                                        <asp:Label ID="lblMin" runat="server" Text="Min: " style="display:block;margin-left:10px;"></asp:Label>
+                                    </div>
+                                    <div style="float:right;width:70%;">
+                                    <asp:TextBox ID="txtPrecioMin" runat="server" style="width:80px;"></asp:TextBox>
+                                    <asp:TextBox ID="txtPrecioMax" runat="server" style="width:80px;"></asp:TextBox>
+                                    </div>
+                            </div>
+                                <div style="display:flex; justify-content:center;margin-top:20px; ">
+                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="120px" OnClick="btnFiltrar_Click" CssClass="boton-personalizado"/>
+                                    </div>
+                                <div style="display:flex; justify-content:center;margin-top:20px;">
+                                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" CssClass="boton-personalizado"/>
+                                </div>
+            </div>
+
+        <div style="float:right; float:left;width: 80%;display:flex;justify-content:center;">
+                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataSourceID="TecnovatosBD">
                 <EditItemTemplate>
                     <td runat="server" style="background-color: #FFCC66; color: #000080;">CodProducto_Pro:
-                        <asp:Label ID="CodProducto_ProLabel1" runat="server" Text='<%# Eval("CodProducto_Pro") %>' />
+                        <asp:Label ID="CodProducto_ProLabel1" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
                         <br />Nombre_Pro:
-                        <asp:TextBox ID="Nombre_ProTextBox" runat="server" Text='<%# Bind("Nombre_Pro") %>' />
+                        <asp:TextBox ID="Nombre_ProTextBox" runat="server" Text='<%# Bind("Nombre_Pr") %>' />
                         <br />Descripcion_Pro:
-                        <asp:TextBox ID="Descripcion_ProTextBox" runat="server" Text='<%# Bind("Descripcion_Pro") %>' />
+                        <asp:TextBox ID="Descripcion_ProTextBox" runat="server" Text='<%# Bind("Descripcion_Pr") %>' />
                         <br />
                         PrecioUnitario_Pro:
-                        <asp:TextBox ID="PrecioUnitario_ProTextBox" runat="server" Text='<%# Bind("PrecioUnitario_Pro") %>' />
+                        <asp:TextBox ID="PrecioUnitario_ProTextBox" runat="server" Text='<%# Bind("PrecioUnitario_Pr") %>' />
                         <br />
                         imgURL_Pro:
-                        <asp:TextBox ID="imgURL_ProTextBox" runat="server" Text='<%# Bind("imgURL_Pro") %>' />
+                        <asp:Image ID="imgURL_ProTextBox" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' />
                         <br />
                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                         <br />
@@ -215,19 +199,19 @@
                     </tr>
                 </GroupTemplate>
                 <InsertItemTemplate>
-                    <td runat="server" style="">CodProducto_Pro:
-                        <asp:TextBox ID="CodProducto_ProTextBox" runat="server" Text='<%# Bind("CodProducto_Pro") %>' />
+                    <td runat="server">CodProducto_Pro:
+                        <asp:TextBox ID="CodProducto_ProTextBox" runat="server" Text='<%# Bind("CodProducto_Pr") %>' />
                         <br />Nombre_Pro:
-                        <asp:TextBox ID="Nombre_ProTextBox" runat="server" Text='<%# Bind("Nombre_Pro") %>' />
+                        <asp:TextBox ID="Nombre_ProTextBox" runat="server" Text='<%# Bind("Nombre_Pr") %>' />
                         <br />
                         Descripcion_Pro:
-                        <asp:TextBox ID="Descripcion_ProTextBox" runat="server" Text='<%# Bind("Descripcion_Pro") %>' />
+                        <asp:TextBox ID="Descripcion_ProTextBox" runat="server" Text='<%# Bind("Descripcion_Pr") %>' />
                         <br />
                         PrecioUnitario_Pro:
-                        <asp:TextBox ID="PrecioUnitario_ProTextBox" runat="server" Text='<%# Bind("PrecioUnitario_Pro") %>' />
+                        <asp:TextBox ID="PrecioUnitario_ProTextBox" runat="server" Text='<%# Bind("PrecioUnitario") %>' />
                         <br />
                         imgURL_Pro:
-                        <asp:TextBox ID="imgURL_ProTextBox" runat="server" Text='<%# Bind("imgURL_Pro") %>' />
+                        <asp:ImageButton ID="imgURL_ProTextBox" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' />
                         <br />
                         <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                         <br />
@@ -236,26 +220,25 @@
                 </InsertItemTemplate>
                 <ItemTemplate>
                     <td runat="server" class="estiloListView">
-                        <asp:Label class="nombreArticulo" ID="Nombre_ProLabel0" runat="server" Text='<%# Eval("Nombre_Pro") %>' Height="30px"></asp:Label>
-                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("imgURL_Pro") %>' Width="230px" Height="200px" />
+                        <asp:Label class="nombreArticulo" ID="Nombre_ProLabel0" runat="server" Text='<%# Eval("Nombre_Pr") %>' Height="30px"></asp:Label>
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' Width="230px" Height="200px" />
                         <br />
                         Código:
-                        <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pro") %>' />
+                        <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
                         <br />
                         Nombre:
-                        <asp:Label ID="Nombre_ProLabel" runat="server" Text='<%# Eval("Nombre_Pro") %>' />
+                        <asp:Label ID="Nombre_ProLabel" runat="server" Text='<%# Eval("Nombre_Pr") %>' />
                         <br />Descripcion:
-                        <asp:Label style="text-align:left" ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pro") %>' Width="250px" Height="150px"/>
-                        <br />Precio: $<asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario_Pro") %>' />
+                        <asp:Label style="text-align:left" ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>' Width="250px" Height="150px"/>
+                        <br />Precio: $<asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario") %>' />
                         <asp:Button class="boton-personalizado" ID="btnAgregarAlCarrito" runat="server" Text="Agregar al Carrito" />
-                        <br />
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <table id="groupPlaceholderContainer" runat="server" style="background-color: #FFFFFF;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr id="groupPlaceholder" runat="server">
                                     </tr>
                                 </table>
@@ -268,25 +251,23 @@
                 </LayoutTemplate>
                 <SelectedItemTemplate>
                     <td runat="server" style="background-color: #FFCC66; font-weight: bold; color: #000080;">CodProducto_Pro:
-                        <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pro") %>' />
+                        <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
                         <br />Nombre_Pro:
-                        <asp:Label ID="Nombre_ProLabel" runat="server" Text='<%# Eval("Nombre_Pro") %>' />
+                        <asp:Label ID="Nombre_ProLabel" runat="server" Text='<%# Eval("Nombre_Pr") %>' />
                         <br />Descripcion_Pro:
-                        <asp:Label ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pro") %>' />
+                        <asp:Label ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>' />
                         <br />
                         PrecioUnitario_Pro:
-                        <asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario_Pro") %>' />
+                        <asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario") %>' />
                         <br />
                         imgURL_Pro:
-                        <asp:Label ID="imgURL_ProLabel" runat="server" Text='<%# Eval("imgURL_Pro") %>' />
+                        <asp:ImageButton ID="imgURL_ProLabel" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' />
                         <br />
                     </td>
                 </SelectedItemTemplate>
             </asp:ListView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BD_TecnoUTNConnectionString %>" SelectCommand="SELECT [CodProducto_Pro], [Nombre_Pro], [Descripcion_Pro], [PrecioUnitario_Pro], [imgURL_Pro] FROM [Productos]"></asp:SqlDataSource>
-            </div>
-            
-
+                        <asp:SqlDataSource ID="TecnovatosBD" runat="server" ConnectionString="Data Source=DESKTOP-JRNDDIA\SQLEXPRESS;Initial Catalog=TecnovatosBD;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Productos]"></asp:SqlDataSource>
+        </div> 
 
     </form>
 </body>

@@ -4,13 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Entidades;
+using System.Data;
 
 namespace Vistas
 {
     public partial class Inicio : System.Web.UI.Page
     {
+        NegocioProductos neg = new NegocioProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                DataTable TablaProductos = neg.getTabla();
+                //lvProductos.DataSource = TablaProductos;
+               // lvProductos.DataBind();
+            }
             Panelpopup.Visible = false;
             Panelpopup2.Visible = false;
         }

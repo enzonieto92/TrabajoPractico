@@ -312,6 +312,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnLimpiarMarcas;
 
         /// <summary>
+        /// Control lblMax.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMax;
+
+        /// <summary>
+        /// Control lblMin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMin;
+
+        /// <summary>
         /// Control txtPrecioMin.
         /// </summary>
         /// <remarks>
@@ -328,15 +346,6 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecioMax;
-
-        /// <summary>
-        /// Control ddlOrden.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrden;
 
         /// <summary>
         /// Control btnFiltrar.
@@ -366,12 +375,12 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.ListView lvProductos;
 
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control TecnovatosBD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource TecnovatosBD;
     }
 }
