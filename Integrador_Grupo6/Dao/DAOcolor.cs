@@ -14,7 +14,12 @@ namespace Dao
         {
 
         }
-
+        public DataTable getTabla()
+        {
+            string consulta = "select * from Colores";
+            DataTable tabla = cn.ObtenerTabla("Colores", consulta);
+            return tabla;
+        }
         public DataTable tablaCategorias()
         {
             DataTable tabla;

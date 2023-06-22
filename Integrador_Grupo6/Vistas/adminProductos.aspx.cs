@@ -20,6 +20,8 @@ namespace Vistas
         NegocioCategorias NC = new NegocioCategorias();
         NegocioMarcas NM = new NegocioMarcas();
         NegocioColores NCo = new NegocioColores();
+        NegocioCaracteristica NCar = new NegocioCaracteristica();
+        NegocioCaracteristicasXproductosXcolores nsCXPXC = new NegocioCaracteristicasXproductosXcolores();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +31,7 @@ namespace Vistas
                 cargarCategorias();
                 cargarMarcas();
                 cargarColores();
-                cargarDDlCodproductos();
+                cargarDDlStock();
             }
 
         }
@@ -74,12 +76,12 @@ namespace Vistas
             DataTable tabla;
 
             tabla = NCo.listarColores();
-            ddlColorProducto.DataSource = tabla;
+            ddlCaracteristicas.DataSource = tabla;
             tabla.Rows.Add("-- Seleccionar --", "-- Seleccionar --");
-            ddlColorProducto.DataTextField = "Descripcion_Co";
-            ddlColorProducto.DataValueField = "CodColor_Co";
-            ddlColorProducto.Text = "-- Seleccionar --";
-            ddlColorProducto.DataBind();
+            ddlCaracteristicas.DataTextField = "Descripcion_Co";
+            ddlCaracteristicas.DataValueField = "CodColor_Co";
+            ddlCaracteristicas.Text = "-- Seleccionar --";
+            ddlCaracteristicas.DataBind();
         }
 
 
@@ -178,10 +180,8 @@ namespace Vistas
             txtCodProd.Text = "";
             txtNombre.Text = "";
             ddlCategoriaProducto.Text = "-- Seleccionar --";
-            ddlColorProducto.Text = "-- Seleccionar --";
             ddlMarcas.Text = "-- Seleccionar --";
             txtPrecioUnitario.Text = "";
-            txtStock.Text = "";
             txtDescripcion.Text = "";
         }
 
@@ -245,8 +245,20 @@ namespace Vistas
 
         protected void btnIngresarStock_Click(object sender, EventArgs e)
         {
-            np.agregarStock(ddlCodProductos.SelectedItem.Text, txtAgregarStock.Text);
-            cargartablaProductos();
+            bool agrego = nsCXPXC.agregarStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue, Convert.ToInt32(txtAgregarStock.Text));
+            if (agrego)
+            {
+                lblStockAgregado.ForeColor = System.Drawing.Color.Green;
+                lblStockAgregado.Text = "Stock agregado con éxito!";
+            }
+            else
+            {
+                lblStockAgregado.ForeColor = System.Drawing.Color.Red;
+                lblStockAgregado.Text = "No se pudo agregar el stock";
+            }
+
+            limpiarCampos();
+            
         }
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -269,15 +281,44 @@ namespace Vistas
             }
         }
 
-        private void cargarDDlCodproductos()
+        private void cargarDDlStock()
         {
-            DataTable tabla;
+            DataTable tabla = np.getTabla();
 
             tabla = np.getTabla();
             ddlCodProductos.DataSource = tabla;
             ddlCodProductos.DataTextField = "CodProducto_Pr";
-            ddlCodProductos.DataValueField = "Nombre_Pr";
+            ddlCodProductos.DataValueField = "CodProducto_Pr";
             ddlCodProductos.DataBind();
+
+            DataTable tablacaracteristica = NCar.getTabla();
+            ddlCaracteristicas.DataSource = tablacaracteristica;
+            ddlCaracteristicas.DataTextField = "Nombre_Car";
+            ddlCaracteristicas.DataValueField = "CodCaracteristica_Car";
+            ddlCaracteristicas.DataBind();
+
+            DataTable tablaColores = NCo.getTabla();
+            ddlColorProducto.DataSource = tablaColores;
+            ddlColorProducto.DataTextField = "Descripcion_Co";
+            ddlColorProducto.DataValueField = "CodColor_Co";
+            ddlColorProducto.DataBind();
+        }
+
+        protected void btnIngresarStock0_Click(object sender, EventArgs e)
+        {
+            bool verificacion = nsCXPXC.existeStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue);
+            int cantidad;
+            if (verificacion == true)
+            {
+                lblVerificacionStock.ForeColor = System.Drawing.Color.Red;
+                lblVerificacionStock.Text = "No hay stock";
+            }
+            else
+            {
+                cantidad = nsCXPXC.recuentoStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue);
+                lblVerificacionStock.ForeColor = System.Drawing.Color.Green;
+                lblVerificacionStock.Text = "El stock existente de acuerdo a los datos ingresados es de: " + cantidad;
+            }
         }
     }
 }

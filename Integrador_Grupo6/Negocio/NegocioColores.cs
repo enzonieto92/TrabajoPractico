@@ -15,7 +15,10 @@ namespace Negocio
         {
 
         }
-
+        public DataTable getTabla()
+        {
+            return Dcol.getTabla();
+        }
         public DataTable listarColores()
         {
             DataTable tabla;

@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DAOcaracteristicas.cs" />
+    <Compile Include="DAOcaracteristicasXproductosXcolores.cs" />
     <Compile Include="DAOcategoria.cs" />
     <Compile Include="DAOcolor.cs" />
     <Compile Include="DAOdetalleFactura.cs" />

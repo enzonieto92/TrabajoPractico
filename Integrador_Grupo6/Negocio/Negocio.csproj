@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NegocioCaracteristica.cs" />
+    <Compile Include="NegocioCaracteristicasXproductosXcolores.cs" />
     <Compile Include="NegocioCategorias.cs" />
     <Compile Include="NegocioColores.cs" />
     <Compile Include="NegocioDetalleFactura.cs" />
