@@ -68,9 +68,9 @@ namespace Dao
             SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
             SqlParametros.Value = prod.CodProducto_Pr1;
             SqlParametros = cmd.Parameters.Add("@CodMarca", SqlDbType.Char);
-            SqlParametros.Value = prod.CodMarcas_Pr1;
+            SqlParametros.Value = prod.CodMarcas_Pr1.CodMarca_Ma;
             SqlParametros = cmd.Parameters.Add("@CodCategoria", SqlDbType.Char);
-            SqlParametros.Value = prod.CodCategoria_Pr1;
+            SqlParametros.Value = prod.CodCategoria_Pr1.CodCategoria_Ca;
             SqlParametros = cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar);
             SqlParametros.Value = prod.Descripcion_Pr1;
             SqlParametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar);
