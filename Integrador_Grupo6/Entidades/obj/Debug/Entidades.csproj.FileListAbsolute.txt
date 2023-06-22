@@ -22,3 +22,9 @@ C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Ent
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.dll
 C:\Users\enzon\Desktop\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\bin\Debug\Entidades.pdb
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.dll
+C:\Users\LENOVO LEGION\Desktop\Universidad\TrabajoPractico\Integrador_Grupo6\Entidades\obj\Debug\Entidades.pdb

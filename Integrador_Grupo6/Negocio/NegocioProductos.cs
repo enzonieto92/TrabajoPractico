@@ -72,5 +72,17 @@ namespace Negocio
             return Dpr.filtroProductos(tipo, texto);
         }
 
+        public Boolean agregarStock(string codigo, string stock)
+        {
+            if (Dpr.agregarStock(codigo, stock) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -29,6 +29,7 @@ namespace Vistas
                 cargarCategorias();
                 cargarMarcas();
                 cargarColores();
+                cargarDDlCodproductos();
             }
 
         }
@@ -244,7 +245,8 @@ namespace Vistas
 
         protected void btnIngresarStock_Click(object sender, EventArgs e)
         {
-
+            np.agregarStock(ddlCodProductos.SelectedItem.Text, txtAgregarStock.Text);
+            cargartablaProductos();
         }
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -265,6 +267,17 @@ namespace Vistas
                 ddlCat.DataValueField = "CodCategoria_Cat";
                 ddlCat.DataBind();
             }
+        }
+
+        private void cargarDDlCodproductos()
+        {
+            DataTable tabla;
+
+            tabla = np.getTabla();
+            ddlCodProductos.DataSource = tabla;
+            ddlCodProductos.DataTextField = "CodProducto_Pr";
+            ddlCodProductos.DataValueField = "Nombre_Pr";
+            ddlCodProductos.DataBind();
         }
     }
 }

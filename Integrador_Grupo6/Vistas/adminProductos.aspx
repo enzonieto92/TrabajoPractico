@@ -134,6 +134,11 @@
                                         <asp:Label ID="lbl_it_Precio" runat="server" Text='<%# Bind("PrecioUnitario") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Stock">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Stock" runat="server" Text='<%# Bind("Stock_CXPXC") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado">
                                     <EditItemTemplate>
                                         <asp:CheckBox ID="cbEstado" runat="server" Checked='<%# Bind("Estado_Pr") %>'/>
@@ -155,7 +160,7 @@
             </table>
             <strong>
             <br class="auto-style6" />
-            <span class="auto-style6">Ingresar Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar Stock del Producto:<br />
+            <span class="auto-style6">Ingresar Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ingresar Stock del Producto:<br />
             <br />
             </span>
             <span class="auto-style15">Código de Producto<br />
@@ -171,6 +176,10 @@
                         <asp:DropDownList ID="ddlCategoriaProducto" runat="server">
                         </asp:DropDownList>
                         </strong></td>
+                    <td class="auto-style4"><strong>Codigo Producto<br />
+                        <asp:DropDownList ID="ddlCodProductos" runat="server">
+                        </asp:DropDownList>
+                        </strong></td>
                 </tr>
                 <tr>
                     <td class="auto-style4"><strong>Marca<br />
@@ -180,6 +189,10 @@
                     <td class="auto-style4"><strong>Color<br />
                         <asp:DropDownList ID="ddlColorProducto" runat="server">
                         </asp:DropDownList>
+                        </strong></td>
+                    <td class="auto-style4"><strong>Stock a agregar<br />
+                        <asp:TextBox ID="txtAgregarStock" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnIngresarStock" runat="server" Text="Agregar Stock" ValidationGroup="2" OnClick="btnIngresarStock_Click" />
                         </strong></td>
                 </tr>
                 <tr>
@@ -194,20 +207,25 @@
                         <br />
                         <asp:TextBox ID="txtStock" runat="server" CssClass="auto-style16" TextMode="Number"></asp:TextBox>
                         </strong></td>
+                    <td class="auto-style10">&nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="2"><strong>Cargar Imagen del Producto<br />
                         <asp:FileUpload ID="FileUploadImagenProd" runat="server" />
                         <br />
                         </strong></td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style12" colspan="2"><strong>Descripcion<br />
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="115px" MaxLength="100" TextMode="MultiLine" Width="431px" ValidationGroup="1"></asp:TextBox>
                         <br />
                         </strong></td>
+                    <td class="auto-style12">&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                     <td class="auto-style4">
                         &nbsp;</td>
                     <td class="auto-style4">
@@ -218,13 +236,16 @@
                         <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnIngresarStock" runat="server" Text="Ingresar Stock" ValidationGroup="2" OnClick="btnIngresarStock_Click" />
-                    </td>
+                        &nbsp;</td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
                     </td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
             </table>
         </div>

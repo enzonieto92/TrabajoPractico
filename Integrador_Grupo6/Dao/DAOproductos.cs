@@ -20,8 +20,9 @@ namespace Dao
 
         public DataTable getTabla()
         {
-            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
-                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat";
+            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Stock_CXPXC, Estado_Pr " +
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
+                              "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -98,19 +99,36 @@ namespace Dao
             SqlParametros.Value = prod.PrecioUnitario_Pr1;
             SqlParametros = cmd.Parameters.Add("@Estado", SqlDbType.Bit);
             SqlParametros.Value = prod.Estado_Pr;
-            
+
+        }
+
+        private void armarParametrosAgregarStock(ref SqlCommand cmd, string codigo, string stock)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
+            SqlParametros.Value = codigo;
+            SqlParametros = cmd.Parameters.Add("@StockNuevo", SqlDbType.Int);
+            SqlParametros.Value = Convert.ToInt32(stock);
         }
 
         public DataTable filtroProductos(string tipo, string texto)
         {
-            string consulta = "SELECT CodProducto_Pr, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, PrecioUnitario, URLimagen_Pr, Estado_Pr FROM Productos " +
-                              "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
-                              "WHERE "+tipo+" LIKE '["+texto+"]%'";
+            string consulta = "SELECT CodProducto_Pr, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
+                              "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC " +
+                              "WHERE " + tipo + " LIKE '" + texto + "%'";
             DataTable tabla;
 
             tabla = cn.ObtenerTabla("Productos Filtrados", consulta);
 
             return tabla;
+        }
+
+        public int agregarStock(string codigo, string stock)
+        {
+            int filas;
+            string consulta = "EXEC SPActualizarStock '" + codigo + "', '" + stock + "'";
+            filas = cn.RealizarConsulta(consulta);
+            return filas;
         }
 
     }

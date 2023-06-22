@@ -141,6 +141,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaProducto;
 
         /// <summary>
+        /// Control ddlCodProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCodProductos;
+
+        /// <summary>
         /// Control ddlMarcas.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,24 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlColorProducto;
+
+        /// <summary>
+        /// Control txtAgregarStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAgregarStock;
+
+        /// <summary>
+        /// Control btnIngresarStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIngresarStock;
 
         /// <summary>
         /// Control Label27.
@@ -220,15 +247,6 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnIngresarProducto;
-
-        /// <summary>
-        /// Control btnIngresarStock.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIngresarStock;
 
         /// <summary>
         /// Control lblMensajeAgregado.
