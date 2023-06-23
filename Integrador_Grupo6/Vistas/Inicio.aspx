@@ -41,7 +41,7 @@
 
         <asp:Label ID="lblUsuario" runat="server" class="Label" Text="Usuario: " ></asp:Label>
         <asp:TextBox ID="txtUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-
+     
     </div>
 
     <div class="Form">
@@ -163,7 +163,7 @@
             </div>
 
         <div style="float:right; float:left;width: 80%;display:flex;justify-content:center;">
-                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataSourceID="TecnovatosBD">
+                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3">
                 <EditItemTemplate>
                     <td runat="server" style="background-color: #FFCC66; color: #000080;">CodProducto_Pro:
                         <asp:Label ID="CodProducto_ProLabel1" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
@@ -266,7 +266,7 @@
                     </td>
                 </SelectedItemTemplate>
             </asp:ListView>
-                        <asp:SqlDataSource ID="TecnovatosBD" runat="server" ConnectionString="Data Source=DESKTOP-JRNDDIA\SQLEXPRESS;Initial Catalog=TecnovatosBD;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Productos]"></asp:SqlDataSource>
+                        
         </div> 
 
     </form>

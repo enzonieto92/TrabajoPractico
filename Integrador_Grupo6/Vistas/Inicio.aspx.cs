@@ -18,8 +18,8 @@ namespace Vistas
             if (!IsPostBack)
             {
                 DataTable TablaProductos = neg.getTabla();
-                //lvProductos.DataSource = TablaProductos;
-               // lvProductos.DataBind();
+                lvProductos.DataSource = TablaProductos;
+                lvProductos.DataBind();
             }
             Panelpopup.Visible = false;
             Panelpopup2.Visible = false;
