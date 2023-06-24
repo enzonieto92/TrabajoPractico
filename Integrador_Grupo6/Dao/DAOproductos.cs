@@ -26,6 +26,13 @@ namespace Dao
             return tabla;
         }
 
+        public DataTable BuscarProducos(string texto)
+        {
+            string consulta = "SELECT * FROM Productos WHERE Estado_Pr = 1 AND nombre_Pr LIKE '%" + texto + "%'";
+            DataTable tabla = cn.ObtenerTabla("Productos", consulta);
+            return tabla;
+        }
+
         public Boolean existeProducto(string codProd)
         {
             String consulta = "SELECT * FROM Productos WHERE CodProducto_Pr= '" + codProd + "'";

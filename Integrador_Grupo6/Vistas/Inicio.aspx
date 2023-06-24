@@ -91,7 +91,7 @@
        <div class="Form">
 
                         <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
-                        <asp:TextBox ID="txtEmail" runat="server" class="TextBox"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" placeholder="example@gmail.com" class="TextBox"></asp:TextBox>
 
        </div>
 
@@ -99,7 +99,7 @@
 
                         <asp:Label ID="lblRepEmail" runat="server" class="Label" Text="Repita el Email:"></asp:Label>
 
-                        <asp:TextBox ID="txtRepEmail" class="TextBox" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtRepEmail" class="TextBox" placeholder="example@gmail.com" runat="server" ></asp:TextBox>
         </div>
                         <div class="Button">
                         <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
@@ -110,8 +110,8 @@
        </div>
         </asp:Panel>
         <div style="text-align: center; margin: 50px">
-            <asp:TextBox class="cajaDeTexto" ID="txtBuscar" runat="server"></asp:TextBox>
-            <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar"  />
+            <asp:TextBox class="cajaDeTexto" ID="txtBuscar" placeholder="Buscar productos por nombre" runat="server"></asp:TextBox>
+            <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"  />
         </div>
         <div class="contenedor">
                             <h3 style="font-family:sans-serif; text-align:center;">Categorías</h3>

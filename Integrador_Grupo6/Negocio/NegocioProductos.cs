@@ -72,6 +72,11 @@ namespace Negocio
             return Dpr.filtroProductos(tipo, texto);
         }
 
+        public DataTable buscarProducto(string texto)
+        {
+            return Dpr.BuscarProducos(texto);
+        }
+
         public Boolean agregarStock(string codigo, string stock)
         {
             if (Dpr.agregarStock(codigo, stock) == 1)

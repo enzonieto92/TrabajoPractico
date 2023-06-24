@@ -69,5 +69,11 @@ protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Carrito.aspx");
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            lvProductos.DataSource = neg.buscarProducto(txtBuscar.Text);
+            lvProductos.DataBind();
+        }
     }
 }
