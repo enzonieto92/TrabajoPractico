@@ -24,32 +24,24 @@
             width: 253px;
             height: 64px;
         }
-        .auto-style7 {
-            width: 428px;
-            height: 64px;
-        }
-        .auto-style8 {
-            width: 253px;
-            height: 66px;
-        }
         .auto-style10 {
             width: 219px;
             height: 114px;
+        }
+        .auto-style11 {
+            width: 219px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
             <br />
             <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx">Productos</asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
             <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx">Usuarios</asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx">Reportes</asp:HyperLink>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style8"><strong>&nbsp;</strong></span><span class="auto-style7"><strong>Productos</strong></span><br />
             <br />
             <br />
             <strong>Filtros</strong><br />
@@ -62,13 +54,11 @@
                 <asp:ListItem Value="Estado_Pr">Estado de Producto</asp:ListItem>
                 <asp:ListItem Value="PrecioUnitario_Pr">Precio Unitario</asp:ListItem>
             </asp:DropDownList>
-            <asp:TextBox ID="txtFiltro" runat="server" CssClass="auto-style11"></asp:TextBox>
+            <asp:TextBox ID="txtFiltro" runat="server" Height="16px" Width="175px"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" />
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="auto-style3" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound">
                             <AlternatingRowStyle BackColor="Gainsboro" />
                             <Columns>
@@ -146,22 +136,22 @@
                         </asp:GridView>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style13">;</td>
                     <td class="auto-style2">
                         <asp:Label ID="Resultado" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>;</td>
                 </tr>
             </table>
             <strong>
             <br class="auto-style6" />
-            <span class="auto-style6">Ingresar Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ingresar Stock del Producto:<br />
+            <span class="auto-style6">Ingresar Producto: Ingresar Stock del Producto:<br />
             <br />
             </span>
             <span class="auto-style15">Código de Producto<br />
             </span>
             <asp:TextBox ID="txtCodProd" runat="server" MaxLength="6"></asp:TextBox>
-&nbsp;</strong><table>
+            </strong><table>
                 <tr>
                     <td class="auto-style4"><strong>Nombre<br />
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="auto-style11" MaxLength="20"></asp:TextBox>
@@ -178,13 +168,14 @@
                         </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"><strong>Marca<br />
+                    <td class="auto-style11"><strong>Marca<br />
                         <asp:DropDownList ID="ddlMarcas" runat="server">
                         </asp:DropDownList>
+                        <asp:ImageButton ID="imgAgregar" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" OnClick="ImageButton1_Click" Width="21px" />
                         </strong></td>
-                    <td class="auto-style4"><strong><br />
+                    <td class="auto-style11"><strong><br />
                         </strong></td>
-                    <td class="auto-style4"><strong>Caracteristica<br />
+                    <td class="auto-style11"><strong>Caracteristica<br />
                         <asp:DropDownList ID="ddlCaracteristicas" runat="server">
                         </asp:DropDownList>
                         <br />
@@ -225,22 +216,22 @@
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="115px" MaxLength="100" TextMode="MultiLine" Width="431px" ValidationGroup="1"></asp:TextBox>
                         <br />
                         </strong></td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                    </td>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                    </td>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
                         <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
                     </td>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                    </td>
                     <td class="auto-style4">
                         <asp:Label ID="lblStockAgregado" runat="server"></asp:Label>
                     </td>
@@ -250,10 +241,31 @@
                         <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
                     </td>
                     <td>
-                        &nbsp;</td>
+                    </td>
                 </tr>
             </table>
         </div>
+        
+
+        <!-- PANEL MARCAS -->
+
+        <!--
+        <asp:Panel ID="PanelMarcas" runat="server" CssClass="panel">
+           
+            <div class="contenedor-popup" id="modal">
+             <div class="popup">
+                <div class="funciones-popup">
+                  <asp:Label ID="lblTextoPopup" runat="server" Text="Ingresar Marca" ForeColor="White"></asp:Label>
+                  <asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
+                  <asp:Button ID="btnAgregarMarca" runat="server" Text="Agregar"></asp:Button>
+                </div>
+            </div>
+        </div>
+
+        </asp:Panel>
+        -->
+        
+
     </form>
 </body>
 </html>

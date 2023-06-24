@@ -71,6 +71,7 @@
     <Content Include="adminReportes.aspx" />
     <Content Include="adminUsuario.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="Imagenes\Iconos\agregar.png" />
     <Content Include="Imagenes\Iconos\carrito.png" />
     <Content Include="Imagenes\Iconos\cruz.png" />
     <Content Include="Imagenes\Iconos\tachobasura.png" />

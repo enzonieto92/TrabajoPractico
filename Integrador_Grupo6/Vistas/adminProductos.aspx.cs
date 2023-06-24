@@ -32,6 +32,7 @@ namespace Vistas
                 cargarMarcas();
                 cargarColores();
                 cargarDDlStock();
+                //Panel1.Visible = false;
             }
 
         }
@@ -319,6 +320,12 @@ namespace Vistas
                 lblVerificacionStock.ForeColor = System.Drawing.Color.Green;
                 lblVerificacionStock.Text = "El stock existente de acuerdo a los datos ingresados es de: " + cantidad;
             }
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
+            //PanelMarcas.Visible = true;
         }
     }
 }
