@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
 using System.Data;
+using System.Threading;
 
 namespace Vistas
 {
@@ -21,8 +22,7 @@ namespace Vistas
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
             }
-            Panelpopup.Visible = false;
-            Panelpopup2.Visible = false;
+
         }
 
         protected void btnLimpiarCategorias_Click(object sender, EventArgs e)
@@ -48,6 +48,7 @@ namespace Vistas
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
         {
             Panelpopup.Visible = true;
+            Panelpopup.CssClass = "fade-in";
         }
 
         protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
@@ -58,6 +59,7 @@ namespace Vistas
         protected void btnAbrirPopup2_Click(object sender, EventArgs e)
         {
             Panelpopup2.Visible = true;
+            Panelpopup2.CssClass = "fade-in";
         }
 
         protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)

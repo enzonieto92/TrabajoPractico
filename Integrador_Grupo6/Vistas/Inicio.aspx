@@ -6,9 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Inicio</title>
-
     <link rel="StyleSheet" href="StyleSheet.css" type="text/css"/>
-
     </head>
 <body>
     <form id="form1" runat="server">
@@ -29,7 +27,7 @@
 		</div>
     </header>
        
-    <asp:Panel ID="Panelpopup" runat="server" Visible="False">
+    <asp:Panel ID="Panelpopup" runat="server" Visible="false">
     <div id="miPopup" class="popup">
             <div class="popup-contenido">
                 <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
@@ -63,7 +61,7 @@
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="Panelpopup2" runat="server">
+        <asp:Panel ID="Panelpopup2" runat="server" Visible="false">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:500px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>

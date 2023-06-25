@@ -139,6 +139,7 @@ header nav a:hover {
     
 }
 
+
 .popup {
     position: fixed;
     top: 0;
@@ -156,6 +157,8 @@ header nav a:hover {
     width: 300px;
     height: 300px;
 }
+
+
 
 /*Grid View Encabezado-----------*/
 .dataGrid-th {
@@ -230,3 +233,19 @@ header nav a:hover {
     font-size: 40px;
 }
 
+
+.fade-in {
+    animation: fade-in 0.5s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
