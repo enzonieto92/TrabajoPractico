@@ -32,7 +32,8 @@ namespace Vistas
                 cargarMarcas();
                 cargarColores();
                 cargarDDlStock();
-                //Panel1.Visible = false;
+                modal.Visible = false;
+                modalStock.Visible = false;
             }
 
         }
@@ -325,7 +326,17 @@ namespace Vistas
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
 
-            //PanelMarcas.Visible = true;
+            modal.Visible = true;
+        }
+
+
+        protected void grvProductos_RowCommand1(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "AgregarStock")  
+            {
+                modalStock.Visible = true;
+            }
+
         }
     }
 }

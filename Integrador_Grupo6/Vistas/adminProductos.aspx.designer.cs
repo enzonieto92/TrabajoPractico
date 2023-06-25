@@ -141,6 +141,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaProducto;
 
         /// <summary>
+        /// Control Label28.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label28;
+
+        /// <summary>
         /// Control ddlCodProductos.
         /// </summary>
         /// <remarks>
@@ -285,13 +294,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblMensajeAgregado;
 
         /// <summary>
-        /// Control PanelMarcas.
+        /// Control modal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelMarcas;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal;
 
         /// <summary>
         /// Control lblTextoPopup.
@@ -319,5 +328,50 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarMarca;
+
+        /// <summary>
+        /// Control modalStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalStock;
+
+        /// <summary>
+        /// Control lblTextoPopupAgrStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextoPopupAgrStock;
+
+        /// <summary>
+        /// Control lblAgrDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAgrDescripcion;
+
+        /// <summary>
+        /// Control txtAgrStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAgrStock;
+
+        /// <summary>
+        /// Control btnAgrStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgrStock;
     }
 }

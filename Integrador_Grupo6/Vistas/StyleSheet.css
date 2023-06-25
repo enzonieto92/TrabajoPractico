@@ -198,18 +198,22 @@ header nav a:hover {
     transition: all 600ms;
 }
 
-.popup {
-    width: 100%;
+.popup2 {
+    width: 50%;
     max-width: 800px;
-    height: 500px;
+    height: 50%;
+    position: relative;
     background-color: #232F3B;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.funciones-popup{
-
+.funciones-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #lblTextoPopup.funciones-popup {

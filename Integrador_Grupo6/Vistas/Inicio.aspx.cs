@@ -60,9 +60,9 @@ namespace Vistas
             Panelpopup2.Visible = true;
         }
 
-protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
+        protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
-        Panelpopup2.Visible = false;
+            Panelpopup2.Visible = false;
         }
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)

@@ -74,6 +74,7 @@
     <Content Include="Imagenes\Iconos\agregar.png" />
     <Content Include="Imagenes\Iconos\carrito.png" />
     <Content Include="Imagenes\Iconos\cruz.png" />
+    <Content Include="Imagenes\Iconos\signo mas.png" />
     <Content Include="Imagenes\Iconos\tachobasura.png" />
     <Content Include="Imagenes\Productos\AuricularesInalambricosNoblex.jpg" />
     <Content Include="Imagenes\Productos\JoystickPlay4.jpg" />
