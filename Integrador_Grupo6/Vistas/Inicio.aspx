@@ -107,6 +107,8 @@
               </div>
        </div>
         </asp:Panel>
+
+
         <div style="text-align: center; margin: 50px">
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" placeholder="Buscar productos por nombre" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"  />
