@@ -113,6 +113,10 @@ header nav a:hover {
     width: 300px;
     text-align:center;
 }
+.lvImagen {
+    max-width: 300px;
+    height: 230px;
+}
 
 .cajaDeTexto {
     background-color: white;

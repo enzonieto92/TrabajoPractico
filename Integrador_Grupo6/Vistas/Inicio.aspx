@@ -221,7 +221,7 @@
                 <ItemTemplate>
                     <td runat="server" class="estiloListView">
                         <asp:Label class="nombreArticulo" ID="Nombre_ProLabel0" runat="server" Text='<%# Eval("Nombre_Pr") %>' Height="30px"></asp:Label>
-                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' Width="230px" Height="200px" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' CssClass="lvImagen" />
                         <br />
                         Código:
                         <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />

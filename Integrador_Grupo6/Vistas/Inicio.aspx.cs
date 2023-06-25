@@ -13,11 +13,12 @@ namespace Vistas
     public partial class Inicio : System.Web.UI.Page
     {
         NegocioProductos neg = new NegocioProductos();
+        DataTable TablaProductos = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                DataTable TablaProductos = neg.getTabla();
+                TablaProductos = neg.getTabla();
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
             }
@@ -85,5 +86,6 @@ namespace Vistas
             lvProductos.DataSource = neg.buscarProducto(txtBuscar.Text);
             lvProductos.DataBind();
         }
+
     }
 }

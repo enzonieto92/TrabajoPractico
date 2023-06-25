@@ -188,9 +188,8 @@ select 8, 1, 4, 'PlayStation 5', 'PlayStation 5 Sony 825GB', 350000.00, '~/Image
 select 9, 8, 4, 'Xbox Series X', 'Xbox Series X 1TB', 300000.00, '~/Imagenes/Productos/10.jpg', 1 union
 select 10, 6, 8, 'Notebook MSI', 'Potente',	255000.00, '~/Imagenes/Productos/20.jpg', 1
 go
-delete from Productos where CodProducto_Pr = '1'
 
-exec [SPEliminarProducto] @CodProducto = '6'
+
 --//////////////////////////////////////////////////////////
 
 insert into CaracteristicasXproductosXcolores(CodProducto_CXPXC,CodCaracteristicas_CXPXC, CodColor_CXPXC,Stock_CXPXC)
@@ -242,7 +241,8 @@ select 2,'2','4','3','145999.99','1' union
 select 3,'3','5','1','219999.99','1' union
 select 4,'4','3','4','155000.00','1' union
 select 4,'1','5','2','380000.00','1'
-go
+go
+
 --Procedimientos almacenados
 
 CREATE PROCEDURE SPEliminarUsuario
@@ -328,3 +328,7 @@ PrecioUnitario=@PrecioUnitario,
 Estado_Pr=@Estado
 WHERE CodProducto_Pr=@CodProducto
 GO
+
+/*delete from Productos where CodProducto_Pr = '1'
+
+exec [SPEliminarProducto] @CodProducto = '6'¨*/
