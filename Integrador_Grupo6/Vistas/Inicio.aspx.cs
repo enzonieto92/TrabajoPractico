@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
 using System.Data;
-using System.Threading;
 
 namespace Vistas
 {
@@ -46,33 +45,33 @@ namespace Vistas
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
         {
-            Panelpopup2.Visible = false;
-            Panelpopup.Visible = true;
-            Panelpopup.CssClass = "fade-in";
+            PanelRegistro.Visible = false;
+            PanelInicioSesion.Visible = true;
+            PanelInicioSesion.CssClass = "fade-in";
         }
 
         protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
         {
-            Panelpopup.CssClass = "fade-out";
-            if(Panelpopup.Attributes["visibility"] == "hidden")
+            PanelInicioSesion.CssClass = "fade-out";
+            if(PanelInicioSesion.Attributes["visibility"] == "hidden")
             {
-                Panelpopup.Visible = false;
+                PanelInicioSesion.Visible = false;
             }
         }
 
         protected void btnAbrirPopup2_Click(object sender, EventArgs e)
         {
-            Panelpopup.Visible = false;
-            Panelpopup2.Visible = true;
-            Panelpopup2.CssClass = "fade-in";
+            PanelInicioSesion.Visible = false;
+            PanelRegistro.Visible = true;
+            PanelRegistro.CssClass = "fade-in";
         }
 
         protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
-            Panelpopup2.CssClass = "fade-out";
-            if (Panelpopup2.Attributes["visibility"] == "hidden")
+            PanelRegistro.CssClass = "fade-out";
+            if (PanelRegistro.Attributes["visibility"] == "hidden")
             {
-                Panelpopup2.Visible = false;
+                PanelRegistro.Visible = false;
             }
         }
 

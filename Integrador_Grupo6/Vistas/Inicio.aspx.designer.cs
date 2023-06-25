@@ -51,13 +51,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
 
         /// <summary>
-        /// Control Panelpopup.
+        /// Control PanelInicioSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panelpopup;
+        protected global::System.Web.UI.WebControls.Panel PanelInicioSesion;
 
         /// <summary>
         /// Control btnCerrar.
@@ -132,13 +132,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
 
         /// <summary>
-        /// Control Panelpopup2.
+        /// Control PanelRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panelpopup2;
+        protected global::System.Web.UI.WebControls.Panel PanelRegistro;
 
         /// <summary>
         /// Control ImageButton3.
