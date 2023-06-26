@@ -54,10 +54,7 @@ namespace Vistas
         protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
         {
             PanelInicioSesion.CssClass = "fade-out";
-            if(PanelInicioSesion.Attributes["visibility"] == "hidden")
-            {
                 PanelInicioSesion.Visible = false;
-            }
         }
 
         protected void btnAbrirPopup2_Click(object sender, EventArgs e)
@@ -70,10 +67,7 @@ namespace Vistas
         protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
             PanelRegistro.CssClass = "fade-out";
-            if (PanelRegistro.Attributes["visibility"] == "hidden")
-            {
                 PanelRegistro.Visible = false;
-            }
         }
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
