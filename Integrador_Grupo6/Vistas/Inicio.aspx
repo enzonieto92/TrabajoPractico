@@ -49,12 +49,13 @@
     </div>
 </div>
                 <div class="Hyperlink">
+                    <asp:Label ID="lblerror" runat="server" visible="false"></asp:Label>
                     <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink> 
                 </div>
 
                     
         <div class="Button">
-                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión"/>
+                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión" OnClick="btnIniciarSesion_Click"/>
                 </div>   
 
             </div>

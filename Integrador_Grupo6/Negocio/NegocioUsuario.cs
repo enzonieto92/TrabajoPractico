@@ -38,6 +38,35 @@ namespace Negocio
             else
                 return false;
         }
+        public Usuario CrearLog(string Usuario, string Contraseña)
+        {
+                Usuario user = new Usuario();
+                DataTable tablaUsuario = new DataTable();
+                user.Usuario_Us1 = Usuario;
+                user.Contraseña_Us1 = Contraseña;
+            if (du.IniciarSesion(user))
+            {
+                tablaUsuario = du.BuscarUsuario(user);
+            }
+            if (tablaUsuario.Rows.Count > 0)
+            {
+                DataRow filaUsuario = tablaUsuario.Rows[0];
+
+                user.Nombre_Us1 = filaUsuario["Nombre_Us"].ToString();
+                user.Apellido_Us1 = filaUsuario["Apellido_Us"].ToString();
+                user.DNI_Us1 = filaUsuario["DNI_Us"].ToString();
+                user.Email_Us1 = filaUsuario["Email_Us"].ToString();
+                user.Telefono_Us1 = filaUsuario["Telefono_Us"].ToString();
+                user.FechaNacimineto_Us1 = Convert.ToDateTime(filaUsuario["FechaNacimiento_Us"]);
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+
+
+            }
         public bool existeMail(Usuario Us)
         {
             bool existe = du.existeMail(Us);

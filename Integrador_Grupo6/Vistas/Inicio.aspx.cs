@@ -13,14 +13,22 @@ namespace Vistas
     public partial class Inicio : System.Web.UI.Page
     {
         NegocioProductos neg = new NegocioProductos();
+        Usuario Current = new Usuario();
+        NegocioUsuario negU = new NegocioUsuario();
         DataTable TablaProductos = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Current = (Usuario)HttpContext.Current.Session["Usuario"];
             if (!IsPostBack)
             {
                 TablaProductos = neg.getTabla();
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
+            }
+            if (Current != null)
+            {
+                btnAbrirPopup.Text = Current.Nombre_Us1;
+                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
             }
         }
 
@@ -79,6 +87,27 @@ namespace Vistas
         {
             lvProductos.DataSource = neg.buscarProducto(txtBuscar.Text);
             lvProductos.DataBind();
+        }
+
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            PanelInicioSesion.CssClass = "";
+                Session["Usuario"] = negU.CrearLog(txtUsuario.Text, txtContraseña.Text);
+                if (Session["Usuario"] == null)
+                {
+                    lblerror.Text = "Datos Incorrectos!";
+                    lblerror.Visible = true;
+                }
+                else
+                {
+                   
+                    Current = (Usuario)HttpContext.Current.Session["Usuario"];
+                btnAbrirPopup.Text = Current.Nombre_Us1;
+                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
+                PanelInicioSesion.Visible = false;
+                }
+            
+
         }
 
     }

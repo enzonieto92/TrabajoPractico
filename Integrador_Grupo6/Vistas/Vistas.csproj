@@ -71,6 +71,7 @@
     <Content Include="adminReportes.aspx" />
     <Content Include="adminUsuario.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="DetallesUsuario.aspx" />
     <Content Include="Imagenes\Iconos\agregar.png" />
     <Content Include="Imagenes\Iconos\carrito.png" />
     <Content Include="Imagenes\Iconos\cruz.png" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesUsuario.aspx.cs">
+      <DependentUpon>DetallesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallesUsuario.aspx.designer.cs">
+      <DependentUpon>DetallesUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

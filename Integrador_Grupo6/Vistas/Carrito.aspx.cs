@@ -44,12 +44,22 @@ namespace Vistas
         private decimal SumaTotal()
         {
             decimal total = 0;
-            int i;
+            int rowCount = gvProductosCarrito.Rows.Count;
 
-            for (i=0;i<4;i++)
+            for (int i = 0; i < rowCount && i < 4; i++)
             {
-                total += Convert.ToDecimal(gvProductosCarrito.Rows[i].Cells[4].Text);
+                decimal cellValue;
+                if (decimal.TryParse(gvProductosCarrito.Rows[i].Cells[4].Text, out cellValue))
+                {
+                    total += cellValue;
+                }
+                else
+                {
+                    // Manejar el caso en el que el valor en la celda no se pueda convertir a decimal.
+                    // Puedes mostrar un mensaje de error, omitir el valor o realizar alguna otra acción.
+                }
             }
+
             return total;
         }
 

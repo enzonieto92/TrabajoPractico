@@ -45,6 +45,25 @@ namespace Dao
             String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "' AND NOT DNI_Us='" + Us.DNI_Us1 + "'";
             return cn.existe(consulta);
         }
+        public Boolean IniciarSesion(Usuario Us)
+        {
+            String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "' AND Contraseña_Us='" + Us.Contraseña_Us1 + "'";
+            return cn.existe(consulta);
+        }
+        public DataTable BuscarUsuario(Usuario Us)
+        {
+            String consulta = "Select * FROM Usuario WHERE Usuario_Us='" + Us.Usuario_Us1 + "' AND Contraseña_Us='" + Us.Contraseña_Us1+ "'";
+            if (cn.existe(consulta))
+            {
+                String consulta2 = "SELECT * FROM Usuario WHERE Usuario_Us='" + Us.Usuario_Us1 + "'";
+                return cn.ObtenerTabla("Usuario", consulta2);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public int eliminarUsuario(Usuario us)
         {
             SqlCommand comando = new SqlCommand();
