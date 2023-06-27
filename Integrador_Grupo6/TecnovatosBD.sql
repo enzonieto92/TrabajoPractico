@@ -43,7 +43,7 @@ CREATE TABLE Productos
 CodProducto_Pr char(6) not null,
 CodMarcas_Pr char(6) not null,
 CodCategoria_Pr char(6) not null,
-Nombre_Pr varchar(30) not null,
+Nombre_Pr varchar(50) not null,
 Descripcion_Pr varchar(100) not null,
 PrecioUnitario decimal(10,2) not null default 0.00,
 URLimagen_Pr varchar(500) not null default 0,
@@ -177,7 +177,7 @@ go
 --//////////////////////////////////////////////////////////
 
 insert into Productos(CodProducto_Pr, CodMarcas_Pr,CodCategoria_Pr,Nombre_Pr,Descripcion_Pr,PrecioUnitario,URLimagen_Pr,Estado_Pr)
-select 1, 2, 1, 'celular Samsung Galaxy S23 Ultra','Amplia pantalla AMOLED vibrante en el S23 Ultra', 380000.00,'~/Imagenes/Productos/1.jpg',1 union
+select 1, 2, 1, 'celular Samsung Galaxy S23 Ultra','Amplia pantalla AMOLED vibrante en el S23 Ultra', 380000.00,'~/Imagenes/Productos/1.jpg', 1 union
 select 2, 2, 1, 'celular Samsung Galaxy A72', 'Cámara de alta resolución en el A72', 145999.99, '~/Imagenes/Productos/2.jpg', 1 union
 select 3, 3, 1, 'celular Motorola edge 40 Pro',	'Potente rendimiento en el Edge 40 Pro', 219999.99,	'~/Imagenes/Productos/3.jpg', 1 union
 select 4, 3, 1, 'celular Motorola edge 30 Pro',	'Rendimiento rapdisimo en el Edge 30 Pro', 155000.00, '~/Imagenes/Productos/4.jpg',	1 union
@@ -241,7 +241,7 @@ select 2,'2','4','3','145999.99','1' union
 select 3,'3','5','1','219999.99','1' union
 select 4,'4','3','4','155000.00','1' union
 select 4,'1','5','2','380000.00','1'
-go
+GO
 
 --Procedimientos almacenados
 
