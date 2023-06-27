@@ -149,12 +149,12 @@
                             <h3 style="font-family:sans-serif; text-align:center;">Categorías</h3>
                                 
                                 <asp:RadioButtonList ID="rblCategorias" runat="server" CssClass="radioBtn">
-                                    <asp:ListItem Value="1">Tarjetas Graficas</asp:ListItem>
-                                    <asp:ListItem Value="2">Computadoras Armadas</asp:ListItem>
-                                    <asp:ListItem Value="3">Gaming</asp:ListItem>
-                                    <asp:ListItem Value="4">Notebooks</asp:ListItem>
-                                    <asp:ListItem Value="5">Realidad Virtual</asp:ListItem>
-                                    <asp:ListItem Value="6">Codigos de windows</asp:ListItem>
+                                    <asp:ListItem Value="1">celulares</asp:ListItem>
+                                    <asp:ListItem Value="2">Tarjetas Graficas</asp:ListItem>
+                                    <asp:ListItem Value="3">Mothers</asp:ListItem>
+                                    <asp:ListItem Value="4">Consolas</asp:ListItem>
+                                    <asp:ListItem Value="5">Coolers</asp:ListItem>
+                                    <asp:ListItem Value="6">Gabinetes</asp:ListItem>
                                 </asp:RadioButtonList>
                             <div style="display:flex; justify-content:center;margin-top:20px;">
                                 <asp:Button ID="btnLimpiarCategorias" runat="server" OnClick="btnLimpiarCategorias_Click" Text="Limpiar" class="boton-personalizado"/>
@@ -163,11 +163,11 @@
                              <h3 style="text-align:center;font-family:sans-serif;"> Marcas</h3>
 
                                 <asp:RadioButtonList ID="rblMarcas" runat="server" CssClass="radioBtn">
-                                    <asp:ListItem Value="1">Nvidia</asp:ListItem>
-                                    <asp:ListItem Value="2">Asus</asp:ListItem>
-                                    <asp:ListItem Value="3">Xbox</asp:ListItem>
-                                    <asp:ListItem Value="4">Sony</asp:ListItem>
-                                    <asp:ListItem Value="5">Samsung</asp:ListItem>
+                                    <asp:ListItem Value="1">Sony</asp:ListItem>
+                                    <asp:ListItem Value="2">Samsung</asp:ListItem>
+                                    <asp:ListItem Value="3">Motorola</asp:ListItem>
+                                    <asp:ListItem Value="4">Nvidia</asp:ListItem>
+                                    <asp:ListItem Value="5">Asus</asp:ListItem>
                                     <asp:ListItem Value="6">MSI</asp:ListItem>
                                 </asp:RadioButtonList>
                              <div style="display:flex; justify-content:center;margin-top:20px; margin-bottom:20px;">

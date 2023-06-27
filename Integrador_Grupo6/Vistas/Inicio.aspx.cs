@@ -35,22 +35,33 @@ namespace Vistas
 
         protected void btnLimpiarCategorias_Click(object sender, EventArgs e)
         {
-
+            rblCategorias.ClearSelection();
         }
 
         protected void btnLimpiarMarcas_Click(object sender, EventArgs e)
         {
-
+            rblMarcas.ClearSelection();
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            string categoria = rblCategorias.SelectedValue;
+            string marcas = rblMarcas.SelectedValue;
+            string precioMin = txtPrecioMin.Text;
+            string precioMax = txtPrecioMax.Text;
 
+            TablaProductos = neg.InicioFiltros(categoria, marcas, precioMax, precioMin);
+            lvProductos.DataSource = TablaProductos;
+            lvProductos.DataBind();
         }
 
         protected void btnQuitarFiltro_Click(object sender, EventArgs e)
         {
-
+            txtBuscar.Text = "";
+            txtPrecioMax.Text = "";
+            txtPrecioMin.Text = "";
+            rblCategorias.ClearSelection();
+            rblMarcas.ClearSelection();
         }
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)

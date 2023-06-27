@@ -138,5 +138,28 @@ namespace Dao
             return filas;
         }
 
+        public DataTable inicioFiltros(string categoria, string marca, string precioMax, string precioMin)
+        {
+            string consulta = "SELECT * FROM Productos WHERE Estado_Pr = 1";
+            if (categoria != "")
+            {
+                consulta += " AND CodCategoria_Pr = '" + categoria + "'";
+            }
+            else if (marca != "")
+            {
+                consulta += " AND CodMarca_Pr = '" + marca + "'";
+            }
+            else if (precioMin != "")
+            {
+                consulta += " AND PrecioUnitario >= '" + precioMin + "'";
+            }
+            else if (precioMax != "")
+            {
+                consulta += " AND PrecioUnitario <= '" + precioMax + "'";
+            }
+            return cn.ObtenerTabla("Productos", consulta);
+        }
     }
+
+    
 }

@@ -153,6 +153,7 @@ header nav a:hover {
     display:flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
 }
 
     .popup-contenido {

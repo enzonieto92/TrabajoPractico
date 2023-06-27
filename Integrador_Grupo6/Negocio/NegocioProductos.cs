@@ -89,5 +89,10 @@ namespace Negocio
             }
         }
 
+        public DataTable InicioFiltros(string categoria, string marca, string precioMax, string precioMin)
+        {
+            return Dpr.inicioFiltros(categoria, marca, precioMax, precioMin);
+        }
+
     }
 }
