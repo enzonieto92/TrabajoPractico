@@ -18,6 +18,7 @@ namespace Vistas
         DataTable TablaProductos = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             Current = (Usuario)HttpContext.Current.Session["Usuario"];
             if (!IsPostBack)
             {
