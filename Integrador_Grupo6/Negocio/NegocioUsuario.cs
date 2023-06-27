@@ -67,6 +67,17 @@ namespace Negocio
 
 
             }
+        public bool esAdmin(string usuario, string contraseña)
+        {
+            Usuario user = new Usuario();
+            user.Usuario_Us1 = usuario;
+            user.Contraseña_Us1 = contraseña;
+            bool esAdmin = du.esAdmin(user);
+            if (esAdmin)
+                return true;
+            else
+                return false;
+        }
         public bool existeMail(Usuario Us)
         {
             bool existe = du.existeMail(Us);
@@ -74,6 +85,22 @@ namespace Negocio
                 return true;
             else
                 return false;
+        }
+        public bool existeDNI(Usuario Us)
+        {
+            bool existe = du.existeDNI(Us);
+            if (existe)
+                return true;
+            else
+                return false;
+        }
+        public bool AgregarUsuario(Usuario Us)
+        {
+            int cantFilas = 0;
+
+            cantFilas = du.AgregarUsuario(Us);
+            if (cantFilas == 1) return true;
+            else return false;
         }
         public bool ActualizarUsuario(Usuario Us)
         {

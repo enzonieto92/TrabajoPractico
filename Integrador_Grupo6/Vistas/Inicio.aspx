@@ -64,7 +64,7 @@
 
         <asp:Panel ID="PanelRegistro" runat="server" Visible="false">
        <div id="PopupRegistro" class="popup">
-             <div class="popup-contenido" style="height:500px; width: 500px;">
+             <div class="popup-contenido" style="height:680px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
                     <h2 style="text-align:center; font-family:sans-serif;">
                     <asp:Label ID="Label1" runat="server" Text="Registrarse"></asp:Label> 
@@ -72,10 +72,53 @@
                     <div class="Datos">
         <div class="Form">
 
-            <asp:Label ID="Label2" runat="server" class="Label" Text="Usuario: " ></asp:Label>
-            <asp:TextBox ID="txtboxUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-
+            <asp:Label ID="Label2" runat="server" class="Label" Text="DNI: " ></asp:Label>
+            <asp:TextBox ID="txtboxDNI" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDNI" runat="server"  class="Validator_Center" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su DNI</asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationExpression="^[\d]{1,3}\.?[\d]{3,3}\.?[\d]{3,3}$" ValidationGroup="1">DNI Inválido</asp:RegularExpressionValidator>
         </div>
+                        
+       <div class="Form">
+
+                        <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
+                        <asp:TextBox ID="txtEmail" runat="server" placeholder="example@gmail.com" class="TextBox"></asp:TextBox>
+
+       </div>
+                        
+       <div class="Form">
+
+                        <asp:Label ID="lblNombre" runat="server" class="Label" Text="Nombre:"></asp:Label>
+                        <asp:TextBox ID="txtboxNombre" runat="server" class="TextBox"></asp:TextBox>
+
+       </div>
+       
+       <div class="Form">
+
+                        <asp:Label ID="lblApellido" runat="server" class="Label" Text="Apellido:"></asp:Label>
+                        <asp:TextBox ID="txtboxApellido" runat="server" class="TextBox"></asp:TextBox>
+
+       </div>
+       
+       <div class="Form">
+
+                        <asp:Label ID="lblFechaNacimineto" runat="server" class="Label" Text="Fecha de Nacimiento:"></asp:Label>
+                        <asp:TextBox ID="txtFechaNacimiento" runat="server" class="TextBox" TextMode="Date"></asp:TextBox>
+
+       </div>
+                               
+       <div class="Form">
+
+                        <asp:Label ID="lblTelefono" runat="server" class="Label" Text="Telefono:"></asp:Label>
+                        <asp:TextBox ID="txtTelefono" runat="server" class="TextBox"></asp:TextBox>
+
+       </div>
+
+       <div class="Form">
+
+                        <asp:Label ID="lblCrearUsuario" runat="server" class="Label" Text="Usuario:"></asp:Label>
+                        <asp:TextBox ID="txtboxCrearUsuario" runat="server" class="TextBox"></asp:TextBox>
+
+       </div>
 
         <div class="Form">
 
@@ -87,21 +130,9 @@
                <asp:TextBox ID="txtRepContraseña" runat="server" class="TextBox" TextMode="password"></asp:TextBox>
         </div>
 
-       <div class="Form">
-
-                        <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
-                        <asp:TextBox ID="txtEmail" runat="server" placeholder="example@gmail.com" class="TextBox"></asp:TextBox>
-
-       </div>
-
-        <div class="Form">
-
-                        <asp:Label ID="lblRepEmail" runat="server" class="Label" Text="Repita el Email:"></asp:Label>
-
-                        <asp:TextBox ID="txtRepEmail" class="TextBox" placeholder="example@gmail.com" runat="server" ></asp:TextBox>
-        </div>
                         <div class="Button">
-                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
+                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium" OnClick="Button1_Click" ValidationGroup="1"   />
+                            <asp:Label ID="lblLeyenda" class="Validator_Center" runat="server" ForeColor="Red"></asp:Label>
                         </div>
     </div>
 

@@ -100,8 +100,11 @@ namespace Vistas
                 }
                 else
                 {
-                   
-                    Current = (Usuario)HttpContext.Current.Session["Usuario"];
+                if (negU.esAdmin(txtUsuario.Text,txtContraseña.Text))
+                    Response.Redirect("~/AdminReportes.aspx");
+                else
+
+                Current = (Usuario)HttpContext.Current.Session["Usuario"];
                 btnAbrirPopup.Text = Current.Nombre_Us1;
                 btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
                 PanelInicioSesion.Visible = false;
@@ -110,5 +113,44 @@ namespace Vistas
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario Us = new Usuario();
+                Us.DNI_Us1 = txtboxDNI.Text;
+                Us.Email_Us1 = txtEmail.Text;
+                Us.Nombre_Us1 = txtboxNombre.Text;
+                Us.Apellido_Us1 = txtboxApellido.Text;
+                Us.FechaNacimineto_Us1 = DateTime.Parse(txtFechaNacimiento.Text);
+                Us.Telefono_Us1 = txtTelefono.Text;
+                Us.Usuario_Us1 = txtboxCrearUsuario.Text;
+                Us.Contraseña_Us1 = txtboxContraseña.Text;
+
+
+
+
+                if (negU.existeUsuario(Us))
+                    throw new Exception("Este usuario ya existe");
+                if (negU.existeMail(Us))
+                    throw new Exception("Este Email ya existe");
+                if (negU.existeDNI(Us))
+                    throw new Exception("Este DNI ya existe");
+
+                bool agrego = negU.AgregarUsuario(Us);
+
+                if (!agrego)
+                    lblLeyenda.Text = "No se pudo registrar al usuario";
+                else
+                {
+                    lblLeyenda.ForeColor = System.Drawing.Color.Green;
+                    lblLeyenda.Text = "Usuario registrado con éxito!";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblLeyenda.Text = ex.Message;
+            }
+        }
     }
 }

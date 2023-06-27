@@ -64,6 +64,54 @@ namespace Dao
             }
         }
 
+        public Boolean esAdmin(Usuario Us)
+        {
+            String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "'AND Tipo_Us = '2'";
+            return cn.existe(consulta);
+        }
+        public Boolean existeDNI(Usuario Us)
+        {
+            String consulta = "Select * from Usuario where DNI_Us='" + Us.DNI_Us1 + "'";
+            return cn.existe(consulta);
+        }
+        public int AgregarUsuario(Usuario Us)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosAgregar(ref cmd, Us);
+            AccesoDatos cn = new AccesoDatos();
+            int filasAfectadas = cn.EjecutarProcedimientoAlmacenado(cmd, "SPInsertarUsuario");
+            if (filasAfectadas == 1) return 1;
+            return 0;
+        }
+
+        public void armarParametrosAgregar(ref SqlCommand cmd, Usuario Us)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = cmd.Parameters.Add("@DNI", SqlDbType.Char, 10);
+            parametros.Value = Us.DNI_Us1;
+
+            parametros = cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Usuario_Us1;
+
+            parametros = cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Contraseña_Us1;
+
+            parametros = cmd.Parameters.Add("@Email", SqlDbType.VarChar, 60);
+            parametros.Value = Us.Email_Us1;
+
+            parametros = cmd.Parameters.Add("@Telefono", SqlDbType.Char, 10);
+            parametros.Value = Us.Telefono_Us1;
+
+            parametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Nombre_Us1;
+
+            parametros = cmd.Parameters.Add("@Apellido", SqlDbType.VarChar, 30);
+            parametros.Value = Us.Apellido_Us1;
+
+            parametros = cmd.Parameters.Add("@FechaNac", SqlDbType.Date);
+            parametros.Value = Us.FechaNacimineto_Us1;
+        }
+
         public int eliminarUsuario(Usuario us)
         {
             SqlCommand comando = new SqlCommand();
