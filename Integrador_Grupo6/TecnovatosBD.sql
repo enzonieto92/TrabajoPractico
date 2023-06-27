@@ -284,6 +284,22 @@ Estado_Us=@Estado
 WHERE DNI_Us=@DNI
 GO
 
+CREATE PROCEDURE SPInsertarUsuario
+(
+@DNI CHAR(10),
+@Usuario VARCHAR(30),
+@Contraseña VARCHAR(30),
+@Email VARCHAR(60),
+@Telefono CHAR(10),
+@Nombre VARCHAR(30),
+@Apellido VARCHAR(30),
+@FechaNac DATE
+)
+AS
+INSERT INTO Usuario (DNI_Us,Usuario_Us,Contraseña_Us,Email_Us,Telefono_Us,Nombre_Us,Apellido_Us,FechaNacimiento_Us)
+VALUES (@DNI,@Usuario,@Contraseña,@Email,@Telefono,@Nombre,@Apellido,@FechaNac)
+GO
+
 CREATE PROCEDURE SPInsertarProducto
 (
 @CodProducto CHAR(6),
