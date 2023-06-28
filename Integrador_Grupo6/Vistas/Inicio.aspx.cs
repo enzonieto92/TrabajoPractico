@@ -19,17 +19,12 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            Current = (Usuario)HttpContext.Current.Session["Usuario"];
             if (!IsPostBack)
             {
+                Current = (Usuario)HttpContext.Current.Session["Usuario"];
                 TablaProductos = neg.getTabla();
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
-            }
-            if (Current != null)
-            {
-                btnAbrirPopup.Text = Current.Nombre_Us1;
-                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
             }
         }
 
@@ -97,7 +92,6 @@ namespace Vistas
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            PanelInicioSesion.CssClass = "";
             Session["Usuario"] = negU.CrearLog(txtUsuario.Text, txtContraseña.Text);
             if (Session["Usuario"] == null)
             {
@@ -109,14 +103,28 @@ namespace Vistas
                 if (negU.esAdmin(txtUsuario.Text, txtContraseña.Text))
                     Response.Redirect("~/AdminReportes.aspx");
                 else
-
-                    Current = (Usuario)HttpContext.Current.Session["Usuario"];
-                btnAbrirPopup.Text = Current.Nombre_Us1;
-                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
-                PanelInicioSesion.Visible = false;
+                Current = (Usuario)HttpContext.Current.Session["Usuario"];
+                CambiarNavegadores();
             }
 
 
+        }
+        protected void CambiarNavegadores()
+        {
+            if (Current != null)
+            {
+                btnRegistrarse.Text = "Cerrar Sesión";
+                btnRegistrarse.OnClientClick = "btnCerrarSesion";
+                btnAbrirPopup.Text = Current.Nombre_Us1;
+                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
+            }
+            else
+            {
+                btnRegistrarse.Text = "Registrarse";
+                btnRegistrarse.OnClientClick = "btnAbrirPopup2_Click";
+                btnAbrirPopup.Text = "Iniciar Sesión";
+                btnAbrirPopup.OnClientClick = "btnAbrirPopup_Click";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -199,6 +207,13 @@ namespace Vistas
         fadeOut(document.getElementById('" + popup + @"'));
     </script>";
             ClientScript.RegisterStartupScript(this.GetType(), "FadeOutScript", fadeOutScript);
+        }
+
+        protected void btnCerrarSesion(object sender, EventArgs e)
+        {
+            Current = null;
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
         }
     }
 }
