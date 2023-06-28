@@ -261,7 +261,7 @@
                         <br />Descripcion:
                         <asp:Label style="text-align:left" ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>' Width="250px" Height="150px"/>
                         <br />Precio: $<asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario") %>' />
-                        <asp:Button class="boton-personalizado" ID="btnAgregarAlCarrito" runat="server" Text="Agregar al Carrito" />
+                        <asp:Button class="boton-personalizado" ID="btnAgregarAlCarrito" runat="server" Text="Agregar al Carrito" CommandArgument='<%# Eval("CodProducto_Pr") %>' OnCommand="btnVerMas_Command" CommandName="eventoVerMas" />
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>
@@ -296,6 +296,10 @@
                     </td>
                 </SelectedItemTemplate>
             </asp:ListView>
+                        
+                        <br />
+                        <asp:Label ID="lblMensajeStock" runat="server"></asp:Label>
+                        <br />
                         
         </div> 
 

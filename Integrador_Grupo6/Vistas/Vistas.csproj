@@ -98,6 +98,7 @@
     <Content Include="Imagenes\Productos\8.jpg" />
     <Content Include="Imagenes\Productos\9.jpg" />
     <Content Include="Inicio.aspx" />
+    <Content Include="ProductoSeleccion.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -143,6 +144,13 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoSeleccion.aspx.cs">
+      <DependentUpon>ProductoSeleccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoSeleccion.aspx.designer.cs">
+      <DependentUpon>ProductoSeleccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

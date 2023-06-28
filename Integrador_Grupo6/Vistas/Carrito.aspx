@@ -117,7 +117,7 @@
 
             </div>
         <div style="display:flex;justify-content:center;">
-            <asp:GridView ID="gvProductosCarrito" runat="server" AutoGenerateColumns="False" DataKeyNames="CodProducto_Pro" DataSourceID="SqlDataSource1" HeaderStyle-CssClass="dataGrid-th">
+            <asp:GridView ID="gvProductosCarrito" runat="server" AutoGenerateColumns="False" DataKeyNames="CodProducto_Pro" HeaderStyle-CssClass="dataGrid-th">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL_Pro" HeaderText="Imagen">
                         <ControlStyle Height="40px" Width="50px" />
@@ -146,7 +146,19 @@
                 </Columns>
                 <HeaderStyle CssClass="dataGrid-th" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                    <asp:GridView ID="grdCarrito" runat="server" Width="211px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AllowPaging="True">
+                    <AlternatingRowStyle BackColor="#DCDCDC" />
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#000065" />
+                </asp:GridView>
+            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
         </div>
         <div class="encabezado" style="display:flex;justify-content:center; margin-top: 10px; background-color:darkred">
             <asp:Label ID="lblTotal" runat="server" Text="Total: $"></asp:Label>

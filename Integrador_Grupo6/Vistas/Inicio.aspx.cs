@@ -17,6 +17,7 @@ namespace Vistas
         NegocioCategorias nc = new NegocioCategorias();
         NegocioMarcas nm = new NegocioMarcas();
         NegocioUsuario negU = new NegocioUsuario();
+        NegocioCaracteristicasXproductosXcolores nCXPXC = new NegocioCaracteristicasXproductosXcolores();
         DataTable TablaProductos = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -244,6 +245,23 @@ namespace Vistas
             Current = null;
             Session["Usuario"] = null;
             Response.Redirect("Inicio.aspx");
+        }
+        protected void btnVerMas_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "eventoVerMas")
+            {
+                String id = e.CommandArgument.ToString();
+                CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+                cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = id;
+
+                if (nCXPXC.existeStockv2(cxpxc))
+                    Response.Redirect("ProductoSeleccion.aspx?id=" + id);
+                else
+                {
+                    lblMensajeStock.Text = "Este producto no tiene stock!";
+                    return;
+                }
+            }
         }
     }
 }

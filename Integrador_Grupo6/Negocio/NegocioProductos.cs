@@ -99,6 +99,12 @@ namespace Negocio
         {
             return Dpr.inicioFiltros(categoria,marca,precioMax,precioMin);
         }
+        public DataTable getTablaProductosSeleccionados(String id)
+        {
+            Productos p = new Productos();
+            p.CodProducto_Pr1 = id;
+            return Dpr.getTablaProductosSeleccionados(p);
+        }
 
     }
 }

@@ -168,6 +168,12 @@ namespace Dao
             }
             return cn.ObtenerTabla("Productos", consulta);
         }
+        public DataTable getTablaProductosSeleccionados(Productos p)
+        {
+            string consulta = "SELECT * FROM Productos WHERE CodProducto_Pr = '" + p.CodProducto_Pr1 + "'";
+            DataTable tabla = cn.ObtenerTabla("Productos", consulta);
+            return tabla;
+        }
     }
 
     

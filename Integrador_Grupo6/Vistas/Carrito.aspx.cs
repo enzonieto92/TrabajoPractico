@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.Sql;
+using Negocio;
+using Entidades;
 
 namespace Vistas
 {
@@ -13,7 +17,27 @@ namespace Vistas
         {
             Panelpopup.Visible = false;
             Panelpopup2.Visible = false;
-            lblImporte.Text = SumaTotal().ToString();
+            if (!IsPostBack)
+            {
+                if (Session["carrito"] != null)
+                {
+                    grdCarrito.DataSource = Session["carrito"];
+                    grdCarrito.DataBind();
+                    decimal acumTotal = 0;
+
+                    foreach (DataRow dr in ((DataTable)Session["carrito"]).Rows)
+                    {
+                        acumTotal += Convert.ToInt32(dr["Cantidad"]) * Convert.ToDecimal(dr["Precio Unitario"]);
+                    }
+
+                    lblTotal.Text = Convert.ToString(acumTotal);
+                }
+                else
+                {
+                    lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    lblMensaje.Text = "Carrito vacio!";
+                }
+            }
         }
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)

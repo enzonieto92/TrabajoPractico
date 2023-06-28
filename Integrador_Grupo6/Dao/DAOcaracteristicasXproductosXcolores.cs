@@ -36,5 +36,28 @@ namespace Dao
             int cantFilas = cn.ejecutarTransaccion("UPDATE CaracteristicasXproductosXcolores SET Stock_CXPXC = " + cxpxc.Stock_CXPXC1 + " WHERE CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'");
             return cantFilas;
         }
+        public Boolean existeStock(CaracteristicasXproductoXcolores cxpxc)
+        {
+            String consulta = "Select * from CaracteristicasXProductosXColores where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "'";
+            return cn.existe(consulta);
+        }
+        public DataTable getTablaCaracteristicas(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "SELECT distinct CodCaracteristicas_CXPXC, Nombre_Car FROM CaracteristicasXProductosXColores inner join Caracteristicas on CodCaracteristicas_CXPXC = CodCaracteristica_Car WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "'";
+            DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
+            return tabla;
+        }
+        public DataTable getTablaColores(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "SELECT Descripcion_Co, CodColor_CXPXC FROM CaracteristicasXProductosXColores INNER JOIN Colores ON CodColor_CXPXC = CodColor_Co WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "'";
+            DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
+            return tabla;
+        }
+        public DataTable getCantidad(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "SELECT Stock_CXPXC FROM CaracteristicasXProductosXColores where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC='" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC='" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'";
+            DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
+            return tabla;
+        }
     }
 }
