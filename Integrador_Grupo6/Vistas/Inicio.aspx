@@ -27,8 +27,8 @@
 		</div>
     </header>
        
-    <asp:Panel ID="PanelInicioSesion" runat="server" Visible="false">
-    <div id="miPopup" class="popup">
+    <asp:Panel ID="PanelInicioSesion" runat="server">
+    <div id="PopupInicioSesion" class="popup">
             <div class="popup-contenido">
                 <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
                 <h2 style="text-align:center; font-family:sans-serif;">
@@ -62,7 +62,7 @@
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="PanelRegistro" runat="server" Visible="false">
+        <asp:Panel ID="PanelRegistro" runat="server">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:680px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>

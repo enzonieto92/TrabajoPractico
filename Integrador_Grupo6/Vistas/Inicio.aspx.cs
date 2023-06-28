@@ -66,28 +66,22 @@ namespace Vistas
 
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
         {
-            PanelRegistro.Visible = false;
-            PanelInicioSesion.Visible = true;
-            PanelInicioSesion.CssClass = "fade-in";
+            MostrarPopup("PopupInicioSesion");
         }
 
         protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
         {
-            PanelInicioSesion.CssClass = "fade-out";
-                PanelInicioSesion.Visible = false;
+            OcultarPopup("PopupInicioSesion");
         }
 
         protected void btnAbrirPopup2_Click(object sender, EventArgs e)
         {
-            PanelInicioSesion.Visible = false;
-            PanelRegistro.Visible = true;
-            PanelRegistro.CssClass = "fade-in";
+            MostrarPopup("PopupRegistro");
         }
 
         protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
         {
-            PanelRegistro.CssClass = "fade-out";
-                PanelRegistro.Visible = false;
+            OcultarPopup("PopupRegistro");
         }
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
@@ -104,24 +98,24 @@ namespace Vistas
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             PanelInicioSesion.CssClass = "";
-                Session["Usuario"] = negU.CrearLog(txtUsuario.Text, txtContraseña.Text);
-                if (Session["Usuario"] == null)
-                {
-                    lblerror.Text = "Datos Incorrectos!";
-                    lblerror.Visible = true;
-                }
-                else
-                {
-                if (negU.esAdmin(txtUsuario.Text,txtContraseña.Text))
+            Session["Usuario"] = negU.CrearLog(txtUsuario.Text, txtContraseña.Text);
+            if (Session["Usuario"] == null)
+            {
+                lblerror.Text = "Datos Incorrectos!";
+                lblerror.Visible = true;
+            }
+            else
+            {
+                if (negU.esAdmin(txtUsuario.Text, txtContraseña.Text))
                     Response.Redirect("~/AdminReportes.aspx");
                 else
 
-                Current = (Usuario)HttpContext.Current.Session["Usuario"];
+                    Current = (Usuario)HttpContext.Current.Session["Usuario"];
                 btnAbrirPopup.Text = Current.Nombre_Us1;
                 btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
                 PanelInicioSesion.Visible = false;
-                }
-            
+            }
+
 
         }
 
@@ -163,6 +157,48 @@ namespace Vistas
             {
                 lblLeyenda.Text = ex.Message;
             }
+        }
+        public void MostrarPopup(string popup)
+        {
+            string fadeInScript = @"<script>
+        function fadeIn(element) {
+            element.style.opacity = 0;
+            element.style.visibility = 'visible';
+
+            (function fade() {
+                var val = parseFloat(element.style.opacity);
+                if (!((val += 0.1) > 1)) {
+                    element.style.opacity = val;
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+        fadeIn(document.getElementById('" + popup + @"'));
+    </script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "FadeInScript", fadeInScript);
+
+
+        }
+        public void OcultarPopup(string popup)
+        {
+            string fadeOutScript = @"<script>
+        function fadeOut(element) {
+            element.style.opacity = 1;
+            element.style.visibility = 'visible';
+
+            (function fade() {
+                if ((element.style.opacity -= 0.1) < 0) {
+                    element.style.display = 'none';
+                    element.style.visibility = 'hidden';
+                    element.style.opacity = '0';
+                } else {
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+        fadeOut(document.getElementById('" + popup + @"'));
+    </script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "FadeOutScript", fadeOutScript);
         }
     }
 }
