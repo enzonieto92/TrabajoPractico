@@ -23,6 +23,12 @@ namespace Negocio
             return Dpr.getTabla();
         }
 
+        public DataTable getTablaInicio()
+        {
+            return Dpr.getTablaInicio();
+        }
+
+
         public bool existeProducto(string CodProducto)
         {
             bool existe = Dpr.existeProducto(CodProducto);
@@ -91,7 +97,7 @@ namespace Negocio
 
         public DataTable InicioFiltros(string categoria, string marca, string precioMax, string precioMin)
         {
-            return Dpr.inicioFiltros(categoria, marca, precioMax, precioMin);
+            return Dpr.inicioFiltros(categoria,marca,precioMax,precioMin);
         }
 
     }

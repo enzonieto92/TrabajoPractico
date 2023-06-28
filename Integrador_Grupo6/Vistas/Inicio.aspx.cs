@@ -14,6 +14,8 @@ namespace Vistas
     {
         NegocioProductos neg = new NegocioProductos();
         Usuario Current = new Usuario();
+        NegocioCategorias nc = new NegocioCategorias();
+        NegocioMarcas nm = new NegocioMarcas();
         NegocioUsuario negU = new NegocioUsuario();
         DataTable TablaProductos = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -22,10 +24,12 @@ namespace Vistas
             if (!IsPostBack)
             {
                 Current = (Usuario)HttpContext.Current.Session["Usuario"];
-                TablaProductos = neg.getTabla();
+                TablaProductos = neg.getTablaInicio();
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
                 CambiarNavegadores();
+                cargarCategorias();
+                cargarMarcas();
             }
         }
 
@@ -56,6 +60,9 @@ namespace Vistas
             txtBuscar.Text = "";
             txtPrecioMax.Text = "";
             txtPrecioMin.Text = "";
+            TablaProductos = neg.getTablaInicio();
+            lvProductos.DataSource = TablaProductos;
+            lvProductos.DataBind();
             rblCategorias.ClearSelection();
             rblMarcas.ClearSelection();
         }
@@ -168,6 +175,27 @@ namespace Vistas
                 lblLeyenda.Text = ex.Message;
             }
         }
+
+        void cargarCategorias()
+        {
+            DataTable tabla;
+            tabla  = nc.listarCategorias();
+            rblCategorias.DataSource = tabla;
+            rblCategorias.DataTextField = "Descripcion_Cat";
+            rblCategorias.DataValueField = "CodCategoria_Cat";
+            rblCategorias.DataBind();
+        }
+
+        void cargarMarcas()
+        {
+            DataTable tabla;
+            tabla = nm.listarMarcas();
+            rblMarcas.DataSource = tabla;
+            rblMarcas.DataTextField = "Descripcion_Ma";
+            rblMarcas.DataValueField = "CodMarca_Ma";
+            rblMarcas.DataBind();
+        }
+
         public void MostrarPopup(string popup)
         {
             string fadeInScript = @"<script>

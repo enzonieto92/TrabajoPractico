@@ -27,6 +27,14 @@ namespace Dao
             return tabla;
         }
 
+        public DataTable getTablaInicio()
+        {
+            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat ";  
+            DataTable tabla = cn.ObtenerTabla("Productos", consulta);
+            return tabla;
+        }
+
         public DataTable BuscarProducos(string texto)
         {
             string consulta = "SELECT * FROM Productos WHERE Estado_Pr = 1 AND nombre_Pr LIKE '%" + texto + "%'";
@@ -141,21 +149,22 @@ namespace Dao
         public DataTable inicioFiltros(string categoria, string marca, string precioMax, string precioMin)
         {
             string consulta = "SELECT * FROM Productos WHERE Estado_Pr = 1";
+
             if (categoria != "")
             {
                 consulta += " AND CodCategoria_Pr = '" + categoria + "'";
             }
-            else if (marca != "")
+            if (marca != "")
             {
-                consulta += " AND CodMarca_Pr = '" + marca + "'";
+                consulta += " AND CodMarcas_Pr = '" + marca + "'";
             }
-            else if (precioMin != "")
+            if (precioMin != "")
             {
-                consulta += " AND PrecioUnitario >= '" + precioMin + "'";
+                consulta += " AND PrecioUnitario <= '" + precioMin + "'";
             }
-            else if (precioMax != "")
+            if (precioMax != "")
             {
-                consulta += " AND PrecioUnitario <= '" + precioMax + "'";
+                consulta += " AND PrecioUnitario >= '" + precioMax + "'";
             }
             return cn.ObtenerTabla("Productos", consulta);
         }
