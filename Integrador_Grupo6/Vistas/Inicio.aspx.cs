@@ -25,6 +25,7 @@ namespace Vistas
                 TablaProductos = neg.getTabla();
                 lvProductos.DataSource = TablaProductos;
                 lvProductos.DataBind();
+                CambiarNavegadores();
             }
         }
 
@@ -111,6 +112,7 @@ namespace Vistas
         }
         protected void CambiarNavegadores()
         {
+                btnInicio.Text = "Inicio";
             if (Current != null)
             {
                 btnRegistrarse.Text = "Cerrar Sesión";
