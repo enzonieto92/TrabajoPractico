@@ -184,7 +184,7 @@ select 4, 3, 1, 'Motorola Edge 30 Pro',	'Rendimiento rapidisimo en el Edge 30 Pr
 select 5, 4, 2, 'NVIDIA RTX 3050', 'Potente tarjeta gráfica Nvidia 3050', 145000.00,'~/Imagenes/Productos/5.jpg', 1 union
 select 6, 4, 2, 'NVIDIA RTX 2070', 'Potente gráfica', 120000.00, '~/Imagenes/Productos/6.jpg', 1 union
 select 7, 5, 3,  'Asus Prime B550-K', 'Mothers', 85000.00, '~/Imagenes/Productos/7.jpg', 1 union
-select 8, 1, 4, 'PlayStation 5', 'PlayStation 5 Sony 825GB', 350000.00, '~/Imagenes/Productos/8.jpg', 1 union
+select 8, 1, 4, 'PlayStation 5', 'PlayStation 5 Sony 825GB', 350000.00, '~/Imagenes/Productos/9.jpg', 1 union
 select 9, 8, 4, 'Xbox Series X', 'Xbox Series X 1TB', 300000.00, '~/Imagenes/Productos/10.jpg', 1 union
 select 10, 6, 8, 'Notebook MSI', 'Potente',	255000.00, '~/Imagenes/Productos/20.jpg', 1
 go
