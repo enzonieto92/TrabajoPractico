@@ -124,16 +124,13 @@ namespace Vistas
             if (Current != null)
             {
                 btnRegistrarse.Text = "Cerrar Sesión";
-                btnRegistrarse.OnClientClick = "btnCerrarSesion";
                 btnAbrirPopup.Text = Current.Nombre_Us1;
                 btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
             }
             else
             {
                 btnRegistrarse.Text = "Registrarse";
-                btnRegistrarse.OnClientClick = "btnAbrirPopup2_Click";
                 btnAbrirPopup.Text = "Iniciar Sesión";
-                btnAbrirPopup.OnClientClick = "btnAbrirPopup_Click";
             }
         }
 
@@ -242,9 +239,17 @@ namespace Vistas
 
         protected void btnCerrarSesion(object sender, EventArgs e)
         {
+            Current = (Usuario)HttpContext.Current.Session["Usuario"];
+            if(Current == null)
+            {
+                MostrarPopup("PopupRegistro");
+            }
+            else
+            {
             Current = null;
             Session["Usuario"] = null;
             Response.Redirect("Inicio.aspx");
+            }
         }
         protected void btnVerMas_Command(object sender, CommandEventArgs e)
         {
