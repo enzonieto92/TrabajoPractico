@@ -348,6 +348,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddl_FormasEnvio;
 
         /// <summary>
+        /// Control rfv_FormaEnvio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_FormaEnvio;
+
+        /// <summary>
         /// Control PanelFormaEnvio.
         /// </summary>
         /// <remarks>
@@ -366,6 +375,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtDireccionEntrega;
 
         /// <summary>
+        /// Control rfv_Dir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Dir;
+
+        /// <summary>
         /// Control txtCiudad.
         /// </summary>
         /// <remarks>
@@ -375,6 +393,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtCiudad;
 
         /// <summary>
+        /// Control rfv_Ciu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Ciu;
+
+        /// <summary>
         /// Control txtProvincia.
         /// </summary>
         /// <remarks>
@@ -382,6 +409,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProvincia;
+
+        /// <summary>
+        /// Control rfv_Prov.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Prov;
 
         /// <summary>
         /// Control btnTarjeta.
@@ -447,6 +483,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_Tarjeta;
 
         /// <summary>
+        /// Control rfv_Tarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Tarjeta;
+
+        /// <summary>
+        /// Control rev_Tarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_Tarjeta;
+
+        /// <summary>
         /// Control txt_Titular.
         /// </summary>
         /// <remarks>
@@ -454,6 +508,24 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Titular;
+
+        /// <summary>
+        /// Control rfv_Titular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Titular;
+
+        /// <summary>
+        /// Control rev_Titular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_Titular;
 
         /// <summary>
         /// Control txt_Vencimiento.
@@ -465,6 +537,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_Vencimiento;
 
         /// <summary>
+        /// Control rfv_Vencimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Vencimiento;
+
+        /// <summary>
         /// Control txt_CodigoSeg.
         /// </summary>
         /// <remarks>
@@ -474,6 +555,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_CodigoSeg;
 
         /// <summary>
+        /// Control rfv_CodigoSeg.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_CodigoSeg;
+
+        /// <summary>
+        /// Control rev_CodigoSeg.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_CodigoSeg;
+
+        /// <summary>
         /// Control ddl_Cuotas.
         /// </summary>
         /// <remarks>
@@ -481,6 +580,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Cuotas;
+
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Control btn_PagarTarj.
@@ -508,6 +616,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Efectivo;
+
+        /// <summary>
+        /// Control rfv_Efectivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Efectivo;
 
         /// <summary>
         /// Control btn_PagarEfec.

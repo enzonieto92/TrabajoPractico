@@ -13,14 +13,23 @@ namespace Vistas
 {
     public partial class Carrito : System.Web.UI.Page
     {
+        NegocioFactura nF = new NegocioFactura();
+        NegocioDetalleFactura nDF = new NegocioDetalleFactura();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Panelpopup.Visible = false;
-            Panelpopup2.Visible = false;
             if (!IsPostBack)
             {
+                PanelFormaEnvio.Visible = false;
+                PanelEfectivo.Visible = false;
+                PanelTarjeta.Visible = false;
+
                 if (Session["carrito"] != null)
                 {
+                    lbl_Nombre.Text = ((Usuario)Session["usuario"]).Nombre_Us1;
+                    lbl_Apellido.Text = ((Usuario)Session["usuario"]).Apellido_Us1;
+                    lbl_DNI.Text = ((Usuario)Session["usuario"]).DNI_Us1;
+
                     grdCarrito.DataSource = Session["carrito"];
                     grdCarrito.DataBind();
                     decimal acumTotal = 0;
@@ -89,12 +98,14 @@ namespace Vistas
 
         protected void btnTarjeta_Click(object sender, EventArgs e)
         {
-
+            PanelTarjeta.Visible = true;
+            PanelEfectivo.Visible = false;
         }
 
         protected void btnEfectivo_Click(object sender, EventArgs e)
         {
-
+            PanelEfectivo.Visible = true;
+            PanelTarjeta.Visible = false;
         }
 
         protected void btn_PagarTarj_Click(object sender, EventArgs e)
@@ -105,6 +116,31 @@ namespace Vistas
         protected void btn_PagarEfec_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddl_FormasEnvio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddl_FormasEnvio.SelectedValue == "0")
+            {
+                PanelFormaEnvio.Visible = false;
+            }
+            else if(ddl_FormasEnvio.SelectedValue == "2")
+            {
+                PanelFormaEnvio.Visible = true;
+                btnEfectivo.ValidationGroup = "Grupo1";
+                btnTarjeta.ValidationGroup = "Grupo1";
+            }
+            else
+            {
+                PanelFormaEnvio.Visible = false;
+                btnEfectivo.ValidationGroup = "Grupo0";
+                btnTarjeta.ValidationGroup = "Grupo0";
+            }
         }
     }
 }

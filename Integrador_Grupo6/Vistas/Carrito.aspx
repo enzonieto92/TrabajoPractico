@@ -11,6 +11,13 @@
 
     <style type="text/css">
 
+        .auto-style1 {
+            width: 315px;
+        }
+        .auto-style2 {
+            width: 64px;
+        }
+
     </style>
 </head>
 <body>
@@ -165,7 +172,7 @@
             <asp:Label ID="lblImporte" runat="server" Text="-"></asp:Label>
         </div>
         <div style="display:flex;justify-content:center; margin-top: 10px">
-            <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" />
+            <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" />
             <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnVaciar" runat="server" Text="Vaciar Carrito" />
         </div>
 
@@ -174,36 +181,39 @@
             <p>
         <strong>Formas de Envio</strong></p>
     <p>
-        <asp:DropDownList ID="ddl_FormasEnvio" runat="server" AutoPostBack="True" ValidationGroup="Grupo0">
-            <asp:ListItem>---Forma de Envio---</asp:ListItem>
+        <asp:DropDownList ID="ddl_FormasEnvio" runat="server" AutoPostBack="True" ValidationGroup="Grupo0" OnSelectedIndexChanged="ddl_FormasEnvio_SelectedIndexChanged">
+            <asp:ListItem Value="0">---Forma de Envio---</asp:ListItem>
             <asp:ListItem Value="1">Retiro en Sucursal</asp:ListItem>
             <asp:ListItem Value="2">A Domicilio</asp:ListItem>
         </asp:DropDownList>
-        &nbsp;</p>
+        &nbsp;<asp:RequiredFieldValidator ID="rfv_FormaEnvio" runat="server" ControlToValidate="ddl_FormasEnvio" ErrorMessage="Seleccione un metodo de envio" ForeColor="Red" InitialValue="---Forma de Envio---" ValidationGroup="Grupo0"></asp:RequiredFieldValidator>
+            </p>
     <asp:Panel ID="PanelFormaEnvio" runat="server">
         Direccion de Entrega:&nbsp;&nbsp;
         <asp:TextBox ID="txtDireccionEntrega" runat="server" MaxLength="40" ValidationGroup="Grupo1"></asp:TextBox>
-        &nbsp;<br />
+        &nbsp;<asp:RequiredFieldValidator ID="rfv_Dir" runat="server" ControlToValidate="txtDireccionEntrega" ErrorMessage="Ingrese una direccion de entrega" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+        <br />
         Ciudad:&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtCiudad" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_Ciu" runat="server" ControlToValidate="txtCiudad" ErrorMessage="Ingrese un ciudad" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
         <br />
         Provincia:&nbsp;&nbsp;
         <asp:TextBox ID="txtProvincia" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_Prov" runat="server" ControlToValidate="txtProvincia" ErrorMessage="Ingrese una provincia " ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
         </asp:Panel>
     <br />
     <table class="auto-style12">
         <tr>
-            <td class="auto-style10">
-                <br />
-                <br />
+            <td class="auto-style1">
         <strong>Formas de Pago</strong><br />
         <asp:Button ID="btnTarjeta" runat="server" Text="Tarjeta" CssClass="boton-personalizado" OnClick="btnTarjeta_Click" Width="114px" ValidationGroup="Grupo0" />
         <br />
                 <br />
-        <asp:Button ID="btnEfectivo" runat="server" Text="Efectivo" CssClass="boton-personalizado" Width="114px" OnClick="btnEfectivo_Click" ValidationGroup="Grupo0" />
+        <asp:Button ID="btnEfectivo" runat="server" Text="Efectivo" CssClass="boton-personalizado" Width="127px" OnClick="btnEfectivo_Click" ValidationGroup="Grupo0" />
             </td>
-            <td>
+            <td class="auto-style2">
+                <br />
                 <br />
                 <br />
                 <br />
@@ -217,12 +227,13 @@
                 <br />
                 <br />
                 <br />
+                <br />
                 <asp:Label ID="lbl_DNI" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td></td>
-            <td>Nombre:
+            <td class="auto-style1"></td>
+            <td class="auto-style2">Nombre:
                 <br />
             </td>
             <td>
@@ -231,8 +242,8 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>Apellido:&nbsp; </td>
+            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style2">Apellido:&nbsp; </td>
             <td>
                 <asp:Label ID="lbl_Apellido" runat="server"></asp:Label>
             </td>
@@ -244,15 +255,22 @@
         <br />
         Numero de Tarjeta:<asp:TextBox ID="txt_Tarjeta" runat="server" MaxLength="16" ValidationGroup="Grupo2"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_Tarjeta" runat="server" ControlToValidate="txt_Tarjeta" ErrorMessage="Ingresar Numero de Tarjeta" ForeColor="Red" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="rev_Tarjeta" runat="server" ControlToValidate="txt_Tarjeta" ErrorMessage="Numero de Tarjeta No Valido" ForeColor="Red" ValidationExpression="^\d*$" ValidationGroup="Grupo2"></asp:RegularExpressionValidator>
         <br />
         Titular Tarjeta:<asp:TextBox ID="txt_Titular" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_Titular" runat="server" ControlToValidate="txt_Titular" ErrorMessage="Ingresar Nombre del Titular" ForeColor="Red" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="rev_Titular" runat="server" ControlToValidate="txt_Titular" ErrorMessage="Ingresar Nombre Valido" ForeColor="Red" ValidationExpression="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" ValidationGroup="Grupo2"></asp:RegularExpressionValidator>
         <br />
         Fecha de Vencimiento(MM/AA):<asp:TextBox ID="txt_Vencimiento" runat="server" Width="151px" TextMode="Month" ValidationGroup="Grupo2"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_Vencimiento" runat="server" ControlToValidate="txt_Vencimiento" ErrorMessage="Ingresar Fecha de Vencimiento" ForeColor="Red" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
         <br />
         Codigo de Seguridad:<asp:TextBox ID="txt_CodigoSeg" runat="server" Width="83px" ValidationGroup="Grupo2"></asp:TextBox>
         &nbsp;
+        <asp:RequiredFieldValidator ID="rfv_CodigoSeg" runat="server" ControlToValidate="txt_CodigoSeg" ErrorMessage="Ingresar Codigo de Seguridad" ForeColor="Red" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="rev_CodigoSeg" runat="server" ControlToValidate="txt_CodigoSeg" ErrorMessage="Codigo de Seguridad Erroneo" ForeColor="Red" ValidationExpression="^\d*$" ValidationGroup="Grupo2"></asp:RegularExpressionValidator>
         <br />
         Cuotas:
         <asp:DropDownList ID="ddl_Cuotas" runat="server" ValidationGroup="Grupo2">
@@ -262,9 +280,10 @@
             <asp:ListItem>6 Cuota</asp:ListItem>
             <asp:ListItem>9 Cuota</asp:ListItem>
         </asp:DropDownList>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddl_Cuotas" ForeColor="Red" InitialValue="--Seleccionar Cuotas--" ValidationGroup="Grupo2">Seleccionar Cuotas</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="80px" />
+        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="133px" />
         <br />
         <br />
     </asp:Panel>
@@ -279,9 +298,10 @@
             <asp:ListItem Value="2">Rapi Pago</asp:ListItem>
             <asp:ListItem Value="3">Sucursal</asp:ListItem>
         </asp:DropDownList>
+        <asp:RequiredFieldValidator ID="rfv_Efectivo" runat="server" ControlToValidate="ddl_Efectivo" ForeColor="Red" InitialValue="--Seleccionar Opcion--" ValidationGroup="Grupo3">Seleccionar Opcion</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="77px" />
+        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="138px" />
     </asp:Panel>
     <p>
         <asp:Label ID="Label4" runat="server"></asp:Label>
