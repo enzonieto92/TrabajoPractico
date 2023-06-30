@@ -24,6 +24,23 @@ namespace Negocio
             decimal cantidad = dDF.getTotalProductosVendidos(consulta);
             return cantidad;
         }
+
+        public bool insertarDetalles(String codProducto, String codCaracteristica, String color, String precioUn, int cantidad)
+        {
+            DetalleFacturas df = new DetalleFacturas();
+
+            df.CodProducto_Df1.CodProducto_Pr1 = codProducto;
+            df.CodCaracteristicas_Df1.Cod_Caracteristica_Car1 = codCaracteristica;
+            df.CodColor_Df1.Cod_Color_Co1 = color;
+            df.Cantidad_Df1 = cantidad;
+
+            int cantfilas = dDF.insertarDetalles(df, precioUn);
+
+            if (cantfilas >= 1)
+                return true;
+            else
+                return false;
+        }
     }
 
     

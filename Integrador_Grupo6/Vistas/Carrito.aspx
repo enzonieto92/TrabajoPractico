@@ -172,7 +172,7 @@
             <asp:Label ID="lblImporte" runat="server" Text="-"></asp:Label>
         </div>
         <div style="display:flex;justify-content:center; margin-top: 10px">
-            <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" />
+            <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnConfirmar" runat="server" Text="Confirmar" />
             <asp:Button class="boton-personalizado" style="margin: 10px" ID="btnVaciar" runat="server" Text="Vaciar Carrito" />
         </div>
 

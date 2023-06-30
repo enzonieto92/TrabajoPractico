@@ -32,6 +32,12 @@ namespace Dao
 
             return cantidad;
         }
+
+        public int insertarDetalles(DetalleFacturas df, String precioUn)
+        {
+            int cantFilas = cn.ejecutarTransaccion("INSERT INTO DetalleFacturas VALUES ((SELECT MAX(NroFactura_Fa) FROM Facturas), '" + df.CodProducto_Df1.CodProducto_Pr1 + "','" + df.CodCaracteristicas_Df1.Cod_Caracteristica_Car1 + "',(SELECT CodColor_Co FROM Colores WHERE Descripcion_Co='" + df.CodColor_Df1.Cod_Color_Co1 + "')," + precioUn + "," + df.Cantidad_Df1 + ")");
+            return cantFilas;
+        }
     }
 
 

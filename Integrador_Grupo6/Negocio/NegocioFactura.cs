@@ -30,5 +30,23 @@ namespace Negocio
             decimal cantidad = df.getTotalRecaudado(consulta);
             return cantidad;
         }
+
+        public bool agregarFactura(String dni, String metodoPago, String metodoEnvio, String direccionEntrega)
+        {
+            int cantFilas = 0;
+
+            Facturas fac = new Facturas();
+            fac.DNI_Fa1.DNI_Us1 = dni;
+            fac.CodMetodoPago_Fa1.CodMetPago_Pa1 = metodoPago;
+            fac.CodMetodoEnvio_Fa1.CodMetEnvio_En1 = metodoEnvio;
+            fac.DireccionEntrega_Fa1 = direccionEntrega;
+
+            cantFilas = df.agregarFactura(fac);
+
+            if (cantFilas == 1)
+                return true;
+            else
+                return false;
+        }
     }
 }

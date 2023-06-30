@@ -25,6 +25,13 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("Facturas", consulta);
             return tabla;
         }
+
+        public int agregarFactura(Facturas fac)
+        {
+            int cantFilas = cn.ejecutarTransaccion("INSERT INTO Facturas (DNI_Fa, CodMetodoEnvio_Fa, CodMetodoPago_Fa, Fecha_Fa, DireccionEntrega_Fa,  Total_Fa)" +
+                " SELECT '" + fac.DNI_Fa1.DNI_Us1 + "','" + fac.CodMetodoEnvio_Fa1.CodMetEnvio_En1 + "','" + fac.CodMetodoPago_Fa1.CodMetPago_Pa1 + "',GETDATE(),'" + fac.DireccionEntrega_Fa1 + "','"  + fac.Total_Fa1 + "'");
+            return cantFilas;
+        }
         public DataTable getTablaFecha(String consulta)
         {
             string con = "select * from Facturas " + consulta;

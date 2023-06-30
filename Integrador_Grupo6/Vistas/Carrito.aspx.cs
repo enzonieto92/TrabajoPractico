@@ -15,6 +15,8 @@ namespace Vistas
     {
         NegocioFactura nF = new NegocioFactura();
         NegocioDetalleFactura nDF = new NegocioDetalleFactura();
+        NegocioEnvio Nen = new NegocioEnvio();
+        NegocioPago Npa = new NegocioPago();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +25,7 @@ namespace Vistas
                 PanelFormaEnvio.Visible = false;
                 PanelEfectivo.Visible = false;
                 PanelTarjeta.Visible = false;
+                //cargarEnvio();
 
                 if (Session["carrito"] != null)
                 {
@@ -110,18 +113,78 @@ namespace Vistas
 
         protected void btn_PagarTarj_Click(object sender, EventArgs e)
         {
+            if (Session["carrito"] != null)
+            {
+                String metodoPago = "2";
+                bool agrego = agregarFactura(metodoPago);
 
+                if (agrego)
+                {
+                    bool agregoDetalles = agregarDetalles();
+
+                    if (agregoDetalles)
+                    {
+                        lblMensaje.Text = "Se realizó la compra con éxito!";
+                        lblMensaje.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "No se pudo realizar la compra";
+                        lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "No se pudo realizar la compra";
+                    lblMensaje.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Session["carrito"] = null;
+            }
+            else
+            {
+                lblMensaje.Text = "Ya se realizó esta compra!";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         protected void btn_PagarEfec_Click(object sender, EventArgs e)
         {
+            if (Session["carrito"] != null)
+            {
+                String metodoPago = "1";
+                bool agrego = agregarFactura(metodoPago);
 
+                if (agrego)
+                {
+                    bool agregoDetalles = agregarDetalles();
+
+                    if (agregoDetalles)
+                    {
+                        lblMensaje.Text = "Se realizó la compra con éxito!";
+                        lblMensaje.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "No se pudo realizar la compra";
+                        lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "No se pudo realizar la compra";
+                    lblMensaje.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Session["carrito"] = null;
+            }
+            else
+            {
+                lblMensaje.Text = "Ya se realizó esta compra!";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
-        protected void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void ddl_FormasEnvio_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -142,5 +205,53 @@ namespace Vistas
                 btnTarjeta.ValidationGroup = "Grupo0";
             }
         }
+
+        public bool agregarFactura(String metodoPago)
+        {
+            String dni = ((Usuario)Session["usuario"]).DNI_Us1;
+            String metodoEnvio = ddl_FormasEnvio.SelectedValue;
+            String direccionEntrega;
+            if (txtDireccionEntrega.Text != "" && metodoEnvio == "2")
+                direccionEntrega = txtDireccionEntrega.Text;
+            else
+                direccionEntrega = "Retiro en sucursal";
+
+            return nF.agregarFactura(dni, metodoPago, metodoEnvio, direccionEntrega);
+        }
+
+        public bool agregarDetalles()
+        {
+            bool agrego = true;
+            foreach (DataRow dr in ((DataTable)Session["carrito"]).Rows)
+            {
+                String codProducto = Convert.ToString(dr["Id Producto"]);
+                String codCaracteristica = Convert.ToString(dr["Caracteristica"]);
+                String color = Convert.ToString(dr["Color"]);
+                int cantitad = Convert.ToInt32(dr["Cantidad"]);
+                decimal precioUn = Convert.ToDecimal(dr["Precio Unitario"]);
+                String precioUnConPunto = Convert.ToString(precioUn).Replace(',', '.');
+
+                if (nDF.insertarDetalles(codProducto, codCaracteristica, color, precioUnConPunto, cantitad) == true && agrego != false)
+                {
+                    agrego = true;
+                }
+                else
+                {
+                    agrego = false;
+                }
+            }
+            return agrego;
+        }
+
+        //void cargarEnvio()
+        //{
+        //    DataTable tabla;
+        //    tabla = Nen.tablaEnvio();
+        //    ddl_FormasEnvio.DataSource = tabla;
+        //    ddl_FormasEnvio.DataTextField = "Descripcion_Me";
+        //    ddl_FormasEnvio.DataValueField = "CodMetodoEnvio_Me";
+        //    ddl_FormasEnvio.DataBind();
+        //}
+
     }
 }

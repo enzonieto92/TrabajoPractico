@@ -49,6 +49,8 @@
     <Compile Include="DAOdetalleFactura.cs" />
     <Compile Include="DAOfactura.cs" />
     <Compile Include="DAOmarcas.cs" />
+    <Compile Include="DAOmetodoEnvio.cs" />
+    <Compile Include="DAOmetodoPago.cs" />
     <Compile Include="DAOproductos.cs" />
     <Compile Include="DAOusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -96,7 +96,7 @@ namespace Vistas
             }
             else
             {
-                lblErrorIni.Text = "Primero debe Iniciar Sesion";
+               lblErrorIni.Text = "Primero debe Iniciar Sesion";
             }
         }
 
