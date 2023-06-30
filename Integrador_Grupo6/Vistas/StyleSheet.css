@@ -25,9 +25,18 @@
     margin-top: 5px;
     text-align: left;
 }
-.Hyperlink{
-    Text-align:center;
+.lblError {
+    color: #000000;
+
+    font-family: sans-serif;
+    Text-align: center;
+    display:flex;
+    justify-content:center;
+}
+.Hyperlink {
+    Text-align: center;
     margin-bottom: 40px;
+
 }
 .Form {
     font-family: sans-serif;

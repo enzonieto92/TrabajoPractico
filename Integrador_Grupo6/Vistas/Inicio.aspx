@@ -24,6 +24,7 @@
            </nav>
 		</div>
     </header>
+            <asp:Label ID="lblErrorIni" runat="server" CssClass="lblError"></asp:Label>
        
     <asp:Panel ID="PanelInicioSesion" runat="server">
     <div id="PopupInicioSesion" class="popup">
@@ -136,7 +137,6 @@
 
               </div>
        </div>
-            <asp:Label ID="lblErrorIni" runat="server" Font-Size="20pt" ForeColor="Red"></asp:Label>
         </asp:Panel>
 
 
