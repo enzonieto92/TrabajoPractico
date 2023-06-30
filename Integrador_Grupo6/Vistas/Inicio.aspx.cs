@@ -90,7 +90,14 @@ namespace Vistas
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("Carrito.aspx");
+            if (Current == null)
+            {
+                Response.Redirect("Carrito.aspx");
+            }
+            else
+            {
+                lblErrorIni.Text = "Primero debe Iniciar Sesion";
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

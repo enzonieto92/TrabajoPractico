@@ -136,6 +136,7 @@
 
               </div>
        </div>
+            <asp:Label ID="lblErrorIni" runat="server" Font-Size="20pt" ForeColor="Red"></asp:Label>
         </asp:Panel>
 
 
