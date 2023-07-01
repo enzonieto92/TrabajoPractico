@@ -66,7 +66,9 @@ namespace Vistas
 
         protected void btnAbrirPopup2_Click(object sender, EventArgs e)
         {
-            Panelpopup2.Visible = true;
+                Current = null;
+                Session["Usuario"] = null;
+                Response.Redirect("Inicio.aspx");
         }
 
         protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)

@@ -20,7 +20,7 @@
 
                 <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnCerrarSesion"></asp:LinkButton>
 
-			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" OnClick="ImageButton2_Click1"/>
+			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" OnClick="ImageButton2_Click1"/>
            </nav>
 		</div>
     </header>

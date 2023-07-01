@@ -53,7 +53,7 @@
 				</a>
                 <asp:LinkButton ID="btnUsuario" runat="server"></asp:LinkButton>
                 <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="CerrarSesion" Text="Cerrar Sesión"></asp:LinkButton>
-			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx"/>
+			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" PostBackUrl="Carrito.aspx"/>
            </nav>
 		</div>
     </header>
