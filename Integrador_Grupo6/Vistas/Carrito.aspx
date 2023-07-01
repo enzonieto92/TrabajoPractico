@@ -165,7 +165,8 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
-            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+            <asp:Label ID="lblMensaje" runat="server" Font-Size="15pt"></asp:Label>
+            <asp:Label ID="lblCarroVacio" runat="server" Font-Size="15pt" ForeColor="Red"></asp:Label>
         </div>
         <div class="encabezado" style="display:flex;justify-content:center; margin-top: 10px; background-color:darkred">
             <asp:Label ID="lblTotal" runat="server" Text="Total: $"></asp:Label>

@@ -58,9 +58,17 @@ namespace Vistas
         }
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if(Session["carrito"] == null)
+            {
+                lblCarroVacio.Text = "Primero llene el carro";
+            }
+            else
+            {
             PanelMetodos.Visible = true;
             PanelTarjeta.Visible = false;
             PanelEfectivo.Visible = false;
+            }
+            
         }
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
         {
