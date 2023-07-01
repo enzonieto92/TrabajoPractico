@@ -90,7 +90,7 @@ namespace Vistas
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
         {
-            if (Current == null)
+            if (Current != null)
             {
                 Response.Redirect("Carrito.aspx");
             }

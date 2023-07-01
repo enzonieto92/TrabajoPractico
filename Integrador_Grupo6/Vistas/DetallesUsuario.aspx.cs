@@ -24,5 +24,12 @@ namespace Vistas
             lblUsuario.Text = ((Usuario)Session["usuario"]).Usuario_Us1;
             lblContraseña.Text = "********";
         }
+
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            user = null;
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

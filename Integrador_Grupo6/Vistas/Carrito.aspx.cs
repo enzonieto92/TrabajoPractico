@@ -17,11 +17,13 @@ namespace Vistas
         NegocioDetalleFactura nDF = new NegocioDetalleFactura();
         NegocioEnvio Nen = new NegocioEnvio();
         NegocioPago Npa = new NegocioPago();
-
+        Usuario Current = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                Current = (Usuario)HttpContext.Current.Session["Usuario"];
+                CambiarNavegadores();
                 PanelFormaEnvio.Visible = false;
                 PanelEfectivo.Visible = false;
                 PanelTarjeta.Visible = false;
@@ -241,6 +243,20 @@ namespace Vistas
                 }
             }
             return agrego;
+        }
+        protected void CambiarNavegadores()
+        {
+            if (Current != null)
+            {
+                btnRegistrarse.Text = "Cerrar Sesión";
+                btnAbrirPopup.Text = Current.Nombre_Us1;
+                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
+            }
+            else
+            {
+                btnRegistrarse.Text = "Registrarse";
+                btnAbrirPopup.Text = "Iniciar Sesión";
+            }
         }
 
         //void cargarEnvio()
