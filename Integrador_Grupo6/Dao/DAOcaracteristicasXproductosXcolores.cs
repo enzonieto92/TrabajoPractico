@@ -33,7 +33,7 @@ namespace Dao
         }
         public int actualizarStock(CaracteristicasXproductoXcolores cxpxc)
         {
-            int cantFilas = cn.ejecutarTransaccion("UPDATE CaracteristicasXproductosXcolores SET Stock_CXPXC = " + cxpxc.Stock_CXPXC1 + " WHERE CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'");
+            int cantFilas = cn.RealizarConsulta("UPDATE CaracteristicasXproductosXcolores SET Stock_CXPXC = Stock_CXPXC + '" + cxpxc.Stock_CXPXC1 + "' WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'");
             return cantFilas;
         }
         public Boolean existeStock(CaracteristicasXproductoXcolores cxpxc)

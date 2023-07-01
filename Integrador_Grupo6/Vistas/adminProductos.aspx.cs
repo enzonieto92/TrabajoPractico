@@ -22,6 +22,11 @@ namespace Vistas
         NegocioColores NCo = new NegocioColores();
         NegocioCaracteristica NCar = new NegocioCaracteristica();
         NegocioCaracteristicasXproductosXcolores nsCXPXC = new NegocioCaracteristicasXproductosXcolores();
+
+        string codigoProd;
+        string codCaract = " - ";
+        string codColor = " - ";
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -46,7 +51,7 @@ namespace Vistas
 
         void cargarCategorias()
         {
-            
+
             DataTable tabla;
 
             tabla = NC.listarCategorias();
@@ -60,7 +65,7 @@ namespace Vistas
 
         void cargarMarcas()
         {
-            
+
             DataTable tabla;
 
             tabla = NM.listarMarcas();
@@ -74,7 +79,7 @@ namespace Vistas
 
         void cargarColores()
         {
-    
+
             DataTable tabla;
 
             tabla = NCo.listarColores();
@@ -93,16 +98,18 @@ namespace Vistas
 
             switch (tipo)
             {
-                case "CodMarca_Pr": tipo = "Descripcion_Ma";
-                break;
-                case "CodCategoria_Pr": tipo = "Descripcion_Cat";
-                break;
+                case "CodMarca_Pr":
+                    tipo = "Descripcion_Ma";
+                    break;
+                case "CodCategoria_Pr":
+                    tipo = "Descripcion_Cat";
+                    break;
             }
 
-            grvProductos.DataSource = np.filtrarProductos(tipo , txtFiltro.Text);
+            grvProductos.DataSource = np.filtrarProductos(tipo, txtFiltro.Text);
             grvProductos.DataBind();
 
-            if(np.filtrarProductos(tipo, txtFiltro.Text).Rows.Count == 0)
+            if (np.filtrarProductos(tipo, txtFiltro.Text).Rows.Count == 0)
             {
                 Resultado.ForeColor = System.Drawing.Color.Red;
                 Resultado.Text = "NO SE ENCONTRARON RESULTADOS";
@@ -128,7 +135,7 @@ namespace Vistas
             Productos prod = new Productos();
             prod.CodProducto_Pr1 = codPr;
             cargartablaProductos();
-           bool result = np.eliminarProducto(prod);
+            bool result = np.eliminarProducto(prod);
             if (result)
             {
                 Resultado.Text = "No se eliminó";
@@ -137,7 +144,7 @@ namespace Vistas
             {
                 Resultado.Text = "Eliminado";
             }
-            
+
         }
 
         protected void btnIngresarProducto_Click(object sender, EventArgs e)
@@ -222,7 +229,7 @@ namespace Vistas
         protected void grvProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grvProductos.EditIndex = e.NewEditIndex;
-            
+
             cargartablaProductos();
 
         }
@@ -232,7 +239,7 @@ namespace Vistas
             cargartablaProductos();
         }
 
- 
+
         protected void grvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             lblMensajeAgregado.Text = "";
@@ -260,12 +267,12 @@ namespace Vistas
             }
 
             limpiarCampos();
-            
+
         }
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if(e.Row.RowState==DataControlRowState.Edit)
+            if (e.Row.RowState == DataControlRowState.Edit)
             {
                 DropDownList ddlMa = (DropDownList)e.Row.FindControl("ei_ddl_Marca");
                 DropDownList ddlCat = (DropDownList)e.Row.FindControl("ei_ddl_Categoria");
@@ -281,6 +288,10 @@ namespace Vistas
                 ddlCat.DataValueField = "CodCategoria_Cat";
                 ddlCat.DataBind();
             }
+
+
+
+
         }
 
         private void cargarDDlStock()
@@ -329,17 +340,81 @@ namespace Vistas
             modal.Visible = true;
         }
 
+        protected void grvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow fila = grvProductos.SelectedRow;
+            lblMensajeAgregado.Text = fila.Cells[6].Text;
+            lblMensajeAgregado.Text = "index changed";
+            //modalStock.Visible = true;
+            //Label l1 = grvProductos.Rows[1].FindControl("lbl_it_Nombre") as Label;
+            //lblMensajeAgregado.Text = l1.Text;
+            //lblMensajeAgregado.Text = "aaaaaaaaaaaah";
+        }
+
+        protected void grvProductos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //Label l1 = grvProductos.Rows[1].FindControl("lbl_it_Nombre") as Label;
+            //lblMensajeAgregado.Text = l1.Text;
+
+
+
+            //int fila = grvProductos.Rows[1].RowIndex;
+            //lblMensajeAgregado.Text = grvProductos.Rows[fila].Cells[6].Text;
+
+        }
 
         protected void grvProductos_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "AgregarStock")  
+            if (e.CommandName == "AgregarStock")
             {
+                // *******************************************************************
+
+                // OBTENER DATOS DE UNA CELDA DE GRID VIEW
+                int rowIndex = Convert.ToInt32(e.CommandArgument);  // OBTIENE INDICE DE FILA
+                GridViewRow fila = grvProductos.Rows[rowIndex];     // OBTIENE OBJETO FILA SEGÚN ÍNDICE
+                string nombre = (fila.FindControl("lbl_it_Nombre") as Label).Text;  // HACE REFERENCIA AL CONTROL LABEL LLAMADO "lbl_it_Nombre"
+                                                                                    // DENTRO DE LA FILA SELECCIONADA Y OBTIENE EL TEXTO DEL MISMO
+                                                                                    // UBICADO EN LA CELDA DEL GRIDVIEW.
+                codigoProd = (fila.FindControl("lbl_it_CodProd") as Label).Text;
+                lblCaract.Text = lblCaract.Text + NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
+                lblColor.Text = lblColor.Text + NCo.NombreColor((fila.FindControl("lbl_it_CodColor") as Label).Text);
+
+                //********************************************************************
+
+
+
+
+                lblAgrDescripcion.Text = nombre;
+
                 modalStock.Visible = true;
             }
+        }
+
+        protected void btnAgrStock_Click(object sender, EventArgs e)
+        {
+            // AGREGAR STOCK -------------------------------------------
+
+
+            bool agrego = nsCXPXC.agregarStock("1", NCar.codigoCaract(lblCaract.Text), NCo.CodigoColor(lblColor.Text), Convert.ToInt32(txtAgrStock.Text));
+            if (agrego)
+            {
+                lblMensajeStock.ForeColor = System.Drawing.Color.Green;
+                lblMensajeStock.Text = "Stock agregado con éxito!";
+            }
+            else
+            {
+                lblMensajeStock.ForeColor = System.Drawing.Color.Red;
+                lblMensajeStock.Text = "No se pudo agregar el stock";
+            }
+
+            // ---------------------------------------------------------
+        }
+
+        protected void grvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
 
         }
     }
 }
-
 
 

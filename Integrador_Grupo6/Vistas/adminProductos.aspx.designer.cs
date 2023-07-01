@@ -357,6 +357,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblAgrDescripcion;
 
         /// <summary>
+        /// Control lblCaract.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCaract;
+
+        /// <summary>
+        /// Control lblColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblColor;
+
+        /// <summary>
         /// Control txtAgrStock.
         /// </summary>
         /// <remarks>
@@ -373,5 +391,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgrStock;
+
+        /// <summary>
+        /// Control lblMensajeStock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensajeStock;
     }
 }

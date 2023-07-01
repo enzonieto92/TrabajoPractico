@@ -22,14 +22,10 @@ namespace Negocio
             CXPXC.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = codCaracteristica;
             CXPXC.CodColor_CXPXC1.Cod_Color_Co1 = codColor;
             CXPXC.Stock_CXPXC1 = stock;
-            if (dcxpxc.CaracteristicaXproductosXcolores(CXPXC) == false)
-            {
-                cantFilas = dcxpxc.agregarStock(CXPXC);
-            }
-            else
-            {
-                cantFilas = dcxpxc.actualizarStock(CXPXC);
-            }
+
+
+            cantFilas = dcxpxc.actualizarStock(CXPXC);
+
 
             if (cantFilas == 1)
             {
