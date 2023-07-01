@@ -348,3 +348,31 @@ GO
 /*delete from Productos where CodProducto_Pr = '1'
 
 exec [SPEliminarProducto] @CodProducto = '6'¨*/
+
+CREATE PROCEDURE SPInsertarFactura
+(
+@DNI CHAR(10),
+@CodMetEnvio CHAR(6),
+@CodMetPago CHAR(6),
+@Fecha DATE,
+@DireccionEntrega VARCHAR(60),
+@Total decimal (8,2)
+)
+AS
+INSERT INTO Facturas (DNI_Fa,CodMetodoEnvio_Fa,CodMetodoPago_Fa,Fecha_Fa,DireccionEntrega_Fa,Total_Fa)
+VALUES(@DNI,@CodMetEnvio,@CodMetPago,@Fecha,@DireccionEntrega,@Total)
+GO
+
+CREATE PROCEDURE SPInsertarDetalleFactura
+(
+@NroFactura INT,
+@CodProducto CHAR(6),
+@CodCaracteristica CHAR(6),
+@CodColor CHAR(6),
+@PrecioUnitario DECIMAL(8,2),
+@Cantidad INT
+)
+AS
+INSERT INTO DetalleFacturas (NroFactura_Df,CodProducto_Df,CodCaracteristicas_Df,CodColor_Df,PrecioUnitario_Df,Cantidad_Df)
+VALUES(@NroFactura,@CodProducto,@CodCaracteristica,@CodColor,@PrecioUnitario,@Cantidad)
+GO
