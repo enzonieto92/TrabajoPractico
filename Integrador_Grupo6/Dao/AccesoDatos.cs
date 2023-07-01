@@ -42,6 +42,15 @@ namespace Dao
                 return null;
             }
         }
+        public object consulta(string consultaSQL)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(consultaSQL, cn);
+            object resultado = cmd.ExecuteScalar();
+            cn.Close();
+            return resultado;
+        }
 
         public int RealizarConsulta(string consultaSQL)
         {

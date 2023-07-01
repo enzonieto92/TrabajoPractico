@@ -28,9 +28,33 @@ namespace Dao
 
         public int agregarFactura(Facturas fac)
         {
-            int cantFilas = cn.ejecutarTransaccion("INSERT INTO Facturas (DNI_Fa, CodMetodoEnvio_Fa, CodMetodoPago_Fa, Fecha_Fa, DireccionEntrega_Fa,  Total_Fa)" +
-                " SELECT '" + fac.DNI_Fa1.DNI_Us1 + "','" + fac.CodMetodoEnvio_Fa1.CodMetEnvio_En1 + "','" + fac.CodMetodoPago_Fa1.CodMetPago_Pa1 + "',GETDATE(),'" + fac.DireccionEntrega_Fa1 + "','"  + fac.Total_Fa1 + "'");
-            return cantFilas;
+            SqlCommand comando = new SqlCommand();
+            armarParametrosAgregar(ref comando, fac);
+            return cn.EjecutarProcedimientoAlmacenado(comando, "SPInsertarFactura");
+        }
+        private void armarParametrosAgregar(ref SqlCommand cmd, Facturas fac)
+        {
+            DateTime fecha = DateTime.Today;
+            fac.Fecha_Fa1 = fecha;
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = cmd.Parameters.Add("@DNI", SqlDbType.Char);
+            SqlParametros.Value = fac.DNI_Fa1.DNI_Us1;
+            SqlParametros = cmd.Parameters.Add("@CodMetEnvio", SqlDbType.Char);
+            SqlParametros.Value = fac.CodMetodoEnvio_Fa1.CodMetEnvio_En1;
+            SqlParametros = cmd.Parameters.Add("@CodMetPago", SqlDbType.Char);
+            SqlParametros.Value = fac.CodMetodoPago_Fa1.CodMetPago_Pa1;
+            SqlParametros = cmd.Parameters.Add("@Fecha", SqlDbType.Date);
+            SqlParametros.Value = fac.Fecha_Fa1;
+            SqlParametros = cmd.Parameters.Add("@DireccionEntrega", SqlDbType.VarChar);
+            SqlParametros.Value = fac.DireccionEntrega_Fa1;
+            SqlParametros = cmd.Parameters.Add("@Total", SqlDbType.Decimal);
+            SqlParametros.Value = fac.Total_Fa1;
+        }
+        public DataTable getTablav2(Facturas f)
+        {
+            string consulta = "Select * from Facturas where Dni_Fa = '" + f.DNI_Fa1.DNI_Us1 + "'";
+            DataTable tabla = cn.ObtenerTabla("Facturas", consulta);
+            return tabla;
         }
         public DataTable getTablaFecha(String consulta)
         {

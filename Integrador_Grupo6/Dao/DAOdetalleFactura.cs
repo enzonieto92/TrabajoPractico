@@ -32,11 +32,35 @@ namespace Dao
 
             return cantidad;
         }
-
-        public int insertarDetalles(DetalleFacturas df, String precioUn)
+        public int nroFactura()
         {
-            int cantFilas = cn.ejecutarTransaccion("INSERT INTO DetalleFacturas VALUES ((SELECT MAX(NroFactura_Fa) FROM Facturas), '" + df.CodProducto_Df1.CodProducto_Pr1 + "','" + df.CodCaracteristicas_Df1.Cod_Caracteristica_Car1 + "',(SELECT CodColor_Co FROM Colores WHERE Descripcion_Co='" + df.CodColor_Df1.Cod_Color_Co1 + "')," + precioUn + "," + df.Cantidad_Df1 + ")");
-            return cantFilas;
+            string nro = "SELECT MAX(NroFactura_Fa) FROM Facturas";
+            int numero = Convert.ToInt32(cn.consulta(nro));
+            return numero;
+        }
+        public int agregarDetalleFacturas(DetalleFacturas df)
+        {
+            SqlCommand comando = new SqlCommand();
+            armarParametrosAgregar(ref comando, df);
+            return cn.EjecutarProcedimientoAlmacenado(comando, "SPInsertarDetalleFactura");
+        }
+        private void armarParametrosAgregar(ref SqlCommand cmd, DetalleFacturas df)
+        {
+            int factura = nroFactura();
+            df.NroFacturas_Df1.NroFactura_Fa1 = factura;
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = cmd.Parameters.Add("@NroFactura", SqlDbType.Int);
+            SqlParametros.Value = df.NroFacturas_Df1.NroFactura_Fa1;
+            SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
+            SqlParametros.Value = df.CodProducto_Df1.CodProducto_Pr1;
+            SqlParametros = cmd.Parameters.Add("@CodCaracteristica", SqlDbType.Char);
+            SqlParametros.Value = df.CodCaracteristicas_Df1.Cod_Caracteristica_Car1;
+            SqlParametros = cmd.Parameters.Add("@CodColor", SqlDbType.Char);
+            SqlParametros.Value = df.CodColor_Df1.Cod_Color_Co1;
+            SqlParametros = cmd.Parameters.Add("@PrecioUnitario", SqlDbType.Decimal);
+            SqlParametros.Value = df.PrecioUnitario_Df1;
+            SqlParametros = cmd.Parameters.Add("@Cantidad", SqlDbType.Int);
+            SqlParametros.Value = df.Cantidad_Df1;
         }
     }
 

@@ -30,8 +30,14 @@ namespace Negocio
             decimal cantidad = df.getTotalRecaudado(consulta);
             return cantidad;
         }
+        public DataTable getTablav2(string dni)
+        {
+            Facturas f = new Facturas();
+            f.DNI_Fa1.DNI_Us1 = dni;
+            return df.getTablav2(f);
+        }
 
-        public bool agregarFactura(String dni, String metodoPago, String metodoEnvio, String direccionEntrega)
+        public bool agregarFactura(String dni, String metodoPago, String metodoEnvio, String direccionEntrega, decimal Total)
         {
             int cantFilas = 0;
 
@@ -40,6 +46,7 @@ namespace Negocio
             fac.CodMetodoPago_Fa1.CodMetPago_Pa1 = metodoPago;
             fac.CodMetodoEnvio_Fa1.CodMetEnvio_En1 = metodoEnvio;
             fac.DireccionEntrega_Fa1 = direccionEntrega;
+            fac.Total_Fa1 = Total;
 
             cantFilas = df.agregarFactura(fac);
 

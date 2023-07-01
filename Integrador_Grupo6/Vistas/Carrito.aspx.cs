@@ -51,9 +51,17 @@ namespace Vistas
                     lblMensaje.ForeColor = System.Drawing.Color.Red;
                     lblMensaje.Text = "Carrito vacio!";
                 }
+                PanelMetodos.Visible = false;
+                PanelTarjeta.Visible = false;
+                PanelEfectivo.Visible = false;
             }
         }
-
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            PanelMetodos.Visible = true;
+            PanelTarjeta.Visible = false;
+            PanelEfectivo.Visible = false;
+        }
         protected void btnAbrirPopup_Click(object sender, EventArgs e)
         {
             Panelpopup.Visible = true;
@@ -199,19 +207,25 @@ namespace Vistas
             else if(ddl_FormasEnvio.SelectedValue == "2")
             {
                 PanelFormaEnvio.Visible = true;
-                btnEfectivo.ValidationGroup = "Grupo1";
-                btnTarjeta.ValidationGroup = "Grupo1";
+                btnEfectivo.ValidationGroup = "1";
+                btnTarjeta.ValidationGroup = "1";
             }
             else
             {
                 PanelFormaEnvio.Visible = false;
-                btnEfectivo.ValidationGroup = "Grupo0";
-                btnTarjeta.ValidationGroup = "Grupo0";
+                btnEfectivo.ValidationGroup = "2";
+                btnTarjeta.ValidationGroup = "2";
             }
         }
 
         public bool agregarFactura(String metodoPago)
         {
+            decimal acumTotal = 0;
+
+            foreach (DataRow dr in ((DataTable)Session["carrito"]).Rows)
+            {
+                acumTotal += Convert.ToInt32(dr["Cantidad"]) * Convert.ToDecimal(dr["Precio Unitario"]);
+            }
             String dni = ((Usuario)Session["usuario"]).DNI_Us1;
             String metodoEnvio = ddl_FormasEnvio.SelectedValue;
             String direccionEntrega;
@@ -220,7 +234,7 @@ namespace Vistas
             else
                 direccionEntrega = "Retiro en sucursal";
 
-            return nF.agregarFactura(dni, metodoPago, metodoEnvio, direccionEntrega);
+            return nF.agregarFactura(dni, metodoPago, metodoEnvio, direccionEntrega,acumTotal);
         }
 
         public bool agregarDetalles()
@@ -230,12 +244,12 @@ namespace Vistas
             {
                 String codProducto = Convert.ToString(dr["Id Producto"]);
                 String codCaracteristica = Convert.ToString(dr["Caracteristica"]);
-                String color = Convert.ToString(dr["Color"]);
+                String Codcolor = Convert.ToString(dr["Color"]);
                 int cantitad = Convert.ToInt32(dr["Cantidad"]);
                 decimal precioUn = Convert.ToDecimal(dr["Precio Unitario"]);
-                String precioUnConPunto = Convert.ToString(precioUn).Replace(',', '.');
+                
 
-                if (nDF.insertarDetalles(codProducto, codCaracteristica, color, precioUnConPunto, cantitad) == true && agrego != false)
+                if (nDF.insertarDetalles(codProducto, codCaracteristica, Codcolor, precioUn, cantitad) == true && agrego != false)
                 {
                     agrego = true;
                 }
@@ -245,6 +259,14 @@ namespace Vistas
                 }
             }
             return agrego;
+        }
+        protected void btnVaciar_Click(object sender, EventArgs e)
+        {
+            Session["carrito"] = null;
+            grdCarrito.DataSource = Session["carrito"];
+            grdCarrito.DataBind();
+            lblMensaje.ForeColor = System.Drawing.Color.Red;
+            lblMensaje.Text = "Los elementos seleccionados han sido borrados!";
         }
         protected void CambiarNavegadores()
         {

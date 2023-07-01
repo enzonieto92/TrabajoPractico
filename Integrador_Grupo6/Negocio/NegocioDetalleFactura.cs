@@ -25,7 +25,7 @@ namespace Negocio
             return cantidad;
         }
 
-        public bool insertarDetalles(String codProducto, String codCaracteristica, String color, String precioUn, int cantidad)
+        public bool insertarDetalles(String codProducto, String codCaracteristica, String color, Decimal precioUn, int cantidad)
         {
             DetalleFacturas df = new DetalleFacturas();
 
@@ -33,8 +33,9 @@ namespace Negocio
             df.CodCaracteristicas_Df1.Cod_Caracteristica_Car1 = codCaracteristica;
             df.CodColor_Df1.Cod_Color_Co1 = color;
             df.Cantidad_Df1 = cantidad;
+            df.PrecioUnitario_Df1 = precioUn;
 
-            int cantfilas = dDF.insertarDetalles(df, precioUn);
+            int cantfilas = dDF.agregarDetalleFacturas(df);
 
             if (cantfilas >= 1)
                 return true;

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.Sql;
+using Negocio;
 using Entidades;
 
 namespace Vistas
@@ -11,6 +14,8 @@ namespace Vistas
     public partial class DetallesUsuario : System.Web.UI.Page
     {
         Usuario user = new Usuario();
+        NegocioFactura nsF = new NegocioFactura();
+        NegocioDetalleFactura nDF = new NegocioDetalleFactura();
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (Usuario)HttpContext.Current.Session["Usuario"];
@@ -23,6 +28,43 @@ namespace Vistas
             lblTelefono.Text = ((Usuario)Session["usuario"]).Telefono_Us1;
             lblUsuario.Text = ((Usuario)Session["usuario"]).Usuario_Us1;
             lblContraseña.Text = "********";
+            if (!IsPostBack)
+            {
+                cargarTablaFacturasTODO();
+            }
+        }
+        void cargarTablaFacturasTODO()
+        {
+            string dni = ((Usuario)Session["usuario"]).DNI_Us1;
+            DataTable tablaFacturas = nsF.getTablav2(dni);
+            grvFacturas.DataSource = tablaFacturas;
+            grvFacturas.DataBind();
+        }
+        protected void grvFacturas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "eventoVerMas")
+            {
+                int fila = Convert.ToInt32(e.CommandArgument);
+                string s_nroFactura = ((Label)grvFacturas.Rows[fila].FindControl("it_lbl_NFactura")).Text;
+                cargarTablaDetalleFacturas(s_nroFactura);
+            }
+        }
+        public void cargarTablaDetalleFacturas(String nroFactura)
+        {
+            grvDetalleFacturas.DataSource = nDF.getTabla(nroFactura);
+            grvDetalleFacturas.DataBind();
+        }
+        protected void grvDetalleFacturas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            String s_NroFactura = ((Label)grvFacturas.Rows[e.NewPageIndex].FindControl("it_lbl_NFactura")).Text;
+            grvDetalleFacturas.PageIndex = e.NewPageIndex;
+            cargarTablaDetalleFacturas(s_NroFactura);
+        }
+
+        protected void grvFacturas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grvFacturas.PageIndex = e.NewPageIndex;
+            cargarTablaFacturasTODO();
         }
 
         protected void CerrarSesion(object sender, EventArgs e)
