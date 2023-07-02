@@ -201,6 +201,12 @@ header nav a:hover {
                         font-size: 40px;
                     }
 
+.centered-element {
+    margin: 0;
+    position: absolute;
+    left: auto;
+    right: auto;
+}
 
 .popup2 {
     width: 50%;

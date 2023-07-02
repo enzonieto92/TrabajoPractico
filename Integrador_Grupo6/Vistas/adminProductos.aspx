@@ -68,12 +68,12 @@
                                         <asp:Label ID="lbl_it_CodProd" runat="server" Text='<%# Bind("CodProducto_Pr") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Caracteristicas">
+                                <asp:TemplateField HeaderText="Codigo Caracteristicas" Visible="False">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_CodCaract" runat="server" Text='<%# Bind("CodCaracteristicas_CXPXC") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Marca">
+                                <asp:TemplateField HeaderText="Codigo Marca" Visible="False">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ei_ddl_Marca" runat="server">
                                             <asp:ListItem Value="CodMarca_Ma">Codigo Marca</asp:ListItem>
@@ -88,7 +88,7 @@
                                         <asp:Label ID="it_lbl_Marca" runat="server" Text='<%# Bind("Descripcion_Ma") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Categoria">
+                                <asp:TemplateField HeaderText="Codigo Categoria" Visible="False">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ei_ddl_Categoria" runat="server">
                                             <asp:ListItem Value="CodCategoria_Cat">Codigo Categoria</asp:ListItem>
@@ -119,9 +119,9 @@
                                         <asp:Label ID="lbl_it_Desc" runat="server" Text='<%# Bind("Descripcion_Pr") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Color">
+                                <asp:TemplateField HeaderText="Color">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_CodColor" runat="server" Text='<%# Bind("CodColor_CXPXC") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_CodColor" runat="server" Text='<%# Bind("Descripcion_Co") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:ImageField DataImageUrlField="URLimagen_Pr" HeaderText="Imagen">
@@ -152,11 +152,6 @@
                                 <ControlStyle Height="25px" Width="25px" />
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:ButtonField>
-                                <asp:TemplateField HeaderText="Prueba">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_prueba" runat="server">prueba</asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
             <table class="auto-style1">
@@ -282,6 +277,7 @@
                   <asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
                   <asp:Button ID="btnAgregarMarca" runat="server" Text="Agregar"></asp:Button>
                 </div>
+                 <asp:ImageButton ID="imgCerrarPopMarcas" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="ImageButtonCerrar_Click1" />
             </div>
         </div>
         
@@ -290,14 +286,28 @@
         <div class="contenedor-popup" id="modalStock" runat="server">
              <div class="popup2">
                 <div class="funciones-popup">
-                  <asp:Label ID="lblTextoPopupAgrStock" runat="server" Text="Agregar stock" ForeColor="White"></asp:Label>
+                  <asp:Label style="margin-left:30%; font-size: 20px" ID="lblTextoPopupAgrStock" runat="server" Text="Agregar stock" ForeColor="White"></asp:Label>
+                    <br />
+                    <br />
+                  <asp:Label ID="lblCodigoProd" runat="server" Text="Código: " ForeColor="White"></asp:Label>
+                  <asp:Label ID="lblMuestraCod" runat="server" Text="" ForeColor="White"></asp:Label>
+                    <br />
+                  <asp:Label ID="lblArticulo" runat="server" Text="Articulo: " ForeColor="White"></asp:Label>
                   <asp:Label ID="lblAgrDescripcion" runat="server" Text="Descripcion" ForeColor="White"></asp:Label>
-                  <asp:Label ID="lblCaract" runat="server" Text="Caracteristica: " ForeColor="White"></asp:Label>
+                    <br />
+                  <asp:Label ID="lblCaract" runat="server" Text="Caracteristicas: " ForeColor="White"></asp:Label>
+                  <asp:Label ID="lblMuestraCar" runat="server" Text="" ForeColor="White"></asp:Label>
+                    <br />
                   <asp:Label ID="lblColor" runat="server" Text="Color: " ForeColor="White"></asp:Label>
-                  <asp:TextBox ID="txtAgrStock" runat="server"></asp:TextBox>
+                  <asp:Label ID="lblMuestraColor" runat="server" Text="" ForeColor="White"></asp:Label>
+                    <br />
+                  <asp:TextBox style="margin-top: 20px" ID="txtAgrStock" runat="server" TextMode="Number"></asp:TextBox>
                   <asp:Button ID="btnAgrStock" runat="server" Text="Agregar Stock" OnClick="btnAgrStock_Click"></asp:Button>
-                  <asp:Label ID="lblMensajeStock" runat="server" Text="" ForeColor="White"></asp:Label>
+                    <br />
+                    <br />
+                  <asp:Label class="centered-element" ID="lblMensajeStock" runat="server" Text="" ForeColor="White"></asp:Label>
                 </div>
+                 <asp:ImageButton ID="imgCerrarPop" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="ImageButton1_Click1" />
             </div>
         </div>
         

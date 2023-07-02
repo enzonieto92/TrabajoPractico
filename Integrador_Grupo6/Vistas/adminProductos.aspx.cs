@@ -23,10 +23,6 @@ namespace Vistas
         NegocioCaracteristica NCar = new NegocioCaracteristica();
         NegocioCaracteristicasXproductosXcolores nsCXPXC = new NegocioCaracteristicasXproductosXcolores();
 
-        string codigoProd;
-        string codCaract = " - ";
-        string codColor = " - ";
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -351,17 +347,6 @@ namespace Vistas
             //lblMensajeAgregado.Text = "aaaaaaaaaaaah";
         }
 
-        protected void grvProductos_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            //Label l1 = grvProductos.Rows[1].FindControl("lbl_it_Nombre") as Label;
-            //lblMensajeAgregado.Text = l1.Text;
-
-
-
-            //int fila = grvProductos.Rows[1].RowIndex;
-            //lblMensajeAgregado.Text = grvProductos.Rows[fila].Cells[6].Text;
-
-        }
 
         protected void grvProductos_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
@@ -375,14 +360,11 @@ namespace Vistas
                 string nombre = (fila.FindControl("lbl_it_Nombre") as Label).Text;  // HACE REFERENCIA AL CONTROL LABEL LLAMADO "lbl_it_Nombre"
                                                                                     // DENTRO DE LA FILA SELECCIONADA Y OBTIENE EL TEXTO DEL MISMO
                                                                                     // UBICADO EN LA CELDA DEL GRIDVIEW.
-                codigoProd = (fila.FindControl("lbl_it_CodProd") as Label).Text;
-                lblCaract.Text = lblCaract.Text + NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
-                lblColor.Text = lblColor.Text + NCo.NombreColor((fila.FindControl("lbl_it_CodColor") as Label).Text);
+                lblMuestraCod.Text = (fila.FindControl("lbl_it_CodProd") as Label).Text;
+                lblMuestraCar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
+                lblMuestraColor.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
 
                 //********************************************************************
-
-
-
 
                 lblAgrDescripcion.Text = nombre;
 
@@ -394,18 +376,37 @@ namespace Vistas
         {
             // AGREGAR STOCK -------------------------------------------
 
-
-            bool agrego = nsCXPXC.agregarStock("1", NCar.codigoCaract(lblCaract.Text), NCo.CodigoColor(lblColor.Text), Convert.ToInt32(txtAgrStock.Text));
-            if (agrego)
+            if (txtAgrStock.Text != "" && txtAgrStock.Text != "0")
             {
-                lblMensajeStock.ForeColor = System.Drawing.Color.Green;
-                lblMensajeStock.Text = "Stock agregado con éxito!";
+                bool agrego = nsCXPXC.agregarStock(lblMuestraCod.Text, NCar.codigoCaract(lblMuestraCar.Text), NCo.CodigoColor(lblMuestraColor.Text), Convert.ToInt32(txtAgrStock.Text));
+                if (agrego)
+                {
+                    cargartablaProductos();
+                    lblMensajeStock.ForeColor = System.Drawing.Color.Green;
+                    lblMensajeStock.Text = "Stock agregado con éxito!";
+                    txtAgrStock.Text = "";
+                }
+                else
+                {
+                    lblMensajeStock.ForeColor = System.Drawing.Color.Red;
+                    lblMensajeStock.Text = "No se pudo agregar el stock";
+                }
             }
             else
             {
-                lblMensajeStock.ForeColor = System.Drawing.Color.Red;
-                lblMensajeStock.Text = "No se pudo agregar el stock";
+                if (txtAgrStock.Text == "0")
+                {
+                    lblMensajeStock.ForeColor = System.Drawing.Color.Red;
+                    lblMensajeStock.Text = "La cantidad debe ser distinta a 0";
+                }
+                else
+                {
+                    lblMensajeStock.ForeColor = System.Drawing.Color.Red;
+                    lblMensajeStock.Text = "Debe ingresar una cantidad";
+                }
+
             }
+
 
             // ---------------------------------------------------------
         }
@@ -413,6 +414,19 @@ namespace Vistas
         protected void grvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
 
+        }
+
+        protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
+        {
+            lblMensajeStock.Text = "";
+            txtAgrStock.Text = "";
+            modalStock.Visible = false;
+        }
+
+        protected void ImageButtonCerrar_Click1(object sender, ImageClickEventArgs e)
+        {
+
+            modal.Visible = false;
         }
     }
 }

@@ -330,6 +330,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnAgregarMarca;
 
         /// <summary>
+        /// Control imgCerrarPopMarcas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgCerrarPopMarcas;
+
+        /// <summary>
         /// Control modalStock.
         /// </summary>
         /// <remarks>
@@ -346,6 +355,33 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTextoPopupAgrStock;
+
+        /// <summary>
+        /// Control lblCodigoProd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCodigoProd;
+
+        /// <summary>
+        /// Control lblMuestraCod.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMuestraCod;
+
+        /// <summary>
+        /// Control lblArticulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArticulo;
 
         /// <summary>
         /// Control lblAgrDescripcion.
@@ -366,6 +402,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblCaract;
 
         /// <summary>
+        /// Control lblMuestraCar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMuestraCar;
+
+        /// <summary>
         /// Control lblColor.
         /// </summary>
         /// <remarks>
@@ -373,6 +418,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblColor;
+
+        /// <summary>
+        /// Control lblMuestraColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMuestraColor;
 
         /// <summary>
         /// Control txtAgrStock.
@@ -400,5 +454,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensajeStock;
+
+        /// <summary>
+        /// Control imgCerrarPop.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgCerrarPop;
     }
 }
