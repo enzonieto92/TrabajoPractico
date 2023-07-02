@@ -32,9 +32,10 @@ namespace Vistas
                 cargarCategorias();
                 cargarMarcas();
                 cargarColores();
-                cargarDDlStock();
+                //cargarDDlStock();
                 modal.Visible = false;
                 modalStock.Visible = false;
+                modalAgregarProducto.Visible = false;
             }
 
         }
@@ -248,23 +249,23 @@ namespace Vistas
 
         }
 
-        protected void btnIngresarStock_Click(object sender, EventArgs e)
+        /*protected void btnIngresarStock_Click(object sender, EventArgs e)
         {
             bool agrego = nsCXPXC.agregarStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue, Convert.ToInt32(txtAgregarStock.Text));
             if (agrego)
             {
-                lblStockAgregado.ForeColor = System.Drawing.Color.Green;
-                lblStockAgregado.Text = "Stock agregado con éxito!";
+                //lblStockAgregado.ForeColor = System.Drawing.Color.Green;
+                //lblStockAgregado.Text = "Stock agregado con éxito!";
             }
             else
             {
-                lblStockAgregado.ForeColor = System.Drawing.Color.Red;
-                lblStockAgregado.Text = "No se pudo agregar el stock";
+                //lblStockAgregado.ForeColor = System.Drawing.Color.Red;
+                //lblStockAgregado.Text = "No se pudo agregar el stock";
             }
 
             limpiarCampos();
 
-        }
+        }*/
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -290,7 +291,7 @@ namespace Vistas
 
         }
 
-        private void cargarDDlStock()
+        /*private void cargarDDlStock()
         {
             DataTable tabla = np.getTabla();
 
@@ -311,9 +312,9 @@ namespace Vistas
             ddlColorProducto.DataTextField = "Descripcion_Co";
             ddlColorProducto.DataValueField = "CodColor_Co";
             ddlColorProducto.DataBind();
-        }
+        }*/
 
-        protected void btnIngresarStock0_Click(object sender, EventArgs e)
+        /*protected void btnIngresarStock0_Click(object sender, EventArgs e)
         {
             bool verificacion = nsCXPXC.existeStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue);
             int cantidad;
@@ -328,7 +329,7 @@ namespace Vistas
                 lblVerificacionStock.ForeColor = System.Drawing.Color.Green;
                 lblVerificacionStock.Text = "El stock existente de acuerdo a los datos ingresados es de: " + cantidad;
             }
-        }
+        }*/
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
@@ -427,6 +428,16 @@ namespace Vistas
         {
 
             modal.Visible = false;
+        }
+
+        protected void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            modalAgregarProducto.Visible = true;
+        }
+
+        protected void imgCerrarAgregarProducto_Click1(object sender, ImageClickEventArgs e)
+        {
+            modalAgregarProducto.Visible = false;
         }
     }
 }

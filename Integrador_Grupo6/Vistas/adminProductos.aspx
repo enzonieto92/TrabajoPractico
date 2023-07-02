@@ -33,6 +33,55 @@
             width: 219px;
             height: 100px;
         }
+        .auto-style12 {
+            width: 40%;
+        }
+        .auto-style13 {
+            width: 48%;
+        }
+        .auto-style14 {
+            width: 200px;
+        }
+        .auto-style15 {
+            width: 200px;
+            height: 52px;
+        }
+        .auto-style16 {
+            height: 52px;
+        }
+        .auto-style17 {
+            height: 52px;
+            width: 396px;
+        }
+        .auto-style19 {
+            width: 1483px;
+            height: 52px;
+            text-align: justify;
+        }
+        .auto-style21 {
+            width: 200px;
+            height: 26px;
+        }
+        .auto-style22 {
+            width: 396px;
+            height: 26px;
+        }
+        .auto-style23 {
+            width: 1483px;
+            height: 26px;
+        }
+        .auto-style24 {
+            text-align: center;
+        }
+        .auto-style25 {
+            text-align: justify;
+        }
+        .auto-style26 {
+            width: 1483px;
+        }
+        .auto-style27 {
+            width: 396px;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +95,7 @@
             <br />
             <br />
             <strong>Filtros</strong><br />
-            <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="auto-style12">
+            <asp:DropDownList ID="ddlFiltro" runat="server">
                 <asp:ListItem Value="CodProducto_Pr">Codigo Producto</asp:ListItem>
                 <asp:ListItem Value="CodMarca_Pr">Marca</asp:ListItem>
                 <asp:ListItem Value="CodCategoria_Pr">Categoría</asp:ListItem>
@@ -154,6 +203,11 @@
                                 </asp:ButtonField>
                             </Columns>
                         </asp:GridView>
+
+            <div style="display:flex;justify-content:center; margin-top: 10px">
+               <asp:Button CssClass="boton-personalizado" ID="btnAgregarProducto" runat="server" Text="Agregar Producto" ValidationGroup="1" OnClick="btnAgregarProducto_Click" />
+            </div>
+
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
@@ -163,108 +217,8 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
-            <strong>
-            <br class="auto-style6" />
-            <span class="auto-style6">Ingresar Producto: Ingresar Stock del Producto:<br />
-            <br />
-            </span>
-            <span class="auto-style15">Código de Producto<br />
-            </span>
-            <asp:TextBox ID="txtCodProd" runat="server" MaxLength="6"></asp:TextBox>
-            </strong><table>
-                <tr>
-                    <td class="auto-style4"><strong>Nombre<br />
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="auto-style11" MaxLength="20"></asp:TextBox>
-                        <br />
-                        Categoría<br />
-                        <asp:DropDownList ID="ddlCategoriaProducto" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                    <td class="auto-style4"><strong><br />
-                        <asp:Label ID="Label28" runat="server" Text="Label" Visible="False"></asp:Label>
-                        </strong></td>
-                    <td class="auto-style4"><strong>Codigo Producto<br />
-                        <asp:DropDownList ID="ddlCodProductos" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"><strong>Marca<br />
-                        <asp:DropDownList ID="ddlMarcas" runat="server">
-                        </asp:DropDownList>
-                        <asp:ImageButton ID="imgAgregar" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" OnClick="ImageButton1_Click" Width="21px" />
-                        </strong></td>
-                    <td class="auto-style11"><strong><br />
-                        </strong></td>
-                    <td class="auto-style11"><strong>Caracteristica<br />
-                        <asp:DropDownList ID="ddlCaracteristicas" runat="server">
-                        </asp:DropDownList>
-                        <br />
-                        Color<br />
-                        <asp:DropDownList ID="ddlColorProducto" runat="server">
-                        </asp:DropDownList>
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style10"><strong>
-                        <asp:Label ID="Label27" runat="server" Text="Precio Unitario"></asp:Label>
-                        <br />
-                        <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="auto-style16"></asp:TextBox>
-                        <br />
-                        </strong></td>
-                    <td class="auto-style10"><strong>
-                        <br />
-                        </strong></td>
-                    <td class="auto-style10"><strong>Stock<br />
-                        <asp:TextBox ID="txtAgregarStock" runat="server"></asp:TextBox>
-                        <br />
-                        <asp:Button ID="btnIngresarStock0" runat="server" Text="Verificar Stock" ValidationGroup="2" OnClick="btnIngresarStock0_Click" />
-                        <br />
-                        <asp:Label ID="lblVerificacionStock" runat="server"></asp:Label>
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Cargar Imagen del Producto<br />
-                        <asp:FileUpload ID="FileUploadImagenProd" runat="server" />
-                        <br />
-                        </strong></td>
-                    <td><strong>
-                        <asp:Button ID="btnIngresarStock" runat="server" Text="Agregar Stock" ValidationGroup="2" OnClick="btnIngresarStock_Click" />
-                        </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style12" colspan="2"><strong>Descripcion<br />
-                        <asp:TextBox ID="txtDescripcion" runat="server" Height="115px" MaxLength="100" TextMode="MultiLine" Width="431px" ValidationGroup="1"></asp:TextBox>
-                        <br />
-                        </strong></td>
-                    <td class="auto-style12"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                    </td>
-                    <td class="auto-style4">
-                    </td>
-                    <td class="auto-style4">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
-                    </td>
-                    <td class="auto-style4">
-                    </td>
-                    <td class="auto-style4">
-                        <asp:Label ID="lblStockAgregado" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-            </table>
+           
+
         </div>
         
 
@@ -309,6 +263,91 @@
                 </div>
                  <asp:ImageButton ID="imgCerrarPop" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="ImageButton1_Click1" />
             </div>
+        </div>
+
+        <!-- DIV AGREGAR PRODUCTO -->
+        <div class="contenedor-popup" id="modalAgregarProducto" runat="server">
+             <div class="popup2" style="height:60%; width: 70%">
+                <div id="divAgregarProducto" class="funciones-popup">
+                  <table align="center" class="auto-style13">
+                <tr>
+                    <asp:Label ID="lblAgregarProducto" runat="server" Text="Agregar Producto" style="color:white"></asp:Label>
+                </tr>
+                <tr>
+                    <td class="auto-style15"><asp:Label ID="lblCodigo" runat="server" Text="Código" Style="color:white"></asp:Label><br />
+            <strong>
+            <asp:TextBox ID="txtCodProd" runat="server" MaxLength="6"></asp:TextBox>
+            </strong></td>
+                    
+                    <td class="auto-style17"><asp:Label ID="lblNombre" runat="server" Text="Nombre" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:TextBox ID="txtNombre" runat="server" MaxLength="20" Height="16px" Width="180px"></asp:TextBox>
+                        </strong></td>
+                    <td class="auto-style19"><asp:Label ID="lblMarca" runat="server" Text="Marca" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:DropDownList ID="ddlMarcas" runat="server">
+                        </asp:DropDownList>
+                        <asp:ImageButton ID="imgAgregar" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" OnClick="ImageButton1_Click" Width="21px" />
+                        </strong></td>
+                </tr>
+                <tr>
+                    <td class="auto-style14"><asp:Label ID="lblCategoria" runat="server" Text="Categoría" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:DropDownList ID="ddlCategoriaProducto" runat="server">
+                        </asp:DropDownList>
+                        </strong></td>
+                    <td class="auto-style27"><asp:Label ID="lblCaracteristicas" runat="server" Text="Características" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:DropDownList ID="ddlCaracteristicas" runat="server">
+                        </asp:DropDownList>
+                        </strong></td>
+                    <td class="auto-style26"><asp:Label ID="lblColor2" runat="server" Text="Color" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:DropDownList ID="ddlColorProducto" runat="server">
+                        </asp:DropDownList>
+                        </strong></td>
+                </tr>
+                <tr>
+                    <td class="auto-style21"><asp:Label ID="lblPrecioUnitario" runat="server" Text="Precio Unitario" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="auto-style16" Height="16px"></asp:TextBox>
+                        </strong></td>
+                    <td class="auto-style22"><asp:Label ID="lblStock" runat="server" Text="Stock" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:TextBox ID="txtAgregarStock" runat="server"></asp:TextBox>
+                        </strong></td>
+                    <td class="auto-style23">
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><asp:Label ID="lblImagen" runat="server" Text="Imagen" Style="color:white"></asp:Label><strong><br />
+                        <asp:FileUpload style="color:white" ID="FileUploadImagenProd" runat="server" />
+                        </strong></td>
+                    <td class="auto-style26">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style25" colspan="3"><asp:Label ID="lblDescripcion" runat="server" Text="Descripción" Style="color:white"></asp:Label><br />
+                        <strong>
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="115px" MaxLength="100" TextMode="MultiLine" Width="734px" ValidationGroup="1"></asp:TextBox>
+                        </strong></td>
+                </tr>
+                <tr>
+                    <td class="auto-style24" colspan="3">
+                        <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
+                        <br />
+                        <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+                </div>
+                 <asp:ImageButton ID="imgCerrarAgregarProducto" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="imgCerrarAgregarProducto_Click1" />
+            </div>
+        </div>
+        
+
+        <div>
+            
         </div>
         
 

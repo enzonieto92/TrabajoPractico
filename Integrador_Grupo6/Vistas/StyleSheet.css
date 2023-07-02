@@ -202,10 +202,9 @@ header nav a:hover {
                     }
 
 .centered-element {
-    margin: 0;
-    position: absolute;
-    left: auto;
-    right: auto;
+    display:flex;
+    justify-content:center; 
+    margin-top: 10px;
 }
 
 .popup2 {

@@ -33,8 +33,7 @@ namespace Dao
         public DataTable nombreColor(Colores col)
         {
             DataTable tabla;
-            string color = "2";
-            string consulta = "SELECT Descripcion_Co FROM Colores WHERE CodColor_Co = '" + color + "'";
+            string consulta = "SELECT Descripcion_Co FROM Colores WHERE CodColor_Co = '" + col.Cod_Color_Co1 + "'";
             tabla = cn.ObtenerTabla("Colores", consulta);
             return tabla;
         }
@@ -42,8 +41,7 @@ namespace Dao
         public DataTable codigoColor(Colores col)
         {
             DataTable tabla;
-            string nombre = "Negro";
-            string consulta = "SELECT CodColor_Co FROM Colores WHERE Descripcion_Co = '" + nombre + "'";
+            string consulta = "SELECT CodColor_Co FROM Colores WHERE Descripcion_Co = '" + col.Descripcion_Co1 + "'";
             tabla = cn.ObtenerTabla("Colores", consulta);
             return tabla;
         }
