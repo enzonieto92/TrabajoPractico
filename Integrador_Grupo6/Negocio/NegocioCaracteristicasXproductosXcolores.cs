@@ -89,5 +89,18 @@ namespace Negocio
             DataTable tabla = dcxpxc.getCantidad(cxpxc);
             return Convert.ToInt32(tabla.Rows[0][0]);
         }
+
+        public Boolean agregarCxPxC(CaracteristicasXproductoXcolores cpc)
+        {
+            int cantFilas = dcxpxc.insertarCxPxC(cpc);
+
+            if(cantFilas == 0)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
     }
 }

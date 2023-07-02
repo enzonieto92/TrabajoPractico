@@ -59,5 +59,13 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
             return tabla;
         }
+
+        public int insertarCxPxC(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "INSERT INTO CaracteristicasXproductosXcolores (CodProducto_CXPXC, CodCaracteristicas_CXPXC, CodColor_CXPXC, Stock_CXPXC)" +
+                              "SELECT '"+cxpxc.CodProductos_CXPXC1.CodProducto_Pr1+"' , '"+cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1+"' , '"+cxpxc.CodColor_CXPXC1.Cod_Color_Co1+"' , '"+cxpxc.Stock_CXPXC1+"'";
+            int filas = cn.RealizarConsulta(consulta);
+            return filas;
+        }
     }
 }

@@ -20,10 +20,9 @@ namespace Dao
 
         public DataTable getTabla()
         {
-            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Stock_CXPXC, Estado_Pr " +
-                               "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
-                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC";
-
+            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
+                              "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
+                              "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -128,9 +127,11 @@ namespace Dao
         }
 
         public DataTable filtroProductos(string tipo, string texto)
+
         {
-            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
-                              "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC " +
+            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
+                              "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
+                              "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
                               "WHERE " + tipo + " LIKE '" + texto + "%'";
             DataTable tabla;
 

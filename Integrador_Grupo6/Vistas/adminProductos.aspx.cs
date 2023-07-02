@@ -32,6 +32,7 @@ namespace Vistas
                 cargarCategorias();
                 cargarMarcas();
                 cargarColores();
+                cargarCaracteristicas();
                 //cargarDDlStock();
                 modal.Visible = false;
                 modalStock.Visible = false;
@@ -80,14 +81,26 @@ namespace Vistas
             DataTable tabla;
 
             tabla = NCo.listarColores();
+            ddlColorProducto.DataSource = tabla;
+            tabla.Rows.Add("-- Seleccionar --", "-- Seleccionar --");
+            ddlColorProducto.DataTextField = "Descripcion_Co";
+            ddlColorProducto.DataValueField = "CodColor_Co";
+            ddlColorProducto.Text = "-- Seleccionar --";
+            ddlColorProducto.DataBind();
+        }
+
+        private void cargarCaracteristicas()
+        {
+            DataTable tabla;
+
+            tabla = NCar.getTabla();
             ddlCaracteristicas.DataSource = tabla;
             tabla.Rows.Add("-- Seleccionar --", "-- Seleccionar --");
-            ddlCaracteristicas.DataTextField = "Descripcion_Co";
-            ddlCaracteristicas.DataValueField = "CodColor_Co";
+            ddlCaracteristicas.DataTextField = "Nombre_Car";
+            ddlCaracteristicas.DataValueField = "CodCaracteristica_Car";
             ddlCaracteristicas.Text = "-- Seleccionar --";
             ddlCaracteristicas.DataBind();
         }
-
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -147,10 +160,12 @@ namespace Vistas
         protected void btnIngresarProducto_Click(object sender, EventArgs e)
         {
             Productos pro = new Productos();
+            CaracteristicasXproductoXcolores car = new CaracteristicasXproductoXcolores();
 
             pro = cargarproducto();
+            car = cargarCxPxC();
 
-            if (np.agregarProducto(pro))
+            if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
             {
                 cargartablaProductos();
                 limpiarCampos();
@@ -179,6 +194,19 @@ namespace Vistas
             pro.Descripcion_Pr1 = txtDescripcion.Text;
 
             return pro;
+        }
+
+        private CaracteristicasXproductoXcolores cargarCxPxC()
+        {
+            CaracteristicasXproductoXcolores cpc = new CaracteristicasXproductoXcolores();
+            NegocioColores col = new NegocioColores();
+            NegocioCaracteristica car = new NegocioCaracteristica();
+            cpc.CodProductos_CXPXC1.CodProducto_Pr1 = txtCodProd.Text;
+            cpc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = ddlCaracteristicas.SelectedItem.Value;
+            cpc.CodColor_CXPXC1.Cod_Color_Co1 =ddlCaracteristicas.SelectedItem.Value;
+            cpc.Stock_CXPXC1 = Convert.ToInt32(txtAgregarStock.Text);
+
+            return cpc;
         }
 
         private void limpiarCampos()

@@ -173,6 +173,11 @@
                                         <asp:Label ID="lbl_it_CodColor" runat="server" Text='<%# Bind("Descripcion_Co") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Característica">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Caracteristica" runat="server" Text='<%# Bind("Nombre_Car") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:ImageField DataImageUrlField="URLimagen_Pr" HeaderText="Imagen">
                                     <ControlStyle Height="40px" Width="50px" />
                                 </asp:ImageField>
