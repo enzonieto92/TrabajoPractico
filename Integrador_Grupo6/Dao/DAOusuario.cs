@@ -149,7 +149,7 @@ namespace Dao
             parametros = cmd.Parameters.Add("@Apellido", SqlDbType.VarChar, 30);
             parametros.Value = Us.Apellido_Us1;
 
-            parametros = cmd.Parameters.Add("@FechaNacimiento", SqlDbType.Date);
+            parametros = cmd.Parameters.Add("@FechaNac", SqlDbType.Date);
             parametros.Value = Us.FechaNacimineto_Us1;
 
             parametros = cmd.Parameters.Add("@Telefono", SqlDbType.Char, 10);
