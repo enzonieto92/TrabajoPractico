@@ -8,66 +8,10 @@
     <title></title>
    <link rel="StyleSheet" href="StyleSheet.css" type="text/css"/>
     <style type="text/css">
-        .auto-style1 {
-            width: 250px;
-        }
-        .auto-style2 {
-            width: 251px;
-        }
-        .auto-style3 {
-            width: 185px;
-            margin-bottom: 0px;
-        }
-        .auto-style13 {
-            width: 48%;
-        }
-        .auto-style14 {
-            width: 200px;
-        }
-        .auto-style15 {
-            width: 200px;
-            height: 52px;
-        }
-        .auto-style16 {
-            height: 52px;
-        }
-        .auto-style17 {
-            height: 52px;
-            width: 396px;
-        }
-        .auto-style19 {
-            width: 1483px;
-            height: 52px;
-            text-align: justify;
-        }
-        .auto-style21 {
-            width: 200px;
-            height: 26px;
-        }
-        .auto-style22 {
-            width: 396px;
-            height: 26px;
-        }
-        .auto-style23 {
-            width: 1483px;
-            height: 26px;
-        }
-        .auto-style24 {
-            text-align: center;
-        }
-        .auto-style25 {
-            text-align: justify;
-        }
-        .auto-style26 {
-            width: 1483px;
-        }
-        .auto-style27 {
-            width: 396px;
-        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" style ="font-family: sans-serif" runat="server">
         <div>
             <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
             <br />
@@ -87,12 +31,12 @@
                 <asp:ListItem Value="PrecioUnitario_Pr">Precio Unitario</asp:ListItem>
             </asp:DropDownList>
             <asp:TextBox ID="txtFiltro" runat="server" Height="16px" Width="175px"></asp:TextBox>
-            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click" />
+            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="boton-personalizado" OnClick="btnFiltrar_Click" />
+            <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" CssClass="boton-personalizado" OnClick="btnQuitarFiltro_Click" />
             <br />
             <br />
-                        <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="auto-style3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1" OnSelectedIndexChanging="grvProductos_SelectedIndexChanging">
-                            <AlternatingRowStyle BackColor="Gainsboro" />
+                        <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1" OnSelectedIndexChanging="grvProductos_SelectedIndexChanging">
+                            <AlternatingRowStyle BackColor="white" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Codigo Producto">
                                     <ItemTemplate>
@@ -229,7 +173,7 @@
                 <div class="funciones-popup">
                   <asp:Label ID="lblTextoPopup" runat="server" Text="Ingresar Marca" ForeColor="White"></asp:Label>
                   <asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
-                  <asp:Button ID="btnAgregarMarca" runat="server" Text="Agregar"></asp:Button>
+                  <asp:Button ID="btnAgregarMarca" runat="server" CssClass="boton-personalizado" Text="Agregar"></asp:Button>
                 </div>
                  <asp:ImageButton ID="imgCerrarPopMarcas" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="ImageButtonCerrar_Click1" />
             </div>
@@ -256,7 +200,7 @@
                   <asp:Label ID="lblMuestraColor" runat="server" Text="" ForeColor="White"></asp:Label>
                     <br />
                   <asp:TextBox style="margin-top: 20px" ID="txtAgrStock" runat="server" TextMode="Number"></asp:TextBox>
-                  <asp:Button ID="btnAgrStock" runat="server" Text="Agregar Stock" OnClick="btnAgrStock_Click"></asp:Button>
+                  <asp:Button ID="btnAgrStock" runat="server" Text="Agregar Stock" CssClass="boton-personalizado" OnClick="btnAgrStock_Click"></asp:Button>
                     <br />
                     <br />
                   <asp:Label class="centered-element" ID="lblMensajeStock" runat="server" Text="" ForeColor="White"></asp:Label>
@@ -283,7 +227,7 @@
                         <strong>
                         <asp:TextBox ID="txtNombre" runat="server" MaxLength="20" Height="16px" Width="180px"></asp:TextBox>
                         </strong></td>
-                    <td class="auto-style19"><asp:Label ID="lblMarca" runat="server" Text="Marca" Style="color:white"></asp:Label><br />
+                    <td class="auto-style19"><asp:Label ID="lbla" runat="server" Text="Marca" Style="color:white"></asp:Label><br />
                         <strong>
                         <asp:DropDownList ID="ddlMarcas" runat="server">
                         </asp:DropDownList>
@@ -334,7 +278,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style24" colspan="3">
-                        <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" OnClick="btnIngresarProducto_Click" />
+                        <asp:Button ID="btnIngresarProducto" runat="server" Text="Ingresar Producto" ValidationGroup="1" CssClass="boton-personalizado" OnClick="btnIngresarProducto_Click" />
                         <br />
                         <asp:Label ID="lblMensajeAgregado" runat="server"></asp:Label>
                     </td>
@@ -367,8 +311,8 @@
                     <br />
                   <asp:Label ID="lblConfirmacion" runat="server" Text="¿Está seguro que desea eliminar?" ForeColor="White"></asp:Label>
                     <br />
-                  <asp:Button ID="btnSi" runat="server" Text="Si" OnClick="btnSi_Click"></asp:Button>
-                  <asp:Button ID="btnNo" runat="server" Text="No" OnClick="btnNo_Click"></asp:Button>
+                  <asp:Button ID="btnSi" runat="server" Text="Si" CssClass="boton-personalizado" OnClick="btnSi_Click"></asp:Button>
+                  <asp:Button ID="btnNo" runat="server" Text="No" CssClass="boton-personalizado" OnClick="btnNo_Click"></asp:Button>
                 </div>
                  <asp:ImageButton ID="imgCerrarConfirmacion" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="imgCerrarConfirmacion_Click1" />
             </div>

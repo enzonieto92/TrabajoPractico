@@ -318,8 +318,8 @@ namespace Vistas
         }
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-
             modal.Visible = true;
+            modalAgregarProducto.Visible = false;
         }
 
         /*protected void grvProductos_SelectedIndexChanged(object sender, EventArgs e)
@@ -427,8 +427,8 @@ namespace Vistas
 
         protected void ImageButtonCerrar_Click1(object sender, ImageClickEventArgs e)
         {
-
             modal.Visible = false;
+            modalAgregarProducto.Visible = true;
         }
 
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
