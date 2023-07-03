@@ -22,7 +22,8 @@ namespace Dao
         {
             string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
-                              "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC";
+                              "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
+                              "WHERE Estado_Pr = 1";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -59,7 +60,7 @@ namespace Dao
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametroEliminar(ref comando, prod);
-            int cant = cn.EjecutarProcedimientoAlmacenado(comando, "DeleteProductoCascada");
+            int cant = cn.EjecutarProcedimientoAlmacenado(comando, "SPEliminarProducto");
             return cant;
 
         }
@@ -73,7 +74,7 @@ namespace Dao
         public void ArmarParametroEliminar(ref SqlCommand cmd, Productos prod)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = cmd.Parameters.Add("@CodProducto_Pr", SqlDbType.Char);
+            SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
             SqlParametros.Value = prod.CodProducto_Pr1;
 
         }
@@ -132,7 +133,7 @@ namespace Dao
             string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
-                              "WHERE " + tipo + " LIKE '" + texto + "%'";
+                              "WHERE " + tipo + " LIKE '%" + texto + "%'";
             DataTable tabla;
 
             tabla = cn.ObtenerTabla("Productos Filtrados", consulta);

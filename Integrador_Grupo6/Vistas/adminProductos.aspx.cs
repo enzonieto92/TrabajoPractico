@@ -33,10 +33,10 @@ namespace Vistas
                 cargarMarcas();
                 cargarColores();
                 cargarCaracteristicas();
-                //cargarDDlStock();
                 modal.Visible = false;
                 modalStock.Visible = false;
                 modalAgregarProducto.Visible = false;
+                modalConfirmacionEliminar.Visible = false;
             }
 
         }
@@ -162,21 +162,34 @@ namespace Vistas
             Productos pro = new Productos();
             CaracteristicasXproductoXcolores car = new CaracteristicasXproductoXcolores();
 
-            pro = cargarproducto();
-            car = cargarCxPxC();
-
-            if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
+            if (txtCodProd.Text == "" || txtNombre.Text == "" || ddlMarcas.SelectedItem.Text == "-- Seleccionar --" 
+                || ddlCategoriaProducto.SelectedItem.Text == "-- Seleccionar --" || ddlColorProducto.SelectedItem.Text == "-- Seleccionar --" ||
+                ddlCaracteristicas.SelectedItem.Text == "-- Seleccione --" || txtAgregarStock.Text == "" || txtPrecioUnitario.Text == "")
             {
-                cargartablaProductos();
-                limpiarCampos();
-                FileUploadImagenProd.SaveAs(Server.MapPath("~/Imagenes/Productos/") + FileUploadImagenProd.PostedFile.FileName);
-                lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
-                lblMensajeAgregado.Text = "Producto agregado con èxito";
+                lblMensajeAgregado.ForeColor = System.Drawing.Color.Red;
+                lblMensajeAgregado.Text = "Debe completar los campos obligatorios";
             }
             else
             {
-                lblMensajeAgregado.Text = "No se pudo agregar el producto";
+                pro = cargarproducto();
+                car = cargarCxPxC();
+                if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
+                {
+                    cargartablaProductos();
+                    limpiarCampos();
+                    if(FileUploadImagenProd.HasFile == true)
+                    {
+                        FileUploadImagenProd.SaveAs(Server.MapPath("~/Imagenes/Productos/") + FileUploadImagenProd.PostedFile.FileName);
+                    }
+                    lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
+                    lblMensajeAgregado.Text = "Producto agregado con èxito";
+                }
+                else
+                {
+                    lblMensajeAgregado.Text = "No se pudo agregar el producto";
+                }
             }
+           
         }
 
 
@@ -215,7 +228,10 @@ namespace Vistas
             txtNombre.Text = "";
             ddlCategoriaProducto.Text = "-- Seleccionar --";
             ddlMarcas.Text = "-- Seleccionar --";
+            ddlCaracteristicas.Text = "-- Seleccionar --";
+            ddlColorProducto.Text = "-- Seleccionar --";
             txtPrecioUnitario.Text = "";
+            txtAgregarStock.Text = "";
             txtDescripcion.Text = "";
         }
 
@@ -277,24 +293,6 @@ namespace Vistas
 
         }
 
-        /*protected void btnIngresarStock_Click(object sender, EventArgs e)
-        {
-            bool agrego = nsCXPXC.agregarStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue, Convert.ToInt32(txtAgregarStock.Text));
-            if (agrego)
-            {
-                //lblStockAgregado.ForeColor = System.Drawing.Color.Green;
-                //lblStockAgregado.Text = "Stock agregado con éxito!";
-            }
-            else
-            {
-                //lblStockAgregado.ForeColor = System.Drawing.Color.Red;
-                //lblStockAgregado.Text = "No se pudo agregar el stock";
-            }
-
-            limpiarCampos();
-
-        }*/
-
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowState == DataControlRowState.Edit)
@@ -318,54 +316,13 @@ namespace Vistas
 
 
         }
-
-        /*private void cargarDDlStock()
-        {
-            DataTable tabla = np.getTabla();
-
-            tabla = np.getTabla();
-            ddlCodProductos.DataSource = tabla;
-            ddlCodProductos.DataTextField = "CodProducto_Pr";
-            ddlCodProductos.DataValueField = "CodProducto_Pr";
-            ddlCodProductos.DataBind();
-
-            DataTable tablacaracteristica = NCar.getTabla();
-            ddlCaracteristicas.DataSource = tablacaracteristica;
-            ddlCaracteristicas.DataTextField = "Nombre_Car";
-            ddlCaracteristicas.DataValueField = "CodCaracteristica_Car";
-            ddlCaracteristicas.DataBind();
-
-            DataTable tablaColores = NCo.getTabla();
-            ddlColorProducto.DataSource = tablaColores;
-            ddlColorProducto.DataTextField = "Descripcion_Co";
-            ddlColorProducto.DataValueField = "CodColor_Co";
-            ddlColorProducto.DataBind();
-        }*/
-
-        /*protected void btnIngresarStock0_Click(object sender, EventArgs e)
-        {
-            bool verificacion = nsCXPXC.existeStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue);
-            int cantidad;
-            if (verificacion == true)
-            {
-                lblVerificacionStock.ForeColor = System.Drawing.Color.Red;
-                lblVerificacionStock.Text = "No hay stock";
-            }
-            else
-            {
-                cantidad = nsCXPXC.recuentoStock(ddlCodProductos.SelectedValue, ddlCaracteristicas.SelectedValue, ddlColorProducto.SelectedValue);
-                lblVerificacionStock.ForeColor = System.Drawing.Color.Green;
-                lblVerificacionStock.Text = "El stock existente de acuerdo a los datos ingresados es de: " + cantidad;
-            }
-        }*/
-
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
 
             modal.Visible = true;
         }
 
-        protected void grvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        /*protected void grvProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow fila = grvProductos.SelectedRow;
             lblMensajeAgregado.Text = fila.Cells[6].Text;
@@ -374,21 +331,27 @@ namespace Vistas
             //Label l1 = grvProductos.Rows[1].FindControl("lbl_it_Nombre") as Label;
             //lblMensajeAgregado.Text = l1.Text;
             //lblMensajeAgregado.Text = "aaaaaaaaaaaah";
-        }
+        }*/
 
 
         protected void grvProductos_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
+            // *******************************************************************
+            // OBTENER DATOS DE UNA CELDA DE GRID VIEW
+
+            // OBTIENE INDICE DE FILA
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+             // OBTIENE OBJETO FILA SEGÚN ÍNDICE
+            GridViewRow fila = grvProductos.Rows[rowIndex];    
+
             if (e.CommandName == "AgregarStock")
             {
-                // *******************************************************************
 
-                // OBTENER DATOS DE UNA CELDA DE GRID VIEW
-                int rowIndex = Convert.ToInt32(e.CommandArgument);  // OBTIENE INDICE DE FILA
-                GridViewRow fila = grvProductos.Rows[rowIndex];     // OBTIENE OBJETO FILA SEGÚN ÍNDICE
-                string nombre = (fila.FindControl("lbl_it_Nombre") as Label).Text;  // HACE REFERENCIA AL CONTROL LABEL LLAMADO "lbl_it_Nombre"
-                                                                                    // DENTRO DE LA FILA SELECCIONADA Y OBTIENE EL TEXTO DEL MISMO
-                                                                                    // UBICADO EN LA CELDA DEL GRIDVIEW.
+
+                // HACE REFERENCIA AL CONTROL LABEL LLAMADO "lbl_it_Nombre" DENTRO DE LA FILA SELECCIONADA Y OBTIENE EL TEXTO DEL MISMO UBICADO EN LA CELDA DEL GRIDVIEW.
+                string nombre = (fila.FindControl("lbl_it_Nombre") as Label).Text;  
+
                 lblMuestraCod.Text = (fila.FindControl("lbl_it_CodProd") as Label).Text;
                 lblMuestraCar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
                 lblMuestraColor.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
@@ -398,6 +361,16 @@ namespace Vistas
                 lblAgrDescripcion.Text = nombre;
 
                 modalStock.Visible = true;
+            }
+
+            if (e.CommandName == "Eliminar")
+            {
+                modalConfirmacionEliminar.Visible = true;
+                lblMuestrCodEliminar.Text = (fila.FindControl("lbl_it_CodProd") as Label).Text;
+                lblMuestraArtEliminar.Text = (fila.FindControl("lbl_it_Nombre") as Label).Text;
+                lblMuestraCaractEliminar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
+                lblMuestraColorEliminar.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
+                ViewState["CodProdEliminar"] = lblMuestrCodEliminar.Text;
             }
         }
 
@@ -466,6 +439,26 @@ namespace Vistas
         protected void imgCerrarAgregarProducto_Click1(object sender, ImageClickEventArgs e)
         {
             modalAgregarProducto.Visible = false;
+        }
+
+        protected void btnSi_Click(object sender, EventArgs e)
+        {
+            Productos pro = new Productos();
+
+            pro.CodProducto_Pr1 = ViewState["CodProdEliminar"].ToString() ;
+            np.eliminarProducto(pro);
+            cargartablaProductos();
+            modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void imgCerrarConfirmacion_Click1(object sender, ImageClickEventArgs e)
+        {
+            modalConfirmacionEliminar.Visible = false;
         }
     }
 }
