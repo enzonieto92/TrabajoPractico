@@ -15,24 +15,31 @@
         <div>
             <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
             <br />
-            <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx">Productos</asp:HyperLink>
-            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx">Usuarios</asp:HyperLink>
-            <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx">Reportes</asp:HyperLink>
+            <br />
+            <div style="text-align:center;">
+            <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+            <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+            </div>
+            
             <br />
             <br />
-            <strong>Filtros</strong><br />
-            <asp:DropDownList ID="ddlFiltro" runat="server">
-                <asp:ListItem Value="CodProducto_Pr">Codigo Producto</asp:ListItem>
-                <asp:ListItem Value="CodMarca_Pr">Marca</asp:ListItem>
-                <asp:ListItem Value="CodCategoria_Pr">Categoría</asp:ListItem>
-                <asp:ListItem Value="Nombre_Pr">Nombre</asp:ListItem>
-                <asp:ListItem Value="Descripcion_Pr">Descripcion</asp:ListItem>
-                <asp:ListItem Value="Estado_Pr">Estado de Producto</asp:ListItem>
-                <asp:ListItem Value="PrecioUnitario_Pr">Precio Unitario</asp:ListItem>
-            </asp:DropDownList>
-            <asp:TextBox ID="txtFiltro" runat="server" Height="16px" Width="175px"></asp:TextBox>
-            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="boton-personalizado" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" CssClass="boton-personalizado" OnClick="btnQuitarFiltro_Click" />
+            <div style="text-align: center;" >
+                <strong>Filtros</strong><br />
+                    <asp:DropDownList ID="ddlFiltro" runat="server">
+                    <asp:ListItem Value="CodProducto_Pr">Codigo Producto</asp:ListItem>
+                    <asp:ListItem Value="CodMarca_Pr">Marca</asp:ListItem>
+                    <asp:ListItem Value="CodCategoria_Pr">Categoría</asp:ListItem>
+                    <asp:ListItem Value="Nombre_Pr">Nombre</asp:ListItem>
+                    <asp:ListItem Value="Descripcion_Pr">Descripcion</asp:ListItem>
+                    <asp:ListItem Value="Estado_Pr">Estado de Producto</asp:ListItem>
+                    <asp:ListItem Value="PrecioUnitario_Pr">Precio Unitario</asp:ListItem>
+                </asp:DropDownList>
+                <asp:TextBox ID="txtFiltro" runat="server" Height="16px" Width="175px"></asp:TextBox>
+                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="boton-personalizado" OnClick="btnFiltrar_Click" />
+                <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" CssClass="boton-personalizado" OnClick="btnQuitarFiltro_Click" />
+            </div>
+            
             <br />
             <br />
                         <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1" OnSelectedIndexChanging="grvProductos_SelectedIndexChanging">
