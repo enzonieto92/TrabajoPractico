@@ -645,6 +645,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btn_PagarEfec;
 
         /// <summary>
+        /// Control ScriptManager2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager2;
+
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>

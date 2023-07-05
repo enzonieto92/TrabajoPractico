@@ -156,7 +156,7 @@
                     <asp:GridView ID="grdCarrito" runat="server" Width="211px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AllowPaging="True">
                     <AlternatingRowStyle BackColor="#DCDCDC" />
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle CssClass="dataGrid-th" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
@@ -284,7 +284,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddl_Cuotas" ForeColor="Red" InitialValue="--Seleccionar Cuotas--" ValidationGroup="Grupo2">Seleccionar Cuotas</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo2" OnClientClick="return validate();" OnClick="btn_PagarTarj_Click" Width="133px" />
+        <asp:Button ID="btn_PagarTarj" runat="server" Text="Pagar" CssClass="boton-personalizado" OnClientClick="return validate();" ValidationGroup="Grupo2"  OnClick="btn_PagarTarj_Click" Width="133px" />
         <br />
         <br />
     </asp:Panel>
@@ -302,8 +302,19 @@
         <asp:RequiredFieldValidator ID="rfv_Efectivo" runat="server" ControlToValidate="ddl_Efectivo" ForeColor="Red" InitialValue="--Seleccionar Opcion--" ValidationGroup="Grupo3">Seleccionar Opcion</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="boton-personalizado" ValidationGroup="Grupo3" OnClientClick="return validate();" OnClick="btn_PagarEfec_Click" Width="138px" />
+        <asp:Button ID="btn_PagarEfec" runat="server" Text="Pagar" CssClass="boton-personalizado" OnClientClick="return validate();" ValidationGroup="Grupo3"  OnClick="btn_PagarEfec_Click" Width="138px" />
     </asp:Panel>
+                <asp:ScriptManager ID="ScriptManager2" runat="server">
+                </asp:ScriptManager>
+          <script type="text/javascript" language="javascript" >
+              
+             function validate() {
+                 if (Page_ClientValidate()) {
+                     return confirm('¿Está seguro de realizar la compra?');
+
+                 }
+             }
+          </script>
     <p>
         <asp:Label ID="Label4" runat="server"></asp:Label>
     </p>
