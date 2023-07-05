@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Entidades;
 
 namespace Dao
 {
@@ -13,6 +14,12 @@ namespace Dao
         public DAOmarcas()
         {
 
+        }
+
+        public int agregarStock(Marcas mar)
+        {
+            int cantFilas = cn.ejecutarTransaccion("INSERT INTO Marcas VALUES ('" + mar.CodMarca_Ma + "','" + mar.Descripcion_Ma + ")");
+            return cantFilas;
         }
 
         public DataTable tablaCategorias()

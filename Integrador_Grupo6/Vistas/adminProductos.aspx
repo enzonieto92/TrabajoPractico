@@ -42,7 +42,7 @@
             
             <br />
             <br />
-                        <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1" OnSelectedIndexChanging="grvProductos_SelectedIndexChanging">
+                        <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1">
                             <AlternatingRowStyle BackColor="white" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Codigo Producto">
@@ -180,7 +180,10 @@
                 <div class="funciones-popup">
                   <asp:Label ID="lblTextoPopup" runat="server" Text="Ingresar Marca" ForeColor="White"></asp:Label>
                   <asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
-                  <asp:Button ID="btnAgregarMarca" runat="server" CssClass="boton-personalizado" Text="Agregar"></asp:Button>
+                    <br />
+                  <asp:Label ID="LblDescPopup" runat="server" Text="Ingresar Descripcion" ForeColor="White"></asp:Label>
+                    <asp:TextBox ID="Descripcion" runat="server"></asp:TextBox>
+                  <asp:Button ID="btnAgregarMarca" runat="server" CssClass="boton-personalizado" Text="Agregar" OnClick="btnAgregarMarca_Click"></asp:Button>
                 </div>
                  <asp:ImageButton ID="imgCerrarPopMarcas" runat="server" ImageAlign="Right" ImageUrl="~/Imagenes/Iconos/cruz.png" OnClick="ImageButtonCerrar_Click1" />
             </div>
@@ -246,16 +249,20 @@
                         <strong>
                         <asp:DropDownList ID="ddlCategoriaProducto" runat="server">
                         </asp:DropDownList>
+                        <asp:ImageButton ID="ImageCategoria" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" Width="21px" />
                         </strong></td>
                     <td class="auto-style27"><asp:Label ID="lblCaracteristicas" runat="server" Text="Características" Style="color:white"></asp:Label><br />
                         <strong>
                         <asp:DropDownList ID="ddlCaracteristicas" runat="server">
                         </asp:DropDownList>
+                        <asp:ImageButton ID="ImageCarac" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" Width="21px" />
                         </strong></td>
                     <td class="auto-style26"><asp:Label ID="lblColor2" runat="server" Text="Color" Style="color:white"></asp:Label><br />
                         <strong>
                         <asp:DropDownList ID="ddlColorProducto" runat="server">
                         </asp:DropDownList>
+                        <asp:ImageButton ID="ImageColor" runat="server" Height="22px" ImageUrl="~/Imagenes/Iconos/agregar.png" Width="21px" />
+
                         </strong></td>
                 </tr>
                 <tr>

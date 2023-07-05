@@ -209,6 +209,15 @@ namespace Vistas
             return pro;
         }
 
+        private Marcas cargarMarca()
+        {
+            Marcas mar = new Marcas();
+
+            mar.CodMarca_Ma = txtMarca.Text;
+
+            return mar;
+        }
+
         private CaracteristicasXproductoXcolores cargarCxPxC()
         {
             CaracteristicasXproductoXcolores cpc = new CaracteristicasXproductoXcolores();
@@ -377,7 +386,6 @@ namespace Vistas
         protected void btnAgrStock_Click(object sender, EventArgs e)
         {
             // AGREGAR STOCK -------------------------------------------
-
             if (txtAgrStock.Text != "" && txtAgrStock.Text != "0")
             {
                 bool agrego = nsCXPXC.agregarStock(lblMuestraCod.Text, NCar.codigoCaract(lblMuestraCar.Text), NCo.CodigoColor(lblMuestraColor.Text), Convert.ToInt32(txtAgrStock.Text));
@@ -409,13 +417,9 @@ namespace Vistas
 
             }
 
-
+            grvProductos.EditIndex = -1;
+            grvProductos.DataBind();
             // ---------------------------------------------------------
-        }
-
-        protected void grvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        {
-
         }
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
@@ -459,6 +463,14 @@ namespace Vistas
         protected void imgCerrarConfirmacion_Click1(object sender, ImageClickEventArgs e)
         {
             modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            if(txtMarca.Text != "" || txtDescripcion.Text != "")
+            {
+                bool agrego = NM.agregarMarca(txtMarca.Text, txtDescripcion.Text);
+            }
         }
     }
 }

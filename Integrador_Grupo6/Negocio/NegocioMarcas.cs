@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Dao;
+using Entidades;
 
 namespace Negocio
 {
@@ -16,6 +17,26 @@ namespace Negocio
 
         }
 
+        public bool agregarMarca(string codMarca, string descripcion)
+        {
+            int cantFilas = 0;
+            Marcas mar = new Marcas();
+
+            mar.CodMarca_Ma = codMarca;
+            mar.Descripcion_Ma = descripcion;
+
+            cantFilas = Dmar.agregarStock(mar);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         public DataTable listarMarcas()
         {
 

@@ -150,6 +150,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtMarca;
 
         /// <summary>
+        /// Control LblDescPopup.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDescPopup;
+
+        /// <summary>
+        /// Control Descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Descripcion;
+
+        /// <summary>
         /// Control btnAgregarMarca.
         /// </summary>
         /// <remarks>
@@ -393,6 +411,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaProducto;
 
         /// <summary>
+        /// Control ImageCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageCategoria;
+
+        /// <summary>
         /// Control lblCaracteristicas.
         /// </summary>
         /// <remarks>
@@ -411,6 +438,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlCaracteristicas;
 
         /// <summary>
+        /// Control ImageCarac.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageCarac;
+
+        /// <summary>
         /// Control lblColor2.
         /// </summary>
         /// <remarks>
@@ -427,6 +463,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlColorProducto;
+
+        /// <summary>
+        /// Control ImageColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageColor;
 
         /// <summary>
         /// Control lblPrecioUnitario.
