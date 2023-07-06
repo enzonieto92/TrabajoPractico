@@ -118,5 +118,30 @@ namespace Negocio
             return DC.existeCaractProducto(cxpxc);
         }
 
+        public Boolean getEstadoProducto(string Prod, string Caract, string Color)
+        {
+            CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+            DAOcaracteristicasXproductosXcolores DC = new DAOcaracteristicasXproductosXcolores();
+
+            cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = Prod;
+            cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Caract;
+            cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Color;
+
+            return DC.estadoProducto(cxpxc);
+        }
+
+        public Boolean ActProducto(string Prod, string Caract, string Color, int stock)
+        {
+            CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+            DAOcaracteristicasXproductosXcolores DC = new DAOcaracteristicasXproductosXcolores();
+
+            cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = Prod;
+            cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Caract;
+            cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Color;
+            cxpxc.Stock_CXPXC1 = stock;
+
+            return DC.activarProducto(cxpxc);
+        }
+
     }
 }

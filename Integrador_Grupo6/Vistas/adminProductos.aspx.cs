@@ -180,14 +180,24 @@ namespace Vistas
                 pro = cargarproducto();
                 car = cargarCxPxC();
 
-                /// Chequea si existe el codigo del producto
+                // Chequea si existe el codigo del producto
                 if (np.existeProducto(txtCodProd.Text))
                 {
-                    /// Cheque si existe un producto con las características ingresadas.
+                    // Cheque si existe un producto con las características ingresadas.
                     if (np.existeCXPXC(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value))
                     {
-                        lblMensajeAgregado.ForeColor = System.Drawing.Color.Red;
-                        lblMensajeAgregado.Text = "Ya existe un producto con las características seleccionadas";
+                        if(np.getEstadoProducto(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value))
+                        {
+                            lblMensajeAgregado.ForeColor = System.Drawing.Color.Red;
+                            lblMensajeAgregado.Text = "Ya existe un producto con las características seleccionadas";
+                        }
+                        else
+                        {
+                            np.ActProducto(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value, Convert.ToInt32(txtAgregarStock.Text));
+                            cargartablaProductos();
+                            lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
+                            lblMensajeAgregado.Text = "Producto agregado con èxito";
+                        }
                     }
                     else
                     {
@@ -200,10 +210,10 @@ namespace Vistas
                     }
                     
                 }
-                /// Si el código del producto no existe
+                // Si el código del producto no existe
                 else
                 {
-                    /// Agrega registro a tabla producto y registro a tabla caracteristicasXproductosXcolores.
+                    // Agrega registro a tabla producto y registro a tabla caracteristicasXproductosXcolores.
                     if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
                     {
                         cargartablaProductos();
@@ -215,7 +225,7 @@ namespace Vistas
                         lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
                         lblMensajeAgregado.Text = "Producto agregado con èxito";
                     }
-                    /// Si no se pudo agregar registro a alguna de las tablas...
+                    // Si no se pudo agregar registro a alguna de las tablas...
                     else
                     {
                         lblMensajeAgregado.Text = "No se pudo agregar el producto";
@@ -276,6 +286,7 @@ namespace Vistas
             txtPrecioUnitario.Text = "";
             txtAgregarStock.Text = "";
             txtDescripcion.Text = "";
+            lblMensajeAgregado.Text = "";
         }
 
 

@@ -72,10 +72,43 @@ namespace Dao
         {
             string consulta = "SELECT * FROM CaracteristicasXProductosXColores where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' " +
                               "AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'";
-            int filas;
 
             DataTable tabla = cn.ObtenerTabla("Producto", consulta);
             if(tabla.Rows.Count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Boolean estadoProducto(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "SELECT * FROM CaracteristicasXProductosXColores where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' " +
+                               "AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "' " +
+                               "AND Estado_CXPXC = 1";
+
+            DataTable tabla = cn.ObtenerTabla("Producto", consulta);
+            if (tabla.Rows.Count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Boolean activarProducto(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "UPDATE CaracteristicasXProductosXColores SET Estado_CXPXC = 1, Stock_CXPXC = '"+cxpxc.Stock_CXPXC1+"' where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' " +
+                               "AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "' " +
+                               "AND Estado_CXPXC = 0";
+
+            int fila = cn.RealizarConsulta(consulta);
+            if (fila == 1)
             {
                 return true;
             }

@@ -180,6 +180,7 @@ namespace Dao
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
+
     }
 
     
