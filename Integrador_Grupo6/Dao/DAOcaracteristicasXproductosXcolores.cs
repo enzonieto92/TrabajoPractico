@@ -67,5 +67,22 @@ namespace Dao
             int filas = cn.RealizarConsulta(consulta);
             return filas;
         }
+
+        public Boolean existeCaractProducto(CaracteristicasXproductoXcolores cxpxc)
+        {
+            string consulta = "SELECT * FROM CaracteristicasXProductosXColores where CodProducto_CXPXC='" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' " +
+                              "AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'";
+            int filas;
+
+            filas = cn.RealizarConsulta(consulta);
+            if(filas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

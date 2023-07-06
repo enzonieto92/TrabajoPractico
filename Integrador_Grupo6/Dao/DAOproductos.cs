@@ -20,17 +20,17 @@ namespace Dao
 
         public DataTable getTabla()
         {
-            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
+            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_CXPXC FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
-                              "WHERE Estado_Pr = 1";
+                              "WHERE Estado_CXPXC = 1";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
 
         public DataTable getTablaInicio()
         {
-            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
+            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_CXPXC " +
                               "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = '1' ";  
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
@@ -56,10 +56,10 @@ namespace Dao
             return cn.EjecutarProcedimientoAlmacenado(comando, "SPInsertarProducto");
         }
 
-        public int eliminarProducto(Productos prod)
+        public int eliminarProducto(CaracteristicasXproductoXcolores cxpxc)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametroEliminar(ref comando, prod);
+            ArmarParametroEliminar(ref comando, cxpxc);
             int cant = cn.EjecutarProcedimientoAlmacenado(comando, "SPEliminarProducto");
             return cant;
 
@@ -71,12 +71,15 @@ namespace Dao
             armarParametrosActualizar(ref comando, prod);
             return cn.EjecutarProcedimientoAlmacenado(comando, "SPActualizarProducto");
         }
-        public void ArmarParametroEliminar(ref SqlCommand cmd, Productos prod)
+        public void ArmarParametroEliminar(ref SqlCommand cmd, CaracteristicasXproductoXcolores cxpxc)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
-            SqlParametros.Value = prod.CodProducto_Pr1;
-
+            SqlParametros.Value = cxpxc.CodProductos_CXPXC1.CodProducto_Pr1;
+            SqlParametros = cmd.Parameters.Add("@CodCaract", SqlDbType.Char);
+            SqlParametros.Value = cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1;
+            SqlParametros = cmd.Parameters.Add("@CodColor", SqlDbType.Char);
+            SqlParametros.Value = cxpxc.CodColor_CXPXC1.Cod_Color_Co1;
         }
 
         private void armarParametrosAgregar(ref SqlCommand cmd, Productos prod)

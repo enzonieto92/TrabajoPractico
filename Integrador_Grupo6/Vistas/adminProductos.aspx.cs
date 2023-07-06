@@ -142,10 +142,14 @@ namespace Vistas
         protected void grvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string codPr = ((Label)grvProductos.Rows[e.RowIndex].FindControl("lbl_it_CodProd")).Text;
-            Productos prod = new Productos();
-            prod.CodProducto_Pr1 = codPr;
+            string codCar = ((Label)grvProductos.Rows[e.RowIndex].FindControl("lbl_it_CodCaract")).Text;
+            string codColor = ((Label)grvProductos.Rows[e.RowIndex].FindControl("lbl_it_CodColor")).Text;
+            CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+            cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = codPr;
+            cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = codCar;
+            cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = codColor;
             cargartablaProductos();
-            bool result = np.eliminarProducto(prod);
+            bool result = np.eliminarProducto(cxpxc);
             if (result)
             {
                 Resultado.Text = "No se eliminó";
@@ -173,21 +177,49 @@ namespace Vistas
             {
                 pro = cargarproducto();
                 car = cargarCxPxC();
-                if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
+
+                /// Chequea si existe el codigo del producto
+                if (np.existeProducto(txtCodProd.Text))
                 {
-                    cargartablaProductos();
-                    limpiarCampos();
-                    if(FileUploadImagenProd.HasFile == true)
+                    /// Cheque si existe un producto con las características ingresadas.
+                    if (np.existeCXPXC(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value))
                     {
-                        FileUploadImagenProd.SaveAs(Server.MapPath("~/Imagenes/Productos/") + FileUploadImagenProd.PostedFile.FileName);
+                        lblMensajeAgregado.ForeColor = System.Drawing.Color.Red;
+                        lblMensajeAgregado.Text = "Ya existe un producto con las características seleccionadas";
                     }
-                    lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
-                    lblMensajeAgregado.Text = "Producto agregado con èxito";
+                    else
+                    {
+                        if (nsCXPXC.agregarCxPxC(car))
+                        {
+                            cargartablaProductos();
+                            lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
+                            lblMensajeAgregado.Text = "Producto agregado con èxito";
+                        }
+                    }
+                    
                 }
+                /// Si el código del producto no existe
                 else
                 {
-                    lblMensajeAgregado.Text = "No se pudo agregar el producto";
+                    /// Agrega registro a tabla producto y registro a tabla caracteristicasXproductosXcolores.
+                    if (np.agregarProducto(pro) && nsCXPXC.agregarCxPxC(car))
+                    {
+                        cargartablaProductos();
+                        limpiarCampos();
+                        if (FileUploadImagenProd.HasFile == true)
+                        {
+                            FileUploadImagenProd.SaveAs(Server.MapPath("~/Imagenes/Productos/") + FileUploadImagenProd.PostedFile.FileName);
+                        }
+                        lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
+                        lblMensajeAgregado.Text = "Producto agregado con èxito";
+                    }
+                    /// Si no se pudo agregar registro a alguna de las tablas...
+                    else
+                    {
+                        lblMensajeAgregado.Text = "No se pudo agregar el producto";
+                    }
                 }
+                
             }
            
         }
@@ -225,7 +257,7 @@ namespace Vistas
             NegocioCaracteristica car = new NegocioCaracteristica();
             cpc.CodProductos_CXPXC1.CodProducto_Pr1 = txtCodProd.Text;
             cpc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = ddlCaracteristicas.SelectedItem.Value;
-            cpc.CodColor_CXPXC1.Cod_Color_Co1 =ddlCaracteristicas.SelectedItem.Value;
+            cpc.CodColor_CXPXC1.Cod_Color_Co1 =ddlColorProducto.SelectedItem.Value;
             cpc.Stock_CXPXC1 = Convert.ToInt32(txtAgregarStock.Text);
 
             return cpc;
@@ -379,7 +411,7 @@ namespace Vistas
                 lblMuestraArtEliminar.Text = (fila.FindControl("lbl_it_Nombre") as Label).Text;
                 lblMuestraCaractEliminar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
                 lblMuestraColorEliminar.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
-                ViewState["CodProdEliminar"] = lblMuestrCodEliminar.Text;
+
             }
         }
 
@@ -443,14 +475,20 @@ namespace Vistas
         protected void imgCerrarAgregarProducto_Click1(object sender, ImageClickEventArgs e)
         {
             modalAgregarProducto.Visible = false;
+            limpiarCampos();
         }
 
         protected void btnSi_Click(object sender, EventArgs e)
         {
-            Productos pro = new Productos();
+            NegocioCaracteristica Nc = new NegocioCaracteristica();
+            NegocioColores Ncol = new NegocioColores();
+            CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
 
-            pro.CodProducto_Pr1 = ViewState["CodProdEliminar"].ToString() ;
-            np.eliminarProducto(pro);
+
+            cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = lblMuestrCodEliminar.Text.ToString();
+            cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Nc.codigoCaract(lblMuestraCaractEliminar.Text);
+            cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Ncol.CodigoColor(lblMuestraColorEliminar.Text);
+            np.eliminarProducto(cxpxc);
             cargartablaProductos();
             modalConfirmacionEliminar.Visible = false;
         }

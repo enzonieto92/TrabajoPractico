@@ -133,10 +133,10 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado" Visible="False">
                                     <EditItemTemplate>
-                                        <asp:CheckBox ID="cbEstado" runat="server" Checked='<%# Bind("Estado_Pr") %>'/>
+                                        <asp:CheckBox ID="cbEstado" runat="server" Checked='<%# Bind("Estado_CXPXC") %>'/>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:CheckBox ID="ch_it_estado" runat="server" Checked='<%# Bind("Estado_Pr") %>' />
+                                        <asp:CheckBox ID="ch_it_estado" runat="server" Checked='<%# Bind("Estado_CXPXC") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:ButtonField ButtonType="Image" HeaderText="Agregar Stock" ImageUrl="~/Imagenes/Iconos/signo mas.png" CommandName="AgregarStock">

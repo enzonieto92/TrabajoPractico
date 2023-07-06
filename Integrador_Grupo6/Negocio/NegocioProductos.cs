@@ -40,10 +40,10 @@ namespace Negocio
                 return false;
         }
 
-        public bool eliminarProducto(Productos prod)
+        public bool eliminarProducto(CaracteristicasXproductoXcolores cxpxc)
         {
             int cantFilas = 0;
-            cantFilas = Dpr.eliminarProducto(prod);
+            cantFilas = Dpr.eliminarProducto(cxpxc);
 
             if (cantFilas == 1)
                 return true;
@@ -104,6 +104,18 @@ namespace Negocio
             Productos p = new Productos();
             p.CodProducto_Pr1 = id;
             return Dpr.getTablaProductosSeleccionados(p);
+        }
+
+        public bool existeCXPXC(string Prod, string Caract, string Color)
+        {
+            CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+            DAOcaracteristicasXproductosXcolores DC = new DAOcaracteristicasXproductosXcolores();
+
+            cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = Prod;
+            cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Caract;
+            cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Color;
+
+            return DC.existeCaractProducto(cxpxc);
         }
 
     }

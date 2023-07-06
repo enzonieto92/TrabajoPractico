@@ -59,6 +59,7 @@ CodProducto_CXPXC char(6) not null,
 CodCaracteristicas_CXPXC char (6) not null,
 CodColor_CXPXC char(6) not null,
 Stock_CXPXC int not null default 0,
+Estado_CXPXC bit not null default 1
 CONSTRAINT PK_CARACTERISTICASXPRODUCTOSXCOLORES PRIMARY KEY (CodProducto_CXPXC, CodCaracteristicas_CXPXC, CodColor_CXPXC),
 CONSTRAINT FK_CARACTERISTICASXPRODUCTOSXCOLORES_PRODUCTOS FOREIGN KEY (CodProducto_CXPXC) REFERENCES Productos (CodProducto_Pr),
 CONSTRAINT FK_CARACTERISTICASXPRODUCTOSXCOLORES_CARACTERISTICAS FOREIGN KEY (CodCaracteristicas_CXPXC) REFERENCES Caracteristicas (CodCaracteristica_Car),
@@ -317,11 +318,13 @@ GO
 
 CREATE PROCEDURE SPEliminarProducto
 (
-@CodProducto CHAR(6)
+@CodProducto CHAR(6),
+@CodCaract CHAR(6),
+@CodColor CHAR(6)
 )
 AS
-UPDATE Productos SET Estado_Pr=0
-WHERE CodProducto_Pr=@CodProducto
+UPDATE CaracteristicasXproductosXcolores SET Estado_CXPXC=0
+WHERE CodProducto_CXPXC=@CodProducto AND CodCaracteristicas_CXPXC = @CodCaract AND CodColor_CXPXC = @CodColor
 GO
 
 CREATE PROCEDURE SPActualizarProducto
