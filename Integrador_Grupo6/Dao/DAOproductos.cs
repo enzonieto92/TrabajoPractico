@@ -31,7 +31,7 @@ namespace Dao
         public DataTable getTablaInicio()
         {
             string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_Pr " +
-                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat ";  
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = '1' ";  
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }

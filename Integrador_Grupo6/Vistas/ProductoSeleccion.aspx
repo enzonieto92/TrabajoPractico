@@ -59,29 +59,6 @@
 
 
         <asp:ListView ID="lvProductoMas" runat="server" DataKeyNames="CodProducto_Pr">
-            <EditItemTemplate>
-                <td runat="server" style="background-color: #FFCC66;color: #000080;">CodProducto_Pr:
-                    <asp:Label ID="CodProducto_PrLabel1" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
-                    <br />CodMarca_Pr:
-                    <asp:TextBox ID="CodMarca_PrTextBox" runat="server" Text='<%# Bind("CodMarcaS_Pr") %>' />
-                    <br />CodCategoria_Pr:
-                    <asp:TextBox ID="CodCategoria_PrTextBox" runat="server" Text='<%# Bind("CodCategoria_Pr") %>' />
-                    <br />Descripcion_Pr:
-                    <asp:TextBox ID="Descripcion_PrTextBox" runat="server" Text='<%# Bind("Descripcion_Pr") %>' />
-                    <br />Nombre_Pr:
-                    <asp:TextBox ID="Nombre_PrTextBox" runat="server" Text='<%# Bind("Nombre_Pr") %>' />
-                    <br />UrlImagen_Pr:
-                    <asp:TextBox ID="UrlImagen_PrTextBox" runat="server" Text='<%# Bind("URLImagen_Pr") %>' />
-                    <br />PrecioUnitario_Pr:
-                    <asp:TextBox ID="PrecioUnitario_PrTextBox" runat="server" Text='<%# Bind("PrecioUnitario") %>' />
-                    <br />
-                    <asp:CheckBox ID="Estado_PrCheckBox" runat="server" Checked='<%# Bind("Estado_Pr") %>' Text="Estado_Pr" />
-                    <br />
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
-                    <br />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
-                    <br /></td>
-            </EditItemTemplate>
             <EmptyDataTemplate>
                 <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                     <tr>
@@ -97,31 +74,8 @@
                     <td id="itemPlaceholder" runat="server"></td>
                 </tr>
             </GroupTemplate>
-            <InsertItemTemplate>
-                <td runat="server" style="">CodProducto_Pr:
-                    <asp:TextBox ID="CodProducto_PrTextBox" runat="server" Text='<%# Bind("CodProducto_Pr") %>' />
-                    <br />CodMarca_Pr:
-                    <asp:TextBox ID="CodMarca_PrTextBox" runat="server" Text='<%# Bind("CodMarcas_Pr") %>' />
-                    <br />CodCategoria_Pr:
-                    <asp:TextBox ID="CodCategoria_PrTextBox" runat="server" Text='<%# Bind("CodCategoria_Pr") %>' />
-                    <br />Descripcion_Pr:
-                    <asp:TextBox ID="Descripcion_PrTextBox" runat="server" Text='<%# Bind("Descripcion_Pr") %>' />
-                    <br />Nombre_Pr:
-                    <asp:TextBox ID="Nombre_PrTextBox" runat="server" Text='<%# Bind("Nombre_Pr") %>' />
-                    <br />UrlImagen_Pr:
-                    <asp:TextBox ID="UrlImagen_PrTextBox" runat="server" Text='<%# Bind("URLImagen_Pr") %>' />
-                    <br />PrecioUnitario_Pr:
-                    <asp:TextBox ID="PrecioUnitario_PrTextBox" runat="server" Text='<%# Bind("PrecioUnitario") %>' />
-                    <br />
-                    <asp:CheckBox ID="Estado_PrCheckBox" runat="server" Checked='<%# Bind("Estado_Pr") %>' Text="Estado_Pr" />
-                    <br />
-                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
-                    <br />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
-                    <br /></td>
-            </InsertItemTemplate>
             <ItemTemplate>
-                <td runat="server" style="background-color: #FFFBD6;color: #333333;">&nbsp;<strong><asp:Label ID="Nombre_PrLabel" runat="server" Text='<%# Eval("Nombre_Pr") %>'></asp:Label>
+                <<td runat="server" class="estiloListView">&nbsp;<strong><asp:Label ID="Nombre_PrLabel" runat="server" Text='<%# Eval("Nombre_Pr") %>'></asp:Label>
                     </strong>
                     <br />
                     <asp:Label ID="Descripcion_PrLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>'></asp:Label>
@@ -145,39 +99,17 @@
                             </table>
                         </td>
                     </tr>
-                    <tr runat="server">
-                        <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;"></td>
-                    </tr>
                 </table>
             </LayoutTemplate>
-            <SelectedItemTemplate>
-                <td runat="server" style="background-color: #FFCC66;font-weight: bold;color: #000080;">CodProducto_Pr:
-                    <asp:Label ID="CodProducto_PrLabel" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
-                    <br />CodMarca_Pr:
-                    <asp:Label ID="CodMarca_PrLabel" runat="server" Text='<%# Eval("CodMarcas_Pr") %>' />
-                    <br />CodCategoria_Pr:
-                    <asp:Label ID="CodCategoria_PrLabel" runat="server" Text='<%# Eval("CodCategoria_Pr") %>' />
-                    <br />Descripcion_Pr:
-                    <asp:Label ID="Descripcion_PrLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>' />
-                    <br />Nombre_Pr:
-                    <asp:Label ID="Nombre_PrLabel" runat="server" Text='<%# Eval("Nombre_Pr") %>' />
-                    <br />UrlImagen_Pr:
-                    <asp:Label ID="UrlImagen_PrLabel" runat="server" Text='<%# Eval("URLImagen_Pr") %>' />
-                    <br />PrecioUnitario_Pr:
-                    <asp:Label ID="PrecioUnitario_PrLabel" runat="server" Text='<%# Eval("PrecioUnitario") %>' />
-                    <br />
-                    <asp:CheckBox ID="Estado_PrCheckBox" runat="server" Checked='<%# Eval("Estado_Pr") %>' Enabled="false" Text="Estado_Pr" />
-                    <br /></td>
-            </SelectedItemTemplate>
         </asp:ListView>
 <p>
-    Caracteristica<br __designer:mapid="4c" />
+    Caracteristica<br/>
     <asp:DropDownList runat="server" ID="ddlcaracteristica" AutoPostBack="True" OnSelectedIndexChanged="ddlCaracteristica_SelectedIndexChanged" Width="90px" Height="17px">
     </asp:DropDownList>
-    <br __designer:mapid="79" />Color<br __designer:mapid="74" />
+    <br/>Color<br/>
     <asp:DropDownList runat="server" ID="ddlColor" AutoPostBack="True" OnSelectedIndexChanged="ddlColor_SelectedIndexChanged">
     </asp:DropDownList>
-    <br __designer:mapid="7a" />Cantidad<br __designer:mapid="76" />
+    <br/>Cantidad<br/>
     <asp:DropDownList runat="server" ID="ddlCantidad" AutoPostBack="True" Height="18px" Width="91px">
     </asp:DropDownList>
 </p>

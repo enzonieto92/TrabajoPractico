@@ -21,6 +21,7 @@ namespace Vistas
             if (!IsPostBack)
             {
                 cargarTablaUsuario();
+                modalConfirmacionEliminar.Visible = false;
             }
         }
         void cargarTablaUsuario()
@@ -168,6 +169,43 @@ namespace Vistas
         {
             cargarTablaUsuario();
             limpiarCampos();
+        }
+        protected void grvUsuariosRowCommand1(object sender, GridViewCommandEventArgs e)
+        {
+            // *******************************************************************
+            // OBTENER DATOS DE UNA CELDA DE GRID VIEW
+
+            // OBTIENE INDICE DE FILA
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+            // OBTIENE OBJETO FILA SEGÚN ÍNDICE
+            GridViewRow fila = grvUsuarios.Rows[rowIndex];
+
+            if (e.CommandName == "Eliminar")
+            {
+                modalConfirmacionEliminar.Visible = true;
+                lblMuestrDNIeliminar.Text = (fila.FindControl("it_lbl_DNI") as Label).Text;
+                ViewState["DNIeliminar"] = lblMuestrDNIeliminar.Text;
+            }
+        }
+        protected void btnSi_Click(object sender, EventArgs e)
+        {
+            Usuario us = new Usuario();
+
+            us.DNI_Us1 = ViewState["DNIeliminar"].ToString();
+            nSU.EliminarUsuario(us);
+            cargarTablaUsuario();
+            modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void imgCerrarConfirmacion_Click1(object sender, ImageClickEventArgs e)
+        {
+            modalConfirmacionEliminar.Visible = false;
         }
     }
 }

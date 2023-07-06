@@ -30,10 +30,10 @@
             Buscar reporte de venta<br />
             Ingrese N° Factura:<br />
             <asp:TextBox ID="txtReporteDeVenta" runat="server" CssClass="auto-style2" Height="21px" Width="273px"></asp:TextBox>
-           
-            <asp:Button ID="btnBuscarReporte" runat="server" Text="Buscar" OnClick="btnBuscarReporte_Click" />
-
-            <asp:Button ID="btnQuitarFiltros" runat="server" OnClick="btnQuitarFiltros_Click" Text="Quitar Filtros" />
+             &nbsp;
+            <asp:Button ID="btnBuscarReporte" CssClass="boton-personalizado" runat="server" Text="Buscar" OnClick="btnBuscarReporte_Click" />
+                &nbsp;
+            <asp:Button ID="btnQuitarFiltros" CssClass="boton-personalizado" runat="server" OnClick="btnQuitarFiltros_Click" Text="Quitar Filtros" />
             </div>
             
             <br />
@@ -64,7 +64,7 @@
                         <br />
                         <asp:RequiredFieldValidator ID="rfvFecha2" runat="server" ControlToValidate="txtFecha2" ForeColor="Red" ValidationGroup="1">Completar fecha</asp:RequiredFieldValidator>
                         <br />
-                        <asp:Button ID="btnFiltroFecha" runat="server" OnClick="btnFiltroFecha_Click" Text="Buscar" ValidationGroup="1" />
+                        <asp:Button ID="btnFiltroFecha" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroFecha_Click" Text="Buscar" ValidationGroup="1" />
                         <br />
                         <br />
                         <br />
@@ -74,7 +74,7 @@
                             </strong>
                             <br />
                             <strong>
-                            <asp:Button ID="btnFiltroVentas" runat="server" OnClick="btnFiltroVentas_Click" Text="Buscar" ValidationGroup="2" />
+                            <asp:Button ID="btnFiltroVentas" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroVentas_Click" Text="Buscar" ValidationGroup="2" />
                             <br />
                             </strong>
                             <br />
@@ -83,7 +83,7 @@
                             <asp:Label ID="lblReporteTotal" runat="server"></asp:Label>
                             <br />
                             </strong>
-                            <asp:Button ID="btnFiltroTotal" runat="server" OnClick="btnFiltroTotal_Click" Text="Buscar" ValidationGroup="3" />
+                            <asp:Button ID="btnFiltroTotal" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroTotal_Click" Text="Buscar" ValidationGroup="3" />
                         </asp:Panel>
                         </strong>
                     </td>
@@ -128,6 +128,7 @@
                                 </asp:TemplateField>
                                 <asp:ButtonField ButtonType="Button" CommandName="eventoVerMas" HeaderText="Detalle Factura" Text="Ver detalle" />
                             </Columns>
+                            <HeaderStyle CssClass="dataGrid-th" />
                         </asp:GridView>
                     </td>
                     <td>&nbsp;
@@ -170,6 +171,7 @@
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                         </Columns>
+                                                        <HeaderStyle CssClass="dataGrid-th" />
                                                     </asp:GridView>
                                                 </td>
                 </tr>
