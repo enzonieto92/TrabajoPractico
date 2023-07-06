@@ -74,8 +74,8 @@ namespace Dao
                               "AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND CodColor_CXPXC = '" + cxpxc.CodColor_CXPXC1.Cod_Color_Co1 + "'";
             int filas;
 
-            filas = cn.RealizarConsulta(consulta);
-            if(filas == 1)
+            DataTable tabla = cn.ObtenerTabla("Producto", consulta);
+            if(tabla.Rows.Count == 1)
             {
                 return true;
             }

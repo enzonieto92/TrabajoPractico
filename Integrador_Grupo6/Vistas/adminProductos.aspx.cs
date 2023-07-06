@@ -164,6 +164,8 @@ namespace Vistas
         protected void btnIngresarProducto_Click(object sender, EventArgs e)
         {
             Productos pro = new Productos();
+            NegocioCaracteristica Ncar = new NegocioCaracteristica();
+            NegocioColores Ncol = new NegocioColores();
             CaracteristicasXproductoXcolores car = new CaracteristicasXproductoXcolores();
 
             if (txtCodProd.Text == "" || txtNombre.Text == "" || ddlMarcas.SelectedItem.Text == "-- Seleccionar --" 
