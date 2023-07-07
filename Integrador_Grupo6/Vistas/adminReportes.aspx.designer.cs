@@ -159,15 +159,6 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblProductosVendidos;
 
         /// <summary>
-        /// Control btnFiltroVentas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltroVentas;
-
-        /// <summary>
         /// Control lblReporteTotal.
         /// </summary>
         /// <remarks>
@@ -175,15 +166,6 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReporteTotal;
-
-        /// <summary>
-        /// Control btnFiltroTotal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltroTotal;
 
         /// <summary>
         /// Control grvFacturas.

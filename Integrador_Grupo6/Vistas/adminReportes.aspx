@@ -44,7 +44,6 @@
                         <strong>Filtros<br />
                         <br />
                         Filtrar Por Fecha:</strong><br />
-            <strong>
                         <asp:DropDownList ID="ddlFiltroFecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlFiltroFecha_SelectedIndexChanged" Width="200px">
                             <asp:ListItem Value="-1">Seleccione un parametro</asp:ListItem>
                             <asp:ListItem Value="=">Igual</asp:ListItem>
@@ -58,33 +57,29 @@
                         <br />
                         <asp:RequiredFieldValidator ID="revFecha1" runat="server" ControlToValidate="txtFecha1" ForeColor="Red" ValidationGroup="1">Completar fecha</asp:RequiredFieldValidator>
                         <br />
-                        
                         <br />
     <asp:TextBox ID="txtFecha2" runat="server" TextMode="Date" Visible="False"></asp:TextBox>
                         <br />
                         <asp:RequiredFieldValidator ID="rfvFecha2" runat="server" ControlToValidate="txtFecha2" ForeColor="Red" ValidationGroup="1">Completar fecha</asp:RequiredFieldValidator>
                         <br />
-                        <asp:Button ID="btnFiltroFecha" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroFecha_Click" Text="Buscar" ValidationGroup="1" />
+                        <asp:Button ID="btnFiltroFecha" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroFecha_Click" Text="Buscar" ValidationGroup="1" visible ="false" />
                         <br />
                         <br />
                         <br />
-                        <asp:Panel ID="PanelFiltros" runat="server" Visible="true">
+                        <asp:Panel ID="PanelFiltros" runat="server" Visible="false">
+                            <div>
+
                             <strong><span class="auto-style8">Cantidad de productos vendidos:</span>
                             <asp:Label ID="lblProductosVendidos" runat="server"></asp:Label>
-                            </strong>
-                            <br />
-                            <strong>
-                            <asp:Button ID="btnFiltroVentas" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroVentas_Click" Text="Buscar" ValidationGroup="2" />
-                            <br />
-                            </strong>
-                            <br />
-                            <br />
-                            <strong>Ingresos totales:<br />
+                            </div>
+                            <div>
+                            <strong>Ingresos totales:  </strong>
+
+
                             <asp:Label ID="lblReporteTotal" runat="server"></asp:Label>
-                            <br />
-                            </strong>
-                            <asp:Button ID="btnFiltroTotal" CssClass="boton-personalizado" runat="server" OnClick="btnFiltroTotal_Click" Text="Buscar" ValidationGroup="3" />
+                               </div>
                         </asp:Panel>
+
                         </strong>
                     </td>
                     <td>

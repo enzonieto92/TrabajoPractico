@@ -130,7 +130,6 @@ namespace Vistas
                 txtFecha2.Text = "";
                 PanelFiltros.Visible = true;
                 btnFiltroFecha.Visible = true;
-                btnFiltroTotal.Visible = true;
             }
             else
             {
@@ -138,7 +137,6 @@ namespace Vistas
                 txtFecha1.Visible = false;
                 txtFecha2.Visible = false;
                 btnFiltroFecha.Visible = false;
-                PanelFiltros.Visible = false;
             }
         }
 
@@ -148,35 +146,14 @@ namespace Vistas
             DataTable tablaFacturas = nsF.getTablaFecha(consulta);
             grvFacturas.DataSource = tablaFacturas;
             grvFacturas.DataBind();
+            lblProductosVendidos.Text = Convert.ToString(nDF.getTotalProductosVendidos(consulta));
+            lblReporteTotal.Text = "$ " + Convert.ToString(nsF.getTotalRecaudado(consulta));
             vaciarGridDetalleFacturas();
         }
         public void vaciarGridDetalleFacturas()
         {
             grvDetalleFacturas.DataSource = null;
             grvDetalleFacturas.DataBind();
-        }
-
-        protected void btnFiltroVentas_Click(object sender, EventArgs e)
-        {
-            String consulta = armarParametrosFecha();
-
-            DataTable tablaFacturas = nsF.getTabla();
-            grvFacturas.DataSource = tablaFacturas;
-           
-
-            lblProductosVendidos.Text = Convert.ToString(nDF.getTotalProductosVendidos(consulta));
-
-            vaciarGridDetalleFacturas();
-        }
-
-        protected void btnFiltroTotal_Click(object sender, EventArgs e)
-        {
-            string consulta = armarParametrosFecha();
-            DataTable tablaFacturas = nsF.getTabla();
-            grvFacturas.DataSource = tablaFacturas;
-            
-
-            lblReporteTotal.Text = "$ " + Convert.ToString(nsF.getTotalRecaudado(consulta));
         }
     }
 }
