@@ -275,5 +275,10 @@ namespace Vistas
                 }
             }
         }
+
+        protected void lvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

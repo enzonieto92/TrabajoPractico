@@ -30,8 +30,8 @@ namespace Dao
 
         public DataTable getTablaInicio()
         {
-            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario, Estado_CXPXC " +
-                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = '1' ";  
+            string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario " +
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC WHERE Estado_CXPXC = '1' ";  
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -133,7 +133,7 @@ namespace Dao
         public DataTable filtroProductos(string tipo, string texto)
 
         {
-            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_Pr FROM Productos " +
+            string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_CXPXC FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
                               "WHERE " + tipo + " LIKE '%" + texto + "%'";

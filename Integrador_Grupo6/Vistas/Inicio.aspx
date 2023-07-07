@@ -194,7 +194,7 @@
             </div>
 
         <div style="float:right; float:left;width: 80%;display:flex;justify-content:center;">
-                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3">
+                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" OnSelectedIndexChanged="lvProductos_SelectedIndexChanged">
                 <EditItemTemplate>
                     <td runat="server" style="background-color: #FFCC66; color: #000080;">CodProducto_Pro:
                         <asp:Label ID="CodProducto_ProLabel1" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
