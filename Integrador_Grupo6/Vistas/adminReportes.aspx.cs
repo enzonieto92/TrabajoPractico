@@ -128,11 +128,11 @@ namespace Vistas
 
                 txtFecha1.Visible = true;
                 txtFecha2.Text = "";
-                PanelFiltros.Visible = true;
                 btnFiltroFecha.Visible = true;
             }
             else
             {
+                PanelFiltros.Visible = false;
                 txtFecha1.Text = "";
                 txtFecha1.Visible = false;
                 txtFecha2.Visible = false;
@@ -146,6 +146,7 @@ namespace Vistas
             DataTable tablaFacturas = nsF.getTablaFecha(consulta);
             grvFacturas.DataSource = tablaFacturas;
             grvFacturas.DataBind();
+            PanelFiltros.Visible = true;
             lblProductosVendidos.Text = Convert.ToString(nDF.getTotalProductosVendidos(consulta));
             lblReporteTotal.Text = "$ " + Convert.ToString(nsF.getTotalRecaudado(consulta));
             vaciarGridDetalleFacturas();
