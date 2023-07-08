@@ -43,7 +43,7 @@
             <br />
             <br />
                         <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1">
-                            <AlternatingRowStyle BackColor="white" />
+                            <AlternatingRowStyle BackColor="red" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Codigo Producto">
                                     <ItemTemplate>

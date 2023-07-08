@@ -136,7 +136,7 @@ namespace Dao
             string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_CXPXC FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
-                              "WHERE " + tipo + " LIKE '%" + texto + "%'";
+                              "WHERE " + tipo + " LIKE '%" + texto + "%' AND Estado_CXPXC = 1";
             DataTable tabla;
 
             tabla = cn.ObtenerTabla("Productos Filtrados", consulta);
