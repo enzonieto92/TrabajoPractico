@@ -311,6 +311,7 @@ namespace Vistas
             string nombre = ((TextBox)row.FindControl("txtNombreEdit")).Text;
             string descripcion = ((TextBox)row.FindControl("txtDescripcionEdit")).Text;
             string precioUnitario = ((TextBox)row.FindControl("txtPrecioEdit")).Text;
+            Image imagen = (Image)row.FindControl("imgImagen");
             bool estado = ((CheckBox)row.FindControl("cbEstado")).Checked;
 
             // Crear el objeto Productos con los valores actualizados
@@ -321,6 +322,7 @@ namespace Vistas
             productoActualizado.Nombre_Pr1 = nombre;
             productoActualizado.Descripcion_Pr1 = descripcion;
             productoActualizado.PrecioUnitario_Pr1 = decimal.Parse(precioUnitario);
+            productoActualizado.UrlImagen_Pr1 = Convert.ToString(imagen);
             productoActualizado.Estado_Pr = estado;
 
             // Llamar al método np.actualizarProducto para guardar los datos actualizados en la base de datos
@@ -333,9 +335,7 @@ namespace Vistas
         protected void grvProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grvProductos.EditIndex = e.NewEditIndex;
-
             cargartablaProductos();
-
         }
         protected void grvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
@@ -358,26 +358,27 @@ namespace Vistas
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowState == DataControlRowState.Edit)
+            if (e.Row.RowType == DataControlRowType.DataRow)
+
             {
-                DropDownList ddlMa = (DropDownList)e.Row.FindControl("ei_ddl_Marca");
-                DropDownList ddlCat = (DropDownList)e.Row.FindControl("ei_ddl_Categoria");
-                DataTable tablaMarcas = NM.listarMarcas();
-                ddlMa.DataSource = tablaMarcas;
-                ddlMa.DataTextField = "CodMarca_Ma";
-                ddlMa.DataValueField = "CodMarca_Ma";
-                ddlMa.DataBind();
+                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+                {
+                    DropDownList ddlMa = (DropDownList)e.Row.FindControl("ei_ddl_Marca");
+                    DropDownList ddlCat = (DropDownList)e.Row.FindControl("ei_ddl_Categoria");
+                    DataTable tablaMarcas = NM.listarMarcas();
+                    ddlMa.DataSource = tablaMarcas;
+                    ddlMa.DataTextField = "Descripcion_Ma";
+                    ddlMa.DataValueField = "CodMarca_Ma";
+                    ddlMa.DataBind();
 
-                DataTable tablaCategoria = NC.listarCategorias();
-                ddlCat.DataSource = tablaCategoria;
-                ddlCat.DataTextField = "CodCategoria_Cat";
-                ddlCat.DataValueField = "CodCategoria_Cat";
-                ddlCat.DataBind();
+                    DataTable tablaCategoria = NC.listarCategorias();
+                    ddlCat.DataSource = tablaCategoria;
+                    ddlCat.DataTextField = "Descripcion_Cat";
+                    ddlCat.DataValueField = "CodCategoria_Cat";
+                    ddlCat.DataBind();
+                }
+
             }
-
-
-
-
         }
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {

@@ -56,7 +56,7 @@
                                         <asp:Label ID="lbl_it_CodCaract" runat="server" Text='<%# Bind("CodCaracteristicas_CXPXC") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Marca" Visible="False">
+                                <asp:TemplateField HeaderText="Codigo Marca" Visible="true">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ei_ddl_Marca" runat="server">
                                             <asp:ListItem Value="CodMarca_Ma">Codigo Marca</asp:ListItem>
@@ -71,7 +71,7 @@
                                         <asp:Label ID="it_lbl_Marca" runat="server" Text='<%# Bind("Descripcion_Ma") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Codigo Categoria" Visible="False">
+                                <asp:TemplateField HeaderText="Codigo Categoria" Visible="true">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ei_ddl_Categoria" runat="server">
                                             <asp:ListItem Value="CodCategoria_Cat">Codigo Categoria</asp:ListItem>
