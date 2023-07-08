@@ -43,13 +43,13 @@ namespace Dao
         }
         public DataTable getTablaCaracteristicas(CaracteristicasXproductoXcolores cxpxc)
         {
-            string consulta = "SELECT distinct CodCaracteristicas_CXPXC, Nombre_Car FROM CaracteristicasXProductosXColores inner join Caracteristicas on CodCaracteristicas_CXPXC = CodCaracteristica_Car WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "'";
+            string consulta = "SELECT distinct CodCaracteristicas_CXPXC, Nombre_Car FROM CaracteristicasXProductosXColores inner join Caracteristicas on CodCaracteristicas_CXPXC = CodCaracteristica_Car WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND Estado_CXPXC = '1'";
             DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
             return tabla;
         }
         public DataTable getTablaColores(CaracteristicasXproductoXcolores cxpxc)
         {
-            string consulta = "SELECT Descripcion_Co, CodColor_CXPXC FROM CaracteristicasXProductosXColores INNER JOIN Colores ON CodColor_CXPXC = CodColor_Co WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "'";
+            string consulta = "SELECT Descripcion_Co, CodColor_CXPXC FROM CaracteristicasXProductosXColores INNER JOIN Colores ON CodColor_CXPXC = CodColor_Co WHERE CodProducto_CXPXC = '" + cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND CodCaracteristicas_CXPXC = '" + cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 + "' AND Estado_CXPXC = '1'";
             DataTable tabla = cn.ObtenerTabla("CaracteristicasXProductosXColores", consulta);
             return tabla;
         }
