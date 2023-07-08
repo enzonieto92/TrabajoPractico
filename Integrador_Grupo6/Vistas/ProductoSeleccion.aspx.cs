@@ -198,13 +198,19 @@ namespace Vistas
                 if (Session["usuario"] != null)
                 {
                     string id = Request.QueryString["id"];
-                    if (Session["carrito"] == null) Session["carrito"] = tb.crearTabla();
+                    if (Session["carrito"] == null)
+                    {
+                      Session["carrito"] = tb.crearTabla();
+                      Session["carritocarga"] = tb.crearTabla();
+                    }
+                    
 
                     if (!tb.noRepetir(id, Convert.ToString(ddlColor.SelectedValue), ddlcaracteristica.SelectedValue, (DataTable)Session["carrito"]))
                     {
                         if (Convert.ToString(ddlCantidad.SelectedItem) != "Sin Stock")
                         {
                             tb.agregarFila((DataTable)Session["carrito"], id, nombre, Convert.ToString(ddlcaracteristica.SelectedValue), Convert.ToString(ddlColor.SelectedValue), Convert.ToString(ddlCantidad.SelectedValue), precioUnitario);
+                            tb.agregarFila((DataTable)Session["carritocarga"], id, nombre, Convert.ToString(ddlcaracteristica.SelectedItem), Convert.ToString(ddlColor.SelectedItem), Convert.ToString(ddlCantidad.SelectedValue), precioUnitario);
                             lblMensaje.Text = "Producto agregado al carrito!";
                             lblMensaje.ForeColor = System.Drawing.Color.Green;
                         }

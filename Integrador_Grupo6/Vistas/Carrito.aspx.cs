@@ -35,7 +35,7 @@ namespace Vistas
                     lbl_Apellido.Text = ((Usuario)Session["usuario"]).Apellido_Us1;
                     lbl_DNI.Text = ((Usuario)Session["usuario"]).DNI_Us1;
 
-                    grdCarrito.DataSource = Session["carrito"];
+                    grdCarrito.DataSource = Session["carritocarga"];
                     grdCarrito.DataBind();
                     decimal acumTotal = 0;
 
@@ -44,7 +44,7 @@ namespace Vistas
                         acumTotal += Convert.ToInt32(dr["Cantidad"]) * Convert.ToDecimal(dr["Precio Unitario"]);
                     }
 
-                    lblTotal.Text = Convert.ToString(acumTotal);
+                    lblTotal.Text = "$" + Convert.ToString(acumTotal);
                 }
                 else
                 {
@@ -271,7 +271,8 @@ namespace Vistas
         protected void btnVaciar_Click(object sender, EventArgs e)
         {
             Session["carrito"] = null;
-            grdCarrito.DataSource = Session["carrito"];
+            Session["carritocarga"] = null;
+            grdCarrito.DataSource = Session["carritocarga"];
             grdCarrito.DataBind();
             lblMensaje.ForeColor = System.Drawing.Color.Red;
             lblMensaje.Text = "Los elementos seleccionados han sido borrados!";
