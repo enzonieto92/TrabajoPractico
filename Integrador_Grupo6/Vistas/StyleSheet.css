@@ -26,7 +26,7 @@
     text-align: left;
 }
 .lblError {
-    color: #000000;
+    color: red;
 
     font-family: sans-serif;
     Text-align: center;
@@ -35,7 +35,7 @@
 }
 .Hyperlink {
     Text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
 }
 

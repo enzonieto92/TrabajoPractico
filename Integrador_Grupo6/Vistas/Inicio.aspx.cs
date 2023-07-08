@@ -202,6 +202,7 @@ namespace Vistas
         }
         public void OcultarPopup(Panel popup)
         {
+            lblerror.Visible = false;
             popup.Visible = false;
         }
 
