@@ -194,6 +194,7 @@ namespace Vistas
                         else
                         {
                             np.ActProducto(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value, Convert.ToInt32(txtAgregarStock.Text));
+                            np.altaProducto(txtCodProd.Text);
                             cargartablaProductos();
                             lblMensajeAgregado.ForeColor = System.Drawing.Color.Green;
                             lblMensajeAgregado.Text = "Producto agregado con èxito";
@@ -502,6 +503,12 @@ namespace Vistas
             cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Nc.codigoCaract(lblMuestraCaractEliminar.Text);
             cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Ncol.CodigoColor(lblMuestraColorEliminar.Text);
             np.eliminarProducto(cxpxc);
+
+            if (np.getEstadoProducto(lblMuestrCodEliminar.Text, Nc.codigoCaract(lblMuestraCaractEliminar.Text), Ncol.CodigoColor(lblMuestraColorEliminar.Text)) == false)
+            {
+                np.bajaProducto(lblMuestrCodEliminar.Text);
+            }
+
             cargartablaProductos();
             modalConfirmacionEliminar.Visible = false;
         }

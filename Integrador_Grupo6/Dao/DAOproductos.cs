@@ -31,7 +31,7 @@ namespace Dao
         public DataTable getTablaInicio()
         {
             string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario " +
-                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat ";   //INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC WHERE Estado_CXPXC = '1'
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = 1";   //INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC WHERE Estado_CXPXC = '1'
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -179,6 +179,36 @@ namespace Dao
             string consulta = "SELECT * FROM Productos WHERE CodProducto_Pr = '" + p.CodProducto_Pr1 + "'";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
+        }
+
+        public Boolean bajaProducto(Productos prod)
+        {
+            string consulta = "UPDATE Productos SET Estado_Pr = 0 where CodProducto_Pr='" + prod.CodProducto_Pr1 + "' AND Estado_Pr = 1 ";
+
+            int fila = cn.RealizarConsulta(consulta);
+            if (fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Boolean altaProducto(Productos prod)
+        {
+            string consulta = "UPDATE Productos SET Estado_Pr = 1 where CodProducto_Pr='" + prod.CodProducto_Pr1 + "' AND Estado_Pr = 0 ";
+
+            int fila = cn.RealizarConsulta(consulta);
+            if (fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

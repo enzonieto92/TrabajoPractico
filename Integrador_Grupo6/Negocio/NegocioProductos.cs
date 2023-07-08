@@ -143,5 +143,25 @@ namespace Negocio
             return DC.activarProducto(cxpxc);
         }
 
+        public Boolean bajaProducto(string codProd)
+        {
+            Productos pro = new Productos();
+            DAOproductos dp = new DAOproductos();
+
+            pro.CodProducto_Pr1 = codProd;
+
+            return dp.bajaProducto(pro);
+        }
+
+        public Boolean altaProducto(string codProd)
+        {
+            Productos pro = new Productos();
+            DAOproductos dp = new DAOproductos();
+
+            pro.CodProducto_Pr1 = codProd;
+
+            return dp.altaProducto(pro);
+        }
+
     }
 }
