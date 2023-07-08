@@ -183,9 +183,10 @@ namespace Vistas
                 // Chequea si existe el codigo del producto
                 if (np.existeProducto(txtCodProd.Text))
                 {
-                    // Cheque si existe un producto con las características ingresadas.
+                    // Chequea si existe un producto con las características ingresadas.
                     if (np.existeCXPXC(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value))
                     {
+                        // Chequea estado del producto.
                         if(np.getEstadoProducto(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value))
                         {
                             lblMensajeAgregado.ForeColor = System.Drawing.Color.Red;
@@ -193,6 +194,7 @@ namespace Vistas
                         }
                         else
                         {
+                            np.actualizarProducto(pro);
                             np.ActProducto(txtCodProd.Text, ddlCaracteristicas.SelectedItem.Value, ddlColorProducto.SelectedItem.Value, Convert.ToInt32(txtAgregarStock.Text));
                             np.altaProducto(txtCodProd.Text);
                             cargartablaProductos();
@@ -202,6 +204,11 @@ namespace Vistas
                     }
                     else
                     {
+                        if (np.getEstadoProd(car)==false)
+                        {
+                            np.actualizarProducto(pro);
+                        }
+
                         if (nsCXPXC.agregarCxPxC(car))
                         {
                             cargartablaProductos();
@@ -250,6 +257,7 @@ namespace Vistas
             pro.PrecioUnitario_Pr1 = Convert.ToDecimal(txtPrecioUnitario.Text);
             pro.UrlImagen_Pr1 = "~/Imagenes/Productos/" + FileUploadImagenProd.PostedFile.FileName;
             pro.Descripcion_Pr1 = txtDescripcion.Text;
+            pro.Estado_Pr = true;
 
             return pro;
         }
@@ -497,14 +505,16 @@ namespace Vistas
             NegocioCaracteristica Nc = new NegocioCaracteristica();
             NegocioColores Ncol = new NegocioColores();
             CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
-
-
+            Productos pro = new Productos();
+ 
             cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = lblMuestrCodEliminar.Text.ToString();
             cxpxc.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1 = Nc.codigoCaract(lblMuestraCaractEliminar.Text);
             cxpxc.CodColor_CXPXC1.Cod_Color_Co1 = Ncol.CodigoColor(lblMuestraColorEliminar.Text);
             np.eliminarProducto(cxpxc);
 
-            if (np.getEstadoProducto(lblMuestrCodEliminar.Text, Nc.codigoCaract(lblMuestraCaractEliminar.Text), Ncol.CodigoColor(lblMuestraColorEliminar.Text)) == false)
+            pro.CodProducto_Pr1 = lblMuestrCodEliminar.Text.ToString();
+
+            if (np.getEstadoProd(cxpxc) == false)
             {
                 np.bajaProducto(lblMuestrCodEliminar.Text);
             }

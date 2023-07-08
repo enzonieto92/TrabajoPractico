@@ -163,5 +163,12 @@ namespace Negocio
             return dp.altaProducto(pro);
         }
 
+        public Boolean getEstadoProd(CaracteristicasXproductoXcolores pro)
+        {
+            DAOcaracteristicasXproductosXcolores dc = new DAOcaracteristicasXproductosXcolores();
+
+            return dc.getEstado(pro);
+        }
+
     }
 }

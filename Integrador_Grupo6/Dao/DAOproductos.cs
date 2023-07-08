@@ -114,6 +114,8 @@ namespace Dao
             SqlParametros.Value = prod.Descripcion_Pr1;
             SqlParametros = cmd.Parameters.Add("@Nombre", SqlDbType.VarChar);
             SqlParametros.Value = prod.Nombre_Pr1;
+            SqlParametros = cmd.Parameters.Add("@Urlimagen", SqlDbType.VarChar);
+            SqlParametros.Value = prod.UrlImagen_Pr1;
             SqlParametros = cmd.Parameters.Add("@PrecioUnitario", SqlDbType.Decimal);
             SqlParametros.Value = prod.PrecioUnitario_Pr1;
             SqlParametros = cmd.Parameters.Add("@Estado", SqlDbType.Bit);

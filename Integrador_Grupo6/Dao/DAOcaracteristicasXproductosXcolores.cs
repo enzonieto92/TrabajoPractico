@@ -118,5 +118,29 @@ namespace Dao
             }
         }
 
+        public Boolean getEstado(CaracteristicasXproductoXcolores prod)
+        {
+            string consulta = "SELECT Estado_CXPXC FROM CaracteristicasXProductosXColores WHERE CodProducto_CXPXC = '" + prod.CodProductos_CXPXC1.CodProducto_Pr1 + "' AND Estado_CXPXC = 1";
+            DataTable tabla = cn.ObtenerTabla("Productos", consulta);
+
+            //int num = Convert.ToInt32(tabla.Rows[0][0].ToString());
+
+            if (tabla.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /*public Boolean actualizarRegistro(CaracteristicasXproductoXcolores Actual, CaracteristicasXproductoXcolores Nuevo)
+        {
+            string consulta = "UPDATE CaracteristicasXProductosXColores SET CodProducto_CXPXC = '"+Nuevo.CodProductos_CXPXC1.CodProducto_Pr1+ "', CodCaracteristicas_CXPXC = '"+Nuevo.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1+"' " +
+                              "CodColor_CXPXC = '"+Nuevo.CodColor_CXPXC1.Cod_Color_Co1+ "' WHERE CodProducto_CXPXC = '"+Actual.CodProductos_CXPXC1.CodProducto_Pr1+"' AND " +
+                              "CodCaracteristicas_CXPXC = '"+Actual.CodCaracteristicas_CXPXC1.Cod_Caracteristica_Car1+ "' AND CodColor_CXPXC = '"+Actual.CodColor_CXPXC1.Cod_Color_Co1+"'"
+        }*/
+
     }
 }
