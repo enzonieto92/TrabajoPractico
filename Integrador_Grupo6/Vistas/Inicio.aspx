@@ -26,7 +26,7 @@
     </header>
             <asp:Label ID="lblErrorIni" runat="server" CssClass="lblError"></asp:Label>
        
-    <asp:Panel ID="PanelInicioSesion" runat="server">
+    <asp:Panel ID="PanelInicioSesion" runat="server" Visible ="false">
     <div id="PopupInicioSesion" class="popup">
             <div class="popup-contenido">
                 <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
@@ -35,33 +35,34 @@
                 </h2>
                 <div class="Datos">
     <div class="Form">
-
         <asp:Label ID="lblUsuario" runat="server" class="Label" Text="Usuario: " ></asp:Label>
         <asp:TextBox ID="txtUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-     
+        <asp:RequiredFieldValidator ID="rfvInicioUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario" ValidationGroup="InicioSesion" ForeColor="#FF5050"></asp:RequiredFieldValidator>
     </div>
+     
 
     <div class="Form">
-
             <asp:Label ID="lblContraseña" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
-            <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
+            <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password" ValidationGroup="InicioSesion"></asp:TextBox> 
+        <asp:RequiredFieldValidator ID="rfvInicioContraseña" runat="server" ErrorMessage="*" ControlToValidate="txtContraseña" ValidationGroup="InicioSesion" ForeColor="#FF5050"></asp:RequiredFieldValidator>
     </div>
+
 </div>
                 <div class="Hyperlink">
                     <asp:Label ID="lblerror" runat="server" visible="false"></asp:Label>
-                    <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink> 
+                    <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px"></asp:HyperLink> 
                 </div>
 
                     
         <div class="Button">
-                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión" OnClick="btnIniciarSesion_Click"/>
+                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión" OnClick="btnIniciarSesion_Click" ValidationGroup="InicioSesion" />
                 </div>   
 
             </div>
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="PanelRegistro" runat="server">
+        <asp:Panel ID="PanelRegistro" runat="server" Visible ="false">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:680px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
@@ -200,7 +201,7 @@
             </div>
 
         <div style="float:right; float:left;width: 80%;display:flex;justify-content:center;">
-                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" OnSelectedIndexChanged="lvProductos_SelectedIndexChanged">
+                        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3">
                 <EditItemTemplate>
                     <td runat="server" style="background-color: #FFCC66; color: #000080;">CodProducto_Pro:
                         <asp:Label ID="CodProducto_ProLabel1" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />

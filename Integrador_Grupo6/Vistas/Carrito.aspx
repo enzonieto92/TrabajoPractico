@@ -72,7 +72,7 @@
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="Panelpopup2" runat="server">
+        <asp:Panel ID="Panelpopup2" runat="server" Visible="false">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:500px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>

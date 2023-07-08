@@ -114,6 +114,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
+        /// Control rfvInicioUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInicioUsuario;
+
+        /// <summary>
         /// Control lblContraseña.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+
+        /// <summary>
+        /// Control rfvInicioContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInicioContraseña;
 
         /// <summary>
         /// Control lblerror.
