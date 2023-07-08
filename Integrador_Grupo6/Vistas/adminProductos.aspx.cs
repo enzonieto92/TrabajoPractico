@@ -311,7 +311,6 @@ namespace Vistas
             string nombre = ((TextBox)row.FindControl("txtNombreEdit")).Text;
             string descripcion = ((TextBox)row.FindControl("txtDescripcionEdit")).Text;
             string precioUnitario = ((TextBox)row.FindControl("txtPrecioEdit")).Text;
-            Image imagen = (Image)row.FindControl("imgImagen");
             bool estado = ((CheckBox)row.FindControl("cbEstado")).Checked;
 
             // Crear el objeto Productos con los valores actualizados
@@ -322,7 +321,6 @@ namespace Vistas
             productoActualizado.Nombre_Pr1 = nombre;
             productoActualizado.Descripcion_Pr1 = descripcion;
             productoActualizado.PrecioUnitario_Pr1 = decimal.Parse(precioUnitario);
-            productoActualizado.UrlImagen_Pr1 = Convert.ToString(imagen);
             productoActualizado.Estado_Pr = estado;
 
             // Llamar al método np.actualizarProducto para guardar los datos actualizados en la base de datos

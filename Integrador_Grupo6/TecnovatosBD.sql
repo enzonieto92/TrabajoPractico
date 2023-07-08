@@ -339,7 +339,6 @@ CREATE PROCEDURE SPActualizarProducto
 @CodCategoria CHAR(6),
 @Descripcion VARCHAR(100),
 @Nombre VARCHAR(20),
-@URLimagen VARCHAR(500),
 @PrecioUnitario DECIMAL(10,2),
 @Estado BIT
 )
@@ -349,7 +348,6 @@ CodMarcas_Pr=@CodMarca,
 CodCategoria_Pr=@CodCategoria,
 Descripcion_Pr=@Descripcion,
 Nombre_Pr=@Nombre,
-URLimagen_Pr=@URLimagen,
 PrecioUnitario=@PrecioUnitario,
 Estado_Pr=@Estado
 WHERE CodProducto_Pr=@CodProducto
