@@ -410,19 +410,16 @@ namespace Vistas
             // OBTIENE INDICE DE FILA
             int rowIndex = Convert.ToInt32(e.CommandArgument);
 
-             // OBTIENE OBJETO FILA SEGÚN ÍNDICE
-            GridViewRow fila = grvProductos.Rows[rowIndex];    
-
             if (e.CommandName == "AgregarStock")
             {
 
 
                 // HACE REFERENCIA AL CONTROL LABEL LLAMADO "lbl_it_Nombre" DENTRO DE LA FILA SELECCIONADA Y OBTIENE EL TEXTO DEL MISMO UBICADO EN LA CELDA DEL GRIDVIEW.
-                string nombre = (fila.FindControl("lbl_it_Nombre") as Label).Text;  
+                string nombre = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_Nombre")).Text;
 
-                lblMuestraCod.Text = (fila.FindControl("lbl_it_CodProd") as Label).Text;
-                lblMuestraCar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
-                lblMuestraColor.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
+                lblMuestraCod.Text = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodProd")).Text;
+                lblMuestraCar.Text = NCar.nombreCaract(((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodCaract")).Text);
+                lblMuestraColor.Text = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodColor")).Text;
 
                 //********************************************************************
 
@@ -434,10 +431,10 @@ namespace Vistas
             if (e.CommandName == "Eliminar")
             {
                 modalConfirmacionEliminar.Visible = true;
-                lblMuestrCodEliminar.Text = (fila.FindControl("lbl_it_CodProd") as Label).Text;
-                lblMuestraArtEliminar.Text = (fila.FindControl("lbl_it_Nombre") as Label).Text;
-                lblMuestraCaractEliminar.Text = NCar.nombreCaract((fila.FindControl("lbl_it_CodCaract") as Label).Text);
-                lblMuestraColorEliminar.Text = (fila.FindControl("lbl_it_CodColor") as Label).Text;
+                lblMuestrCodEliminar.Text = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodProd")).Text;
+                lblMuestraArtEliminar.Text = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_Nombre")).Text;
+                lblMuestraCaractEliminar.Text = NCar.nombreCaract(((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodCaract")).Text);
+                lblMuestraColorEliminar.Text = ((Label)grvProductos.Rows[rowIndex].FindControl("lbl_it_CodColor")).Text;
 
             }
         }
