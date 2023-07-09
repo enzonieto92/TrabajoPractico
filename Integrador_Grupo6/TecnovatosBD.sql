@@ -136,12 +136,14 @@ go
 --//////////////////////////////////////////////////////////
 
 insert into Caracteristicas(CodCaracteristica_Car,Nombre_Car)
-select '1','2GB' union
-select '2','4GB' union
-select '3','6GB' union
-select '4','8GB' union
-select '5','12GB' union
-select '6','32GB'
+select '1','4GB' union
+select '2','8GB' union
+select '3','16GB' union
+select '4','PCIE4-0' union
+select '5','PCIE3-0' union
+select '6','825GB' union 
+select '7','Mecanico' union
+select '8','Full HD' 
 go
 
 --//////////////////////////////////////////////////////////
@@ -159,7 +161,8 @@ select '9','CoolerMaster' union
 select '10','Kolink' union
 select '11','GameMax' union
 select '12', 'Corsair' union
-select '13','Lenovo' 
+select '13','Lenovo' union 
+select '14', 'Logitec'
 go
 
 --//////////////////////////////////////////////////////////
@@ -172,7 +175,9 @@ select '4','Consolas de videojuego' union
 select '5','Coolers' union
 select '6','Gabinetes' union
 select '7','Memorias RAM' union
-select '8','Notebooks' 
+select '8','Notebooks' union
+select '9','Monitor' union 
+select '10','perifericos'
 go
 
 --//////////////////////////////////////////////////////////
@@ -185,9 +190,14 @@ select 4, 3, 1, 'Motorola Edge 30 Pro',	'Rendimiento rapidisimo en el Edge 30 Pr
 select 5, 4, 2, 'NVIDIA RTX 3050', 'Potente tarjeta gráfica Nvidia 3050', 145000.00,'~/Imagenes/Productos/5.jpg', 1 union
 select 6, 4, 2, 'NVIDIA RTX 2070', 'Potente gráfica', 120000.00, '~/Imagenes/Productos/6.jpg', 1 union
 select 7, 5, 3,  'Asus Prime B550-K', 'Mothers', 85000.00, '~/Imagenes/Productos/7.jpg', 1 union
-select 8, 1, 4, 'PlayStation 5', 'PlayStation 5 Sony 825GB', 350000.00, '~/Imagenes/Productos/9.jpg', 1 union
-select 9, 8, 4, 'Xbox Series X', 'Xbox Series X 1TB', 300000.00, '~/Imagenes/Productos/10.jpg', 1 union
-select 10, 6, 8, 'Notebook MSI', 'Potente',	255000.00, '~/Imagenes/Productos/20.jpg', 1
+select 8, 6, 3,  'MSI A320M Pro-Max', 'Mothers', 35000.00, '~/Imagenes/Productos/8.jpg', 1 union
+select 9, 1, 4, 'PlayStation 5', 'PlayStation 5 Sony 825GB', 350000.00, '~/Imagenes/Productos/9.jpg', 1 union
+select 10, 8, 4, 'Xbox Series X', 'Xbox Series X 825GB', 300000.00, '~/Imagenes/Productos/10.jpg', 1 union
+select 11, 6, 8, 'Notebook MSI', 'Rapida y ligera muy confiable',	255000.00, '~/Imagenes/Productos/20.jpg', 1 union 
+select 12, 7, 7, 'RAM Fury', 'ddr4 de gran velocidad', 8000.00, '~/Imagenes/Productos/15.jpg', 1 union
+select 13, 5, 8,'Notebook Asus', 'Perfecta para gaming', 600000, '~/Imagenes/Productos/17.jpg', 1 union
+select 14, 14, 10,'Teclado Logitec', 'Respuesta rapida sin ghosting', 40000, '~/Imagenes/Productos/24.jpg', 1 union
+select 15, 2, 9, 'Monitor Samsung', 'Ultra fino 240hz', 200000 , '~/Imagenes/Productos/23.jpg', 1
 go
 
 
@@ -202,8 +212,13 @@ select '5','5','2','10' UNION
 SELECT '6','5','2','10' UNION
 SELECT '7','1','3','10' UNION 
 SELECT '8','6','1','10' UNION
-SELECT '9','6','2','10' UNION
-SELECT '10','5','2','10' 
+SELECT '9','6','1','10' UNION
+SELECT '10','6','2','10' UNION
+SELECT '11','3','2','10' UNION
+SELECT '12','2','2','10' UNION
+SELECT '13','3','2','10' UNION
+SELECT '14','7','2','10' UNION
+SELECT '15','8','2','10' 
 go
 
 --/////////////////////////////////////////////////////////
@@ -212,7 +227,7 @@ insert into Usuario (DNI_Us, Email_Us, Nombre_Us, Apellido_Us, FechaNacimiento_U
 select '1111','admin@admin.com','admin','administrador','2023-06-15','11111111','admin','admin','2','1' union
 select '2345', 'nahuel@gmail.com','nahuel','sandoval','2001-11-13','22213456','nahuelcapo','133011','1','1' union
 select '3456','enzo@gmail.com','Enzo','Nieto','1999-10-12','35576234','enzoca23','rana23','1','1' union
-select '4567', 'axel@gmail.com','axel','Mazo','2000-04-16','53132476','axelroca456','sapo3','1','1' union
+select '4567', 'axel@gmail.com','axel','Mazo','2000-04-16','53132476','axel123','oso1','1','1' union
 select '5678','matias@gmail.com','matias','Rocha','1998-08-21','46473869','matiasmas43','mat2365','1','1'
 go
 
