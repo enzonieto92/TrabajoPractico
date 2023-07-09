@@ -33,31 +33,31 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton lbCerrarSesión;
 
         /// <summary>
-        /// Control lbProcudctos.
+        /// Control hlProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbProcudctos;
+        protected global::System.Web.UI.WebControls.HyperLink hlProductos;
 
         /// <summary>
-        /// Control lbUsuarios.
+        /// Control hlUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbUsuarios;
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
 
         /// <summary>
-        /// Control lbReportes.
+        /// Control hlReportes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbReportes;
+        protected global::System.Web.UI.WebControls.HyperLink hlReportes;
 
         /// <summary>
         /// Control txtReporteDeVenta.

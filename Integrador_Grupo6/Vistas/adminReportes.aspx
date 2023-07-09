@@ -11,16 +11,17 @@
 <body>
     <form id="form2" style ="font-family: sans-serif" runat="server">
         <div>
-            <span>
-            </span>
-            <asp:LinkButton ID="lbCerrarSesión" runat="server" PostBackUrl="~/Inicio.aspx" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
-            <br/>
-            <br/>
-            <div style="text-align: center;">
-            <asp:LinkButton ID="lbProcudctos" runat="server" PostBackUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:LinkButton>
-            <asp:LinkButton ID="lbUsuarios" runat="server" PostBackUrl="~/AdminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:LinkButton>
-            <asp:LinkButton ID="lbReportes" runat="server" PostBackUrl="~/adminReportes.aspx">Reportes</asp:LinkButton>
-            </div>
+            
+           <header>
+                <div>
+                        <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
+                </div>
+                <nav style="justify-content:center;">
+                    <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+                </nav>
+            </header>
        
             <strong>
             <br />

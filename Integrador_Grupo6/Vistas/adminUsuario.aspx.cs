@@ -33,7 +33,7 @@ namespace Vistas
 
         protected void lbCerrarSesión_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = null;
+            Session["Usuario"] = null;
             Response.Redirect("~/Inicio.aspx");
         }
         public void limpiarCampos()

@@ -13,15 +13,16 @@
 <body>
     <form id="form1" style ="font-family: sans-serif" runat="server">
         <div>
-            <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
-            <br />
-            <br />
-            <div style="text-align:center;">
-            <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
-            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
-            <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
-            </div>
-            
+            <header>
+                <div>
+                        <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
+                </div>
+                <nav style="justify-content:center;">
+                    <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+                </nav>
+            </header>
             <br />
             <br />
             <div style="text-align: center;" >

@@ -24,40 +24,40 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lbCerrarSesión.
+        /// Control LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCerrarSesión;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
 
         /// <summary>
-        /// Control lbProcudctos.
+        /// Control hlProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbProcudctos;
+        protected global::System.Web.UI.WebControls.HyperLink hlProductos;
 
         /// <summary>
-        /// Control lbUsuarios.
+        /// Control hlUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbUsuarios;
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
 
         /// <summary>
-        /// Control lbReportes.
+        /// Control hlReportes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbReportes;
+        protected global::System.Web.UI.WebControls.HyperLink hlReportes;
 
         /// <summary>
         /// Control ddlFiltro.
