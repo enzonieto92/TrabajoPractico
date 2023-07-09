@@ -22,112 +22,17 @@ namespace Vistas
             string id = Request.QueryString["id"];
             if (!IsPostBack)
             {
+                btnUsuario.Text = ((Usuario)Session["usuario"]).Nombre_Us1;
                 Current = (Usuario)HttpContext.Current.Session["Usuario"];
-                CambiarNavegadores();
                 cargarProductosporId(id);
                 cargarCaracteristicas(id);
                 cargarColores(id);
                 cargarCantidad(id);
             }
         }
-        protected void btnAbrirPopup_Click(object sender, EventArgs e)
-        {
-            MostrarPopup("PopupInicioSesion");
-        }
-
-        protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
-        {
-            OcultarPopup("PopupInicioSesion");
-        }
-
-        protected void btnAbrirPopup2_Click(object sender, EventArgs e)
-        {
-            MostrarPopup("PopupRegistro");
-        }
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Carrito.aspx");
-        }
-        protected void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            Session["Usuario"] = negU.CrearLog(txtUsuario.Text, txtContraseña.Text);
-            if (Session["Usuario"] == null)
-            {
-                lblerror.Text = "Datos Incorrectos!";
-                lblerror.Visible = true;
-            }
-            else
-            {
-                if (negU.esAdmin(txtUsuario.Text, txtContraseña.Text))
-                    Response.Redirect("~/AdminReportes.aspx");
-                else
-                    Current = (Usuario)HttpContext.Current.Session["Usuario"];
-                CambiarNavegadores();
-            }
-
-
-        }
-        protected void btnCerrarSesion(object sender, EventArgs e)
-        {
-            Current = null;
-            Session["Usuario"] = null;
-            Response.Redirect("Inicio.aspx");
-        }
-        protected void CambiarNavegadores()
-        {
-            btnInicio.Text = "Inicio";
-            if (Current != null)
-            {
-                btnAbrirPopup.Text = Current.Nombre_Us1;
-                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
-            }
-            else
-            {
-                btnAbrirPopup.Text = "Iniciar Sesión";
-                btnAbrirPopup.OnClientClick = "btnAbrirPopup_Click";
-            }
-        }
-        public void MostrarPopup(string popup)
-        {
-            string fadeInScript = @"<script>
-        function fadeIn(element) {
-            element.style.opacity = 0;
-            element.style.visibility = 'visible';
-
-            (function fade() {
-                var val = parseFloat(element.style.opacity);
-                if (!((val += 0.1) > 1)) {
-                    element.style.opacity = val;
-                    requestAnimationFrame(fade);
-                }
-            })();
-        }
-        fadeIn(document.getElementById('" + popup + @"'));
-    </script>";
-            ClientScript.RegisterStartupScript(this.GetType(), "FadeInScript", fadeInScript);
-
-
-        }
-        public void OcultarPopup(string popup)
-        {
-            string fadeOutScript = @"<script>
-        function fadeOut(element) {
-            element.style.opacity = 1;
-            element.style.visibility = 'visible';
-
-            (function fade() {
-                if ((element.style.opacity -= 0.1) < 0) {
-                    element.style.display = 'none';
-                    element.style.visibility = 'hidden';
-                    element.style.opacity = '0';
-                } else {
-                    requestAnimationFrame(fade);
-                }
-            })();
-        }
-        fadeOut(document.getElementById('" + popup + @"'));
-    </script>";
-            ClientScript.RegisterStartupScript(this.GetType(), "FadeOutScript", fadeOutScript);
         }
 
         protected void ddlCaracteristica_SelectedIndexChanged(object sender, EventArgs e)
@@ -234,5 +139,10 @@ namespace Vistas
             }
         }
 
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

@@ -15,48 +15,13 @@
 			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
-                <asp:LinkButton ID="btnInicio" runat="server" OnClientClick="Response.Redirect(&quot;Inicio.aspx&quot;)"></asp:LinkButton>
-                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click"></asp:LinkButton>
-
+                <asp:LinkButton ID="btnInicio" runat="server" PostBackUrl="Inicio.aspx" Text="Inicio"></asp:LinkButton>
+                <asp:LinkButton ID="btnUsuario" runat="server" PostBackUrl="DetallesUsuario.aspx"></asp:LinkButton>
+                <asp:LinkButton ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" OnClick="CerrarSesion"></asp:LinkButton>
 			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" OnClick="ImageButton2_Click1"/>
            </nav>
 		</div>
     </header>
-            <asp:Panel ID="PanelInicioSesion" runat="server">
-    <div id="PopupInicioSesion" class="popup">
-            <div class="popup-contenido">
-                <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
-                <h2 style="text-align:center; font-family:sans-serif;">
-                <asp:Label ID="lblRegistrarse" runat="server" Text="Inicio de Sesión"></asp:Label> 
-                </h2>
-                <div class="Datos">
-    <div class="Form">
-
-        <asp:Label ID="lblUsuario" runat="server" class="Label" Text="Usuario: " ></asp:Label>
-        <asp:TextBox ID="txtUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-     
-    </div>
-
-    <div class="Form">
-
-            <asp:Label ID="lblContraseña" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
-            <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
-    </div>
-</div>
-                <div class="Hyperlink">
-                    <asp:Label ID="lblerror" runat="server" visible="false"></asp:Label>
-                    <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink> 
-                </div>
-
-                    
-        <div class="Button">
-                <asp:Button ID="btnIniciarSesion" class="boton-personalizado" runat="server"  Text="Iniciar Sesión" OnClick="btnIniciarSesion_Click"/>
-                </div>   
-
-            </div>
-    </div>
-    </asp:Panel>
-
 
         <asp:ListView ID="lvProductoMas" runat="server" DataKeyNames="CodProducto_Pr">
             <EmptyDataTemplate>
