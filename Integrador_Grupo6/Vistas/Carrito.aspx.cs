@@ -26,7 +26,6 @@ namespace Vistas
                 PanelFormaEnvio.Visible = false;
                 PanelEfectivo.Visible = false;
                 PanelTarjeta.Visible = false;
-                //cargarEnvio();
 
                 if (Session["carrito"] != null)
                 {

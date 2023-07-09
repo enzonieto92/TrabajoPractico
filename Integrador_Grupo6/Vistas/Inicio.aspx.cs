@@ -120,6 +120,7 @@ namespace Vistas
 
 
         }
+
         protected void CambiarNavegadores()
         {
                 btnInicio.Text = "Inicio";
@@ -237,6 +238,18 @@ namespace Vistas
                     lblMensajeStock.Text = "Este producto no tiene stock!";
                     return;
                 }
+            }
+        }
+
+        protected void btnCarrito(object sender, ImageClickEventArgs e)
+        {
+            if (Session["Usuario"] == null)
+            {
+                lblErrorIni.Text = "Inicie Sesión primero";
+            }
+            else
+            {
+                Response.Redirect("Carrito.aspx");
             }
         }
     }
