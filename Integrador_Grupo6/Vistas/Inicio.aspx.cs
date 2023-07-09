@@ -211,7 +211,6 @@ namespace Vistas
         {
             if (Current.Nombre_Us1 == null)
             {
-
                 MostrarPopup(PanelRegistro);
             }
             else
