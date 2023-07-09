@@ -199,6 +199,7 @@ namespace Vistas
         public void MostrarPopup(Panel popup)
         {
             popup.Visible = true;
+            txtUsuario.Focus();
         }
         public void OcultarPopup(Panel popup)
         {

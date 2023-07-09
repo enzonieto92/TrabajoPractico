@@ -15,18 +15,18 @@
 			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
-                <asp:LinkButton ID="btnInicio" runat="server" OnClientClick="Response.Redirect(&quot;Inicio.aspx&quot;)"></asp:LinkButton>
-                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click"></asp:LinkButton>
+                <asp:LinkButton ID="btnInicio" runat="server" TabIndex="-1" PostBackUrl="Inicio.aspx"></asp:LinkButton>
+                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click" TabIndex="-1"></asp:LinkButton>
 
-                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnCerrarSesion"></asp:LinkButton>
+                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnCerrarSesion" TabIndex="-1"></asp:LinkButton>
 
-			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" OnClick="ImageButton2_Click1"/>
+			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" TabIndex="-1" PostBackUrl="Carrito.aspx" />
            </nav>
 		</div>
     </header>
             <asp:Label ID="lblErrorIni" runat="server" CssClass="lblError"></asp:Label>
        
-    <asp:Panel ID="PanelInicioSesion" runat="server" Visible ="false">
+    <asp:Panel ID="PanelInicioSesion" runat="server" Visible ="false" DefaultButton="btnIniciarSesion">
     <div id="PopupInicioSesion" class="popup">
             <div class="popup-contenido">
                 <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
@@ -147,11 +147,13 @@
        </div>
         </asp:Panel>
 
+        <asp:Panel ID="PanelBusqueda" runat="server" DefaultButton="btnBuscar">
 
         <div style="text-align: center; margin: 50px">
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" placeholder="Buscar productos por nombre" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"  />
         </div>
+        </asp:Panel>
         <div class="contenedor">
                             <h3 style="font-family:sans-serif; text-align:center;">Categorías</h3>
                                 

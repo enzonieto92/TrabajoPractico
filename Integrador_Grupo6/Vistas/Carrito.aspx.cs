@@ -17,13 +17,12 @@ namespace Vistas
         NegocioDetalleFactura nDF = new NegocioDetalleFactura();
         NegocioEnvio Nen = new NegocioEnvio();
         NegocioPago Npa = new NegocioPago();
-        Usuario Current = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Current = (Usuario)HttpContext.Current.Session["Usuario"];
-                CambiarNavegadores();
+                btnUsuario.Text = ((Usuario)Session["usuario"]).Nombre_Us1;
+
                 PanelFormaEnvio.Visible = false;
                 PanelEfectivo.Visible = false;
                 PanelTarjeta.Visible = false;
@@ -69,27 +68,6 @@ namespace Vistas
             PanelEfectivo.Visible = false;
             }
             
-        }
-        protected void btnAbrirPopup_Click(object sender, EventArgs e)
-        {
-            Panelpopup.Visible = true;
-        }
-
-        protected void btnCerrar_Click(object sender, ImageClickEventArgs e)
-        {
-            Panelpopup.Visible = false;
-        }
-
-        protected void btnAbrirPopup2_Click(object sender, EventArgs e)
-        {
-                Current = null;
-                Session["Usuario"] = null;
-                Response.Redirect("Inicio.aspx");
-        }
-
-        protected void btnCerrar2_Click(object sender, ImageClickEventArgs e)
-        {
-            Panelpopup2.Visible = false;
         }
 
         protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
@@ -277,30 +255,16 @@ namespace Vistas
             lblMensaje.ForeColor = System.Drawing.Color.Red;
             lblMensaje.Text = "Los elementos seleccionados han sido borrados!";
         }
-        protected void CambiarNavegadores()
+
+        protected void btnUsuario_Click(object sender, EventArgs e)
         {
-            if (Current != null)
-            {
-                btnRegistrarse.Text = "Cerrar Sesión";
-                btnAbrirPopup.Text = Current.Nombre_Us1;
-                btnAbrirPopup.PostBackUrl = "DetallesUsuario.aspx";
-            }
-            else
-            {
-                btnRegistrarse.Text = "Registrarse";
-                btnAbrirPopup.Text = "Iniciar Sesión";
-            }
+            Response.Redirect("DetallesUsuario.aspx");
         }
 
-        //void cargarEnvio()
-        //{
-        //    DataTable tabla;
-        //    tabla = Nen.tablaEnvio();
-        //    ddl_FormasEnvio.DataSource = tabla;
-        //    ddl_FormasEnvio.DataTextField = "Descripcion_Me";
-        //    ddl_FormasEnvio.DataValueField = "CodMetodoEnvio_Me";
-        //    ddl_FormasEnvio.DataBind();
-        //}
-
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

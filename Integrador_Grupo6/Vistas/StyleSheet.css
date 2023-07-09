@@ -55,7 +55,7 @@
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     background: #252932;
     margin-bottom: 20px;
@@ -75,7 +75,6 @@ header .logo {
     line-height: 150px;
     float: left;
 }
-
 header nav {
     float: right;
     font-family: sans-serif;

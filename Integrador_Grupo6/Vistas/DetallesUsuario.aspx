@@ -48,12 +48,12 @@
 			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
-				<a href="inicio.aspx">
-                    Inicio
-				</a>
-                <asp:LinkButton ID="btnUsuario" runat="server"></asp:LinkButton>
-                <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="CerrarSesion" Text="Cerrar Sesión"></asp:LinkButton>
-			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" PostBackUrl="Carrito.aspx"/>
+				<asp:LinkButton ID="btnInicio" runat="server" TabIndex="-1" Text="Inicio" PostBackUrl="Inicio.aspx"></asp:LinkButton>
+                <asp:LinkButton ID="btnUsuario" runat="server" OnClick="btnUsuario_Click"></asp:LinkButton>
+
+                <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="CerrarSesion">Cerrar Sesión</asp:LinkButton>
+
+			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" OnClick="ImageButton2_Click"/>
            </nav>
 		</div>
     </header>
@@ -176,8 +176,6 @@
                                 <asp:ButtonField ButtonType="Button" CommandName="eventoVerMas" HeaderText="Detalle Factura" Text="Ver detalle" />
                             </Columns>
                         </asp:GridView>
-                    </td>
-                    <td>&nbsp;
                                                     <asp:GridView ID="grvDetalleFacturas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderWidth="1px" CellPadding="3" AllowPaging="True" OnPageIndexChanging="grvDetalleFacturas_PageIndexChanging">
                                                         
                                                         <Columns>

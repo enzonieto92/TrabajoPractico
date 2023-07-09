@@ -73,5 +73,15 @@ namespace Vistas
             Session["Usuario"] = null;
             Response.Redirect("Inicio.aspx");
         }
+
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+                Response.Redirect("DetallesUsuario.aspx");
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Carrito.aspx");
+        }
     }
 }
