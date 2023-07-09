@@ -225,19 +225,28 @@ namespace Vistas
         }
         protected void btnVerMas_Command(object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "eventoVerMas")
+            if ( Session["Usuario"] != null)
             {
-                String id = e.CommandArgument.ToString();
-                CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
-                cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = id;
 
-                if (nCXPXC.existeStockv2(cxpxc))
-                    Response.Redirect("ProductoSeleccion.aspx?id=" + id);
-                else
+                if (e.CommandName == "eventoVerMas")
                 {
-                    lblMensajeStock.Text = "Este producto no tiene stock!";
-                    return;
+                    String id = e.CommandArgument.ToString();
+                    CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
+                    cxpxc.CodProductos_CXPXC1.CodProducto_Pr1 = id;
+
+                    if (nCXPXC.existeStockv2(cxpxc))
+                        Response.Redirect("ProductoSeleccion.aspx?id=" + id);
+                    else
+                    {
+                        lblMensajeStock.Text = "Este producto no tiene stock!";
+                        return;
+                    }
                 }
+            }
+            else
+            {
+                lblErrorIni.Text = "Debe Iniciar Sesion primero!";
+                lblErrorIni.Visible = true;
             }
         }
 
