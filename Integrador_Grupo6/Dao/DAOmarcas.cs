@@ -22,10 +22,20 @@ namespace Dao
             return cantFilas;
         }
 
-        public DataTable tablaCategorias()
+        public DataTable tablaMarcas()
         {
             DataTable tabla;
             string consulta = "SELECT CodMarca_Ma, Descripcion_Ma FROM Marcas";
+
+            tabla = cn.ObtenerTabla("Marcas", consulta);
+
+            return tabla;
+        }
+        public DataTable tablaMarcasv2(Productos p)
+        {
+            DataTable tabla;
+            string consulta = "SELECT CodMarca_Ma, Descripcion_Ma FROM Marcas " +
+                              "ORDER BY CASE WHEN CodMarca_Ma = (SELECT CodMarcas_Pr FROM Productos WHERE CodProducto_Pr = '" + p.CodProducto_Pr1 + "') THEN 0 ELSE 1 END, CodMarca_Ma ASC";
 
             tabla = cn.ObtenerTabla("Marcas", consulta);
 

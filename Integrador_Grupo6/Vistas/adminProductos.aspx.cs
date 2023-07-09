@@ -361,15 +361,20 @@ namespace Vistas
             {
                 if ((e.Row.RowState & DataControlRowState.Edit) > 0)
                 {
+                    Label lblCodigoProducto = (Label)e.Row.FindControl("lbl_it_CodProd");
+                    string codigoProducto = lblCodigoProducto.Text;
+                    Productos p = new Productos();
+                    p.CodProducto_Pr1 = codigoProducto;
+
                     DropDownList ddlMa = (DropDownList)e.Row.FindControl("ei_ddl_Marca");
                     DropDownList ddlCat = (DropDownList)e.Row.FindControl("ei_ddl_Categoria");
-                    DataTable tablaMarcas = NM.listarMarcas();
+                    DataTable tablaMarcas = NM.listarMarcasv2(p);
                     ddlMa.DataSource = tablaMarcas;
                     ddlMa.DataTextField = "Descripcion_Ma";
                     ddlMa.DataValueField = "CodMarca_Ma";
                     ddlMa.DataBind();
 
-                    DataTable tablaCategoria = NC.listarCategorias();
+                    DataTable tablaCategoria = NC.listarCategoriasv2(p);
                     ddlCat.DataSource = tablaCategoria;
                     ddlCat.DataTextField = "Descripcion_Cat";
                     ddlCat.DataValueField = "CodCategoria_Cat";

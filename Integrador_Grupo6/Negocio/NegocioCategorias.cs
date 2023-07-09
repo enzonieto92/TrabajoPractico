@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Dao;
+using Entidades;
 
 namespace Negocio
 {
@@ -23,6 +24,11 @@ namespace Negocio
             tabla = Dcat.tablaCategorias();
 
             return tabla;
+        }
+        public DataTable listarCategoriasv2(Productos p)
+        {
+
+            return Dcat.tablaCategoriasv2(p);
         }
 
         public string CodigoCategoria(string nombreCategoria)

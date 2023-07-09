@@ -40,9 +40,13 @@ namespace Negocio
         public DataTable listarMarcas()
         {
 
-            return Dmar.tablaCategorias();
+            return Dmar.tablaMarcas();
         }
+        public DataTable listarMarcasv2(Productos p)
+        {
 
+            return Dmar.tablaMarcasv2(p);
+        }
         public string nombreMarca(string codigoMarca)
         {
             string nombre;
