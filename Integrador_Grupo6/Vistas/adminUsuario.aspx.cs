@@ -179,12 +179,11 @@ namespace Vistas
             int rowIndex = Convert.ToInt32(e.CommandArgument);
 
             // OBTIENE OBJETO FILA SEGÚN ÍNDICE
-            GridViewRow fila = grvUsuarios.Rows[rowIndex];
 
             if (e.CommandName == "Eliminar")
             {
                 modalConfirmacionEliminar.Visible = true;
-                lblMuestrDNIeliminar.Text = (fila.FindControl("it_lbl_DNI") as Label).Text;
+                lblMuestrDNIeliminar.Text = ((Label)grvUsuarios.Rows[rowIndex].FindControl("it_lbl_DNI")).Text;
                 ViewState["DNIeliminar"] = lblMuestrDNIeliminar.Text;
             }
         }
@@ -206,6 +205,13 @@ namespace Vistas
         protected void imgCerrarConfirmacion_Click1(object sender, ImageClickEventArgs e)
         {
             modalConfirmacionEliminar.Visible = false;
+        }
+
+        protected void grvUsuarios_PageIndexChanging1(object sender, GridViewPageEventArgs e)
+        {
+            lblLeyenda.Text = "";
+            grvUsuarios.PageIndex = e.NewPageIndex;
+            cargarTablaUsuario();
         }
     }
 }

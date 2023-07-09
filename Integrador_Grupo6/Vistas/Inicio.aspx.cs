@@ -169,12 +169,23 @@ namespace Vistas
                 {
                     lblLeyenda.ForeColor = System.Drawing.Color.Green;
                     lblLeyenda.Text = "Usuario registrado con éxito!";
+                    limpiarCampos();
                 }
             }
             catch (Exception ex)
             {
                 lblLeyenda.Text = ex.Message;
             }
+        }
+        protected void limpiarCampos()
+        {
+            txtboxDNI.Text = "";
+            txtEmail.Text = "";
+            txtboxNombre.Text = "";
+            txtboxApellido.Text = "";
+            txtFechaNacimiento.Text = "";
+            txtTelefono.Text = "";
+            txtboxCrearUsuario.Text = "";
         }
 
         void cargarCategorias()

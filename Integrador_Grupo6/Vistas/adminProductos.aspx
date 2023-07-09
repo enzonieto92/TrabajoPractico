@@ -33,7 +33,7 @@
                     <asp:ListItem Value="Nombre_Pr">Nombre</asp:ListItem>
                     <asp:ListItem Value="Descripcion_Pr">Descripcion</asp:ListItem>
                     <asp:ListItem Value="Estado_Pr">Estado de Producto</asp:ListItem>
-                    <asp:ListItem Value="PrecioUnitario_Pr">Precio Unitario</asp:ListItem>
+                    <asp:ListItem Value="PrecioUnitario">Precio Unitario</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="txtFiltro" runat="server" Height="16px" Width="175px"></asp:TextBox>
                 <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="boton-personalizado" OnClick="btnFiltrar_Click" />
@@ -43,7 +43,7 @@
             <br />
             <br />
                         <asp:GridView ID="grvProductos" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%" HeaderStyle-CssClass="dataGrid-th" AllowPaging="True" OnRowDeleting="grvProductos_RowDeleting" OnPageIndexChanging="grvProductos_PageIndexChanging" OnRowCancelingEdit="grvProductos_RowCancelingEdit" OnRowEditing="grvProductos_RowEditing" OnRowUpdating="grvProductos_RowUpdating" OnRowDataBound="grvProductos_RowDataBound" HorizontalAlign="Center" OnRowCommand="grvProductos_RowCommand1">
-                            <AlternatingRowStyle BackColor="red" />
+                            <AlternatingRowStyle BackColor="white" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Codigo Producto">
                                     <ItemTemplate>

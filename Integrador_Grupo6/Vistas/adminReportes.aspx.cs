@@ -156,5 +156,11 @@ namespace Vistas
             grvDetalleFacturas.DataSource = null;
             grvDetalleFacturas.DataBind();
         }
+
+        protected void grvFacturas_PageIndexChanging1(object sender, GridViewPageEventArgs e)
+        {
+            grvFacturas.PageIndex = e.NewPageIndex;
+            cargarTablaFacturasTODO();
+        }
     }
 }

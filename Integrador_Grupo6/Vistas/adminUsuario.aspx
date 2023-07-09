@@ -63,7 +63,7 @@
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style1">
-                        <asp:GridView ID="grvUsuarios" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="auto-style3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowDeleting="grvUsuarios_RowDeleting" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1">
+                        <asp:GridView ID="grvUsuarios" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="auto-style3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowDeleting="grvUsuarios_RowDeleting" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1" OnPageIndexChanging="grvUsuarios_PageIndexChanging1" PageSize="3">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI">
