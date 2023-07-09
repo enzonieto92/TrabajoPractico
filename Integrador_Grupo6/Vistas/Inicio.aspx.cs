@@ -210,7 +210,7 @@ namespace Vistas
 
         protected void btnCerrarSesion(object sender, EventArgs e)
         {
-            if (Current.Nombre_Us1 == null)
+            if (Session["Usuario"] == null)
             {
                 MostrarPopup(PanelRegistro);
             }
