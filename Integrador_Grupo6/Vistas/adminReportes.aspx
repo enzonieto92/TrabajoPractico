@@ -13,7 +13,7 @@
         <div>
             <span>
             </span>
-            <asp:LinkButton ID="lbCerrarSesión" runat="server" PostBackUrl="~/Inicio.aspx">Cerrar sesión</asp:LinkButton>
+            <asp:LinkButton ID="lbCerrarSesión" runat="server" PostBackUrl="~/Inicio.aspx" OnClick="lbCerrarSesión_Click">Cerrar sesión</asp:LinkButton>
             <br/>
             <br/>
             <div style="text-align: center;">

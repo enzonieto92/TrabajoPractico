@@ -351,7 +351,8 @@ namespace Vistas
 
         protected void lbCerrarSesión_Click(object sender, EventArgs e)
         {
-
+            Session["usuario"] = null;
+            Response.Redirect("~/Inicio.aspx");
         }
 
         protected void grvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
