@@ -24,100 +24,20 @@
     <form id="form1" runat="server">
     <header>
         		<div class="wrapper">
-			<div class="logo">TECNO UTN</div>
+			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
-				<a href="inicio.aspx">
-                    Inicio
-				</a>
-                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click"></asp:LinkButton>
+                <asp:LinkButton ID="btnInicio" runat="server" TabIndex="-1" Text="Inicio" PostBackUrl="Inicio.aspx"></asp:LinkButton>
+                <asp:LinkButton ID="btnUsuario" runat="server" OnClick="btnUsuario_Click"></asp:LinkButton>
 
-                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnAbrirPopup2_Click"></asp:LinkButton>
+                <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
 
 			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" href="Carrito.aspx" OnClick="ImageButton2_Click1"/>
            </nav>
 		</div>
     </header>
-            <asp:Panel ID="Panelpopup" runat="server" Visible="False">
-    <div id="miPopup" class="popup">
-            <div class="popup-contenido">
-                <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
-                <h2 style="text-align:center; font-family:sans-serif;">
-                <asp:Label ID="lblRegistrarse" runat="server" Text="Inicio de Sesión"></asp:Label> 
-                </h2>
-                <div class="Datos">
-    <div class="Form">
 
-        <asp:Label ID="lblUsuario" runat="server" class="Label" Text="Usuario: " ></asp:Label>
-        <asp:TextBox ID="txtUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
 
-    </div>
-
-    <div class="Form">
-
-            <asp:Label ID="lblContraseña" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
-            <asp:TextBox ID="txtContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
-    </div>
-</div>
-                <div class="Hyperlink">
-                    <asp:HyperLink ID="HlOlvidar" runat="server" Text="¿Olvidaste tu contraseña?" font-name="sans-serif"  ForeColor="SkyBlue" Font-Size="10px" NavigateUrl="~/iniciarSesion.aspx"></asp:HyperLink> 
-                </div>
-
-                    
-        <div class="Button">
-                <asp:Button ID="btnRegistrase" class="boton-personalizado" runat="server"  Text="Iniciar Sesión"/>
-                </div>   
-
-            </div>
-    </div>
-    </asp:Panel>
-
-        <asp:Panel ID="Panelpopup2" runat="server" Visible="false">
-       <div id="PopupRegistro" class="popup">
-             <div class="popup-contenido" style="height:500px; width: 500px;">
-                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
-                    <h2 style="text-align:center; font-family:sans-serif;">
-                    <asp:Label ID="Label1" runat="server" Text="Registrarse"></asp:Label> 
-                    </h2>
-                    <div class="Datos">
-        <div class="Form">
-
-            <asp:Label ID="Label2" runat="server" class="Label" Text="Usuario: " ></asp:Label>
-            <asp:TextBox ID="txtboxUsuario" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-
-        </div>
-
-        <div class="Form">
-
-                <asp:Label ID="Label3" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
-                <asp:TextBox ID="txtboxContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
-        </div>
-        <div class="Form">
-                <asp:Label ID="lblRepContraseña" runat="server" class="Label" Text="Repita la contraseña:"></asp:Label>
-               <asp:TextBox ID="txtRepContraseña" runat="server" class="TextBox" TextMode="password"></asp:TextBox>
-        </div>
-
-       <div class="Form">
-
-                        <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
-                        <asp:TextBox ID="txtEmail" runat="server" class="TextBox"></asp:TextBox>
-
-       </div>
-
-        <div class="Form">
-
-                        <asp:Label ID="lblRepEmail" runat="server" class="Label" Text="Repita el Email:"></asp:Label>
-
-                        <asp:TextBox ID="txtRepEmail" class="TextBox" runat="server" ></asp:TextBox>
-        </div>
-                        <div class="Button">
-                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium"   />
-                        </div>
-    </div>
-
-              </div>
-       </div>
-        </asp:Panel>
             <div style="display:flex;justify-content:center;" class="encabezado">
 
                 <asp:Label ID="lblEncabezadoCarrito" runat="server" Text="Artículos en carrito"></asp:Label>

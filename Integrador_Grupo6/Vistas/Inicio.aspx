@@ -15,18 +15,18 @@
 			<div class="logo">TECNOVATOS</div>
 			
 			<nav>
-                <asp:LinkButton ID="btnInicio" runat="server" OnClientClick="Response.Redirect(&quot;Inicio.aspx&quot;)"></asp:LinkButton>
-                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click"></asp:LinkButton>
+                <asp:LinkButton ID="btnInicio" runat="server" TabIndex="-1" PostBackUrl="Inicio.aspx"></asp:LinkButton>
+                <asp:LinkButton ID="btnAbrirPopup" runat="server" OnClick="btnAbrirPopup_Click" TabIndex="-1"></asp:LinkButton>
 
-                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnCerrarSesion"></asp:LinkButton>
+                <asp:LinkButton ID="btnRegistrarse" runat="server" OnClick="btnCerrarSesion" TabIndex="-1"></asp:LinkButton>
 
-			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" OnClick="ImageButton2_Click1"/>
+			    <asp:ImageButton ID="ImageButton2" runat="server" Height="29px" ImageUrl="~/Imagenes/Iconos/carrito.png" Width="37px" TabIndex="-1" OnClick="btnCarrito" />
            </nav>
 		</div>
     </header>
             <asp:Label ID="lblErrorIni" runat="server" CssClass="lblError"></asp:Label>
        
-    <asp:Panel ID="PanelInicioSesion" runat="server" Visible ="false">
+    <asp:Panel ID="PanelInicioSesion" runat="server" Visible ="false" DefaultButton="btnIniciarSesion">
     <div id="PopupInicioSesion" class="popup">
             <div class="popup-contenido">
                 <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left: 265px;" OnClick="btnCerrar_Click"/>
@@ -63,7 +63,7 @@
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="PanelRegistro" runat="server" Visible ="false">
+        <asp:Panel ID="PanelRegistro" runat="server" Visible ="false" DefaultButton="btnRegistrarUsuario">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:680px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
@@ -75,70 +75,70 @@
 
             <asp:Label ID="Label2" runat="server" class="Label" Text="DNI: " ></asp:Label>
             <asp:TextBox ID="txtboxDNI" runat="server" class="TextBox" AutoCompleteType="Disabled"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvDNI" runat="server"  class="Validator_Center" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su DNI</asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationExpression="^[\d]{1,3}\.?[\d]{3,3}\.?[\d]{3,3}$" ValidationGroup="1">DNI Inválido</asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator ID="rfvDNI" runat="server"  class="Validator_Center" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtboxDNI" ForeColor="Red" ValidationExpression="^[\d]{1,3}\.?[\d]{3,3}\.?[\d]{3,3}$" ValidationGroup="1">*</asp:RegularExpressionValidator>
         </div>
                         
        <div class="Form">
 
                         <asp:Label ID="lblEmail" runat="server" class="Label" Text="Email:"></asp:Label>
                         <asp:TextBox ID="txtEmail" runat="server" placeholder="example@gmail.com" class="TextBox"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvEmail" runat="server"  class="Validator_Center" ControlToValidate="txtEmail" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su Email</asp:RequiredFieldValidator>
+           <asp:RequiredFieldValidator ID="rfvEmail" runat="server"  class="Validator_Center" ControlToValidate="txtEmail" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
        </div>
                         
        <div class="Form">
 
                         <asp:Label ID="lblNombre" runat="server" class="Label" Text="Nombre:"></asp:Label>
                         <asp:TextBox ID="txtboxNombre" runat="server" class="TextBox"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvNombre" class="Validator_Center" runat="server" ControlToValidate="txtboxNombre" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su Nombre</asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtboxNombre" ForeColor="Red" ValidationExpression="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" ValidationGroup="1">Solo se Permiten Letras</asp:RegularExpressionValidator>
+           <asp:RequiredFieldValidator ID="rfvNombre" class="Validator_Center" runat="server" ControlToValidate="txtboxNombre" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtboxNombre" ForeColor="Red" ValidationExpression="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" ValidationGroup="1">*</asp:RegularExpressionValidator>
        </div>
        
        <div class="Form">
 
                         <asp:Label ID="lblApellido" runat="server" class="Label" Text="Apellido:"></asp:Label>
                         <asp:TextBox ID="txtboxApellido" runat="server" class="TextBox"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvApellido" class="Validator_Center" runat="server" ControlToValidate="txtboxApellido" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su Apellido</asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtboxApellido" ForeColor="Red" ValidationExpression="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" ValidationGroup="1">Solo se Permiten Letras</asp:RegularExpressionValidator>
+           <asp:RequiredFieldValidator ID="rfvApellido" class="Validator_Center" runat="server" ControlToValidate="txtboxApellido" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtboxApellido" ForeColor="Red" ValidationExpression="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" ValidationGroup="1">*</asp:RegularExpressionValidator>
        </div>
        
        <div class="Form">
 
                         <asp:Label ID="lblFechaNacimineto" runat="server" class="Label" Text="Fecha de Nacimiento:"></asp:Label>
                         <asp:TextBox ID="txtFechaNacimiento" runat="server" class="TextBox" TextMode="Date"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvFechaNac" class="Validator_Center" runat="server" ControlToValidate="txtFechaNacimiento" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su Fecha de Nacimiento</asp:RequiredFieldValidator>
+           <asp:RequiredFieldValidator ID="rfvFechaNac" class="Validator_Center" runat="server" ControlToValidate="txtFechaNacimiento" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
        </div>
                                
        <div class="Form">
 
                         <asp:Label ID="lblTelefono" runat="server" class="Label" Text="Telefono:"></asp:Label>
                         <asp:TextBox ID="txtTelefono" runat="server" class="TextBox"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvTelefono"  class="Validator_Center" runat="server" ControlToValidate="txtTelefono" ForeColor="Red" ValidationGroup="1">Debe Ingresar Su N° de Telefono</asp:RequiredFieldValidator>
-          <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="1">Solo se Permiten Números</asp:RegularExpressionValidator>
+           <asp:RequiredFieldValidator ID="rfvTelefono"  class="Validator_Center" runat="server" ControlToValidate="txtTelefono" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+          <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="1">*</asp:RegularExpressionValidator>
        </div>
 
        <div class="Form">
 
                         <asp:Label ID="lblCrearUsuario" runat="server" class="Label" Text="Usuario:"></asp:Label>
                         <asp:TextBox ID="txtboxCrearUsuario" runat="server" class="TextBox"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" class="Validator_Center"  ControlToValidate="txtboxCrearUsuario" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">Debe ingresar su Nombre de usuario</asp:RequiredFieldValidator>
+           <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" class="Validator_Center"  ControlToValidate="txtboxCrearUsuario" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">*</asp:RequiredFieldValidator>
        </div>
 
         <div class="Form">
 
                 <asp:Label ID="lblboxContraseña" runat="server" class="Label" Text="Contraseña:" BackColor="#232F3B"></asp:Label>
                 <asp:TextBox ID="txtboxContraseña" runat="server" class="TextBox" TextMode="Password"></asp:TextBox> 
-        <asp:RequiredFieldValidator ID="rfvContraseña" class="Validator_Center" runat="server" ControlToValidate="txtboxContraseña" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">Debe Ingresar una Contraseña</asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvContraseña" class="Validator_Center" runat="server" ControlToValidate="txtboxContraseña" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">*</asp:RequiredFieldValidator>
         </div>
         <div class="Form">
                 <asp:Label ID="lblRepContraseña" runat="server" class="Label" Text="Repita la contraseña:"></asp:Label>
                <asp:TextBox ID="txtRepContraseña" runat="server" class="TextBox" TextMode="password"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfvRepetir" runat="server"  class="Validator_Center" ControlToValidate="txtRepContraseña" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">Debe Ingresar una Contraseña</asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="cvRepetir" runat="server" ControlToCompare="txtboxContraseña" ControlToValidate="txtRepContraseña" ForeColor="Red" ValidationGroup="1">Las Contraseñas No Coinciden</asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="rfvRepetir" runat="server"  class="Validator_Center" ControlToValidate="txtRepContraseña" ForeColor="Red" ErrorMessage="1" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="cvRepetir" runat="server" ControlToCompare="txtboxContraseña" ControlToValidate="txtRepContraseña" ForeColor="Red" ValidationGroup="1">*</asp:CompareValidator>
         </div>
 
                         <div class="Button">
-                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium" OnClick="Button1_Click" ValidationGroup="1"   />
+                        <asp:Button ID="btnRegistrarUsuario" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium" OnClick="Button1_Click" ValidationGroup="1"   />
                             <asp:Label ID="lblLeyenda" class="Validator_Center" runat="server" ForeColor="Red"></asp:Label>
                         </div>
     </div>
@@ -147,11 +147,13 @@
        </div>
         </asp:Panel>
 
+        <asp:Panel ID="PanelBusqueda" runat="server" DefaultButton="btnBuscar">
 
         <div style="text-align: center; margin: 50px">
             <asp:TextBox class="cajaDeTexto" ID="txtBuscar" placeholder="Buscar productos por nombre" runat="server"></asp:TextBox>
             <asp:Button class="boton-personalizado" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"  />
         </div>
+        </asp:Panel>
         <div class="contenedor">
                             <h3 style="font-family:sans-serif; text-align:center;">Categorías</h3>
                                 

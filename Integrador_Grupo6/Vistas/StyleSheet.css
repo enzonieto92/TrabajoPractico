@@ -4,11 +4,13 @@
     border: none;
     border-bottom: 1px solid darkgrey;
     outline: none;
+    display:flex;
     -webkit-transition: all 500ms ease;
     color: white;
     margin-left:20px;
     box-sizing: border-box;
     width: 90%;
+    float: right;
 }
 .Button {
     justify-content: center;
@@ -16,6 +18,9 @@
 }
 .Datos {
   Height:90px;
+}
+.DatosRegistro{
+    width:60%;
 }
 
 .Label {
@@ -27,7 +32,6 @@
 }
 .lblError {
     color: red;
-
     font-family: sans-serif;
     Text-align: center;
     display:flex;
@@ -47,7 +51,7 @@
     margin-bottom:40px;
     Font-size: 12px;
     display: Flex;
-    width:90%;
+    width: 90%;
     height:20px;
 }
 .TextBox:focus{
@@ -55,7 +59,7 @@
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     background: #252932;
     margin-bottom: 20px;
@@ -75,7 +79,6 @@ header .logo {
     line-height: 150px;
     float: left;
 }
-
 header nav {
     float: right;
     font-family: sans-serif;
