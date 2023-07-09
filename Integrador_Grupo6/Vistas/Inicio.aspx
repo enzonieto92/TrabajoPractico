@@ -63,7 +63,7 @@
     </div>
     </asp:Panel>
 
-        <asp:Panel ID="PanelRegistro" runat="server" Visible ="false">
+        <asp:Panel ID="PanelRegistro" runat="server" Visible ="false" DefaultButton="btnRegistrarUsuario">
        <div id="PopupRegistro" class="popup">
              <div class="popup-contenido" style="height:680px; width: 500px;">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/Iconos/cruz.png" style="position: relative; top: 10px; left:465px;" OnClick="btnCerrar2_Click"/>
@@ -138,7 +138,7 @@
         </div>
 
                         <div class="Button">
-                        <asp:Button ID="Button1" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium" OnClick="Button1_Click" ValidationGroup="1"   />
+                        <asp:Button ID="btnRegistrarUsuario" runat="server" class="boton-personalizado" Text="Registrarse" font-family="sans-serif" Font-Size="Medium" OnClick="Button1_Click" ValidationGroup="1"   />
                             <asp:Label ID="lblLeyenda" class="Validator_Center" runat="server" ForeColor="Red"></asp:Label>
                         </div>
     </div>
