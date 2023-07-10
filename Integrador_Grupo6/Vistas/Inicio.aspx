@@ -264,7 +264,7 @@
                         <asp:Label class="nombreArticulo" ID="Nombre_ProLabel0" runat="server" Text='<%# Eval("Nombre_Pr") %>' Height="30px"></asp:Label>
                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("URLimagen_Pr") %>' CssClass="lvImagen" />
                         <br />
-                        <div style="border:3px solid #f2f2f2;  margin-bottom:100px; height:120px;">
+                        <div style="border:3px solid #f2f2f2;  margin-bottom:30px; height:120px;">
                         Código:
                         <asp:Label ID="CodProducto_ProLabel" runat="server" Text='<%# Eval("CodProducto_Pr") %>' />
                         <br />
@@ -274,7 +274,7 @@
                         <asp:Label style="text-align:center; margin-top: 5px;" ID="Descripcion_ProLabel" runat="server" Text='<%# Eval("Descripcion_Pr") %>' Width="250px"/>
                         </div>
                         <br />Precio: $<asp:Label ID="PrecioUnitario_ProLabel" runat="server" Text='<%# Eval("PrecioUnitario") %>' />
-                        <asp:Button class="boton-personalizado" ID="btnAgregarAlCarrito" runat="server" Text="Agregar al Carrito" CommandArgument='<%# Eval("CodProducto_Pr") %>' OnCommand="btnVerMas_Command" CommandName="eventoVerMas" />
+                        <asp:Button class="boton-personalizado" style="margin-bottom:50px;" ID="btnAgregarAlCarrito" runat="server" Text="Agregar al Carrito" CommandArgument='<%# Eval("CodProducto_Pr") %>' OnCommand="btnVerMas_Command" CommandName="eventoVerMas" />
                             </td>
                 </ItemTemplate>
                 <LayoutTemplate>
