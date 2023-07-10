@@ -13,13 +13,13 @@
         <div>
             <header>
                 <div>
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
+                        <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
                 </div>
-                <nav style="justify-content:center;">
-                    <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
-                    <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
-                    <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
-                </nav>
+                <div style="justify-content:center; display:flex;" >
+                    <asp:HyperLink ID="hlProductos" runat="server" class="btnCerrar" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" class="btnCerrar" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="hlReportes" runat="server" class="btnCerrar" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+                </div>
             </header>
             </div>
             
@@ -48,18 +48,14 @@
             &nbsp;
             <asp:Button ID="btnQuitarFiltro" CssClass="boton-personalizado" runat="server" Text="Quitar Filtro" OnClick="btnQuitarFiltro_Click"/>
             </div>
-           
-            <br />
-            <br />
-            Tipo 1 = Usuario Común<br />
-            Tipo 2 = Usuario Administrador<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style1">
-                        <asp:GridView ID="grvUsuarios" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="auto-style3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowDeleting="grvUsuarios_RowDeleting" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1" OnPageIndexChanging="grvUsuarios_PageIndexChanging1" PageSize="3">
+           <div style="margin-top: 30px; justify-content:center; display:flex; text-align:center;">
+
+            Tipo 1 = Usuario Común </br>
+            Tipo 2 = Usuario Administrador
+
+           </div>
+
+                        <asp:GridView ID="grvUsuarios" runat="server" style="justify-content:center; display:flex;margin-top:30px;" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowDeleting="grvUsuarios_RowDeleting" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1" OnPageIndexChanging="grvUsuarios_PageIndexChanging1" PageSize="3">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI">
@@ -156,11 +152,6 @@
                             </Columns>
                             <HeaderStyle CssClass="dataGrid-th" />
                         </asp:GridView>
-          
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
         </div>
         <!-- DIV CONFIRMACIÓN ELIMINAR -->
         <div class="contenedor-popup" id="modalConfirmacionEliminar" runat="server">

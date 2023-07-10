@@ -12,15 +12,15 @@
     <form id="form2" style ="font-family: sans-serif" runat="server">
         <div>
             
-           <header>
+            <header>
                 <div>
                         <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
                 </div>
-                <nav style="justify-content:center;">
-                    <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
-                    <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
-                    <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
-                </nav>
+                <div style="justify-content:center; display:flex;" >
+                    <asp:HyperLink ID="hlProductos" runat="server" class="btnCerrar" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" class="btnCerrar" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="hlReportes" runat="server" class="btnCerrar" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+                </div>
             </header>
        
             <strong>
@@ -84,6 +84,8 @@
                         </strong>
                     </td>
                     <td>
+                       <div style="justify-content:center;display:flex;">
+
                         <asp:GridView ID="grvFacturas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999"  BorderStyle="None" BorderWidth="1px" CellPadding="3"   EmptyDataText="No hay resultados." AllowPaging="True" OnRowCommand="grvFacturas_RowCommand" OnPageIndexChanging="grvFacturas_PageIndexChanging1">
                             
                             <Columns>
@@ -126,6 +128,7 @@
                             </Columns>
                             <HeaderStyle CssClass="dataGrid-th" />
                         </asp:GridView>
+                       </div>
                     </td>
                     <td>&nbsp;
                                                     <asp:GridView ID="grvDetalleFacturas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderWidth="1px" CellPadding="3" AllowPaging="True">

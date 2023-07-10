@@ -17,11 +17,11 @@
                 <div>
                         <asp:LinkButton ID="lbCerrarSesión" runat="server" OnClick="lbCerrarSesión_Click" CssClass="btnCerrar">Cerrar sesión</asp:LinkButton>         
                 </div>
-                <nav style="justify-content:center;">
-                    <asp:HyperLink ID="hlProductos" runat="server" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
-                    <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
-                    <asp:HyperLink ID="hlReportes" runat="server" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
-                </nav>
+                <div style="justify-content:center; display:flex;" >
+                    <asp:HyperLink ID="hlProductos" runat="server" class="btnCerrar" NavigateUrl="~/adminProductos.aspx" style="margin-right: 20px;">Productos</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" class="btnCerrar" NavigateUrl="~/adminUsuario.aspx" style="margin-right: 20px;">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="hlReportes" runat="server" class="btnCerrar" NavigateUrl="~/adminReportes.aspx" >Reportes</asp:HyperLink>
+                </div>
             </header>
             <br />
             <br />
