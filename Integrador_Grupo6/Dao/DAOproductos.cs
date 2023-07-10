@@ -121,15 +121,6 @@ namespace Dao
 
         }
 
-        //private void armarParametrosAgregarStock(ref SqlCommand cmd, string codigo, string stock)
-        //{
-        //    SqlParameter SqlParametros = new SqlParameter();
-        //    SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
-        //    SqlParametros.Value = codigo;
-        //    SqlParametros = cmd.Parameters.Add("@StockNuevo", SqlDbType.Int);
-        //    SqlParametros.Value = Convert.ToInt32(stock);
-        //}
-
         public DataTable filtroProductos(string tipo, string texto)
 
         {
