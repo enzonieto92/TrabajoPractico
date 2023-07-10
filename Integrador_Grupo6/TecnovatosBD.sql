@@ -204,10 +204,10 @@ go
 --//////////////////////////////////////////////////////////
 
 insert into CaracteristicasXproductosXcolores(CodProducto_CXPXC,CodCaracteristicas_CXPXC, CodColor_CXPXC,Stock_CXPXC)
-select '1','5','2','10' union
-select '2','4','3','10' union
-select '3','5','1','10' union
-select '4','3','4','10' union
+select '1','2','2','10' union
+select '2','1','3','10' union
+select '3','2','1','10' union
+select '4','2','4','10' union
 select '5','5','2','10' UNION
 SELECT '6','5','2','10' UNION
 SELECT '7','1','3','10' UNION 
