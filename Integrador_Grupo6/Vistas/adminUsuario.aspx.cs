@@ -79,6 +79,7 @@ namespace Vistas
 
         protected void grvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+
             string s_DNI = ((Label)grvUsuarios.Rows[e.RowIndex].FindControl("eit_lbl_DNI")).Text;
             string s_Email = ((TextBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_txtMail")).Text;
             string s_Nombre = ((TextBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_txtNombre")).Text;
@@ -88,7 +89,8 @@ namespace Vistas
             string s_Usuario = ((TextBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_txtUsuario")).Text;
             string s_Contraseña = ((TextBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_txtContraseña")).Text;
             string s_Tipo = ((DropDownList)grvUsuarios.Rows[e.RowIndex].FindControl("eit_ddl_Tipo")).SelectedValue;
-            string s_Estado = ((CheckBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_chk_Estado")).Checked.ToString();
+            bool s_Estado = ((CheckBox)grvUsuarios.Rows[e.RowIndex].FindControl("eit_chk_Estado")).Checked;
+
 
             try
             {
@@ -125,6 +127,15 @@ namespace Vistas
                     throw new Exception("Este usuario ya existe");
                 if (nSU.existeMail(Us))
                     throw new Exception("Este Email ya existe");
+
+                if (s_Estado == true)
+                {
+                    Us.Estado_Us1 = s_Estado;
+                }
+                else
+                {
+                    throw new Exception("No se puede editar el estado del usuario");
+                }
 
                 /* ya aca se usa la funcion y se determina que mensaje se mostrara en la ejecución*/
                 bool edito = nSU.ActualizarUsuario(Us);
