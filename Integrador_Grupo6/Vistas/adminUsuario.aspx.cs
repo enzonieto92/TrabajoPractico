@@ -48,27 +48,7 @@ namespace Vistas
             limpiarCampos();
         }
 
-        protected void grvUsuarios_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            string DNI_Us = ((Label)grvUsuarios.Rows[e.RowIndex].FindControl("it_lbl_DNI")).Text;
-            Usuario Us = new Usuario();
-            Us.DNI_Us1 = DNI_Us;
-            NegocioUsuario NU = new NegocioUsuario();
-            bool elimino = NU.EliminarUsuario(Us);
 
-            cargarTablaUsuario();
-
-            if (elimino)
-            {
-                lblLeyenda.ForeColor = System.Drawing.Color.Green;
-                lblLeyenda.Text = "Usuario eliminado con éxito!";
-            }
-            else
-            {
-                lblLeyenda.ForeColor = System.Drawing.Color.Red;
-                lblLeyenda.Text = "No se pudo eliminar el usuario";
-            }
-        }
 
         protected void grvUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -164,9 +144,9 @@ namespace Vistas
         }
         protected void grvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            lblLeyenda.Text = "";
             grvUsuarios.PageIndex = e.NewPageIndex;
             cargarTablaUsuario();
-            limpiarCampos();
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -216,13 +196,6 @@ namespace Vistas
         protected void imgCerrarConfirmacion_Click1(object sender, ImageClickEventArgs e)
         {
             modalConfirmacionEliminar.Visible = false;
-        }
-
-        protected void grvUsuarios_PageIndexChanging1(object sender, GridViewPageEventArgs e)
-        {
-            lblLeyenda.Text = "";
-            grvUsuarios.PageIndex = e.NewPageIndex;
-            cargarTablaUsuario();
         }
     }
 }

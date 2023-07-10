@@ -55,7 +55,7 @@
 
            </div>
 
-                        <asp:GridView ID="grvUsuarios" runat="server" style="justify-content:center; display:flex;margin-top:30px;" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowDeleting="grvUsuarios_RowDeleting" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1" OnPageIndexChanging="grvUsuarios_PageIndexChanging1" PageSize="3">
+                        <asp:GridView ID="grvUsuarios" runat="server" style="justify-content:center; display:flex;margin-top:30px;" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCancelingEdit="grvUsuarios_RowCancelingEdit" OnRowEditing="grvUsuarios_RowEditing" OnRowUpdating="grvUsuarios_RowUpdating" AllowPaging="True" OnRowCommand="grvUsuariosRowCommand1" OnPageIndexChanging="grvUsuarios_PageIndexChanging" PageSize="3">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI">

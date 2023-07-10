@@ -325,6 +325,7 @@ namespace Vistas
 
             // Llamar al método np.actualizarProducto para guardar los datos actualizados en la base de datos
             np.actualizarProducto(productoActualizado);
+            //Salir del modo edición
             grvProductos.EditIndex = -1;
             // Volver a cargar la tabla de productos después de la actualización
             cargartablaProductos();
