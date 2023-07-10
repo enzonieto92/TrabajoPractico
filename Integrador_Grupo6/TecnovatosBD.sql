@@ -196,7 +196,7 @@ select 10, 8, 4, 'Xbox Series X', 'Xbox Series X 825GB', 300000.00, '~/Imagenes/
 select 11, 6, 8, 'Notebook MSI', 'Rapida y ligera muy confiable',	255000.00, '~/Imagenes/Productos/20.jpg', 1 union 
 select 12, 7, 7, 'RAM Fury', 'ddr4 de gran velocidad', 8000.00, '~/Imagenes/Productos/15.jpg', 1 union
 select 13, 5, 8,'Notebook Asus', 'Perfecta para gaming', 600000, '~/Imagenes/Productos/17.jpg', 1 union
-select 14, 14, 10,'Teclado Logitec', 'Respuesta rapida sin ghosting', 40000, '~/Imagenes/Productos/24.jpg', 1 union
+select 14, 14, 10,'Teclado Logitec', 'Respuesta rapida sin ghosting', 40000, '~/Imagenes/Productos/24.jpeg', 1 union
 select 15, 2, 9, 'Monitor Samsung', 'Ultra fino 240hz', 200000 , '~/Imagenes/Productos/23.jpg', 1
 go
 
