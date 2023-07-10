@@ -47,7 +47,7 @@ namespace Dao
         }
         public Boolean IniciarSesion(Usuario Us)
         {
-            String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "' AND Contraseña_Us='" + Us.Contraseña_Us1 + "'";
+            String consulta = "Select * from Usuario where Usuario_Us='" + Us.Usuario_Us1 + "' AND Contraseña_Us='" + Us.Contraseña_Us1 + "AND Estado_Us=1'";
             return cn.existe(consulta);
         }
         public DataTable BuscarUsuario(Usuario Us)
