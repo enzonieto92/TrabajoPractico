@@ -257,11 +257,10 @@ go
 --//////////////////////////////////////////////////////////
 
 insert into DetalleFacturas(NroFactura_Df,CodProducto_Df,CodCaracteristicas_Df,CodColor_Df,PrecioUnitario_Df,Cantidad_Df)
-select 1,'1','5','2','380000.00','1' union
-select 2,'2','4','3','145999.99','1' union
-select 3,'3','5','1','219999.99','1' union
-select 4,'4','3','4','155000.00','1' union
-select 4,'1','5','2','380000.00','1'
+select 1,'1','2','2','380000.00','1' union
+select 2,'2','1','3','145999.99','1' union
+select 3,'3','2','1','219999.99','1' union
+select 4,'4','2','4','155000.00','1'
 GO
 
 --Procedimientos almacenados
