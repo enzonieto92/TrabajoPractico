@@ -83,9 +83,9 @@ namespace Negocio
             return Dpr.BuscarProducos(texto);
         }
 
-        public Boolean agregarStock(string codigo, string stock)
+        public Boolean EditarStock(string codigo, string stock)
         {
-            if (Dpr.agregarStock(codigo, stock) == 1)
+            if (Dpr.EditarStock(codigo, stock) == 1)
             {
                 return true;
             }

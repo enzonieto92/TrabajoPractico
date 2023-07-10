@@ -140,7 +140,7 @@
                                         <asp:CheckBox ID="ch_it_estado" runat="server" Checked='<%# Bind("Estado_CXPXC") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:ButtonField ButtonType="Image" HeaderText="Agregar Stock" ImageUrl="~/Imagenes/Iconos/signo mas.png" CommandName="AgregarStock">
+                                <asp:ButtonField ButtonType="Image" HeaderText="Editar Stock" ImageUrl="~/Imagenes/Iconos/signo mas.png" CommandName="AgregarStock">
                                 <ControlStyle Height="20px" Width="20px" />
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:ButtonField>
@@ -195,7 +195,7 @@
         <div class="contenedor-popup" id="modalStock" runat="server">
              <div class="popup2">
                 <div class="funciones-popup">
-                  <asp:Label style="margin-left:30%; font-size: 20px" ID="lblTextoPopupAgrStock" runat="server" Text="Agregar stock" ForeColor="White"></asp:Label>
+                  <asp:Label style="margin-left:30%; font-size: 20px" ID="lblTextoPopupAgrStock" runat="server" Text="Editar stock" ForeColor="White"></asp:Label>
                     <br />
                     <br />
                   <asp:Label ID="lblCodigoProd" runat="server" Text="Código: " ForeColor="White"></asp:Label>
@@ -211,7 +211,7 @@
                   <asp:Label ID="lblMuestraColor" runat="server" Text="" ForeColor="White"></asp:Label>
                     <br />
                   <asp:TextBox style="margin-top: 20px" ID="txtAgrStock" runat="server" TextMode="Number"></asp:TextBox>
-                  <asp:Button ID="btnAgrStock" runat="server" Text="Agregar Stock" CssClass="boton-personalizado" OnClick="btnAgrStock_Click"></asp:Button>
+                  <asp:Button ID="btnAgrStock" runat="server" Text="Editar Stock" CssClass="boton-personalizado" OnClick="btnAgrStock_Click"></asp:Button>
                     <br />
                     <br />
                   <asp:Label class="centered-element" ID="lblMensajeStock" runat="server" Text="" ForeColor="White"></asp:Label>

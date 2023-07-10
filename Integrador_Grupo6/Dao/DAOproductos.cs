@@ -135,7 +135,7 @@ namespace Dao
             return tabla;
         }
 
-        public int agregarStock(string codigo, string stock)
+        public int EditarStock(string codigo, string stock)
         {
             int filas;
             string consulta = "EXEC SPActualizarStock '" + codigo + "', '" + stock + "'";

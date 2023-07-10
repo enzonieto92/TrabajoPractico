@@ -433,18 +433,18 @@ namespace Vistas
             // AGREGAR STOCK -------------------------------------------
             if (txtAgrStock.Text != "" && txtAgrStock.Text != "0")
             {
-                bool agrego = nsCXPXC.agregarStock(lblMuestraCod.Text, NCar.codigoCaract(lblMuestraCar.Text), NCo.CodigoColor(lblMuestraColor.Text), Convert.ToInt32(txtAgrStock.Text));
+                bool agrego = nsCXPXC.EditarStock(lblMuestraCod.Text, NCar.codigoCaract(lblMuestraCar.Text), NCo.CodigoColor(lblMuestraColor.Text), Convert.ToInt32(txtAgrStock.Text));
                 if (agrego)
                 {
                     cargartablaProductos();
                     lblMensajeStock.ForeColor = System.Drawing.Color.Green;
-                    lblMensajeStock.Text = "Stock agregado con éxito!";
+                    lblMensajeStock.Text = "Stock editado con éxito!";
                     txtAgrStock.Text = "";
                 }
                 else
                 {
                     lblMensajeStock.ForeColor = System.Drawing.Color.Red;
-                    lblMensajeStock.Text = "No se pudo agregar el stock";
+                    lblMensajeStock.Text = "No se pudo editar el stock";
                 }
             }
             else

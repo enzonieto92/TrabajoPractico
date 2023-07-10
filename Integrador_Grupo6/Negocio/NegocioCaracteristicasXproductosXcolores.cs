@@ -14,7 +14,7 @@ namespace Negocio
     {
         DAOcaracteristicasXproductosXcolores dcxpxc = new DAOcaracteristicasXproductosXcolores();
         CaracteristicasXproductoXcolores cxpxc = new CaracteristicasXproductoXcolores();
-        public bool agregarStock(string codProducto, string codCaracteristica, string codColor, int stock)
+        public bool EditarStock(string codProducto, string codCaracteristica, string codColor, int stock)
         {
             int cantFilas = 0;
             CaracteristicasXproductoXcolores CXPXC = new CaracteristicasXproductoXcolores();
