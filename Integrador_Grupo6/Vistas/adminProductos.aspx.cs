@@ -390,18 +390,6 @@ namespace Vistas
             modalAgregarProducto.Visible = false;
         }
 
-        /*protected void grvProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridViewRow fila = grvProductos.SelectedRow;
-            lblMensajeAgregado.Text = fila.Cells[6].Text;
-            lblMensajeAgregado.Text = "index changed";
-            //modalStock.Visible = true;
-            //Label l1 = grvProductos.Rows[1].FindControl("lbl_it_Nombre") as Label;
-            //lblMensajeAgregado.Text = l1.Text;
-            //lblMensajeAgregado.Text = "aaaaaaaaaaaah";
-        }*/
-
-
         protected void grvProductos_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
             // *******************************************************************

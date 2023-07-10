@@ -23,15 +23,15 @@ namespace Dao
             string consulta = "SELECT CodProducto_Pr, CodCaracteristicas_CXPXC, CodMarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Descripcion_Co, Nombre_Pr, Descripcion_Pr, Nombre_Car, PrecioUnitario, URLimagen_Pr, Stock_CXPXC, Estado_CXPXC FROM Productos " +
                               "INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat " +
                               "INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC INNER JOIN Colores ON CodColor_Co = CodColor_CXPXC INNER JOIN Caracteristicas ON CodCaracteristica_Car = CodCaracteristicas_CXPXC " +
-                              "WHERE Estado_CXPXC = 1";
+                              "WHERE Estado_CXPXC = 1 ORDER BY LEN(CodProducto_CXPXC), CodProducto_CXPXC";
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
 
-        public DataTable getTablaInicio()
+        public DataTable getTablaInicio()///
         {
             string consulta = "SELECT CodProducto_Pr, Codmarcas_Pr, Descripcion_Ma, CodCategoria_Pr, Descripcion_Cat, Nombre_Pr, Descripcion_Pr, URLimagen_Pr, PrecioUnitario " +
-                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = 1";   //INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC WHERE Estado_CXPXC = '1'
+                              "FROM Productos INNER JOIN Marcas ON CodMarcas_Pr = CodMarca_Ma INNER JOIN Categoria ON CodCategoria_Pr = CodCategoria_Cat WHERE Estado_Pr = 1 ORDER BY LEN(CodProducto_Pr), CodProducto_Pr";   //INNER JOIN CaracteristicasXproductosXcolores ON CodProducto_Pr = CodProducto_CXPXC WHERE Estado_CXPXC = '1'
             DataTable tabla = cn.ObtenerTabla("Productos", consulta);
             return tabla;
         }
@@ -43,7 +43,7 @@ namespace Dao
             return tabla;
         }
 
-        public Boolean existeProducto(string codProd)
+        public Boolean existeProducto(string codProd)///LO USAMOS EN ADMINPRODUCTOS 
         {
             String consulta = "SELECT * FROM Productos WHERE CodProducto_Pr= '" + codProd + "'";
             return cn.existe(consulta);
@@ -121,14 +121,14 @@ namespace Dao
 
         }
 
-        private void armarParametrosAgregarStock(ref SqlCommand cmd, string codigo, string stock)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
-            SqlParametros.Value = codigo;
-            SqlParametros = cmd.Parameters.Add("@StockNuevo", SqlDbType.Int);
-            SqlParametros.Value = Convert.ToInt32(stock);
-        }
+        //private void armarParametrosAgregarStock(ref SqlCommand cmd, string codigo, string stock)
+        //{
+        //    SqlParameter SqlParametros = new SqlParameter();
+        //    SqlParametros = cmd.Parameters.Add("@CodProducto", SqlDbType.Char);
+        //    SqlParametros.Value = codigo;
+        //    SqlParametros = cmd.Parameters.Add("@StockNuevo", SqlDbType.Int);
+        //    SqlParametros.Value = Convert.ToInt32(stock);
+        //}
 
         public DataTable filtroProductos(string tipo, string texto)
 
